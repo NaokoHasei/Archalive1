@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="S_INITIALINFO" targetNamespace="http://tempuri.org/S_INITIALINFO.xsd" xmlns:mstns="http://tempuri.org/S_INITIALINFO.xsd" xmlns="http://tempuri.org/S_INITIALINFO.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="DB_FSUISANConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Public" Name="DB_FSUISANConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Model.My.MySettings.GlobalReference.Default.DB_FSUISANConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="S_INITIALINFOViewTableAdapter" GeneratorDataComponentClassName="S_INITIALINFOViewTableAdapter" Name="S_INITIALINFOView" UserDataComponentName="S_INITIALINFOViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DB_FSUISANConnectionString (MySettings)" DbObjectName="DB_FSUISAN.U_FSUISAN.S_INITIALINFO" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT KEYCODE, LOG_DIR, LOG_DELDAY, SEDAISUU, SEDAIBACKUP_DIR, BACKUPFILE_DIR, BACKUPLOG_DIR, BACKUPLOG_NAME, PDF_DIR, POST_DIR, POST_DLURL, POST_COMPRESSNAME, POST_THAWNAME, SHAITO_SYUSIKIN, SHAITO_RIRITU, SHAITO_KOKUZEI, SHAITO_CHIHOUZEI, SHAITO_ROUNDKETA, SHAITO_ROUNDKBN, SHAITO_KZEI_ROUNDKETA, SHAITO_KZEI_ROUNDKBN, SHAITO_CZEI_ROUNDKETA, SHAITO_CZEI_ROUNDKBN, RHAITO_GENSI, RHAITO_KOKUZEI, RHAITO_CHOHOUZEI, RHAITO_ROUNDKETA, RHAITO_ROUNDKBN, RHAITO_RITU_ROUNDKETA, RHAITO_RITU_ROUNDKBN, RHAITO_KZEI_ROUNDKETA, RHAITO_KZEI_ROUNDKBN, RHAITO_CZEI_ROUNDKETA, RHAITO_CZEI_ROUNDKBN, 
+SAITEIHOSYOKIN,HHOSYOKIN_ROUNDKETA,HHOSYOKIN_ROUNDKBN,HRISOKU_ROUNDKETA,
+HRISOKU_ROUNDKBN,SAZUIARI_ROUNDKETA,SAZUIARI_ROUNDKBN,NENSIIRE_ROUNDKETA,
+NENSIIRE_ROUNDKBN,
+PASSWORDKIGEN FROM S_INITIALINFO</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="KEYCODE" DataSetColumn="KEYCODE" />
+              <Mapping SourceColumn="LOG_DIR" DataSetColumn="LOG_DIR" />
+              <Mapping SourceColumn="LOG_DELDAY" DataSetColumn="LOG_DELDAY" />
+              <Mapping SourceColumn="SEDAISUU" DataSetColumn="SEDAISUU" />
+              <Mapping SourceColumn="SEDAIBACKUP_DIR" DataSetColumn="SEDAIBACKUP_DIR" />
+              <Mapping SourceColumn="BACKUPFILE_DIR" DataSetColumn="BACKUPFILE_DIR" />
+              <Mapping SourceColumn="BACKUPLOG_DIR" DataSetColumn="BACKUPLOG_DIR" />
+              <Mapping SourceColumn="BACKUPLOG_NAME" DataSetColumn="BACKUPLOG_NAME" />
+              <Mapping SourceColumn="PDF_DIR" DataSetColumn="PDF_DIR" />
+              <Mapping SourceColumn="POST_DIR" DataSetColumn="POST_DIR" />
+              <Mapping SourceColumn="POST_DLURL" DataSetColumn="POST_DLURL" />
+              <Mapping SourceColumn="POST_COMPRESSNAME" DataSetColumn="POST_COMPRESSNAME" />
+              <Mapping SourceColumn="POST_THAWNAME" DataSetColumn="POST_THAWNAME" />
+              <Mapping SourceColumn="SHAITO_SYUSIKIN" DataSetColumn="SHAITO_SYUSIKIN" />
+              <Mapping SourceColumn="SHAITO_RIRITU" DataSetColumn="SHAITO_RIRITU" />
+              <Mapping SourceColumn="SHAITO_KOKUZEI" DataSetColumn="SHAITO_KOKUZEI" />
+              <Mapping SourceColumn="SHAITO_CHIHOUZEI" DataSetColumn="SHAITO_CHIHOUZEI" />
+              <Mapping SourceColumn="SHAITO_ROUNDKETA" DataSetColumn="SHAITO_ROUNDKETA" />
+              <Mapping SourceColumn="SHAITO_ROUNDKBN" DataSetColumn="SHAITO_ROUNDKBN" />
+              <Mapping SourceColumn="SHAITO_KZEI_ROUNDKETA" DataSetColumn="SHAITO_KZEI_ROUNDKETA" />
+              <Mapping SourceColumn="SHAITO_KZEI_ROUNDKBN" DataSetColumn="SHAITO_KZEI_ROUNDKBN" />
+              <Mapping SourceColumn="SHAITO_CZEI_ROUNDKETA" DataSetColumn="SHAITO_CZEI_ROUNDKETA" />
+              <Mapping SourceColumn="SHAITO_CZEI_ROUNDKBN" DataSetColumn="SHAITO_CZEI_ROUNDKBN" />
+              <Mapping SourceColumn="RHAITO_GENSI" DataSetColumn="RHAITO_GENSI" />
+              <Mapping SourceColumn="RHAITO_KOKUZEI" DataSetColumn="RHAITO_KOKUZEI" />
+              <Mapping SourceColumn="RHAITO_CHOHOUZEI" DataSetColumn="RHAITO_CHOHOUZEI" />
+              <Mapping SourceColumn="RHAITO_ROUNDKETA" DataSetColumn="RHAITO_ROUNDKETA" />
+              <Mapping SourceColumn="RHAITO_ROUNDKBN" DataSetColumn="RHAITO_ROUNDKBN" />
+              <Mapping SourceColumn="RHAITO_RITU_ROUNDKETA" DataSetColumn="RHAITO_RITU_ROUNDKETA" />
+              <Mapping SourceColumn="RHAITO_RITU_ROUNDKBN" DataSetColumn="RHAITO_RITU_ROUNDKBN" />
+              <Mapping SourceColumn="RHAITO_KZEI_ROUNDKETA" DataSetColumn="RHAITO_KZEI_ROUNDKETA" />
+              <Mapping SourceColumn="RHAITO_KZEI_ROUNDKBN" DataSetColumn="RHAITO_KZEI_ROUNDKBN" />
+              <Mapping SourceColumn="RHAITO_CZEI_ROUNDKETA" DataSetColumn="RHAITO_CZEI_ROUNDKETA" />
+              <Mapping SourceColumn="RHAITO_CZEI_ROUNDKBN" DataSetColumn="RHAITO_CZEI_ROUNDKBN" />
+              <Mapping SourceColumn="PASSWORDKIGEN" DataSetColumn="PASSWORDKIGEN" />
+              <Mapping SourceColumn="SAITEIHOSYOKIN" DataSetColumn="SAITEIHOSYOKIN" />
+              <Mapping SourceColumn="HHOSYOKIN_ROUNDKETA" DataSetColumn="HHOSYOKIN_ROUNDKETA" />
+              <Mapping SourceColumn="HHOSYOKIN_ROUNDKBN" DataSetColumn="HHOSYOKIN_ROUNDKBN" />
+              <Mapping SourceColumn="HRISOKU_ROUNDKETA" DataSetColumn="HRISOKU_ROUNDKETA" />
+              <Mapping SourceColumn="HRISOKU_ROUNDKBN" DataSetColumn="HRISOKU_ROUNDKBN" />
+              <Mapping SourceColumn="SAZUIARI_ROUNDKETA" DataSetColumn="SAZUIARI_ROUNDKETA" />
+              <Mapping SourceColumn="SAZUIARI_ROUNDKBN" DataSetColumn="SAZUIARI_ROUNDKBN" />
+              <Mapping SourceColumn="NENSIIRE_ROUNDKETA" DataSetColumn="NENSIIRE_ROUNDKETA" />
+              <Mapping SourceColumn="NENSIIRE_ROUNDKBN" DataSetColumn="NENSIIRE_ROUNDKBN" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="S_INITIALINFO" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="S_INITIALINFO" msprop:Generator_DataSetName="S_INITIALINFO" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="S_INITIALINFOView" msprop:Generator_UserTableName="S_INITIALINFOView" msprop:Generator_RowDeletedName="S_INITIALINFOViewRowDeleted" msprop:Generator_RowChangedName="S_INITIALINFOViewRowChanged" msprop:Generator_RowClassName="S_INITIALINFOViewRow" msprop:Generator_RowChangingName="S_INITIALINFOViewRowChanging" msprop:Generator_RowEvArgName="S_INITIALINFOViewRowChangeEvent" msprop:Generator_RowEvHandlerName="S_INITIALINFOViewRowChangeEventHandler" msprop:Generator_TableClassName="S_INITIALINFOViewDataTable" msprop:Generator_TableVarName="tableS_INITIALINFOView" msprop:Generator_RowDeletingName="S_INITIALINFOViewRowDeleting" msprop:Generator_TablePropName="S_INITIALINFOView">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="KEYCODE" msprop:Generator_UserColumnName="KEYCODE" msprop:Generator_ColumnVarNameInTable="columnKEYCODE" msprop:Generator_ColumnPropNameInRow="KEYCODE" msprop:Generator_ColumnPropNameInTable="KEYCODEColumn" type="xs:decimal" />
+              <xs:element name="LOG_DIR" msprop:Generator_UserColumnName="LOG_DIR" msprop:Generator_ColumnVarNameInTable="columnLOG_DIR" msprop:Generator_ColumnPropNameInRow="LOG_DIR" msprop:Generator_ColumnPropNameInTable="LOG_DIRColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOG_DELDAY" msprop:Generator_UserColumnName="LOG_DELDAY" msprop:Generator_ColumnVarNameInTable="columnLOG_DELDAY" msprop:Generator_ColumnPropNameInRow="LOG_DELDAY" msprop:Generator_ColumnPropNameInTable="LOG_DELDAYColumn" type="xs:short" />
+              <xs:element name="SEDAISUU" msprop:Generator_UserColumnName="SEDAISUU" msprop:Generator_ColumnVarNameInTable="columnSEDAISUU" msprop:Generator_ColumnPropNameInRow="SEDAISUU" msprop:Generator_ColumnPropNameInTable="SEDAISUUColumn" type="xs:short" />
+              <xs:element name="SEDAIBACKUP_DIR" msprop:Generator_UserColumnName="SEDAIBACKUP_DIR" msprop:Generator_ColumnVarNameInTable="columnSEDAIBACKUP_DIR" msprop:Generator_ColumnPropNameInRow="SEDAIBACKUP_DIR" msprop:Generator_ColumnPropNameInTable="SEDAIBACKUP_DIRColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BACKUPFILE_DIR" msprop:Generator_UserColumnName="BACKUPFILE_DIR" msprop:Generator_ColumnVarNameInTable="columnBACKUPFILE_DIR" msprop:Generator_ColumnPropNameInRow="BACKUPFILE_DIR" msprop:Generator_ColumnPropNameInTable="BACKUPFILE_DIRColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BACKUPLOG_DIR" msprop:Generator_UserColumnName="BACKUPLOG_DIR" msprop:Generator_ColumnVarNameInTable="columnBACKUPLOG_DIR" msprop:Generator_ColumnPropNameInRow="BACKUPLOG_DIR" msprop:Generator_ColumnPropNameInTable="BACKUPLOG_DIRColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BACKUPLOG_NAME" msprop:Generator_UserColumnName="BACKUPLOG_NAME" msprop:Generator_ColumnVarNameInTable="columnBACKUPLOG_NAME" msprop:Generator_ColumnPropNameInRow="BACKUPLOG_NAME" msprop:Generator_ColumnPropNameInTable="BACKUPLOG_NAMEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PDF_DIR" msprop:Generator_UserColumnName="PDF_DIR" msprop:Generator_ColumnVarNameInTable="columnPDF_DIR" msprop:Generator_ColumnPropNameInRow="PDF_DIR" msprop:Generator_ColumnPropNameInTable="PDF_DIRColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="POST_DIR" msprop:Generator_UserColumnName="POST_DIR" msprop:Generator_ColumnVarNameInTable="columnPOST_DIR" msprop:Generator_ColumnPropNameInRow="POST_DIR" msprop:Generator_ColumnPropNameInTable="POST_DIRColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="POST_DLURL" msprop:Generator_UserColumnName="POST_DLURL" msprop:Generator_ColumnVarNameInTable="columnPOST_DLURL" msprop:Generator_ColumnPropNameInRow="POST_DLURL" msprop:Generator_ColumnPropNameInTable="POST_DLURLColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="POST_COMPRESSNAME" msprop:Generator_UserColumnName="POST_COMPRESSNAME" msprop:Generator_ColumnVarNameInTable="columnPOST_COMPRESSNAME" msprop:Generator_ColumnPropNameInRow="POST_COMPRESSNAME" msprop:Generator_ColumnPropNameInTable="POST_COMPRESSNAMEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="POST_THAWNAME" msprop:Generator_UserColumnName="POST_THAWNAME" msprop:Generator_ColumnVarNameInTable="columnPOST_THAWNAME" msprop:Generator_ColumnPropNameInRow="POST_THAWNAME" msprop:Generator_ColumnPropNameInTable="POST_THAWNAMEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SHAITO_SYUSIKIN" msprop:Generator_UserColumnName="SHAITO_SYUSIKIN" msprop:Generator_ColumnVarNameInTable="columnSHAITO_SYUSIKIN" msprop:Generator_ColumnPropNameInRow="SHAITO_SYUSIKIN" msprop:Generator_ColumnPropNameInTable="SHAITO_SYUSIKINColumn" type="xs:decimal" />
+              <xs:element name="SHAITO_RIRITU" msprop:Generator_UserColumnName="SHAITO_RIRITU" msprop:Generator_ColumnVarNameInTable="columnSHAITO_RIRITU" msprop:Generator_ColumnPropNameInRow="SHAITO_RIRITU" msprop:Generator_ColumnPropNameInTable="SHAITO_RIRITUColumn" type="xs:decimal" />
+              <xs:element name="SHAITO_KOKUZEI" msprop:Generator_UserColumnName="SHAITO_KOKUZEI" msprop:Generator_ColumnVarNameInTable="columnSHAITO_KOKUZEI" msprop:Generator_ColumnPropNameInRow="SHAITO_KOKUZEI" msprop:Generator_ColumnPropNameInTable="SHAITO_KOKUZEIColumn" type="xs:decimal" />
+              <xs:element name="SHAITO_CHIHOUZEI" msprop:Generator_UserColumnName="SHAITO_CHIHOUZEI" msprop:Generator_ColumnVarNameInTable="columnSHAITO_CHIHOUZEI" msprop:Generator_ColumnPropNameInRow="SHAITO_CHIHOUZEI" msprop:Generator_ColumnPropNameInTable="SHAITO_CHIHOUZEIColumn" type="xs:decimal" />
+              <xs:element name="SHAITO_ROUNDKETA" msprop:Generator_UserColumnName="SHAITO_ROUNDKETA" msprop:Generator_ColumnVarNameInTable="columnSHAITO_ROUNDKETA" msprop:Generator_ColumnPropNameInRow="SHAITO_ROUNDKETA" msprop:Generator_ColumnPropNameInTable="SHAITO_ROUNDKETAColumn" type="xs:short" />
+              <xs:element name="SHAITO_ROUNDKBN" msprop:Generator_UserColumnName="SHAITO_ROUNDKBN" msprop:Generator_ColumnVarNameInTable="columnSHAITO_ROUNDKBN" msprop:Generator_ColumnPropNameInRow="SHAITO_ROUNDKBN" msprop:Generator_ColumnPropNameInTable="SHAITO_ROUNDKBNColumn" type="xs:short" />
+              <xs:element name="SHAITO_KZEI_ROUNDKETA" msprop:Generator_UserColumnName="SHAITO_KZEI_ROUNDKETA" msprop:Generator_ColumnVarNameInTable="columnSHAITO_KZEI_ROUNDKETA" msprop:Generator_ColumnPropNameInRow="SHAITO_KZEI_ROUNDKETA" msprop:Generator_ColumnPropNameInTable="SHAITO_KZEI_ROUNDKETAColumn" type="xs:short" />
+              <xs:element name="SHAITO_KZEI_ROUNDKBN" msprop:Generator_UserColumnName="SHAITO_KZEI_ROUNDKBN" msprop:Generator_ColumnVarNameInTable="columnSHAITO_KZEI_ROUNDKBN" msprop:Generator_ColumnPropNameInRow="SHAITO_KZEI_ROUNDKBN" msprop:Generator_ColumnPropNameInTable="SHAITO_KZEI_ROUNDKBNColumn" type="xs:short" />
+              <xs:element name="SHAITO_CZEI_ROUNDKETA" msprop:Generator_UserColumnName="SHAITO_CZEI_ROUNDKETA" msprop:Generator_ColumnVarNameInTable="columnSHAITO_CZEI_ROUNDKETA" msprop:Generator_ColumnPropNameInRow="SHAITO_CZEI_ROUNDKETA" msprop:Generator_ColumnPropNameInTable="SHAITO_CZEI_ROUNDKETAColumn" type="xs:short" />
+              <xs:element name="SHAITO_CZEI_ROUNDKBN" msprop:Generator_UserColumnName="SHAITO_CZEI_ROUNDKBN" msprop:Generator_ColumnVarNameInTable="columnSHAITO_CZEI_ROUNDKBN" msprop:Generator_ColumnPropNameInRow="SHAITO_CZEI_ROUNDKBN" msprop:Generator_ColumnPropNameInTable="SHAITO_CZEI_ROUNDKBNColumn" type="xs:short" />
+              <xs:element name="RHAITO_GENSI" msprop:Generator_UserColumnName="RHAITO_GENSI" msprop:Generator_ColumnVarNameInTable="columnRHAITO_GENSI" msprop:Generator_ColumnPropNameInRow="RHAITO_GENSI" msprop:Generator_ColumnPropNameInTable="RHAITO_GENSIColumn" type="xs:decimal" />
+              <xs:element name="RHAITO_KOKUZEI" msprop:Generator_UserColumnName="RHAITO_KOKUZEI" msprop:Generator_ColumnVarNameInTable="columnRHAITO_KOKUZEI" msprop:Generator_ColumnPropNameInRow="RHAITO_KOKUZEI" msprop:Generator_ColumnPropNameInTable="RHAITO_KOKUZEIColumn" type="xs:decimal" />
+              <xs:element name="RHAITO_CHOHOUZEI" msprop:Generator_UserColumnName="RHAITO_CHOHOUZEI" msprop:Generator_ColumnVarNameInTable="columnRHAITO_CHOHOUZEI" msprop:Generator_ColumnPropNameInRow="RHAITO_CHOHOUZEI" msprop:Generator_ColumnPropNameInTable="RHAITO_CHOHOUZEIColumn" type="xs:decimal" />
+              <xs:element name="RHAITO_ROUNDKETA" msprop:Generator_UserColumnName="RHAITO_ROUNDKETA" msprop:Generator_ColumnVarNameInTable="columnRHAITO_ROUNDKETA" msprop:Generator_ColumnPropNameInRow="RHAITO_ROUNDKETA" msprop:Generator_ColumnPropNameInTable="RHAITO_ROUNDKETAColumn" type="xs:short" />
+              <xs:element name="RHAITO_ROUNDKBN" msprop:Generator_UserColumnName="RHAITO_ROUNDKBN" msprop:Generator_ColumnVarNameInTable="columnRHAITO_ROUNDKBN" msprop:Generator_ColumnPropNameInRow="RHAITO_ROUNDKBN" msprop:Generator_ColumnPropNameInTable="RHAITO_ROUNDKBNColumn" type="xs:short" />
+              <xs:element name="RHAITO_RITU_ROUNDKETA" msprop:Generator_UserColumnName="RHAITO_RITU_ROUNDKETA" msprop:Generator_ColumnVarNameInTable="columnRHAITO_RITU_ROUNDKETA" msprop:Generator_ColumnPropNameInRow="RHAITO_RITU_ROUNDKETA" msprop:Generator_ColumnPropNameInTable="RHAITO_RITU_ROUNDKETAColumn" type="xs:short" />
+              <xs:element name="RHAITO_RITU_ROUNDKBN" msprop:Generator_UserColumnName="RHAITO_RITU_ROUNDKBN" msprop:Generator_ColumnVarNameInTable="columnRHAITO_RITU_ROUNDKBN" msprop:Generator_ColumnPropNameInRow="RHAITO_RITU_ROUNDKBN" msprop:Generator_ColumnPropNameInTable="RHAITO_RITU_ROUNDKBNColumn" type="xs:short" />
+              <xs:element name="RHAITO_KZEI_ROUNDKETA" msprop:Generator_UserColumnName="RHAITO_KZEI_ROUNDKETA" msprop:Generator_ColumnVarNameInTable="columnRHAITO_KZEI_ROUNDKETA" msprop:Generator_ColumnPropNameInRow="RHAITO_KZEI_ROUNDKETA" msprop:Generator_ColumnPropNameInTable="RHAITO_KZEI_ROUNDKETAColumn" type="xs:short" />
+              <xs:element name="RHAITO_KZEI_ROUNDKBN" msprop:Generator_UserColumnName="RHAITO_KZEI_ROUNDKBN" msprop:Generator_ColumnVarNameInTable="columnRHAITO_KZEI_ROUNDKBN" msprop:Generator_ColumnPropNameInRow="RHAITO_KZEI_ROUNDKBN" msprop:Generator_ColumnPropNameInTable="RHAITO_KZEI_ROUNDKBNColumn" type="xs:short" />
+              <xs:element name="RHAITO_CZEI_ROUNDKETA" msprop:Generator_UserColumnName="RHAITO_CZEI_ROUNDKETA" msprop:Generator_ColumnVarNameInTable="columnRHAITO_CZEI_ROUNDKETA" msprop:Generator_ColumnPropNameInRow="RHAITO_CZEI_ROUNDKETA" msprop:Generator_ColumnPropNameInTable="RHAITO_CZEI_ROUNDKETAColumn" type="xs:short" />
+              <xs:element name="RHAITO_CZEI_ROUNDKBN" msprop:Generator_UserColumnName="RHAITO_CZEI_ROUNDKBN" msprop:Generator_ColumnVarNameInTable="columnRHAITO_CZEI_ROUNDKBN" msprop:Generator_ColumnPropNameInRow="RHAITO_CZEI_ROUNDKBN" msprop:Generator_ColumnPropNameInTable="RHAITO_CZEI_ROUNDKBNColumn" type="xs:short" />
+              <xs:element name="PASSWORDKIGEN" msprop:Generator_UserColumnName="PASSWORDKIGEN" msprop:Generator_ColumnVarNameInTable="columnPASSWORDKIGEN" msprop:Generator_ColumnPropNameInRow="PASSWORDKIGEN" msprop:Generator_ColumnPropNameInTable="PASSWORDKIGENColumn" type="xs:decimal" />
+              <xs:element name="SAITEIHOSYOKIN" msprop:Generator_UserColumnName="SAITEIHOSYOKIN" msprop:Generator_ColumnPropNameInRow="SAITEIHOSYOKIN" msprop:Generator_ColumnVarNameInTable="columnSAITEIHOSYOKIN" msprop:Generator_ColumnPropNameInTable="SAITEIHOSYOKINColumn" type="xs:decimal" />
+              <xs:element name="HHOSYOKIN_ROUNDKETA" msprop:Generator_UserColumnName="HHOSYOKIN_ROUNDKETA" msprop:Generator_ColumnPropNameInRow="HHOSYOKIN_ROUNDKETA" msprop:Generator_ColumnVarNameInTable="columnHHOSYOKIN_ROUNDKETA" msprop:Generator_ColumnPropNameInTable="HHOSYOKIN_ROUNDKETAColumn" type="xs:short" />
+              <xs:element name="HHOSYOKIN_ROUNDKBN" msprop:Generator_UserColumnName="HHOSYOKIN_ROUNDKBN" msprop:Generator_ColumnPropNameInRow="HHOSYOKIN_ROUNDKBN" msprop:Generator_ColumnVarNameInTable="columnHHOSYOKIN_ROUNDKBN" msprop:Generator_ColumnPropNameInTable="HHOSYOKIN_ROUNDKBNColumn" type="xs:short" />
+              <xs:element name="HRISOKU_ROUNDKETA" msprop:Generator_UserColumnName="HRISOKU_ROUNDKETA" msprop:Generator_ColumnPropNameInRow="HRISOKU_ROUNDKETA" msprop:Generator_ColumnVarNameInTable="columnHRISOKU_ROUNDKETA" msprop:Generator_ColumnPropNameInTable="HRISOKU_ROUNDKETAColumn" type="xs:short" />
+              <xs:element name="HRISOKU_ROUNDKBN" msprop:Generator_UserColumnName="HRISOKU_ROUNDKBN" msprop:Generator_ColumnPropNameInRow="HRISOKU_ROUNDKBN" msprop:Generator_ColumnVarNameInTable="columnHRISOKU_ROUNDKBN" msprop:Generator_ColumnPropNameInTable="HRISOKU_ROUNDKBNColumn" type="xs:short" />
+              <xs:element name="SAZUIARI_ROUNDKETA" msprop:Generator_UserColumnName="SAZUIARI_ROUNDKETA" msprop:Generator_ColumnPropNameInRow="SAZUIARI_ROUNDKETA" msprop:Generator_ColumnVarNameInTable="columnSAZUIARI_ROUNDKETA" msprop:Generator_ColumnPropNameInTable="SAZUIARI_ROUNDKETAColumn" type="xs:short" />
+              <xs:element name="SAZUIARI_ROUNDKBN" msprop:Generator_UserColumnName="SAZUIARI_ROUNDKBN" msprop:Generator_ColumnPropNameInRow="SAZUIARI_ROUNDKBN" msprop:Generator_ColumnVarNameInTable="columnSAZUIARI_ROUNDKBN" msprop:Generator_ColumnPropNameInTable="SAZUIARI_ROUNDKBNColumn" type="xs:short" />
+              <xs:element name="NENSIIRE_ROUNDKETA" msprop:Generator_UserColumnName="NENSIIRE_ROUNDKETA" msprop:Generator_ColumnPropNameInRow="NENSIIRE_ROUNDKETA" msprop:Generator_ColumnVarNameInTable="columnNENSIIRE_ROUNDKETA" msprop:Generator_ColumnPropNameInTable="NENSIIRE_ROUNDKETAColumn" type="xs:short" />
+              <xs:element name="NENSIIRE_ROUNDKBN" msprop:Generator_UserColumnName="NENSIIRE_ROUNDKBN" msprop:Generator_ColumnPropNameInRow="NENSIIRE_ROUNDKBN" msprop:Generator_ColumnVarNameInTable="columnNENSIIRE_ROUNDKBN" msprop:Generator_ColumnPropNameInTable="NENSIIRE_ROUNDKBNColumn" type="xs:short" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:S_INITIALINFOView" />
+      <xs:field xpath="mstns:KEYCODE" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

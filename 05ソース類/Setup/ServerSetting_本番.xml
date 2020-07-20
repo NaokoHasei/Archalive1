@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<appSettings>
+  <add key="ConnectionString">
+    <value>Data Source=HYOGOKISO-SV\SQLEXPRESS;Initial Catalog=DB_Archalive1;User ID=U_Archalive1;Password=Archalive1</value>
+  </add>
+  <add key="SQLCommandTimeout">
+    <value>3600</value>
+  </add> 
+</appSettings>

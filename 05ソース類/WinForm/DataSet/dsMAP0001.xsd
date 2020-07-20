@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsMAP0001" targetNamespace="http://tempuri.org/dsMAP0001.xsd" xmlns:mstns="http://tempuri.org/dsMAP0001.xsd" xmlns="http://tempuri.org/dsMAP0001.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsMAP0001" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsMAP0001" msprop:Generator_UserDSName="dsMAP0001">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dbgMeisai" msprop:Generator_TableClassName="dbgMeisaiDataTable" msprop:Generator_TableVarName="tabledbgMeisai" msprop:Generator_TablePropName="dbgMeisai" msprop:Generator_RowDeletingName="dbgMeisaiRowDeleting" msprop:Generator_RowChangingName="dbgMeisaiRowChanging" msprop:Generator_RowEvHandlerName="dbgMeisaiRowChangeEventHandler" msprop:Generator_RowDeletedName="dbgMeisaiRowDeleted" msprop:Generator_UserTableName="dbgMeisai" msprop:Generator_RowChangedName="dbgMeisaiRowChanged" msprop:Generator_RowEvArgName="dbgMeisaiRowChangeEvent" msprop:Generator_RowClassName="dbgMeisaiRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SENTAKU" msprop:Generator_ColumnVarNameInTable="columnSENTAKU" msprop:Generator_ColumnPropNameInRow="SENTAKU" msprop:Generator_ColumnPropNameInTable="SENTAKUColumn" msprop:Generator_UserColumnName="SENTAKU" type="xs:string" minOccurs="0" />
+              <xs:element name="SYONIN_JYUTYU" msprop:Generator_ColumnVarNameInTable="columnSYONIN_JYUTYU" msprop:Generator_ColumnPropNameInRow="SYONIN_JYUTYU" msprop:Generator_ColumnPropNameInTable="SYONIN_JYUTYUColumn" msprop:Generator_UserColumnName="SYONIN_JYUTYU" type="xs:string" minOccurs="0" />
+              <xs:element name="SYONIN_HATTYU" msprop:Generator_ColumnVarNameInTable="columnSYONIN_HATTYU" msprop:Generator_ColumnPropNameInRow="SYONIN_HATTYU" msprop:Generator_ColumnPropNameInTable="SYONIN_HATTYUColumn" msprop:Generator_UserColumnName="SYONIN_HATTYU" type="xs:string" minOccurs="0" />
+              <xs:element name="JYOTAI" msprop:Generator_ColumnVarNameInTable="columnJYOTAI" msprop:Generator_ColumnPropNameInRow="JYOTAI" msprop:Generator_ColumnPropNameInTable="JYOTAIColumn" msprop:Generator_UserColumnName="JYOTAI" type="xs:string" minOccurs="0" />
+              <xs:element name="BUKKENNAME" msprop:Generator_ColumnVarNameInTable="columnBUKKENNAME" msprop:Generator_ColumnPropNameInRow="BUKKENNAME" msprop:Generator_ColumnPropNameInTable="BUKKENNAMEColumn" msprop:Generator_UserColumnName="BUKKENNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="KOUJIBASYO" msprop:Generator_ColumnVarNameInTable="columnKOUJIBASYO" msprop:Generator_ColumnPropNameInRow="KOUJIBASYO" msprop:Generator_ColumnPropNameInTable="KOUJIBASYOColumn" msprop:Generator_UserColumnName="KOUJIBASYO" type="xs:string" minOccurs="0" />
+              <xs:element name="MOTOUKE" msprop:Generator_ColumnVarNameInTable="columnMOTOUKE" msprop:Generator_ColumnPropNameInRow="MOTOUKE" msprop:Generator_ColumnPropNameInTable="MOTOUKEColumn" msprop:Generator_UserColumnName="MOTOUKE" type="xs:string" minOccurs="0" />
+              <xs:element name="CHAKKOUDATE" msprop:Generator_ColumnVarNameInTable="columnCHAKKOUDATE" msprop:Generator_ColumnPropNameInRow="CHAKKOUDATE" msprop:Generator_ColumnPropNameInTable="CHAKKOUDATEColumn" msprop:Generator_UserColumnName="CHAKKOUDATE" type="xs:string" minOccurs="0" />
+              <xs:element name="KANKOUDATE" msprop:Generator_ColumnVarNameInTable="columnKANKOUDATE" msprop:Generator_ColumnPropNameInRow="KANKOUDATE" msprop:Generator_ColumnPropNameInTable="KANKOUDATEColumn" msprop:Generator_UserColumnName="KANKOUDATE" type="xs:string" minOccurs="0" />
+              <xs:element name="TANTONAME" msprop:Generator_ColumnVarNameInTable="columnTANTONAME" msprop:Generator_ColumnPropNameInRow="TANTONAME" msprop:Generator_ColumnPropNameInTable="TANTONAMEColumn" msprop:Generator_UserColumnName="TANTONAME" type="xs:string" minOccurs="0" />
+              <xs:element name="BUKKENNO" msprop:Generator_ColumnVarNameInTable="columnBUKKENNO" msprop:Generator_ColumnPropNameInRow="BUKKENNO" msprop:Generator_ColumnPropNameInTable="BUKKENNOColumn" msprop:Generator_UserColumnName="BUKKENNO" type="xs:string" minOccurs="0" />
+              <xs:element name="POSTNO" msprop:Generator_ColumnVarNameInTable="columnPOSTNO" msprop:Generator_ColumnPropNameInRow="POSTNO" msprop:Generator_ColumnPropNameInTable="POSTNOColumn" msprop:Generator_UserColumnName="POSTNO" type="xs:string" minOccurs="0" />
+              <xs:element name="LAT" msprop:Generator_ColumnVarNameInTable="columnLAT" msprop:Generator_ColumnPropNameInRow="LAT" msprop:Generator_ColumnPropNameInTable="LATColumn" msprop:Generator_UserColumnName="LAT" type="xs:string" minOccurs="0" />
+              <xs:element name="LNG" msprop:Generator_ColumnVarNameInTable="columnLNG" msprop:Generator_ColumnPropNameInRow="LNG" msprop:Generator_ColumnPropNameInTable="LNGColumn" msprop:Generator_UserColumnName="LNG" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

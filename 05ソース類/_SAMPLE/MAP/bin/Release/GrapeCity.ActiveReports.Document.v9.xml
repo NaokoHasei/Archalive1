@@ -1,0 +1,1665 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>GrapeCity.ActiveReports.Document.v9</name>
+  </assembly>
+  <members>
+    <member name="T:GrapeCity.ActiveReports.BorderLineStyle">
+      <summary>罫線の描画に使用する線のスタイルを表します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.BorderLineStyle.None">
+      <summary>線なし。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.BorderLineStyle.Solid">
+      <summary>1ピクセル幅の実線。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.BorderLineStyle.Dash">
+      <summary>1ピクセル幅の破線。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.BorderLineStyle.Dot">
+      <summary>1ピクセル幅の点線。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.BorderLineStyle.DashDot">
+      <summary>1ピクセル幅の一点鎖線。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.BorderLineStyle.DashDotDot">
+      <summary>1ピクセル幅の二点鎖線。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.BorderLineStyle.Double">
+      <summary>二重線。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.BorderLineStyle.ThickSolid">
+      <summary>太い実線。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.BorderLineStyle.ThickDash">
+      <summary>太い破線。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.BorderLineStyle.ThickDot">
+      <summary>太い点線。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.BorderLineStyle.ThickDashDot">
+      <summary>太い一点鎖線。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.BorderLineStyle.ThickDashDotDot">
+      <summary>太い二点鎖線。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.BorderLineStyle.ThickDouble">
+      <summary>太い二重線。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.BorderLineStyle.ExtraThickSolid">
+      <summary>極太の実線。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.PaddingEx">
+      <summary>コントロールの枠（４辺）から文字までの余白を設定するための情報を提供します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.PaddingEx.#ctor">
+      <summary>PaddingEx構造体の新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.PaddingEx.#ctor(System.Int32)">
+      <summary>すべての辺に対して同じ値を使用して、PaddingEx構造体の新しいインスタンスを初期化します。</summary>
+      <param name="all">コントロールの枠（４辺）から文字までの余白幅。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.PaddingEx.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>各辺に対して指定された値を使用して、PaddingEx 構造体の新しいインスタンスを初期化します。</summary>
+      <param name="left">コントロールの左辺から文字までの余白幅。</param>
+      <param name="top">コントロールの上辺から文字までの余白幅。</param>
+      <param name="right">コントロールの右辺から文字までの余白幅。</param>
+      <param name="bottom">コントロールの下辺から文字までの余白幅。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.PaddingEx.Equals">
+      <summary>現在のPaddingExオブジェクトが、指定したオブジェクトの値と同じかどうかを判断します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.PaddingEx.GetHashCode">
+      <summary>PaddingExオブジェクトのハッシュコードを生成します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.PaddingEx.Equals(GrapeCity.ActiveReports.PaddingEx)">
+      <summary>現在のPaddingExオブジェクトと指定したPaddingExオブジェクトが、等しいかどうかを示す値を返します。</summary>
+      <param name="paddingEx">現在のPaddingExオブジェクトと比較するPaddingExオブジェクト。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.PaddingEx.Equals(System.Object)">
+      <summary>現在のPaddingExオブジェクトと指定したオブジェクトが、等しいかどうかを示す値を返します。</summary>
+      <param name="obj">現在の PaddingExオブジェクトと比較するオブジェクト。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.PaddingEx.op_Equality(GrapeCity.ActiveReports.PaddingEx,GrapeCity.ActiveReports.PaddingEx)">
+      <summary>指定した2つのPaddingExオブジェクトが、等しいかどうかを確認します。</summary>
+      <param name="p1">比較対象となる１番目のPaddingExオブジェクト。</param>
+      <param name="p2">比較対象となる２番目のPaddingExオブジェクト。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.PaddingEx.op_Inequality(GrapeCity.ActiveReports.PaddingEx,GrapeCity.ActiveReports.PaddingEx)">
+      <summary>指定した２つのPaddingExオブジェクトが等しくないかどうかを確認します。</summary>
+      <param name="p1">比較対象となる１番目のPaddingExオブジェクト。</param>
+      <param name="p2">比較対象となる２番目のPaddingExオブジェクト。</param>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.PaddingEx.All">
+      <summary>コントロールの枠（４辺）から文字までの余白幅を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.PaddingEx.Bottom">
+      <summary>コントロールの下辺から文字までの余白幅を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.PaddingEx.Horizontal">
+      <summary>コントロールの左辺から文字までの余白幅と、右辺から文字までの余白幅の合計を取得します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.PaddingEx.Left">
+      <summary>コントロールの左辺から文字までの余白幅を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.PaddingEx.Right">
+      <summary>コントロールの右辺から文字までの余白幅を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.PaddingEx.Size">
+      <summary>余白情報を System.Drawing.Size 構造体の形式で取得します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.PaddingEx.Top">
+      <summary>コントロールの上辺から文字までの余白幅を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.PaddingEx.Vertical">
+      <summary>コントロールの上辺から文字までの余白幅と、下辺から文字までの余白幅の合計を取得します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.PaddingEx.Empty">
+      <summary>余白なしのPaddingExオブジェクトを返します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Border">
+      <summary>コントロール領域の周囲の罫線を描画します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Border.BorderMargins">
+      <summary>コントロール内容の周囲の余白幅を表します。FormatBorderDialogのプレビューおよびARエンジンでセクションの拡張/縮小により余白の切り取りを防ぐために使用されます。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Border.#ctor">
+      <summary>Borderクラスの新しいインスタンスを作成します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Border.Clone">
+      <summary>Borderクラスの現在のインスタンスのコピーを作成します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Border.CopyTo(GrapeCity.ActiveReports.Border)">
+      <summary>Borderオブジェクトを指定したBorderオブジェクトにコピーします。</summary>
+      <param name="border">GrapeCity.ActiveReports.Borderオブジェクト。</param>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Border.BottomColor">
+      <summary>下罫線の色を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Border.BottomStyle">
+      <summary>下罫線のスタイルを取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Border.Color">
+      <summary>コントロールの境界線の色を設定するか返します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Border.LeftColor">
+      <summary>左罫線の色を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Border.LeftStyle">
+      <summary>左罫線のスタイルを取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Border.RightColor">
+      <summary>右罫線の色を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Border.RightStyle">
+      <summary>右罫線のスタイルを取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Border.Shadow">
+      <summary>コントロールの右辺と下辺に影を描画するかどうかを決定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Border.Style">
+      <summary>罫線のスタイルを取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Border.TopColor">
+      <summary>上罫線の色を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Border.TopStyle">
+      <summary>上罫線のスタイルを取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Border.BorderMargins.Bottom">
+      <summary>コントロールの下辺の余白幅を取得します。設定はできません。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Border.BorderMargins.Left">
+      <summary>コントロールの左辺の余白幅を取得します。設定はできません。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Border.BorderMargins.Right">
+      <summary>コントロールの右辺の余白幅を取得します。設定はできません。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Border.BorderMargins.Top">
+      <summary>コントロールの上辺の余白幅を取得します。設定はできません。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.SectionDocument">
+      <summary>生成出力されたレポートを表すDocumentオブジェクト。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.SectionDocument.#ctor">
+      <summary>SectionDocumentクラスの新しいインスタンスを作成します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.SectionDocument.#ctor">
+      <summary>SectionDocumentクラスの新しいインスタンスを作成します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.SectionDocument.#ctor(System.String)">
+      <summary>指定した名前でSectionDocumentクラスの新しいインスタンスを作成します。</summary>
+      <param name="name">ドキュメントの名前。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.SectionDocument.CopyToClipboard(System.Int32,System.Int32)">
+      <summary>ページをTextまたはRftデータにエクスポートして、クリップボードにコピーします。</summary>
+      <param name="firstPageIndex">ゼロベースの開始のページインデックス。</param>
+      <param name="count">クリップボードにコピーするページの数。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.SectionDocument.Dispose">
+      <summary>Documentインスタンスをメモリから解放します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.SectionDocument.Find">
+      <summary>ドキュメントページから指定した文字列を検索します。</summary>
+      <returns>
+        <para>ブール値。ドキュメントで文字列が見つかった場合は <strong>True</strong>、それ以外の場合は <strong>False</strong>。</para>
+      </returns>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.SectionDocument.Load">
+      <summary>ストリームまたはファイルからDocumentオブジェクトをロードします。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.SectionDocument.ResetPrinter">
+      <summary>Printerクラスの設定を初期値に戻します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.SectionDocument.Save">
+      <summary>ドキュメントの内容をRDF形式でストリームまたはファイルに保存します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.SectionDocument.Dispose">
+      <summary>このレベルで解放すると、このレベルの元にあるページ、フォントなどを使用できません。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.SectionDocument.Find(System.String,System.Int32@)">
+      <summary>ドキュメントページから指定した文字列を検索します。</summary>
+      <param name="searchString">
+        <para>ドキュメントで検索する文字列。</para>
+      </param>
+      <param name="currentIndex">検索の開始ページを表すインデックス。文字列が見つかった場合、currentIndexは文字列が見つかったページを表すインデックスに設定されます。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.SectionDocument.Find(System.String,GrapeCity.ActiveReports.Document.FindOptions,System.Int32@,System.Single@)">
+      <summary>SearchTexを説明します。</summary>
+      <param name="searchString">検索する文字列。</param>
+      <param name="options">検索する方向。</param>
+      <param name="currentIndex">ページコレクションのゼロベースのインデックス。</param>
+      <param name="currentOffset">テキスト文字列の現在のオフセット。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.SectionDocument.Load(System.IO.Stream)">
+      <summary>ストリームからレポートドキュメントをロードします。</summary>
+      <param name="stream">有効なレポートドキュメントを含むStreamオブジェクト。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.SectionDocument.Load(System.String)">
+      <summary>指定したファイルからドキュメントをロードします。</summary>
+      <param name="fileName">Documentファイル名。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.SectionDocument.Save(System.String,GrapeCity.ActiveReports.Document.Section.RdfFormat)">
+      <summary>レポートドキュメントを指定したファイル形式の指定したファイルに保存します。</summary>
+      <param name="fileName">ドキュメントを保存するファイル。</param>
+      <param name="fmt">ドキュメントを保存するファイル形式。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.SectionDocument.Save(System.String,GrapeCity.ActiveReports.Document.Section.RdfFormat,GrapeCity.ActiveReports.Document.Section.SaveOptions)">
+      <summary>レポートドキュメントを指定したファイル形式の指定したファイルに保存します。</summary>
+      <param name="fileName">ドキュメントを保存するファイル。</param>
+      <param name="fmt">ドキュメントを保存するファイル形式。</param>
+      <param name="options">
+        <para>ドキュメントの圧縮を指定するSaveOptions列挙体。</para>
+      </param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.SectionDocument.Save(System.String)">
+      <summary>レポートドキュメントを指定したファイルに保存します。</summary>
+      <param name="fileName">ドキュメントを保存するファイル。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.SectionDocument.Save(System.IO.Stream,GrapeCity.ActiveReports.Document.Section.RdfFormat)">
+      <summary>ドキュメントの内容を指定したファイル形式でストリームに保存します。</summary>
+      <param name="stream">ドキュメントを保存するStreamオブジェクト。</param>
+      <param name="fmt">ストリームに保存するファイル形式。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.SectionDocument.Save(System.IO.Stream,GrapeCity.ActiveReports.Document.Section.RdfFormat,GrapeCity.ActiveReports.Document.Section.SaveOptions)">
+      <summary>ドキュメントの内容を指定したファイル形式でストリームに保存します。</summary>
+      <param name="stream">ドキュメントを保存するStreamオブジェクト。</param>
+      <param name="fmt">ストリームに保存するファイル形式。</param>
+      <param name="options">
+        <para>ドキュメントの圧縮を指定するSaveOptions列挙体。</para>
+      </param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.SectionDocument.Save(System.IO.Stream)">
+      <summary>ドキュメントの内容をStreamオブジェクトに保存します。</summary>
+      <param name="stream">ドキュメントを保存するStreamオブジェクト。</param>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.SectionDocument.Bookmarks">
+      <summary>ドキュメントのブックマークへの参照を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.SectionDocument.CacheToDisk">
+      <summary>レポート生成時やPDFエクスポート時、現在処理していないレポートのページを、メモリの代わりにハードディスクに格納するかどうかを取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.SectionDocument.CacheToDiskLocation">
+      <summary>CacheToDiskプロパティによって格納される物理的なパスの位置を指定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.SectionDocument.Content">
+      <summary>ドキュメントをWebサービスに割り当てます。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.SectionDocument.InProgress">
+      <summary>ドキュメントが現在ロード中であるかどうかを決定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.SectionDocument.LoadUrl">
+      <summary>インターネットプロトコルを使用して非同期にドキュメントをダウンロードするためのURLを取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.SectionDocument.Name">
+      <summary>ドキュメントの名前を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.SectionDocument.Pages">
+      <summary>ドキュメントのページへの参照を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.SectionDocument.Password">
+      <summary>保存したドキュメントファイルを保護するためのパスワードを取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.SectionDocument.Printer">
+      <summary>ドキュメントのプリンタ設定への参照を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.SectionDocument.PrintOptions">
+      <summary>印刷オプションを表します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.SectionDocument.UserPreferences">
+      <summary>ハイパーリンクの外観、およびViewerコントロール中でそれらをホストするコントロールの外観を指定します。</summary>
+    </member>
+    <member name="E:GrapeCity.ActiveReports.Document.SectionDocument.DownloadError">
+      <summary>LoadUrlから非同期にドキュメントをダウンロードしている間に例外がスローされたときに発生します。</summary>
+    </member>
+    <member name="E:GrapeCity.ActiveReports.Document.SectionDocument.LoadCompleted">
+      <summary>すべてのドキュメントページが完全にロードされた後に発生します。</summary>
+    </member>
+    <member name="E:GrapeCity.ActiveReports.Document.SectionDocument.PrintAborted">
+      <summary>ユーザーが印刷ジョブをキャンセルしたときに発生します。</summary>
+    </member>
+    <member name="E:GrapeCity.ActiveReports.Document.SectionDocument.PrintingThreadErrorEvent">
+      <summary>印刷スレッドによって例外がスローされるときに発生します。</summary>
+    </member>
+    <member name="E:GrapeCity.ActiveReports.Document.SectionDocument.PrintProgress">
+      <summary>
+        <para>レポートドキュメントの各ページが印刷されるごとに発生します。</para>
+      </summary>
+    </member>
+    <member name="E:GrapeCity.ActiveReports.Document.SectionDocument.StateChanged">
+      <summary>状態が変わったときに発生します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.LoadCompletedEventHandler">
+      <summary>ドキュメントのLoadCompletedイベントを処理するメソッドを表します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.StateChangedHandler">
+      <summary>
+        <para>DocumentのStateChangedイベントのタイプを設定します。</para>
+      </summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.BackgroundStyle">
+      <summary>下位レベルのページ描画APIを使用するときの、背景スタイルを表します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.BackgroundStyle.Transparent">
+      <summary>背景は透明になります。背景内のオブジェクトは透けて見えます。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.BackgroundStyle.Opaque">
+      <summary>背景を塗りつぶします。背景内のオブジェクトは透けません。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.PageOrientation">
+      <summary>プリンタに出力するときのページの向きを表します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.PageOrientation.Default">
+      <summary>プリンタのデフォルト設定に従います。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.PageOrientation.Portrait">
+      <summary>ページを縦向きで印刷します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.PageOrientation.Landscape">
+      <summary>ページを横向きで印刷します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.PenStyles">
+      <summary>ページに線を描画するときに使用するペンの種類を表します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.PenStyles.Transparent">
+      <summary>線なし。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.PenStyles.Solid">
+      <summary>実線。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.PenStyles.Dash">
+      <summary>破線。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.PenStyles.Dot">
+      <summary>点線。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.PenStyles.DashDot">
+      <summary>一点鎖線。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.PenStyles.DashDotDot">
+      <summary>二点鎖線。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.RdfFormat">
+      <summary>レポートドキュメントの保存に使用するファイル形式を表します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.RdfFormat.AR20">
+      <summary>
+        <para>ActiveX版のActiveReports.2.0ファイル形式。このメンバは互換性のために残されております。<br />
+この形式で出力したレポートを、ActiveX製品の「ActiveReports 2.0J」や、.NET製品の「ActiveReports for .NET 3.0J」以前に含まれる、ActiveXビューワコントロールで表示することはサポートされていません。</para>
+      </summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.RdfFormat.ARNet">
+      <summary>ActiveReports for .NETファイル形式。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.SaveOptions">
+      <summary>レポートドキュメントの保存に使用する圧縮形式を表します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.SaveOptions.Normal">
+      <summary>圧縮せずにRDFファイル形式に保存。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.SaveOptions.Compressed">
+      <summary>圧縮してRDFファイル形式に保存。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.TextAlignment">
+      <summary>コントロール領域内のテキストの水平配置を表します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.TextAlignment.Left">
+      <summary>テキストはコントロールの左辺に合わせて配置されます。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.TextAlignment.Center">
+      <summary>テキストはコントロール領域の左右の中央に合わせて配置されます。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.TextAlignment.Right">
+      <summary>テキストはコントロールの右辺に合わせて配置されます。テキストの右辺に空白文字がある場合、その空白文字は無視されたかたちで表示されます。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.TextAlignment.Justify">
+      <summary>テキストはコントロールの左右に合わせて両端揃えされます。この設定は、マルチラインでテキストに空白文字が含まれる行（最終行を除く）に対してのみ、有効に働きます。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.TextJustify">
+      <summary>AlignmentプロパティがJustifyに設定された場合に、テキストの配置（位置揃え）を取得または設定します。<!--DXMETADATA end --></summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.TextJustify.Auto">
+      <summary>TextJustify列挙体の値をActiveReportsが設定します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.TextJustify.Distribute">
+      <summary>文字間隔と単語間隔を調整して均等割付とします。（アジア言語向け）</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.TextJustify.DistributeAllLines">
+      <summary>段落の最後の行を含む全ての行で、文字間隔と単語間隔を調整して均等割付とします。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.Units">
+      <summary>ドキュメントページで低レベルの描画APIを使用するときのドキュメントの計測単位を表します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Units.Centimeters">
+      <summary>ページ描画メソッドのパラメータをセンチ単位で指定します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Units.Inches">
+      <summary>ページ描画メソッドのパラメータをインチ単位で指定します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Units.Pixels">
+      <summary>ページ描画メソッドのパラメータをピクセル単位で指定します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Units.Document">
+      <summary>ページ描画メソッドのパラメータをドキュメント独自の単位（1/300インチ）で指定します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.VerticalTextAlignment">
+      <summary>コントロール領域内のテキストの垂直配置を表します。<!--DXMETADATA end --></summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.VerticalTextAlignment.Top">
+      <summary>テキストはコントロールの下辺に合わせて配置されます。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.VerticalTextAlignment.Middle">
+      <summary>テキストはコントロールの上下の中央に合わせて配置されます。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.VerticalTextAlignment.Bottom">
+      <summary>テキストはコントロールの上辺に合わせて配置されます。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.WrapMode">
+      <summary>指定したテキストが左から右または左に右に書かれているかどうかを指定します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.WrapMode.NoWrap">
+      <summary>
+        <span closure_uid_eymerj="183">折り返しなし。</span>
+      </summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.WrapMode.WordWrap">
+      <summary>言葉の境界ごとに折り返し。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.WrapMode.CharWrap">
+      <summary>
+        <span id="result_box" lang="ja" class="short_text" f="4" a="undefined" closure_uid_eymerj="84" xml:lang="ja">
+          <span closure_uid_eymerj="182">文字ごとに</span>
+          <span closure_uid_eymerj="183">折り返し</span>
+          <span closure_uid_eymerj="184">。</span>
+        </span>
+      </summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.ActiveReportPrintControllerWithStatusDialog">
+      <summary>ドキュメントを印刷する方法を制御します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.Bookmark">
+      <summary>ハイパーリンクや見出し一覧の名前を使用して移動できる、ドキュメントまたはページ内の名前の付いた場所を示します。<!--DXMETADATA end --></summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.BookmarksCollection">
+      <summary>Bookmarkオブジェクトのコレクションです。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.Margins">
+      <summary>
+        <para>出力されたページの余白を設定するために使用します。</para>
+      </summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.Page">
+      <summary>レポートドキュメントとして出力されたページを表します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.PagesCollection">
+      <summary>Documentオブジェクト内のページのコレクションを管理します。<!--DXMETADATA end --></summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.StringFormatProvider">
+      <summary>GDI+ StringFormatゲッターファクトリの変更とは別に、StringFormat.GenericDefaultおよびStringFormat.GenericTypographicのインスタンスを作成するローカルファクトリを提供します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.UrlErrorEventArgs">
+      <summary>ダウンロードエラーイベントの引数を表します。<!--DXMETADATA end --></summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.UserPreferences">
+      <summary>ハイパーリンクの外観、およびViewerコントロール内で、それらをホストするコントロールの外観を指定します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.ActiveReportPrintControllerWithStatusDialog.#ctor">
+      <summary>ActiveReportPrintControllerWithStatusDialogクラスの新しいインスタンスを作成します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.ActiveReportPrintControllerWithStatusDialog.OnEndPage(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintPageEventArgs)">
+      <summary>ドキュメント内のページを印刷する時点と方法を決定する制御シーケンスを完了します。</summary>
+      <param name="prnDoc">印刷されるドキュメントを表すSystem.Drawing.Printing.PrintDocumentオブジェクト。</param>
+      <param name="ppea">ドキュメント内のページを印刷する方法に関する情報を含むSystem.Drawing.Printing.PrintPageEventArgsオブジェクト。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.ActiveReportPrintControllerWithStatusDialog.OnEndPrint(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintEventArgs)">
+      <summary>ドキュメントを印刷する時点と方法を決定する制御シーケンスを完了します。</summary>
+      <param name="prnDoc">印刷されるドキュメントを表すSystem.Drawing.Printing.PrintDocumentオブジェクト。</param>
+      <param name="ppea">ドキュメント内のページを印刷する方法に関する情報を含むSystem.Drawing.Printing.PrintPageEventArgsオブジェクト。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.ActiveReportPrintControllerWithStatusDialog.OnStartPage(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintPageEventArgs)">
+      <summary>ドキュメント内のページを印刷する時点と方法を決定する制御シーケンスを開始します。</summary>
+      <param name="prnDoc">印刷されるドキュメントを表すSystem.Drawing.Printing.PrintDocumentオブジェクト。</param>
+      <param name="ppea">ドキュメント内のページを印刷する方法に関する情報を含むSystem.Drawing.Printing.PrintPageEventArgsオブジェクト。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.ActiveReportPrintControllerWithStatusDialog.OnStartPrint(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintEventArgs)">
+      <summary>ドキュメントを印刷する時点と方法を決定する制御シーケンスを開始します。</summary>
+      <param name="prnDoc">印刷されるドキュメントを表すSystem.Drawing.Printing.PrintDocumentオブジェクト。</param>
+      <param name="ppea">ドキュメント内のページを印刷する方法に関する情報を含むSystem.Drawing.Printing.PrintPageEventArgsオブジェクト。</param>
+    </member>
+    <member name="E:GrapeCity.ActiveReports.Document.Section.ActiveReportPrintControllerWithStatusDialog.PrintAborted">
+      <summary>ユーザーがステータスダイアログの〈キャンセル〉ボタンをクリックしたときに発生します。</summary>
+    </member>
+    <member name="E:GrapeCity.ActiveReports.Document.Section.ActiveReportPrintControllerWithStatusDialog.PrintingProgress">
+      <summary>印刷ジョブの進行中に、各ページの出力が完了するたびに発生します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Bookmark.#ctor">
+      <summary>Bookmarkクラスの新しいインスタンスを作成します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Bookmark.#ctor">
+      <summary>Bookmarkクラスの新しいインスタンスを作成します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Bookmark.Label">
+      <summary>ブックマークのキャプションを取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Bookmark.Offset">
+      <summary>ページの上端を基準にしたブックマークの相対位置を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Bookmark.PageNumber">
+      <summary>ブックマークが追加されたページ番号を取得または設定します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.BookmarksCollection.#ctor">
+      <summary>BookmarksCollectionクラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.BookmarksCollection.#ctor">
+      <summary>BookmarksCollectionクラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.BookmarksCollection.Add(GrapeCity.ActiveReports.Document.Section.Bookmark)">
+      <summary>コレクションに指定したBookmarkオブジェクトを追加します。</summary>
+      <returns>
+        <para>コレクションに追加したブックマークのインデックスを表す値。</para>
+      </returns>
+      <param name="value">コレクションに追加するBookmarkオブジェクト。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.BookmarksCollection.Clear">
+      <summary>コレクションからすべてのブックマークを削除します。<!--DXMETADATA end --></summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.BookmarksCollection.Contains(GrapeCity.ActiveReports.Document.Section.Bookmark)">
+      <summary>指定したブックマークオブジェクトがコレクションに存在するかどうかを決定します。</summary>
+      <returns>
+        <para>ブックマークがコレクションのメンバである場合は <strong>True</strong>、そうでなければ <strong>False</strong>。</para>
+      </returns>
+      <param name="value">コレクション内で検索するBookmarkオブジェクトを指定します。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.BookmarksCollection.CopyTo(GrapeCity.ActiveReports.Document.Section.Bookmark[],System.Int32)">
+      <summary>指定したレポートのBookmarksコレクションを別のBookmarksコレクションの指定したインデックスにコピーします。</summary>
+      <param name="values">コピーするブックマークを含む配列。</param>
+      <param name="index">コレクション内の挿入インデックス。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.BookmarksCollection.Dispose">
+      <summary>BookmarksCollectionインスタンスをメモリから解放します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.BookmarksCollection.FillTree(System.Windows.Forms.TreeView)">
+      <summary>
+        <para>BookmarkオブジェクトをWindowsフォームのTreeViewコントロールに読み込みます。</para>
+      </summary>
+      <param name="treeView">
+        <font color="#222222" face="Arial">ブックマークのオブジェクトで組み込むTreeViewコントロールを指定します。</font>
+      </param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.BookmarksCollection.IndexOf(GrapeCity.ActiveReports.Document.Section.Bookmark)">
+      <summary>コレクション内の指定したBookmarkオブジェクトのインデックスを返します。</summary>
+      <returns>
+        <para>指定したBookmarkのインデックスを表す値。</para>
+      </returns>
+      <param name="value">検索するBookmarkオブジェクトを指定します。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.BookmarksCollection.Insert(System.Int32,GrapeCity.ActiveReports.Document.Section.Bookmark)">
+      <summary>指定したBookmarkオブジェクトをコレクションの指定したインデックスに挿入します。</summary>
+      <param name="index">コレクション内の挿入インデックス。</param>
+      <param name="value">指定したインデックスに挿入する新しいBookmarkオブジェクト。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.BookmarksCollection.Remove(GrapeCity.ActiveReports.Document.Section.Bookmark)">
+      <summary>指定したBookmarkオブジェクトをコレクションから削除します。</summary>
+      <param name="value">削除するBookmarkオブジェクト。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.BookmarksCollection.RemoveAt(System.Int32)">
+      <summary>指定したインデックスのBookmarkオブジェクトをコレクションから削除します。</summary>
+      <param name="index">コレクションから削除するBookmarkオブジェクトのインデックスを指定します。</param>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.BookmarksCollection.Count">
+      <summary>コレクション内のBookmarkオブジェクトの数を取得します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.BookmarksCollection.CurrentBookmark">
+      <summary>現在選択されているブックマークのインデックスを返します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.BookmarksCollection.Item(System.Int32)">
+      <summary>指定したインデックスのブックマークオブジェクトへの参照を返します。</summary>
+      <param name="index">要求アイテムのインデックス。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Margins.#ctor">
+      <summary>Marginsクラスの新しいインスタンスを指定した余白設定で初期化します。
+<!--DXMETADATA end --></summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Margins.#ctor">
+      <summary>Marginsクラスの新しいインスタンスを指定した余白設定で初期化します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Margins.#ctor(System.Single,System.Single,System.Single,System.Single)">
+      <summary>
+        <para>Marginsクラスの新しいインスタンスを指定した余白設定で初期化します。</para>
+      </summary>
+      <param name="left">左余白。</param>
+      <param name="top">上余白。</param>
+      <param name="right">右余白。</param>
+      <param name="bottom">下余白。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Margins.Clone">
+      <summary>
+        <para>Margins クラスの現在のインスタンスのコピーを作成します。</para>
+      </summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Margins.Equals(System.Object)">
+      <summary>現在のオブジェクトと指定したオブジェクトが、等しいかどうかを決定します。</summary>
+      <param name="obj">現在のオブジェクトと比較するオブジェクト。</param>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Margins.Bottom">
+      <summary>ページの下余白を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Margins.Left">
+      <summary>ページの左余白を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Margins.Right">
+      <summary>ページの右余白を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Margins.Top">
+      <summary>ページの上余白を取得または設定します。</summary>
+    </member>
+    <member name="E:GrapeCity.ActiveReports.Document.Section.Margins.Changed">
+      <summary>マージンが変更されるときに発生します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.#ctor">
+      <summary>Pageクラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.AddBookmark">
+      <summary>指定したオフセットでブックマークをページに追加します。</summary>
+      <returns>
+        <para>ドキュメント内の新しいブックマークのインデックス</para>
+      </returns>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.Clear">
+      <summary>すべての項目をすべてのページからクリアします。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.ClearCanvasItems">
+      <summary>すべてのCanvasItemsをページからクリアします。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.Clone">
+      <summary>Pageオブジェクトのクローンを作成します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.Dispose">
+      <summary>Pageインスタンスをメモリから解放します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.Draw">
+      <summary>指定したGraphicsオブジェクトにページの内容を表示します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawBorder">
+      <summary>ページ上に境界線を描画します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawEllipse(System.Single,System.Single,System.Single,System.Single)">
+      <summary>ページ上に楕円を描画します。</summary>
+      <param name="left">楕円の左端の座標（インチ単位）。</param>
+      <param name="top">楕円の上端の座標（インチ単位）。</param>
+      <param name="width">楕円の幅（インチ単位）。</param>
+      <param name="height">楕円の高さ（インチ単位）。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawImage">
+      <summary>ページ上に画像を描画します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawLine(System.Single,System.Single,System.Single,System.Single)">
+      <summary>ページ上の指定した座標に線を描画します。</summary>
+      <param name="x1">
+        <para>線の始点の水平座標（インチ単位）。</para>
+      </param>
+      <param name="y1">線の始点の垂直座標（インチ単位）。</param>
+      <param name="x2">
+        <para>線の終点の水平座標（インチ単位）。</para>
+      </param>
+      <param name="y2">線の始点の垂直座標（インチ単位）。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawRect">
+      <summary>ページ上の指定した座標に四角形を描画します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawRoundRect">
+      <summary>ページ上の指定した座標に角丸四角形を描画します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawText">
+      <summary>ページ上にテキストを描画します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.FillRect">
+      <summary>指定した領域を現在のページのBackColorで塗りつぶします。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.Load">
+      <summary>BinaryReaderまたはファイルからページ内容をロードします。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.MeasureParagraphHeight">
+      <returns>
+        <para>テキストの高さと幅（インチ単位）を含むSizeF構造体。</para>
+      </returns>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.MeasureText">
+      <summary>テキスト文字列の幅と高さを決定します。</summary>
+      <returns>
+        <para>文字列の幅と高さを表すSizeF構造体。</para>
+      </returns>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.Overlay(GrapeCity.ActiveReports.Document.Section.Page)">
+      <summary>指定したページオブジェクトをこのページの上に重ねます。</summary>
+      <param name="page">上に重ねるページ。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.Save">
+      <summary>ページの内容を保存します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.ToString">
+      <summary>ページの設定情報と内容を文字列で返します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.AddBookmark(System.String,System.Single)">
+      <summary>指定したオフセットでブックマークをページに追加します。</summary>
+      <param name="strBookmark">ブックマークの名前。円記号（\）をパスの区切り文字として使用し、ブックマークの階層を作成できます。</param>
+      <param name="offset">ページ上のブックマークの位置。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.Dispose">
+      <summary>Pageインスタンスをメモリから解放します。<!--DXMETADATA end --></summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.Draw(System.Drawing.Graphics,System.Drawing.RectangleF)">
+      <summary>指定したGraphicsオブジェクトに、指定した座標のページの内容を表示します。</summary>
+      <param name="graphics">ページの内容を表示するGraphicsオブジェクト。</param>
+      <param name="bounds">ページの内容を拡大／縮小して表示するGraphicsオブジェクト上の矩形。System.Drawing.RectangleF。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.Draw(System.Drawing.Graphics,System.Drawing.RectangleF,System.Single,System.Single,System.Boolean)">
+      <summary>サンプル（レポートの拡大／縮小）で使用しています。</summary>
+      <param name="graphics">ページの内容を表示するGraphicsオブジェクト。</param>
+      <param name="bounds">ページの内容を拡大／縮小して表示するGraphicsオブジェクト上の矩形。System.Drawing.RectangleF。</param>
+      <param name="scaleFactorX">水平方向の拡大率。1.0が等倍です。</param>
+      <param name="scaleFactorY">水直方向の拡大率。1.0が等倍です。</param>
+      <param name="printing">描画するgraphicsオブジェクトの種類に応じて切り替えます。PrintDocumentなど印刷に使われるgraphicsオブジェクトの場合、Trueをセットします。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawBorder(GrapeCity.ActiveReports.Border,System.Single,System.Single,System.Single,System.Single)">
+      <summary>指定した座標の指定した境界線を描画します。</summary>
+      <param name="border">ページ上に描画するBorderオブジェクト。</param>
+      <param name="left">境界線の左位置（インチ単位）。</param>
+      <param name="top">境界線の上位置（インチ単位）。</param>
+      <param name="width">境界線の幅（インチ単位）。</param>
+      <param name="height">境界線の高さ（インチ単位）。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawBorder(GrapeCity.ActiveReports.Border,System.Drawing.RectangleF)">
+      <summary>指定した範囲の指定した境界線を描画します。</summary>
+      <param name="border">ページ上に描画するBorderオブジェクト。</param>
+      <param name="bounds">境界線を描画するSystem.Drawing.RectangleF座標。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawImage(System.Drawing.Image,System.Single,System.Single,System.Single,System.Single)">
+      <summary>指定した画像を指定した座標に描画します。</summary>
+      <param name="image">ページ上に描画するSystem.Drawing.Image。</param>
+      <param name="left">画像の左端の座標（インチ単位）。</param>
+      <param name="top">
+        <para>画像の上端の座標（インチ単位）。</para>
+      </param>
+      <param name="width">画像の幅（インチ単位）。</param>
+      <param name="height">画像の高さ（インチ単位）。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawImage(System.Drawing.Image,System.Single,System.Single,System.Single,System.Single,System.String,System.String)">
+      <summary>指定した画像を指定した座標に描画します。</summary>
+      <param name="image">ページ上に描画するSystem.Drawing.Image。</param>
+      <param name="left">画像の左端の座標（インチ単位）。</param>
+      <param name="top">
+        <para>画像の上端の座標（インチ単位）。</para>
+      </param>
+      <param name="width">画像の幅（インチ単位）。</param>
+      <param name="height">画像の高さ（インチ単位）。</param>
+      <param name="title">画像のタイトル。</param>
+      <param name="description">画像の説明。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawImage(System.Drawing.Image,System.Drawing.RectangleF)">
+      <summary>指定した画像を指定した矩形範囲に描画します。</summary>
+      <param name="image">ページ上に描画するSystem.Drawing.Image。</param>
+      <param name="bounds">
+        <para>描画する画像の位置とサイズを指定するRectangleF。</para>
+      </param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawImage(System.Drawing.Image,System.Single,System.Single,System.Single,System.Single,System.String)">
+      <summary>指定した画像をページ上の指定した座標に描画し、この画像領域にハイパーリンクを割り当てます。</summary>
+      <param name="image">ページ上に描画するSystem.Drawing.Image。</param>
+      <param name="left">画像の左端の座標（インチ単位）。</param>
+      <param name="top">
+        <para>画像の上端の座標（インチ単位）。</para>
+      </param>
+      <param name="width">画像の幅（インチ単位）。</param>
+      <param name="height">画像の高さ（インチ単位）。</param>
+      <param name="strLink">ハイパーリンクURL。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawImage(System.Drawing.Image,System.Single,System.Single,System.Single,System.Single,System.String,System.String,System.String)">
+      <summary>指定した画像をページ上の指定した座標に描画し、この画像領域にハイパーリンクを割り当てます。</summary>
+      <param name="image">ページ上に描画するSystem.Drawing.Image。</param>
+      <param name="left">画像の左端の座標（インチ単位）。</param>
+      <param name="top">
+        <para>画像の上端の座標（インチ単位）。</para>
+      </param>
+      <param name="width">画像の幅（インチ単位）。</param>
+      <param name="height">画像の高さ（インチ単位）。</param>
+      <param name="strLink">ハイパーリンクURL。</param>
+      <param name="title">画像のタイトル。</param>
+      <param name="description">画像の説明。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawImage(System.Drawing.Image,System.Drawing.RectangleF,System.String)">
+      <summary>指定した画像を指定した矩形範囲に描画し、この矩形範囲にハイパーリンクを割り当てます。</summary>
+      <param name="image">ページ上に描画するSystem.Drawing.Image。</param>
+      <param name="bounds">描画する画像の位置とサイズを指定するRectangleF。</param>
+      <param name="strLink">ハイパーリンクURL。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawImage(System.Drawing.Image,System.Boolean,System.Drawing.RectangleF,System.String)">
+      <summary>指定した画像を指定した矩形範囲に描画し、ページ上の領域へのハイパーリンクを割り当てます。</summary>
+      <param name="image">ページ上に描画するSystem.Drawing.Image。</param>
+      <param name="imageChanged">画像が変更されたかどうかを決定するブール値。</param>
+      <param name="text">画像の矩形範囲。</param>
+      <param name="strLink">ハイパーリンクURL。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawRect(System.Single,System.Single,System.Single,System.Single)">
+      <summary>ページ上の指定した座標に四角形を描画します。</summary>
+      <param name="left">四角形の左端の座標（インチ単位）。</param>
+      <param name="top">
+        <para>四角形の上端の座標（インチ単位）。</para>
+      </param>
+      <param name="width">四角形の幅（インチ単位）。</param>
+      <param name="height">四角形の高さ（インチ単位）。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawRect(System.Drawing.RectangleF)">
+      <summary>ページ上の指定した座標に四角形を描画します。</summary>
+      <param name="rc">四角形の矩形範囲。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawText(System.String,System.Single,System.Single,System.Single,System.Single)">
+      <summary>指定した文字列を指定した座標に描画します。</summary>
+      <param name="strText">ページ上に描画するテキスト文字列。</param>
+      <param name="left">テキストの左端の座標。</param>
+      <param name="top">テキストの上端の座標。</param>
+      <param name="width">テキスト領域の幅。</param>
+      <param name="height">テキスト領域の高さ。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawText(System.String,System.Drawing.RectangleF)">
+      <summary>指定した文字列を指定した矩形範囲に描画します。</summary>
+      <param name="strText">ページ上に描画するテキスト文字列。</param>
+      <param name="text">テキストの矩形範囲。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawText(System.String[],System.Single,System.Single,System.Single,System.Single)">
+      <summary>指定した文字列の配列を指定した座標に描画します。</summary>
+      <param name="astrText">ページ上に描画するテキスト文字列の配列。</param>
+      <param name="left">テキストの左端の座標。</param>
+      <param name="top">テキストの上端の座標。</param>
+      <param name="width">テキスト領域の幅。</param>
+      <param name="height">テキスト領域の高さ。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawText(System.String[],System.Drawing.RectangleF)">
+      <summary>指定した文字列の配列を指定した矩形範囲に描画します。</summary>
+      <param name="astrText">ページ上に描画するテキスト文字列の配列。</param>
+      <param name="text">テキストの矩形範囲。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawText(System.String,System.Single,System.Single,System.Single,System.Single,System.String)">
+      <summary>指定した文字列を指定した座標に描画し、テキスト領域のハイパーリンクを作成します。</summary>
+      <param name="strText">ページ上に描画するテキスト文字列。</param>
+      <param name="left">テキストの左端の座標。</param>
+      <param name="top">テキストの上端の座標。</param>
+      <param name="width">テキスト領域の幅。</param>
+      <param name="height">テキスト領域の高さ。</param>
+      <param name="strLink">ハイパーリンクURL。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawText(System.String,System.Drawing.RectangleF,System.String)">
+      <summary>指定した文字列を指定した矩形範囲に描画し、指定した領域へのハイパーリンクを作成します。</summary>
+      <param name="strText">ページ上に描画するテキスト文字列。</param>
+      <param name="text">テキストの矩形範囲。</param>
+      <param name="strLink">ハイパーリンクURL。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawText(System.String[],System.Single,System.Single,System.Single,System.Single,System.String)">
+      <summary>指定した文字列の配列を指定した座標に描画し、テキスト領域のハイパーリンクを作成します。</summary>
+      <param name="astrText">ページ上に描画するテキスト文字列の配列。</param>
+      <param name="left">テキストの左端の座標。</param>
+      <param name="top">テキストの上端の座標。</param>
+      <param name="width">テキスト領域の幅。</param>
+      <param name="height">テキスト領域の高さ。</param>
+      <param name="strLink">ハイパーリンクURL。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.DrawText(System.String[],System.Drawing.RectangleF,System.String)">
+      <summary>指定した文字列の配列を指定した矩形範囲に描画し、指定した領域へのハイパーリンクを作成します。</summary>
+      <param name="astrText">ページ上に描画するテキスト文字列の配列。</param>
+      <param name="text">テキストの矩形範囲。</param>
+      <param name="strLink">ハイパーリンクURL。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.FillRect(System.Single,System.Single,System.Single,System.Single)">
+      <summary>指定した座標を現在のページのBackColorで塗りつぶします。</summary>
+      <param name="left">四角形の左端の座標（インチ単位）。</param>
+      <param name="top">
+        <para>四角形の上端の座標（インチ単位）。</para>
+      </param>
+      <param name="width">四角形の幅（インチ単位）。</param>
+      <param name="height">四角形の高さ（インチ単位）。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.FillRect(System.Drawing.RectangleF)">
+      <summary>指定した範囲を現在のページのBackColorで塗りつぶします。</summary>
+      <param name="rc">四角形の矩形範囲。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.Load(System.String)">
+      <summary>指定した名前のファイルからページ内容をロードします。</summary>
+      <param name="strFileName">以前に保存したページ内容を含むファイルの名前。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.Load(System.IO.Stream)">
+      <summary>指定したストリームからページ内容をロードします。</summary>
+      <param name="stm">保存済みのページ内容を含むストリームを指定します。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.MeasureParagraphHeight(System.String,System.Single)">
+      <summary>現在のページ設定を使用して、指定したテキストを指定した幅で表示したときの高さを計測します。</summary>
+      <param name="strText">
+        <para>計測するテキスト文字列。</para>
+      </param>
+      <param name="width">テキストの幅（インチ単位）。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.MeasureParagraphHeight(System.String,System.Single,System.Drawing.Font,System.Drawing.StringFormat)">
+      <summary>現在のページ設定を使用して、指定したテキストを指定した幅、フォント、フォーマットで表示したときの高さを計測します。</summary>
+      <param name="strText">
+        <para>計測するテキスト文字列。</para>
+      </param>
+      <param name="width">テキストの幅（インチ単位）。</param>
+      <param name="textFont">計測するテキストフォント。</param>
+      <param name="strFormat">計測するテキストフォーマット。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.MeasureText(System.String)">
+      <summary>選択したフォント出］テキスト文字列を決定します。</summary>
+      <param name="strText">決定するテキスト文字列。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.MeasureText(System.String,System.Drawing.Font)">
+      <summary>テキスト文字列を決定します。</summary>
+      <param name="strText">決定するテキスト。</param>
+      <param name="font">テキストのフォント。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.Save(System.String)">
+      <summary>ページ内容を指定した名前のファイルに保存します。</summary>
+      <param name="strFileName">ページ内容を格納するファイルの名前。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Page.Save(System.IO.Stream)">
+      <summary>ページ内容を指定したストリームに保存します。</summary>
+      <param name="stm">ページ内容の格納先のストリームを指定します。</param>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.Annotations">
+      <summary>ページの注釈を設定または取得します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.BackColor">
+      <summary>
+        <para>形状とテキストをページ上に描画する場合に使用する背景色を指定します。</para>
+      </summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.Bookmarks">
+      <summary>ページのブックマークのリストを返します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.CanvasItems">
+      <summary>ページのキャンバス項目のリストを返します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.CharacterSpacing">
+      <summary>Pageクラスの描画メソッドで描画するテキストの文字ピッチをインチ単位で設定または取得します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.Compress">
+      <summary>ページを圧縮するかどうかを示す値を設定するか返します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.Font">
+      <summary>ページ上にテキストを表示するときに使用する現在のフォントを取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.Fonts">
+      <summary>ページのフォントコレクションを返します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.ForeColor">
+      <summary>ページ上のテキストと図形の表示に使用する現在の前景色を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.Height">
+      <summary>ページの高さを取得または設定します（インチ単位）。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.Identifier">
+      <summary>一意なページ識別子を取得します(PagesCollectionでスワップアウトしたページを追跡するのに使用されます)。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.LineSpacing">
+      <summary>Pageクラスの描画メソッドで描画するテキストの行ピッチをインチ単位で設定または取得します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.Margins">
+      <summary>ページ余白の設定を参照します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.Orientation">
+      <summary>ページの向きを取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.Padding">
+      <summary>コントロールの枠から文字までの間の余白を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.PenStyle">
+      <summary>線と図形の描画に使用するペンの種類を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.PenWidth">
+      <summary>線と図形の描画に使用するペンの幅を取得または設定します（1/144インチ単位）。デフォルトは1です。144を設定すると1インチになります。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.RightToLeft">
+      <summary>右から左へ記述するフォントを使う地域をサポートするために、DrawTextメソッドがテキストを右から左に表示するかどうかを示す値を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.Size">
+      <summary>ページの高さと幅を含むSizeF構造体を返します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.TextAlignment">
+      <summary>DrawTextメソッドを使用するときのテキストの配置を決定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.TextAngle">
+      <summary>Pageクラスの描画メソッドで描画するテキストの角度を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.TextJustify">
+      <summary>TextAlignmentプロパティがJustifyに設定された場合に、テキストの配置（位置揃え）を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.TextRenderHint">
+      <summary>描画の品質を指定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.Units">
+      <summary>プリミティブなページ描画メソッドで使用する単位を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.VerticalText">
+      <summary>テキストを描画する場合に、文字を垂直方向に回転して描画するかどうかを示す値を設定するか返します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.VerticalTextAlignment">
+      <summary>DrawTextメソッドを使用するときのテキストの垂直方向の配置を決定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.Width">
+      <summary>ページの幅を取得または設定します（インチ単位）。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.WordWrap">
+      <summary>内部使用のみ。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Page.WrapMode">
+      <summary>テキストを描画する折り返しモードを取得または設定します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.#ctor">
+      <summary>PagesCollectionクラスの新しいインスタンスを初期化します。
+<!--DXMETADATA end --></summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.#ctor">
+      <summary>PagesCollectionクラスの新しいインスタンスを初期化します。
+<!--DXMETADATA end --></summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.#ctor(GrapeCity.ActiveReports.Document.SectionDocument)">
+      <summary>PagesCollectionクラスの新しいインスタンスを初期化します。
+<!--DXMETADATA end --></summary>
+      <param name="document">セクションドキュメント。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.Add">
+      <summary>指定したPageオブジェクトをコレクションに追加します。<!--DXMETADATA end --></summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.AddRange">
+      <summary>ページの配列またはコレクションを追加します。<!--DXMETADATA end --></summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.Clear">
+      <summary>コレクションからすべてのページを削除します。<!--DXMETADATA end --></summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.Clone">
+      <summary>PagesCollectionのクローンを作成します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.Contains">
+      <summary>指定したオブジェクトがコレクションのメンバであるかどうかを決定します。<!--DXMETADATA end --></summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.CopyTo">
+      <summary>コレクションの特定のインデックスから始まるページを配列にコピーします。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.Dispose">
+      <summary>PagesCollectionインスタンスをメモリから解放します。
+<!--DXMETADATA end --></summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.GetRange(System.Int32,System.Int32)">
+      <summary>指定したインデックスから指定したページ数の新しいコレクションを抽出して返します。<!--DXMETADATA end --></summary>
+      <returns>
+        <para>コレクションの指定したインデックスから開始して抽出された新しいコレクション。</para>
+      </returns>
+      <param name="index">
+        <list type="termdef">
+          <item>
+            <description>範囲の開始ページを表すインデックス。</description>
+          </item>
+        </list>
+      </param>
+      <param name="count">抽出するページ数。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.IndexOf">
+      <summary>コレクション内のページのインデックスを返します。<!--DXMETADATA end --></summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.Insert">
+      <summary>指定したインデックスでページ要素をPagesCollectionに挿入します。<!--DXMETADATA end --></summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.InsertNew(System.Int32)">
+      <summary>新しいPageオブジェクトを作成し、コレクション内の指定したインデックスに挿入します。<!--DXMETADATA end --></summary>
+      <param name="index">新しいページのインデックス。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.InsertRange">
+      <summary>ページの範囲をコレクションの指定したインデックスに挿入します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.RemoveAt(System.Int32)">
+      <summary>指定したインデックスのメンバをコレクションから削除します。</summary>
+      <param name="index">削除するページのインデックス。インデックスは０から始まります。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.Add(System.Object)">
+      <summary>PageオブジェクトをPageCollectionの最後に追加します。</summary>
+      <param name="value">追加するページオブジェクト。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.Add(GrapeCity.ActiveReports.Document.Section.Page)">
+      <summary>PageオブジェクトをPageCollectionの最後に追加します。</summary>
+      <param name="value">追加するページオブジェクト。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.AddRange(GrapeCity.ActiveReports.Document.Section.Page[])">
+      <summary>指定したPageオブジェクトの配列を指定したコレクションに追加します。<!--DXMETADATA end --></summary>
+      <param name="pages">
+        <para>追加するページの配列。</para>
+      </param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.AddRange(GrapeCity.ActiveReports.Document.Section.PagesCollection)">
+      <summary>指定したコレクションからこのコレクションにページを追加します。<!--DXMETADATA end --></summary>
+      <param name="pages">コレクションに追加するページのコレクション。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.Contains(System.Object)">
+      <summary>指定したオブジェクトがコレクションのメンバであるかどうかを決定します。<!--DXMETADATA end --></summary>
+      <param name="value">コレクション内に検索するページ。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.Contains(GrapeCity.ActiveReports.Document.Section.Page)">
+      <summary>Page要素はPagesCollection内であるかどうかを決定します。</summary>
+      <param name="value">コレクション内に検索するページ。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.CopyTo(System.Array,System.Int32)">
+      <summary>コレクションの特定のインデックスから始まるページを配列にコピーします。</summary>
+      <param name="array">現在のページコレクションからコピーした要素のデスティネーションとなる配列。</param>
+      <param name="index">コピーが開始されるページコレクション内のインデックスを表す３２ビットのInteger。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.CopyTo(GrapeCity.ActiveReports.Document.Section.Page[],System.Int32)">
+      <summary>PagesCollectionの特定のインデックスからPageオブジェクトの配列をコピーします。</summary>
+      <param name="values">現在のページコレクションからコピーした要素のデスティネーションとなるページ配列。</param>
+      <param name="index">コピーが開始されるページコレクション内のインデックスを表す３２ビットのInteger。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.Dispose">
+      <summary>PagesCollectionインスタンスをメモリから解放します。<!--DXMETADATA end --></summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.IndexOf(System.Object)">
+      <summary>コレクションでページオブジェクトのインデックスを返します。</summary>
+      <param name="value">コレクション内に検索するページ。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.IndexOf(GrapeCity.ActiveReports.Document.Section.Page)">
+      <summary>PagesCollection内のPageオブジェクトの最初に発生するゼロベースインデックスを返します。</summary>
+      <param name="value">コレクション内に検索するページ。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.Insert(System.Int32,System.Object)">
+      <summary>指定したPagesCollectionにページオブジェクトの要素を挿入します。<!--DXMETADATA end --></summary>
+      <param name="index">値を挿入する、０から始まるインデックス番号。</param>
+      <param name="value">挿入するページ。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.Insert(System.Int32,GrapeCity.ActiveReports.Document.Section.Page)">
+      <summary>
+        <div>
+          <span style="WIDTH: 100%" id="ContentItemType|GrapeCity.ActiveReports.Document.v9~GrapeCity.ActiveReports.Document.Section.PagesCollection~Insert|SUMMARY" class="dxeditwrapper" contenteditable="true">指定したページをコレクションの指定したインデックスに挿入します。 <!--DXMETADATA end --></span>
+        </div>
+      </summary>
+      <param name="index">値を挿入する、０から始まるインデックス番号。</param>
+      <param name="value">挿入するページ。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.InsertRange(System.Int32,GrapeCity.ActiveReports.Document.Section.PagesCollection)">
+      <summary>Overloaded: Inserts the elements from PageCollections objects into the PagesCollection at the specified index.</summary>
+      <param name="index">ページ配列の挿入位置を表すコレクションのインデックス。インデックスは０から始まります。</param>
+      <param name="pages">現在のページコレクションに挿入する要素を含むページ配列。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.InsertRange(System.Int32,GrapeCity.ActiveReports.Document.Section.Page[])">
+      <summary>Overloaded: Inserts the elements from an array of Page objects into the PagesCollection at the specified index.</summary>
+      <param name="index">ページ配列の挿入位置を表すコレクションのインデックス。インデックスは０から始まります。</param>
+      <param name="pages">現在のページコレクションに挿入する要素を含むページ配列。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.Remove(System.Object)">
+      <summary>コレクションから指定されたページのオブジェクトを削除します。</summary>
+      <param name="value">コレクションから削除するページ</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.PagesCollection.Remove(GrapeCity.ActiveReports.Document.Section.Page)">
+      <summary>PagesCollectionからPageオブジェクトの最初の発生を削除します。</summary>
+      <param name="page">現在のページコレクションから削除するページ。</param>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.PagesCollection.Count">
+      <summary>コレクションに含まれるPageメンバの数を返します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.PagesCollection.Fonts">
+      <summary>PagesCollectionで使用されるFontsCollectionを返します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.PagesCollection.IsFixedSize">
+      <summary>PagesCollectionが固定サイズかどうかを示す値を取得します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.PagesCollection.IsReadOnly">
+      <summary>PagesCollectionが読み取り専用かどうかを示す値を取得します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.PagesCollection.IsSynchronized">
+      <summary>PagesCollectionへのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.PagesCollection.Item(System.Int32)">
+      <summary>コレクションの指定したインデックスのメンバを返します。</summary>
+      <param name="index">
+        <para>返されるメンバのインデックス。</para>
+      </param>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.PagesCollection.SyncRoot">
+      <summary>PagesCollectionへのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.StringFormatProvider.GetGenericDefault">
+      <summary>StringFormatのGDI+ StringFormat.GenericDefaultと同様なパラメータ付き新しいインスタンスを作成します。</summary>
+      <returns>GenericDefault文字列書式</returns>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.StringFormatProvider.GetGenericTypographic">
+      <summary>StringFormatのGDI+ StringFormat.GenericTypographicと同様なパラメータ付き新しいインスタンスを作成します。</summary>
+      <returns>GenericTypographic文字列書式</returns>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.UrlErrorEventArgs.#ctor">
+      <summary>UrlErrorEventArgsクラスの新しいインスタンスを作成します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.UrlErrorEventArgs.#ctor">
+      <summary>UrlErrorEventArgsクラスの新しいインスタンスを作成します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.UrlErrorEventArgs.#ctor(System.Exception)">
+      <summary>指定した例外のUrlErrorEventArgsクラスの新しいインスタンス作成します。</summary>
+      <param name="e">
+        <list type="termdef">
+          <item>
+            <description>イベントデータを含むUrlErrorEventArgs値。</description>
+          </item>
+        </list>
+      </param>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.UrlErrorEventArgs.Exception">
+      <summary>ダウンロードエラーを引き起こした例外を表す値を取得します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.UserPreferences.#ctor">
+      <summary>UserPreferencesクラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.UserPreferences.HyperLinkBackColor">
+      <summary>ハイパーリンクをホストするコントロールの背景色を、取得または設定します。デフォルトは透明です。<!--DXMETADATA end --></summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.UserPreferences.HyperLinkForeColor">
+      <summary>ハイパーリンクをホストするコントロールのテキストの色を、取得または設定します。デフォルトは青です。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.UserPreferences.HyperLinkUnderline">
+      <summary>ハイパーリンクをホストするコントロールのテキストに下線を引くかどうかを、取得または設定します。デフォルトはTrueです。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.UserPreferences.SearchResultsBackColor">
+      <summary>Viewerコントロールの［検索］ダイアログで検索されたテキストの背景色を、取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.UserPreferences.SearchResultsForeColor">
+      <summary>Viewerコントロールの［検索］ダイアログで検索されたテキストの前景色を、取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.UserPreferences.UseHyperLinkSettings">
+      <summary>Trueの場合、この設定は、すべてのリンクに適用されます。それでない場合、各リンクは、独自の設定に従って表示されます。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.UrlErrorEventHandler">
+      <summary>ドキュメントのダウンロードエラーイベントを処理するメソッドを表します。<!--DXMETADATA end --></summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationBalloon.BallonQuadrant">
+      <summary>吹き出しの尾の部分を、４分割のどこに位置するかを指定します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationBalloon.BallonQuadrant.TopLeft">
+      <summary>上辺の左</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationBalloon.BallonQuadrant.TopRight">
+      <summary>上辺の右</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationBalloon.BallonQuadrant.BottomLeft">
+      <summary>下辺の左</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationBalloon.BallonQuadrant.BottomRight">
+      <summary>下辺の右</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationBalloon.BallonQuadrant.LeftTop">
+      <summary>左辺の上</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationBalloon.BallonQuadrant.LeftBottom">
+      <summary>左辺の下</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationBalloon.BallonQuadrant.RightTop">
+      <summary>右辺の上</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationBalloon.BallonQuadrant.RightBottom">
+      <summary>右辺の下</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationBalloon.BallonQuadrant.None">
+      <summary>尾はなし</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.LinePlacement">
+      <summary>AnnotationLineオブジェクトの罫線を、どこに描画するかを指定します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.LinePlacement.Top">
+      <summary>AnnotationLineオブジェクトの一番上に罫線を引きます。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.LinePlacement.Middle">
+      <summary>AnnotationLineオブジェクトの中央に罫線を引きます。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.LinePlacement.Bottom">
+      <summary>AnnotationLineオブジェクトの一番下に罫線を引きます。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.ShowArrowCap">
+      <summary>矢先を描画するかどうかを指定します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.ShowArrowCap.LeftOnly">
+      <summary>左端に矢先を描画します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.ShowArrowCap.RightOnly">
+      <summary>右端に矢先を描画します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.ShowArrowCap.LeftRight">
+      <summary>両端に矢先を描画します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.ShowArrowCap.None">
+      <summary>矢先を描画しません。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.Annotations.ArrowDirection">
+      <summary>矢印の方向を指定します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.ArrowDirection.Left">
+      <summary>左矢印</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.ArrowDirection.Top">
+      <summary>上矢印</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.ArrowDirection.Right">
+      <summary>右矢印</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.ArrowDirection.Bottom">
+      <summary>下矢印</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.Annotations.ImageLayout">
+      <summary>Annotation画像の位置を指定します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.ImageLayout.Zoom">
+      <summary>画像は、コントロールのサイズに合わせて表示されます。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.ImageLayout.Tile">
+      <summary>画像は、実際のサイズで、注釈の領域全体に並べて表示されます。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.ImageLayout.Stretch">
+      <summary>画像は、縦横比に関わらず、注釈の領域に合わせて引き伸ばされるかどうかを取得または設定します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.ImageLayout.Center">
+      <summary>画像は、注釈の領域の中央に表示されます。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.ImageLayout.Left">
+      <summary>画像は、注釈の領域の左端に表示されます。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.ImageLayout.Top">
+      <summary>画像は、注釈の領域の上端に表示されます。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.ImageLayout.Right">
+      <summary>画像は、注釈の領域の右端に表示されます。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.ImageLayout.Bottom">
+      <summary>画像は、注釈の領域の下端に表示されます。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.ImageLayout.LeftTop">
+      <summary>画像は、注釈の領域の左上端に表示されます。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.ImageLayout.RightTop">
+      <summary>画像は、注釈の領域の右上端に表示されます。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.ImageLayout.RightBottom">
+      <summary>画像は、注釈の領域の右下端に表示されます。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Document.Section.Annotations.ImageLayout.LeftBottom">
+      <summary>画像は、注釈の領域の左下端に表示されます。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.Annotations.Annotation">
+      <summary>Annotationは、Annotationオブジェクトの基本クラスです。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationArrow">
+      <summary>AnnotationArrowオブジェクト（テキストを入力できる２D矢印）を描画します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationBalloon">
+      <summary>AnnotationBalloonオブジェクト（テキストを入力できる吹き出し）を描画します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationBaseText">
+      <summary>全てのAnnotationオブジェクトの基本クラスを表します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationCircle">
+      <summary>AnnotationCircleオブジェクト（テキストを入力できない円）を描画します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationCollection">
+      <summary>Annotationオブジェクトのコレクションを表します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationImage">
+      <summary>AnnotationImageオブジェクトを表します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine">
+      <summary>AnnotationLineオブジェクト（テキスト領域付きの線形）を描画します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationRectangle">
+      <summary>AnnotationRectangleオブジェクト（テキストを入力できない矩形）を描画します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationText">
+      <summary>AnnotationTextオブジェクト（テキストを入力できる矩形）を描画します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.Annotations.BorderCircle">
+      <summary>AnnotationCircle（テキストを入力できない円）の周りに罫線を描画します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Document.Section.Annotations.BorderRectangle">
+      <summary>AnnotationRectangle（テキストを入力できない矩形）の周りに罫線を描画します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Annotations.Annotation.Attach(System.Single,System.Single)">
+      <summary>Annotationオブジェクトを配置する左上隅の座標を取得または設定します。</summary>
+      <param name="x">Annotationオブジェクトを配置するx座標</param>
+      <param name="y">Annotationオブジェクトを配置するｙ座標</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Annotations.Annotation.Refresh">
+      <summary>Annotationオブジェクトを再描画します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.Annotation.Alpha">
+      <summary>Annotationオブジェクトのアルファレベル（透明度）を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.Annotation.Border">
+      <summary>Annotationオブジェクトの罫線を取得します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.Annotation.Color">
+      <summary>Annotationオブジェクトの塗りつぶしに使用する色を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.Annotation.Height">
+      <summary>Annotationオブジェクトの高さを取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.Annotation.PageRectangle">
+      <summary>注釈が描画されるページの矩形領域を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.Annotation.Width">
+      <summary>Annotationオブジェクトの幅を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.Annotation.X">
+      <summary>注釈の水平位置をインチ単位で取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.Annotation.Y">
+      <summary>注釈の垂直位置をインチ単位で取得または設定します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationArrow.#ctor">
+      <summary>AnnotationArrowクラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationArrow.ArrowDirection">
+      <summary>矢印の方向を取得または設定します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationBalloon.#ctor">
+      <summary>
+        <div style="BORDER-BOTTOM: #d0d0d0 1px; PADDING-BOTTOM: 2px; MARGIN-BOTTOM: 5px; COLOR: #000000; PADDING-TOP: 2px">AnnotationBalloonクラスの新しいインスタンスを初期化します。
+</div>
+      </summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationBalloon.Quadrant">
+      <summary>吹き出しの尾の部分を、４分割のどこに位置するかを取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationBaseText.Alignment">
+      <summary>注釈のテキストの配置を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationBaseText.Font">
+      <summary>注釈テキストのフォントを取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationBaseText.LineAligment">
+      <summary>注釈線の配置を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationBaseText.Text">
+      <summary>注釈に使用するテキストを取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationBaseText.TextColor">
+      <summary>注釈に使用するテキストの色を取得または設定します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationCircle.#ctor">
+      <summary>AnnotationCircleクラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationCollection.#ctor">
+      <summary>AnnotationCollecionクラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationCollection.Add(GrapeCity.ActiveReports.Document.Section.Annotations.Annotation)">
+      <summary>コレクションの末尾にAnnotationオブジェクトを追加します。</summary>
+      <param name="annotation">コレクションの末尾に追加するAnnotation</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationCollection.Refresh(GrapeCity.ActiveReports.Document.Section.Annotations.Annotation)">
+      <summary>強制的にAnnotationオブジェクトを再描画します。</summary>
+      <param name="annotation">再描画するAnnotation</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationCollection.Remove(GrapeCity.ActiveReports.Document.Section.Annotations.Annotation)">
+      <summary>コレクションから指定したAnnotationを削除します。</summary>
+      <param name="annotation">削除するAnnotation</param>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationCollection.BackColor">
+      <summary>塗りつぶしに使用する色を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationCollection.Item(System.Int32)">
+      <summary>コレクション内のAnnotationアイテムを取得します。</summary>
+      <param name="index">項目のインデックス。</param>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationCollection.SelectionService">
+      <summary>選択されたコンポーネントの情報を参照し、選択が変更された際にイベントを提供します。内部使用のみ。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationImage.#ctor">
+      <summary>AnnotationImageクラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationImage.BackgroundImage">
+      <summary>注釈の背景画像として使用するSystem.Drawing.Imageを、取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationImage.BackgroundLayout">
+      <summary>注釈ボックス内の画像の位置を表す列挙体の値を、取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationImage.ShowBorder">
+      <summary>注釈ボックスの端に罫線を描画するかどうかを表す値を、取得または設定します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.#ctor">
+      <summary>AnnotationLineクラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.ArrowCapHeight">
+      <summary>矢印の先端の高さを取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.ArrowCapWidth">
+      <summary>矢印の先端の幅を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.Color">
+      <summary>AnnotationLineオブジェクトの色を取得します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.DashCap">
+      <summary>AnnotationLineの破線の各ダッシュの両端に使用する、グラフィック形状の種類を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.DashStyle">
+      <summary>AnnotationLineオブジェクトで描画する破線のスタイルを取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.FillArrowCaps">
+      <summary>矢印の先端の三角形を塗りつぶすかどうかを決定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.Font">
+      <summary>テキストの描画に使用するフォントオブジェクトを取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.LineColor">
+      <summary>AnnotationLineオブジェクトの色を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.LineLocation">
+      <summary>Annotationオブジェクト内のAnnotationLineの位置を取得または設定します。<br />
+Top、Middle、Bottomの３つの値より設定できます。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.LineWidth">
+      <summary>AnnotationLineオブジェクトの幅を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.ShowArrowCaps">
+      <summary>矢先を描画するかどうかを取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.Text">
+      <summary>注釈のテキストの値を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.TextAlignment">
+      <summary>テキストの水平方向の配置を決定する値を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.TextColor">
+      <summary>注釈のテキストの色を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.TextWidth">
+      <summary>AnnotationLineオブジェクトの描画範囲内で、テキストに割り当てる幅を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationLine.Width">
+      <summary>AnnotationLineオブジェクトの幅を取得または設定します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationRectangle.#ctor">
+      <summary>AnnotationRectangleクラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Annotations.AnnotationText.#ctor">
+      <summary>AnnotationTextクラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Annotations.BorderCircle.#ctor">
+      <summary>BorderCircleクラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Document.Section.Annotations.BorderRectangle.#ctor">
+      <summary>BorderRectangleクラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Export.IDocumentExport">
+      <summary>全てのエクスポートフィルタ用に共通のインタフェースを提供します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Export.IDocumentExport.Export">
+      <summary>指定した範囲のページを、HTMLにエクスポートします。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Export.IDocumentExport.Export(GrapeCity.ActiveReports.Document.SectionDocument,System.String,System.String)">
+      <summary>指定したページ範囲を、HTMLにエクスポートします。</summary>
+      <param name="document">エクスポートするActiveReportsのDocumentオブジェクト。</param>
+      <param name="filePath">Htmlファイルを保存するためのファイル名とパスです。複数のファイルの名前が生成されている（画像、目次など）場合、この関数の値は他のファイル名に対して先頭に使用されます。</param>
+      <param name="pageRange">ページ番号の範囲を示します。範囲は、最初の場号と最後の番号の間に「-」を使用して示すことができます。単一のページも含めることができます。各範囲または単一のページはカンマ区きりにより分割されます。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Export.IDocumentExport.Export(GrapeCity.ActiveReports.Document.SectionDocument,System.String)">
+      <summary>ActiveReportsのドキュメント全体を、指定したHTMLにエクスポートします。</summary>
+      <param name="document">エクスポートするActiveReportsのDocumentオブジェクト。</param>
+      <param name="filePath">Htmlファイルを保存するためのファイル名とパスです。複数のファイルの名前が生成されている（画像、目次など）場合、この関数の値は他のファイル名に対して先頭に使用されます。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Export.IDocumentExport.Export(GrapeCity.ActiveReports.Document.SectionDocument,System.IO.Stream)">
+      <summary>ActiveReportsのドキュメント全体を、HTMLとすべてのイメージを単一のファイルに結合するMIME MHT形式(インターネット·エクスプローラーからWebアーカイブとして保存される形式)のHTMLにエクスポートします。</summary>
+      <param name="document">エクスポートするActiveReportsのDocumentオブジェクト。</param>
+      <param name="outputStream">MHTファイルを保存するSystem.IO.Steam保存先。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Export.IDocumentExport.Export(GrapeCity.ActiveReports.Document.SectionDocument,System.IO.Stream,System.String)">
+      <summary>指定したページ範囲を、HTMLとすべてのイメージを単一のファイルに結合するMIME MHT形式(インターネット·エクスプローラーからWebアーカイブとして保存される形式)のHTMLにエクスポートします。</summary>
+      <param name="document">エクスポートするActiveReportsのDocumentオブジェクト。</param>
+      <param name="outputStream">MHTファイルを保存するSystem.IO.Steam保存先。</param>
+      <param name="pageRange">ページ番号の範囲を示します。範囲は、最初の場号と最後の番号の間に「-」を使用して示すことができます。単一のページも含めることができます。各範囲または単一のページはカンマ区きりにより分割されます。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Export.IDocumentExport.Export(GrapeCity.ActiveReports.Document.SectionDocument,GrapeCity.ActiveReports.Export.Html.IOutputHtml,System.String)">
+      <summary>指定したページ範囲をoutputHandlerへエクスポートします。</summary>
+      <param name="document">エクスポートするActiveReportsのDocumentドキュメント。</param>
+      <param name="outputHandler">MHTファイルを保存するデスティネーションとなるSystem.IO.Stream。</param>
+      <param name="pageRange">ページ番号の範囲。各カンマの間には1つのページ番号、または範囲の開始ページ番号と終了ページ番号の間にハイフンがあるページの範囲を持つことができます。</param>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Export.Html.IOutputHtml">
+      <summary>IOutputHtmlインタフェースは、OutputHtmlDataメソッドとFinishメソッドを含みます。これらのメソッドはHtmlExportクラスと共に使用し、データの出力、およびエクスポートが完了するタイミングを示します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Export.Html.IOutputHtml.Finish">
+      <summary>このメソッドはHtmlExportによって呼び出され、現在のドキュメントのエクスポートが完了したことを示します。このメソッドは、実装元から、残りの出力をすべてフラッシュしたり、以前にエクスポートされたドキュメントのフレームセットページを書き出すために使用できます。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Export.Html.IOutputHtml.OutputHtmlData(GrapeCity.ActiveReports.Export.Html.HtmlOutputInfoArgs)">
+      <summary>OutputHtmlDataメソッドはHtmlExportクラスによって呼び出され、データを出力します。</summary>
+      <param name="info">出力に関する情報。</param>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Export.Html.HtmlOutputKind">
+      <summary>HTML出力の種類を指定します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Export.Html.HtmlOutputKind.ImagePng">
+      <summary>出力はPNG画像です。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Export.Html.HtmlOutputKind.ImageJpg">
+      <summary>出力はJPG画像です。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Export.Html.HtmlOutputKind.HtmlPage">
+      <summary>出力はHTMLページです。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Export.Html.HtmlOutputKind.BookmarksHtml">
+      <summary>出力は、メインHTMLページのブックマークのリストを含むHTMLページです。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Export.Html.HtmlOutputKind.FramesetHtml">
+      <summary>出力は、TOCページまたはTOCが使えない場合の見出しページを含むHTMLページと、右側の対象ドキュメントページです。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Export.Html.HtmlOutputInfoArgs">
+      <summary>IOutputHtmlインタフェースのOutputHtmlData関数の引数として使用されます。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Export.Html.HtmlOutputInfoArgs.#ctor(GrapeCity.ActiveReports.Export.Html.HtmlOutputKind,System.IO.Stream)">
+      <summary>HtmlOutputInfoArgクラスの新しいインスタンスを初期化します。</summary>
+      <param name="outputKind">出力データの種類。</param>
+      <param name="outputStream">出力データのストリーム。</param>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Export.Html.HtmlOutputInfoArgs.OutputKind">
+      <summary>OutputStreamプロパティに含まれる出力データの種類を返します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Export.Html.HtmlOutputInfoArgs.OutputStream">
+      <summary>出力される実際のデータです。</summary>
+    </member>
+  </members>
+</doc>

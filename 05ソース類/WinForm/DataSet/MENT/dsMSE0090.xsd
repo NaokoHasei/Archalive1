@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsMSE0090" targetNamespace="http://tempuri.org/dsMSE0090.xsd" xmlns:mstns="http://tempuri.org/dsMSE0090.xsd" xmlns="http://tempuri.org/dsMSE0090.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=171.2.3.159;Initial Catalog=DB_SANKO;Persist Security Info=True;User ID=U_SANKO;Password=SANKO" IsAppSettingsProperty="false" Modifier="Assembly" Name="wpc3159.DB_SANKO.U_SANKO" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="M_KENTableAdapter" GeneratorDataComponentClassName="M_KENTableAdapter" Name="M_KEN" UserDataComponentName="M_KENTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="wpc3159.DB_SANKO.U_SANKO" DbObjectName="DB_SANKO.U_SANKO.M_KEN" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>select * from M_KEN
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DANTAICODE" DataSetColumn="DANTAICODE" />
+              <Mapping SourceColumn="OLDPOSTCODE" DataSetColumn="OLDPOSTCODE" />
+              <Mapping SourceColumn="POSTCODE" DataSetColumn="POSTCODE" />
+              <Mapping SourceColumn="TODOUFUKEN_KANA" DataSetColumn="TODOUFUKEN_KANA" />
+              <Mapping SourceColumn="SIKUTYOUSON_KANA" DataSetColumn="SIKUTYOUSON_KANA" />
+              <Mapping SourceColumn="TYOUIKI_KANA" DataSetColumn="TYOUIKI_KANA" />
+              <Mapping SourceColumn="TODOUFUKEN" DataSetColumn="TODOUFUKEN" />
+              <Mapping SourceColumn="SIKUTYOUSON" DataSetColumn="SIKUTYOUSON" />
+              <Mapping SourceColumn="TYOUIKI" DataSetColumn="TYOUIKI" />
+              <Mapping SourceColumn="CDATE" DataSetColumn="CDATE" />
+              <Mapping SourceColumn="UDATE" DataSetColumn="UDATE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsMSE0090" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsMSE0090" msprop:Generator_UserDSName="dsMSE0090">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="M_KEN" msprop:Generator_TableClassName="M_KENDataTable" msprop:Generator_TableVarName="tableM_KEN" msprop:Generator_TablePropName="M_KEN" msprop:Generator_RowDeletingName="M_KENRowDeleting" msprop:Generator_RowChangingName="M_KENRowChanging" msprop:Generator_RowEvHandlerName="M_KENRowChangeEventHandler" msprop:Generator_RowDeletedName="M_KENRowDeleted" msprop:Generator_UserTableName="M_KEN" msprop:Generator_RowChangedName="M_KENRowChanged" msprop:Generator_RowEvArgName="M_KENRowChangeEvent" msprop:Generator_RowClassName="M_KENRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DANTAICODE" msprop:Generator_ColumnVarNameInTable="columnDANTAICODE" msprop:Generator_ColumnPropNameInRow="DANTAICODE" msprop:Generator_ColumnPropNameInTable="DANTAICODEColumn" msprop:Generator_UserColumnName="DANTAICODE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OLDPOSTCODE" msprop:Generator_ColumnVarNameInTable="columnOLDPOSTCODE" msprop:Generator_ColumnPropNameInRow="OLDPOSTCODE" msprop:Generator_ColumnPropNameInTable="OLDPOSTCODEColumn" msprop:Generator_UserColumnName="OLDPOSTCODE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="POSTCODE" msprop:Generator_ColumnVarNameInTable="columnPOSTCODE" msprop:Generator_ColumnPropNameInRow="POSTCODE" msprop:Generator_ColumnPropNameInTable="POSTCODEColumn" msprop:Generator_UserColumnName="POSTCODE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TODOUFUKEN_KANA" msprop:Generator_ColumnVarNameInTable="columnTODOUFUKEN_KANA" msprop:Generator_ColumnPropNameInRow="TODOUFUKEN_KANA" msprop:Generator_ColumnPropNameInTable="TODOUFUKEN_KANAColumn" msprop:Generator_UserColumnName="TODOUFUKEN_KANA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SIKUTYOUSON_KANA" msprop:Generator_ColumnVarNameInTable="columnSIKUTYOUSON_KANA" msprop:Generator_ColumnPropNameInRow="SIKUTYOUSON_KANA" msprop:Generator_ColumnPropNameInTable="SIKUTYOUSON_KANAColumn" msprop:Generator_UserColumnName="SIKUTYOUSON_KANA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TYOUIKI_KANA" msprop:Generator_ColumnVarNameInTable="columnTYOUIKI_KANA" msprop:Generator_ColumnPropNameInRow="TYOUIKI_KANA" msprop:Generator_ColumnPropNameInTable="TYOUIKI_KANAColumn" msprop:Generator_UserColumnName="TYOUIKI_KANA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TODOUFUKEN" msprop:Generator_ColumnVarNameInTable="columnTODOUFUKEN" msprop:Generator_ColumnPropNameInRow="TODOUFUKEN" msprop:Generator_ColumnPropNameInTable="TODOUFUKENColumn" msprop:Generator_UserColumnName="TODOUFUKEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SIKUTYOUSON" msprop:Generator_ColumnVarNameInTable="columnSIKUTYOUSON" msprop:Generator_ColumnPropNameInRow="SIKUTYOUSON" msprop:Generator_ColumnPropNameInTable="SIKUTYOUSONColumn" msprop:Generator_UserColumnName="SIKUTYOUSON" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TYOUIKI" msprop:Generator_ColumnVarNameInTable="columnTYOUIKI" msprop:Generator_ColumnPropNameInRow="TYOUIKI" msprop:Generator_ColumnPropNameInTable="TYOUIKIColumn" msprop:Generator_UserColumnName="TYOUIKI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CDATE" msprop:Generator_ColumnVarNameInTable="columnCDATE" msprop:Generator_ColumnPropNameInRow="_CDATE" msprop:Generator_ColumnPropNameInTable="CDATEColumn" msprop:Generator_UserColumnName="CDATE" type="xs:dateTime" />
+              <xs:element name="UDATE" msprop:Generator_ColumnVarNameInTable="columnUDATE" msprop:Generator_ColumnPropNameInRow="UDATE" msprop:Generator_ColumnPropNameInTable="UDATEColumn" msprop:Generator_UserColumnName="UDATE" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="M_KENtype" msprop:Generator_TableClassName="M_KENtypeDataTable" msprop:Generator_TableVarName="tableM_KENtype" msprop:Generator_TablePropName="M_KENtype" msprop:Generator_RowDeletingName="M_KENtypeRowDeleting" msprop:Generator_RowChangingName="M_KENtypeRowChanging" msprop:Generator_RowEvHandlerName="M_KENtypeRowChangeEventHandler" msprop:Generator_RowDeletedName="M_KENtypeRowDeleted" msprop:Generator_UserTableName="M_KENtype" msprop:Generator_RowChangedName="M_KENtypeRowChanged" msprop:Generator_RowEvArgName="M_KENtypeRowChangeEvent" msprop:Generator_RowClassName="M_KENtypeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DANTAICODE" msprop:Generator_ColumnVarNameInTable="columnDANTAICODE" msprop:Generator_ColumnPropNameInRow="DANTAICODE" msprop:Generator_ColumnPropNameInTable="DANTAICODEColumn" msprop:Generator_UserColumnName="DANTAICODE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OLDPOSTCODE" msprop:Generator_ColumnVarNameInTable="columnOLDPOSTCODE" msprop:Generator_ColumnPropNameInRow="OLDPOSTCODE" msprop:Generator_ColumnPropNameInTable="OLDPOSTCODEColumn" msprop:Generator_UserColumnName="OLDPOSTCODE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="POSTCODE" msprop:Generator_ColumnVarNameInTable="columnPOSTCODE" msprop:Generator_ColumnPropNameInRow="POSTCODE" msprop:Generator_ColumnPropNameInTable="POSTCODEColumn" msprop:Generator_UserColumnName="POSTCODE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TODOUFUKEN_KANA" msprop:Generator_ColumnVarNameInTable="columnTODOUFUKEN_KANA" msprop:Generator_ColumnPropNameInRow="TODOUFUKEN_KANA" msprop:Generator_ColumnPropNameInTable="TODOUFUKEN_KANAColumn" msprop:Generator_UserColumnName="TODOUFUKEN_KANA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SIKUTYOUSON_KANA" msprop:Generator_ColumnVarNameInTable="columnSIKUTYOUSON_KANA" msprop:Generator_ColumnPropNameInRow="SIKUTYOUSON_KANA" msprop:Generator_ColumnPropNameInTable="SIKUTYOUSON_KANAColumn" msprop:Generator_UserColumnName="SIKUTYOUSON_KANA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TYOUIKI_KANA" msprop:Generator_ColumnVarNameInTable="columnTYOUIKI_KANA" msprop:Generator_ColumnPropNameInRow="TYOUIKI_KANA" msprop:Generator_ColumnPropNameInTable="TYOUIKI_KANAColumn" msprop:Generator_UserColumnName="TYOUIKI_KANA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TODOUFUKEN" msprop:Generator_ColumnVarNameInTable="columnTODOUFUKEN" msprop:Generator_ColumnPropNameInRow="TODOUFUKEN" msprop:Generator_ColumnPropNameInTable="TODOUFUKENColumn" msprop:Generator_UserColumnName="TODOUFUKEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SIKUTYOUSON" msprop:Generator_ColumnVarNameInTable="columnSIKUTYOUSON" msprop:Generator_ColumnPropNameInRow="SIKUTYOUSON" msprop:Generator_ColumnPropNameInTable="SIKUTYOUSONColumn" msprop:Generator_UserColumnName="SIKUTYOUSON" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TYOUIKI" msprop:Generator_ColumnVarNameInTable="columnTYOUIKI" msprop:Generator_ColumnPropNameInRow="TYOUIKI" msprop:Generator_ColumnPropNameInTable="TYOUIKIColumn" msprop:Generator_UserColumnName="TYOUIKI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

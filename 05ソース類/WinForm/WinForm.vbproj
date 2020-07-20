@@ -1,0 +1,859 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{41A3D92C-CE9C-4CC8-95CA-5577E54520CB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Sub Main</StartupObject>
+    <RootNamespace>WinForm</RootNamespace>
+    <AssemblyName>WinForm</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>WinForm.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>WinForm.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.Win.C1TrueDBGrid.2, Version=2.0.20162.188, Culture=neutral, PublicKeyToken=75ae3fb0e2b1e0da, processorArchitecture=MSIL" />
+    <Reference Include="GrapeCity.ActiveReports.Chart.v9, Version=9.5.10955.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
+    <Reference Include="GrapeCity.ActiveReports.Design.Win.v9, Version=9.5.10955.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
+    <Reference Include="GrapeCity.ActiveReports.Diagnostics.v9, Version=9.5.10955.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
+    <Reference Include="GrapeCity.ActiveReports.Document.v9, Version=9.5.10955.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
+    <Reference Include="GrapeCity.ActiveReports.Export.Image.v9, Version=9.5.10955.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
+    <Reference Include="GrapeCity.ActiveReports.Export.Rdf.v9, Version=9.5.10955.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
+    <Reference Include="GrapeCity.ActiveReports.Extensibility.v9, Version=9.5.10955.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
+    <Reference Include="GrapeCity.ActiveReports.v9, Version=9.5.10955.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
+    <Reference Include="GrapeCity.ActiveReports.Viewer.Win.v9, Version=9.5.10955.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\apiMAP0001.vb" />
+    <Compile Include="Common\MitsumoriJyouken.vb" />
+    <Compile Include="DataAccess\daBUK0001.vb" />
+    <Compile Include="DataAccess\daBUK0002.vb" />
+    <Compile Include="DataAccess\daBUK0003.vb" />
+    <Compile Include="DataAccess\daJYU0001.vb" />
+    <Compile Include="DataAccess\MENT\daMENT0001.vb" />
+    <Compile Include="DataAccess\MENT\daMENT0002.vb" />
+    <Compile Include="DataAccess\MENT\daMENT0004.vb" />
+    <Compile Include="DataAccess\MENT\daMENT0005.vb" />
+    <Compile Include="DataAccess\MENT\daMENT0006.vb" />
+    <Compile Include="DataAccess\daMIT0001.vb" />
+    <Compile Include="DataAccess\MENT\daMSE0010.vb" />
+    <Compile Include="DataAccess\MENT\daMSE0020.vb" />
+    <Compile Include="DataAccess\MENT\daMSE0040.vb" />
+    <Compile Include="DataAccess\MENT\daMSE0090.vb" />
+    <Compile Include="DataAccess\daSEI0001.vb" />
+    <Compile Include="DataAccess\daHAT0001.vb" />
+    <Compile Include="DataAccess\daUSERPASS.vb" />
+    <Compile Include="DataSet\dsBUK0003.Designer.vb">
+      <DependentUpon>dsBUK0003.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSet\dsBUK0003.vb">
+      <DependentUpon>dsBUK0003.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsBUK0003_report.Designer.vb">
+      <DependentUpon>dsBUK0003_report.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSet\dsBUK0003_report.vb">
+      <DependentUpon>dsBUK0003_report.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsHAT0001.Designer.vb">
+      <DependentUpon>dsHAT0001.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSet\dsHAT0001.vb">
+      <DependentUpon>dsHAT0001.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsHAT0001_Report.Designer.vb">
+      <DependentUpon>dsHAT0001_Report.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSet\dsHAT0001_Update.Designer.vb">
+      <DependentUpon>dsHAT0001_Update.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSet\dsHAT0001_Update.vb">
+      <DependentUpon>dsHAT0001_Update.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsBUK0002.Designer.vb">
+      <DependentUpon>dsBUK0002.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSet\dsBUK0002.vb">
+      <DependentUpon>dsBUK0002.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsJYU0001.Designer.vb">
+      <DependentUpon>dsJYU0001.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSet\dsJYU0001.vb">
+      <DependentUpon>dsJYU0001.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsMAP0001.Designer.vb">
+      <DependentUpon>dsMAP0001.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSet\MENT\dsMENT0001.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMENT0001.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\MENT\dsMENT0001.vb">
+      <DependentUpon>dsMENT0001.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\MENT\dsMENT0002.Designer.vb">
+      <DependentUpon>dsMENT0002.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSet\MENT\dsMENT0002.vb">
+      <DependentUpon>dsMENT0002.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\MENT\dsMENT0004.Designer.vb">
+      <DependentUpon>dsMENT0004.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSet\MENT\dsMENT0004.vb">
+      <DependentUpon>dsMENT0004.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\MENT\dsMENT0005.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMENT0005.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\MENT\dsMENT0006.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMENT0006.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsMIT0001.Designer.vb">
+      <DependentUpon>dsMIT0001.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSet\dsMIT0001.vb">
+      <DependentUpon>dsMIT0001.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\MENT\dsMSE0010.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMSE0010.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\MENT\dsMSE0040.Designer.vb">
+      <DependentUpon>dsMSE0040.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSet\MENT\dsMSE0040.vb">
+      <DependentUpon>dsMSE0040.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\MENT\dsMSE0090.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMSE0090.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsSEI0001.Designer.vb">
+      <DependentUpon>dsSEI0001.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSet\dsSEI0001.vb">
+      <DependentUpon>dsSEI0001.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\dtMENT0005.vb" />
+    <Compile Include="DTO\dtMENT0006.vb" />
+    <Compile Include="Form\frmSEI0001_Meisai.Designer.vb">
+      <DependentUpon>frmSEI0001_Meisai.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmSEI0001_Meisai.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDebugMain.Designer.vb">
+      <DependentUpon>frmDebugMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDebugMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmBUK0003.Designer.vb">
+      <DependentUpon>frmBUK0003.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmBUK0003.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmHAT0001_COMMENT.Designer.vb">
+      <DependentUpon>frmHAT0001_COMMENT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmHAT0001_COMMENT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\ShowSingleFormLogic.vb" />
+    <Compile Include="Form\frmBUK0001.Designer.vb">
+      <DependentUpon>frmBUK0001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmBUK0001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmBUK0002.Designer.vb">
+      <DependentUpon>frmBUK0002.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmBUK0002.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmHAT0001.Designer.vb">
+      <DependentUpon>frmHAT0001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmHAT0001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmJYU0001.Designer.vb">
+      <DependentUpon>frmJYU0001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmJYU0001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmMAP0001.Designer.vb">
+      <DependentUpon>frmMAP0001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmMAP0001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmMAP0001_SUB1.Designer.vb">
+      <DependentUpon>frmMAP0001_SUB1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmMAP0001_SUB1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\MENT\frmMENT0005.Designer.vb">
+      <DependentUpon>frmMENT0005.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\MENT\frmMENT0005.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\MENT\frmMENT0001.Designer.vb">
+      <DependentUpon>frmMENT0001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\MENT\frmMENT0001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\MENT\frmMENT0002.Designer.vb">
+      <DependentUpon>frmMENT0002.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\MENT\frmMENT0002.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\MENT\frmMENT0004.Designer.vb">
+      <DependentUpon>frmMENT0004.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\MENT\frmMENT0004.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\MENT\frmMENT0006.Designer.vb">
+      <DependentUpon>frmMENT0006.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\MENT\frmMENT0006.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmMENUMENT.Designer.vb">
+      <DependentUpon>frmMENUMENT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmMENUMENT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmMENU.Designer.vb">
+      <DependentUpon>frmMENU.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmMENU.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmMIT0001.Designer.vb">
+      <DependentUpon>frmMIT0001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmMIT0001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\MENT\frmMSE0010.Designer.vb">
+      <DependentUpon>frmMSE0010.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\MENT\frmMSE0010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\MENT\frmMSE0020.Designer.vb">
+      <DependentUpon>frmMSE0020.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\MENT\frmMSE0020.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\MENT\frmMSE0090.Designer.vb">
+      <DependentUpon>frmMSE0090.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\MENT\frmMSE0090.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmSEI0001.Designer.vb">
+      <DependentUpon>frmSEI0001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmSEI0001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmUSERPASS.Designer.vb">
+      <DependentUpon>frmUSERPASS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmUSERPASS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\MENT\frmMSE0040.designer.vb">
+      <DependentUpon>frmMSE0040.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\MENT\frmMSE0040.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Function\clsMIT0001.vb" />
+    <Compile Include="Instance\requestBUK0001.vb" />
+    <Compile Include="Instance\requestMAP0001.vb" />
+    <Compile Include="Instance\responseMAP0001.vb" />
+    <Compile Include="Main.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Report\rptBUK0003.Designer.vb">
+      <DependentUpon>rptBUK0003.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptBUK0003.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptHAT0001.Designer.vb">
+      <DependentUpon>rptHAT0001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptHAT0001.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptHAT0001Uke.Designer.vb">
+      <DependentUpon>rptHAT0001Uke.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptHAT0001Uke.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptHAT0001Uchiwake.Designer.vb">
+      <DependentUpon>rptHAT0001Uchiwake.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptHAT0001Uchiwake.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptSEI0001.Designer.vb">
+      <DependentUpon>rptSEI0001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptSEI0001.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptSEI0001_1.Designer.vb">
+      <DependentUpon>rptSEI0001_1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptSEI0001_1.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptMIT0001_Joken.Designer.vb">
+      <DependentUpon>rptMIT0001_Joken.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptMIT0001_Joken.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptMIT0001_Kagami0.Designer.vb">
+      <DependentUpon>rptMIT0001_Kagami0.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptMIT0001_Kagami0.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptMIT0001_Meisai.Designer.vb">
+      <DependentUpon>rptMIT0001_Meisai.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptMIT0001_Meisai.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptSEI0001_DekidakaTyousho.designer.vb">
+      <DependentUpon>rptSEI0001_DekidakaTyousho.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptSEI0001_DekidakaTyousho.vb">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form\frmBUK0003.resx">
+      <DependentUpon>frmBUK0003.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmHAT0001_COMMENT.resx">
+      <DependentUpon>frmHAT0001_COMMENT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmBUK0001.resx">
+      <DependentUpon>frmBUK0001.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmBUK0002.resx">
+      <DependentUpon>frmBUK0002.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmHAT0001.resx">
+      <DependentUpon>frmHAT0001.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmJYU0001.resx">
+      <DependentUpon>frmJYU0001.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmMAP0001.resx">
+      <DependentUpon>frmMAP0001.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmMAP0001_SUB1.resx">
+      <DependentUpon>frmMAP0001_SUB1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmSEI0001_Meisai.resx">
+      <DependentUpon>frmSEI0001_Meisai.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\MENT\frmMENT0005.resx">
+      <DependentUpon>frmMENT0005.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\MENT\frmMENT0001.resx">
+      <DependentUpon>frmMENT0001.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\MENT\frmMENT0002.resx">
+      <DependentUpon>frmMENT0002.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\MENT\frmMENT0004.resx">
+      <DependentUpon>frmMENT0004.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\MENT\frmMENT0006.resx">
+      <DependentUpon>frmMENT0006.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmMENUMENT.resx">
+      <DependentUpon>frmMENUMENT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmMENU.resx">
+      <DependentUpon>frmMENU.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmMIT0001.resx">
+      <DependentUpon>frmMIT0001.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\MENT\frmMSE0010.resx">
+      <DependentUpon>frmMSE0010.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\MENT\frmMSE0020.resx">
+      <DependentUpon>frmMSE0020.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\MENT\frmMSE0090.resx">
+      <DependentUpon>frmMSE0090.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmSEI0001.resx">
+      <DependentUpon>frmSEI0001.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmUSERPASS.resx">
+      <DependentUpon>frmUSERPASS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\MENT\frmMSE0040.resx">
+      <DependentUpon>frmMSE0040.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDebugMain.resx">
+      <DependentUpon>frmDebugMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptBUK0003.resx">
+      <DependentUpon>rptBUK0003.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptHAT0001.resx">
+      <DependentUpon>rptHAT0001.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptHAT0001Uke.resx">
+      <DependentUpon>rptHAT0001Uke.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptHAT0001Uchiwake.resx">
+      <DependentUpon>rptHAT0001Uchiwake.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptSEI0001.resx">
+      <DependentUpon>rptSEI0001.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptSEI0001_1.resx">
+      <DependentUpon>rptSEI0001_1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptMIT0001_Joken.resx">
+      <DependentUpon>rptMIT0001_Joken.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptMIT0001_Kagami0.resx">
+      <DependentUpon>rptMIT0001_Kagami0.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptMIT0001_Meisai.resx">
+      <DependentUpon>rptMIT0001_Meisai.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptSEI0001_DekidakaTyousho.resx">
+      <DependentUpon>rptSEI0001_DekidakaTyousho.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSet\dsBUK0003.xsc">
+      <DependentUpon>dsBUK0003.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsBUK0003.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsBUK0003.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\dsBUK0003.xss">
+      <DependentUpon>dsBUK0003.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsBUK0003_report.xsc">
+      <DependentUpon>dsBUK0003_report.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsBUK0003_report.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsBUK0003_report.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\dsBUK0003_report.xss">
+      <DependentUpon>dsBUK0003_report.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsHAT0001.xsc">
+      <DependentUpon>dsHAT0001.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsHAT0001.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsHAT0001.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\dsHAT0001.xss">
+      <DependentUpon>dsHAT0001.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsHAT0001_Report.xsc">
+      <DependentUpon>dsHAT0001_Report.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsHAT0001_Report.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsHAT0001_Report.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\dsHAT0001_Report.xss">
+      <DependentUpon>dsHAT0001_Report.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsHAT0001_Update.xsc">
+      <DependentUpon>dsHAT0001_Update.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsHAT0001_Update.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsHAT0001_Update.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\dsHAT0001_Update.xss">
+      <DependentUpon>dsHAT0001_Update.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsBUK0002.xsc">
+      <DependentUpon>dsBUK0002.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsBUK0002.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsBUK0002.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\dsBUK0002.xss">
+      <DependentUpon>dsBUK0002.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsJYU0001.xsc">
+      <DependentUpon>dsJYU0001.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsJYU0001.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsJYU0001.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\dsJYU0001.xss">
+      <DependentUpon>dsJYU0001.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsMAP0001.xsc">
+      <DependentUpon>dsMAP0001.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsMAP0001.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMAP0001.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\dsMAP0001.xss">
+      <DependentUpon>dsMAP0001.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\MENT\dsMENT0001.xsc">
+      <DependentUpon>dsMENT0001.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\MENT\dsMENT0001.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMENT0001.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\MENT\dsMENT0001.xss">
+      <DependentUpon>dsMENT0001.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\MENT\dsMENT0002.xsc">
+      <DependentUpon>dsMENT0002.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\MENT\dsMENT0002.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMENT0002.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\MENT\dsMENT0002.xss">
+      <DependentUpon>dsMENT0002.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\MENT\dsMENT0004.xsc">
+      <DependentUpon>dsMENT0004.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\MENT\dsMENT0004.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMENT0004.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\MENT\dsMENT0004.xss">
+      <DependentUpon>dsMENT0004.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\MENT\dsMENT0005.xsc">
+      <DependentUpon>dsMENT0005.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\MENT\dsMENT0005.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMENT0005.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\MENT\dsMENT0005.xss">
+      <DependentUpon>dsMENT0005.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\MENT\dsMENT0006.xsc">
+      <DependentUpon>dsMENT0006.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\MENT\dsMENT0006.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMENT0006.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\MENT\dsMENT0006.xss">
+      <DependentUpon>dsMENT0006.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsMIT0001.xsc">
+      <DependentUpon>dsMIT0001.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsMIT0001.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMIT0001.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\dsMIT0001.xss">
+      <DependentUpon>dsMIT0001.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\MENT\dsMSE0010.xsc">
+      <DependentUpon>dsMSE0010.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\MENT\dsMSE0010.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMSE0010.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\MENT\dsMSE0010.xss">
+      <DependentUpon>dsMSE0010.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\MENT\dsMSE0040.xsc">
+      <DependentUpon>dsMSE0040.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\MENT\dsMSE0040.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMSE0040.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\MENT\dsMSE0040.xss">
+      <DependentUpon>dsMSE0040.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\MENT\dsMSE0090.xsc">
+      <DependentUpon>dsMSE0090.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\MENT\dsMSE0090.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMSE0090.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\MENT\dsMSE0090.xss">
+      <DependentUpon>dsMSE0090.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsSEI0001.xsc">
+      <DependentUpon>dsSEI0001.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsSEI0001.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSEI0001.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\dsSEI0001.xss">
+      <DependentUpon>dsSEI0001.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Upload.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\businessLogic\Common\Common.vbproj">
+      <Project>{edf158fc-b01d-42e1-b94d-73068b075f14}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\businessLogic\SEN\SEN.vbproj">
+      <Project>{90c4a3eb-bdb7-405a-bf83-fc3daee6618c}</Project>
+      <Name>SEN</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.vbproj">
+      <Project>{3fb45f5c-4234-49e1-95d3-31d51493c5d3}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OperationLog\OperationLog.vbproj">
+      <Project>{d0c02e5a-bd42-4432-8e20-97fa4c1c9585}</Project>
+      <Name>OperationLog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\DBUtility\DBUtility.vbproj">
+      <Project>{22a44628-c937-4783-bf06-5f607f96eaad}</Project>
+      <Name>DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility\Utility.vbproj">
+      <Project>{905bff01-b835-418b-ab78-5604767009ba}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\WinFormControls\WinFormControls.vbproj">
+      <Project>{790beca2-b46f-47a1-a2e5-e126c673827d}</Project>
+      <Name>WinFormControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\WinForm\WinForm.vbproj">
+      <Project>{314835dd-a8be-4886-b43c-59298de7314b}</Project>
+      <Name>WinForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinFormBase\WinFormBase.vbproj">
+      <Project>{44366e4b-2c5e-4637-b980-28a898185cb4}</Project>
+      <Name>WinFormBase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Scripting">
+      <Guid>{420B2830-E718-11CF-893D-00A0C9054228}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Shell32">
+      <Guid>{50A7E9B0-70EF-11D1-B75A-00A0C90564FE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{790BECA2-B46F-47A1-A2E5-E126C673827D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CommonUtility.WinFormControls</RootNamespace>
+    <AssemblyName>CommonUtility.WinFormControls</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Empty</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <StartupObject>
+    </StartupObject>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42017,42018,42019,42032,42036,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42020,42021,42022,42105,42106,42107</WarningsAsErrors>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42017,42018,42019,42032,42036,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42020,42021,42022,42105,42106,42107</WarningsAsErrors>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.ComponentModel" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Reflection" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonDialogEx.Designer.vb">
+      <DependentUpon>CommonDialogEx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CommonDialogEx.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataGridViewEx.Designer.vb">
+      <DependentUpon>DataGridViewEx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DataGridViewEx.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DateTextBoxEx.Designer.vb">
+      <DependentUpon>DateTextBoxEx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DateTextBoxEx.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DropdownEx.Designer.vb">
+      <DependentUpon>DropdownEx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DropdownEx.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FunctionKey.Designer.vb">
+      <DependentUpon>FunctionKey.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FunctionKey.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GridController.vb" />
+    <Compile Include="ISearchFormCreatable.vb" />
+    <Compile Include="IValidatable.vb" />
+    <Compile Include="KobetuSentakuButton.Designer.vb">
+      <DependentUpon>KobetuSentakuButton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KobetuSentakuButton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Manual.vb" />
+    <Compile Include="MitumoriNoComboBox.Designer.vb">
+      <DependentUpon>MitumoriNoComboBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MitumoriNoComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="NumberTextBoxEx.Designer.vb">
+      <DependentUpon>NumberTextBoxEx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NumberTextBoxEx.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RangeValidator.vb" />
+    <Compile Include="TextBoxEx.Designer.vb">
+      <DependentUpon>TextBoxEx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TextBoxEx.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TitleBar.Designer.vb">
+      <DependentUpon>TitleBar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TitleBar.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TypComboBox.Designer.vb">
+      <DependentUpon>TypComboBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TypComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="C1.Win.C1TrueDBGrid.2, Version=2.0.20162.188, Culture=neutral, PublicKeyToken=75ae3fb0e2b1e0da, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FunctionKey.resx">
+      <DependentUpon>FunctionKey.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KobetuSentakuButton.resx">
+      <DependentUpon>KobetuSentakuButton.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MitumoriNoComboBox.resx">
+      <DependentUpon>MitumoriNoComboBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextBoxEx.resx">
+      <DependentUpon>TextBoxEx.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TitleBar.resx">
+      <DependentUpon>TitleBar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TypComboBox.resx">
+      <DependentUpon>TypComboBox.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{94E38DFF-614B-4CBD-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\businessLogic\Common\Common.vbproj">
+      <Project>{edf158fc-b01d-42e1-b94d-73068b075f14}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Model\Model.vbproj">
+      <Project>{3FB45F5C-4234-49E1-95D3-31D51493C5D3}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBUtility\DBUtility.vbproj">
+      <Project>{22a44628-c937-4783-bf06-5f607f96eaad}</Project>
+      <Name>DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.vbproj">
+      <Project>{905BFF01-B835-418B-AB78-5604767009BA}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinForm\WinForm.vbproj">
+      <Project>{314835DD-A8BE-4886-B43C-59298DE7314B}</Project>
+      <Name>WinForm</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

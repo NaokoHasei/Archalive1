@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{44366E4B-2C5E-4637-B980-28A898185CB4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>WinFormBase</RootNamespace>
+    <AssemblyName>WinFormBase</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Empty</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <StartupObject>
+    </StartupObject>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>42105,42106,42107</WarningsAsErrors>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>42105,42106,42107</WarningsAsErrors>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.ComponentModel" />
+    <Import Include="System.Data" />
+    <Import Include="System.Web" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChildFormBase.Designer.vb">
+      <DependentUpon>ChildFormBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChildFormBase.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBase.Designer.vb">
+      <DependentUpon>FormBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBase.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogic.vb" />
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="frmZoomOption.Designer.vb">
+      <DependentUpon>frmZoomOption.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmZoomOption.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="個別選択\KobetuSentakuForm.Designer.vb">
+      <DependentUpon>KobetuSentakuForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="個別選択\KobetuSentakuForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBase.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="個別選択\SENTAKU_TOKUI.Designer.vb">
+      <DependentUpon>SENTAKU_TOKUI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="個別選択\SENTAKU_TOKUI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="個別選択\SENTAKU_TANTO.Designer.vb">
+      <DependentUpon>SENTAKU_TANTO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="個別選択\SENTAKU_TANTO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="個別選択\SENTAKU_SIIRE.Designer.vb">
+      <DependentUpon>SENTAKU_SIIRE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="個別選択\SENTAKU_SIIRE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="印刷\Preview.Designer.vb">
+      <DependentUpon>Preview.vb</DependentUpon>
+    </Compile>
+    <Compile Include="印刷\Preview.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="個別選択\KobetuSentakuForm2.Designer.vb">
+      <DependentUpon>KobetuSentakuForm2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="個別選択\KobetuSentakuForm2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="個別選択\SENTEN.Designer.vb">
+      <DependentUpon>SENTEN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="個別選択\SENTEN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="個別選択\SENBUM.Designer.vb">
+      <DependentUpon>SENBUM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="個別選択\SENBUM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="検索\SEARCH_SIIRE.designer.vb">
+      <DependentUpon>SEARCH_SIIRE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="検索\SEARCH_SIIRE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="検索\SEARCH_TANTO.designer.vb">
+      <DependentUpon>SEARCH_TANTO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="検索\SEARCH_TANTO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="検索\SEARCH_TOKUI.designer.vb">
+      <DependentUpon>SEARCH_TOKUI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="検索\SEARCH_TOKUI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="検索\SEN0040.Designer.vb">
+      <DependentUpon>SEN0040.vb</DependentUpon>
+    </Compile>
+    <Compile Include="検索\SEN0040.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="C1.Win.C1TrueDBGrid.2, Version=2.0.20162.188, Culture=neutral, PublicKeyToken=75ae3fb0e2b1e0da, processorArchitecture=MSIL" />
+    <Reference Include="GrapeCity.ActiveReports.Chart.v9, Version=9.5.10955.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff" />
+    <Reference Include="GrapeCity.ActiveReports.Design.Win.v9, Version=9.5.10955.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff" />
+    <Reference Include="GrapeCity.ActiveReports.Diagnostics.v9, Version=9.5.10955.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff" />
+    <Reference Include="GrapeCity.ActiveReports.Document.v9, Version=9.5.10955.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff" />
+    <Reference Include="GrapeCity.ActiveReports.Export.Image.v9, Version=9.5.10955.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff" />
+    <Reference Include="GrapeCity.ActiveReports.Export.Pdf.v9, Version=9.5.10955.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff" />
+    <Reference Include="GrapeCity.ActiveReports.Export.Rdf.v9, Version=9.5.10955.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff" />
+    <Reference Include="GrapeCity.ActiveReports.Extensibility.v9, Version=9.5.10955.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff" />
+    <Reference Include="GrapeCity.ActiveReports.v9, Version=9.5.10955.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff" />
+    <Reference Include="GrapeCity.ActiveReports.Viewer.Win.v9, Version=9.5.10955.1, Culture=neutral, PublicKeyToken=cc4967777c49a3ff" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ChildFormBase.resx">
+      <DependentUpon>ChildFormBase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBase.resx">
+      <DependentUpon>FormBase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmZoomOption.resx">
+      <DependentUpon>frmZoomOption.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="個別選択\KobetuSentakuForm.resx">
+      <DependentUpon>KobetuSentakuForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="個別選択\SENTAKU_TOKUI.resx">
+      <DependentUpon>SENTAKU_TOKUI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="個別選択\SENTAKU_TANTO.resx">
+      <DependentUpon>SENTAKU_TANTO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="個別選択\SENTAKU_SIIRE.resx">
+      <DependentUpon>SENTAKU_SIIRE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="印刷\Preview.resx">
+      <DependentUpon>Preview.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="個別選択\KobetuSentakuForm2.resx">
+      <DependentUpon>KobetuSentakuForm2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="個別選択\SENTEN.resx">
+      <DependentUpon>SENTEN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="個別選択\SENBUM.resx">
+      <DependentUpon>SENBUM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="検索\SEARCH_SIIRE.resx">
+      <DependentUpon>SEARCH_SIIRE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="検索\SEARCH_TANTO.resx">
+      <DependentUpon>SEARCH_TANTO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="検索\SEARCH_TOKUI.resx">
+      <DependentUpon>SEARCH_TOKUI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="検索\SEN0040.resx">
+      <DependentUpon>SEN0040.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\businessLogic\Common\Common.vbproj">
+      <Project>{EDF158FC-B01D-42E1-B94D-73068B075F14}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\businessLogic\SEN\SEN.vbproj">
+      <Project>{90C4A3EB-BDB7-405A-BF83-FC3DAEE6618C}</Project>
+      <Name>SEN</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.vbproj">
+      <Project>{3FB45F5C-4234-49E1-95D3-31D51493C5D3}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OperationLog\OperationLog.vbproj">
+      <Project>{D0C02E5A-BD42-4432-8E20-97FA4C1C9585}</Project>
+      <Name>OperationLog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\DBUtility\DBUtility.vbproj">
+      <Project>{22A44628-C937-4783-BF06-5F607F96EAAD}</Project>
+      <Name>DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility\Utility.vbproj">
+      <Project>{905BFF01-B835-418B-AB78-5604767009BA}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\WinFormControls\WinFormControls.vbproj">
+      <Project>{790BECA2-B46F-47A1-A2E5-E126C673827D}</Project>
+      <Name>WinFormControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\WinForm\WinForm.vbproj">
+      <Project>{314835DD-A8BE-4886-B43C-59298DE7314B}</Project>
+      <Name>WinForm</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

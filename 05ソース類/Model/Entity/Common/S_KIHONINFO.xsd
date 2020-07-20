@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="S_KIHONINFO" targetNamespace="http://tempuri.org/S_KIHONINFO.xsd" xmlns:mstns="http://tempuri.org/S_KIHONINFO.xsd" xmlns="http://tempuri.org/S_KIHONINFO.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="DB_FSUISANConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Public" Name="DB_FSUISANConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Model.My.MySettings.GlobalReference.Default.DB_FSUISANConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="S_KIHONINFOViewTableAdapter" GeneratorDataComponentClassName="S_KIHONINFOViewTableAdapter" Name="S_KIHONINFOView" UserDataComponentName="S_KIHONINFOViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DB_FSUISANConnectionString (MySettings)" DbObjectName="DB_FSUISAN.U_FSUISAN.S_KIHONINFO" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select * from S_KIHONINFO</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="KEYCODE" DataSetColumn="KEYCODE" />
+              <Mapping SourceColumn="KIS_MEI" DataSetColumn="KIS_MEI" />
+              <Mapping SourceColumn="DHS_MEI" DataSetColumn="DHS_MEI" />
+              <Mapping SourceColumn="ZIP_COD" DataSetColumn="ZIP_COD" />
+              <Mapping SourceColumn="ADR" DataSetColumn="ADR" />
+              <Mapping SourceColumn="TEL_BNG" DataSetColumn="TEL_BNG" />
+              <Mapping SourceColumn="FAX_BNG" DataSetColumn="FAX_BNG" />
+              <Mapping SourceColumn="BNK_MEI" DataSetColumn="BNK_MEI" />
+              <Mapping SourceColumn="STN_MEI" DataSetColumn="STN_MEI" />
+              <Mapping SourceColumn="YKN_SBT" DataSetColumn="YKN_SBT" />
+              <Mapping SourceColumn="KUZ_BNG" DataSetColumn="KUZ_BNG" />
+              <Mapping SourceColumn="YKN_MIG" DataSetColumn="YKN_MIG" />
+              <Mapping SourceColumn="AZK_RAT" DataSetColumn="AZK_RAT" />
+              <Mapping SourceColumn="HSK_RAT" DataSetColumn="HSK_RAT" />
+              <Mapping SourceColumn="FIN_UPD_3RD" DataSetColumn="FIN_UPD_3RD" />
+              <Mapping SourceColumn="FIN_UPD_KMT" DataSetColumn="FIN_UPD_KMT" />
+              <Mapping SourceColumn="KISYU_MONTH" DataSetColumn="KISYU_MONTH" />
+              <Mapping SourceColumn="START_NND" DataSetColumn="START_NND" />
+              <Mapping SourceColumn="NOW_NND" DataSetColumn="NOW_NND" />
+              <Mapping SourceColumn="DATECHECKKBN" DataSetColumn="DATECHECKKBN" />
+              <Mapping SourceColumn="DATECHKTUKISUU" DataSetColumn="DATECHKTUKISUU" />
+              <Mapping SourceColumn="KJN_HSK_DEF" DataSetColumn="KJN_HSK_DEF" />
+              <Mapping SourceColumn="KJN_HSK_MLT" DataSetColumn="KJN_HSK_MLT" />
+              <Mapping SourceColumn="HTY_HSK_DEF" DataSetColumn="HTY_HSK_DEF" />
+              <Mapping SourceColumn="HTY_HSK_MLT" DataSetColumn="HTY_HSK_MLT" />
+              <Mapping SourceColumn="UPDATEMENT" DataSetColumn="UPDATEMENT" />
+              <Mapping SourceColumn="UPDATEPGID" DataSetColumn="UPDATEPGID" />
+              <Mapping SourceColumn="UPDATEUSERCODE" DataSetColumn="UPDATEUSERCODE" />
+              <Mapping SourceColumn="CDATE" DataSetColumn="CDATE" />
+              <Mapping SourceColumn="UDATE" DataSetColumn="UDATE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="S_KIHONINFO" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="S_KIHONINFO" msprop:Generator_DataSetName="S_KIHONINFO" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="S_KIHONINFOView" msprop:Generator_UserTableName="S_KIHONINFOView" msprop:Generator_RowDeletedName="S_KIHONINFOViewRowDeleted" msprop:Generator_TableClassName="S_KIHONINFOViewDataTable" msprop:Generator_RowChangedName="S_KIHONINFOViewRowChanged" msprop:Generator_RowClassName="S_KIHONINFOViewRow" msprop:Generator_RowChangingName="S_KIHONINFOViewRowChanging" msprop:Generator_RowEvArgName="S_KIHONINFOViewRowChangeEvent" msprop:Generator_RowEvHandlerName="S_KIHONINFOViewRowChangeEventHandler" msprop:Generator_TablePropName="S_KIHONINFOView" msprop:Generator_TableVarName="tableS_KIHONINFOView" msprop:Generator_RowDeletingName="S_KIHONINFOViewRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="KEYCODE" msprop:Generator_UserColumnName="KEYCODE" msprop:Generator_ColumnPropNameInRow="KEYCODE" msprop:Generator_ColumnVarNameInTable="columnKEYCODE" msprop:Generator_ColumnPropNameInTable="KEYCODEColumn" type="xs:decimal" />
+              <xs:element name="KIS_MEI" msprop:Generator_UserColumnName="KIS_MEI" msprop:Generator_ColumnPropNameInRow="KIS_MEI" msprop:Generator_ColumnVarNameInTable="columnKIS_MEI" msprop:Generator_ColumnPropNameInTable="KIS_MEIColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DHS_MEI" msprop:Generator_UserColumnName="DHS_MEI" msprop:Generator_ColumnPropNameInRow="DHS_MEI" msprop:Generator_ColumnVarNameInTable="columnDHS_MEI" msprop:Generator_ColumnPropNameInTable="DHS_MEIColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ZIP_COD" msprop:Generator_UserColumnName="ZIP_COD" msprop:Generator_ColumnPropNameInRow="ZIP_COD" msprop:Generator_ColumnVarNameInTable="columnZIP_COD" msprop:Generator_ColumnPropNameInTable="ZIP_CODColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ADR" msprop:Generator_UserColumnName="ADR" msprop:Generator_ColumnPropNameInRow="ADR" msprop:Generator_ColumnVarNameInTable="columnADR" msprop:Generator_ColumnPropNameInTable="ADRColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEL_BNG" msprop:Generator_UserColumnName="TEL_BNG" msprop:Generator_ColumnPropNameInRow="TEL_BNG" msprop:Generator_ColumnVarNameInTable="columnTEL_BNG" msprop:Generator_ColumnPropNameInTable="TEL_BNGColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FAX_BNG" msprop:Generator_UserColumnName="FAX_BNG" msprop:Generator_ColumnPropNameInRow="FAX_BNG" msprop:Generator_ColumnVarNameInTable="columnFAX_BNG" msprop:Generator_ColumnPropNameInTable="FAX_BNGColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BNK_MEI" msprop:Generator_UserColumnName="BNK_MEI" msprop:Generator_ColumnPropNameInRow="BNK_MEI" msprop:Generator_ColumnVarNameInTable="columnBNK_MEI" msprop:Generator_ColumnPropNameInTable="BNK_MEIColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="STN_MEI" msprop:Generator_UserColumnName="STN_MEI" msprop:Generator_ColumnPropNameInRow="STN_MEI" msprop:Generator_ColumnVarNameInTable="columnSTN_MEI" msprop:Generator_ColumnPropNameInTable="STN_MEIColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="YKN_SBT" msprop:Generator_UserColumnName="YKN_SBT" msprop:Generator_ColumnPropNameInRow="YKN_SBT" msprop:Generator_ColumnVarNameInTable="columnYKN_SBT" msprop:Generator_ColumnPropNameInTable="YKN_SBTColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KUZ_BNG" msprop:Generator_UserColumnName="KUZ_BNG" msprop:Generator_ColumnPropNameInRow="KUZ_BNG" msprop:Generator_ColumnVarNameInTable="columnKUZ_BNG" msprop:Generator_ColumnPropNameInTable="KUZ_BNGColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="YKN_MIG" msprop:Generator_UserColumnName="YKN_MIG" msprop:Generator_ColumnPropNameInRow="YKN_MIG" msprop:Generator_ColumnVarNameInTable="columnYKN_MIG" msprop:Generator_ColumnPropNameInTable="YKN_MIGColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AZK_RAT" msprop:Generator_UserColumnName="AZK_RAT" msprop:Generator_ColumnPropNameInRow="AZK_RAT" msprop:Generator_ColumnVarNameInTable="columnAZK_RAT" msprop:Generator_ColumnPropNameInTable="AZK_RATColumn" type="xs:decimal" />
+              <xs:element name="HSK_RAT" msprop:Generator_UserColumnName="HSK_RAT" msprop:Generator_ColumnPropNameInRow="HSK_RAT" msprop:Generator_ColumnVarNameInTable="columnHSK_RAT" msprop:Generator_ColumnPropNameInTable="HSK_RATColumn" type="xs:decimal" />
+              <xs:element name="FIN_UPD_3RD" msprop:Generator_UserColumnName="FIN_UPD_3RD" msprop:Generator_ColumnPropNameInRow="FIN_UPD_3RD" msprop:Generator_ColumnVarNameInTable="columnFIN_UPD_3RD" msprop:Generator_ColumnPropNameInTable="FIN_UPD_3RDColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FIN_UPD_KMT" msprop:Generator_UserColumnName="FIN_UPD_KMT" msprop:Generator_ColumnPropNameInRow="FIN_UPD_KMT" msprop:Generator_ColumnVarNameInTable="columnFIN_UPD_KMT" msprop:Generator_ColumnPropNameInTable="FIN_UPD_KMTColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="KISYU_MONTH" msprop:Generator_UserColumnName="KISYU_MONTH" msprop:Generator_ColumnPropNameInRow="KISYU_MONTH" msprop:Generator_ColumnVarNameInTable="columnKISYU_MONTH" msprop:Generator_ColumnPropNameInTable="KISYU_MONTHColumn" type="xs:decimal" />
+              <xs:element name="START_NND" msprop:Generator_UserColumnName="START_NND" msprop:Generator_ColumnPropNameInRow="START_NND" msprop:Generator_ColumnVarNameInTable="columnSTART_NND" msprop:Generator_ColumnPropNameInTable="START_NNDColumn" type="xs:decimal" />
+              <xs:element name="NOW_NND" msprop:Generator_UserColumnName="NOW_NND" msprop:Generator_ColumnPropNameInRow="NOW_NND" msprop:Generator_ColumnVarNameInTable="columnNOW_NND" msprop:Generator_ColumnPropNameInTable="NOW_NNDColumn" type="xs:decimal" />
+              <xs:element name="DATECHECKKBN" msprop:Generator_UserColumnName="DATECHECKKBN" msprop:Generator_ColumnPropNameInRow="DATECHECKKBN" msprop:Generator_ColumnVarNameInTable="columnDATECHECKKBN" msprop:Generator_ColumnPropNameInTable="DATECHECKKBNColumn" type="xs:unsignedByte" />
+              <xs:element name="DATECHKTUKISUU" msprop:Generator_UserColumnName="DATECHKTUKISUU" msprop:Generator_ColumnPropNameInRow="DATECHKTUKISUU" msprop:Generator_ColumnVarNameInTable="columnDATECHKTUKISUU" msprop:Generator_ColumnPropNameInTable="DATECHKTUKISUUColumn" type="xs:unsignedByte" />
+              <xs:element name="KJN_HSK_DEF" msprop:Generator_UserColumnName="KJN_HSK_DEF" msprop:Generator_ColumnPropNameInRow="KJN_HSK_DEF" msprop:Generator_ColumnVarNameInTable="columnKJN_HSK_DEF" msprop:Generator_ColumnPropNameInTable="KJN_HSK_DEFColumn" type="xs:decimal" />
+              <xs:element name="KJN_HSK_MLT" msprop:Generator_UserColumnName="KJN_HSK_MLT" msprop:Generator_ColumnPropNameInRow="KJN_HSK_MLT" msprop:Generator_ColumnVarNameInTable="columnKJN_HSK_MLT" msprop:Generator_ColumnPropNameInTable="KJN_HSK_MLTColumn" type="xs:decimal" />
+              <xs:element name="HTY_HSK_DEF" msprop:Generator_UserColumnName="HTY_HSK_DEF" msprop:Generator_ColumnPropNameInRow="HTY_HSK_DEF" msprop:Generator_ColumnVarNameInTable="columnHTY_HSK_DEF" msprop:Generator_ColumnPropNameInTable="HTY_HSK_DEFColumn" type="xs:decimal" />
+              <xs:element name="HTY_HSK_MLT" msprop:Generator_UserColumnName="HTY_HSK_MLT" msprop:Generator_ColumnPropNameInRow="HTY_HSK_MLT" msprop:Generator_ColumnVarNameInTable="columnHTY_HSK_MLT" msprop:Generator_ColumnPropNameInTable="HTY_HSK_MLTColumn" type="xs:decimal" />
+              <xs:element name="UPDATEMENT" msprop:Generator_UserColumnName="UPDATEMENT" msprop:Generator_ColumnPropNameInRow="UPDATEMENT" msprop:Generator_ColumnVarNameInTable="columnUPDATEMENT" msprop:Generator_ColumnPropNameInTable="UPDATEMENTColumn" type="xs:dateTime" />
+              <xs:element name="UPDATEPGID" msprop:Generator_UserColumnName="UPDATEPGID" msprop:Generator_ColumnPropNameInRow="UPDATEPGID" msprop:Generator_ColumnVarNameInTable="columnUPDATEPGID" msprop:Generator_ColumnPropNameInTable="UPDATEPGIDColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UPDATEUSERCODE" msprop:Generator_UserColumnName="UPDATEUSERCODE" msprop:Generator_ColumnPropNameInRow="UPDATEUSERCODE" msprop:Generator_ColumnVarNameInTable="columnUPDATEUSERCODE" msprop:Generator_ColumnPropNameInTable="UPDATEUSERCODEColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CDATE" msprop:Generator_UserColumnName="CDATE" msprop:Generator_ColumnPropNameInRow="_CDATE" msprop:Generator_ColumnVarNameInTable="columnCDATE" msprop:Generator_ColumnPropNameInTable="CDATEColumn" type="xs:dateTime" />
+              <xs:element name="UDATE" msprop:Generator_UserColumnName="UDATE" msprop:Generator_ColumnPropNameInRow="UDATE" msprop:Generator_ColumnVarNameInTable="columnUDATE" msprop:Generator_ColumnPropNameInTable="UDATEColumn" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:S_KIHONINFOView" />
+      <xs:field xpath="mstns:KEYCODE" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,77 @@
+
+■ＭＳＤＥデータベースの作り方
+
+1.CreateDataBase.bat内のパスを確認して実行して下さい。
+
+SQL2005以降では、CreateDataBase.sql 内に
+!!MD C:\TYP
+go
+!!MD C:\TYP\SANKO
+go
+!!MD C:\TYP\SANKO\DB
+go
+コマンドを記述していると、エラーになるため、
+今回、CreateDataBase.bat内にフォルダ作成を自動で組み込んでいます。
+
+
+もし、DB作成を手動にて実行する場合は、下記を参照して下さい。
+ただし、DBを作成するフォルダは手動にて予め作成しておいて下さい。
+
+----------------------------------------------------------------------------
+
+1.コマンドプロンプトを起動させる。
+  (スタート→プログラム→アクセサリ→コマンドプロンプト)
+
+2.表示されているカレントディレクトリ
+  ("C:\Documents and Settings\Administrator>"など)
+  の後に続けて
+
+  "osql -s XXXX -U sa -P < "
+
+XXXX:saで入力する
+
+  と入力する。xxxx:サーバー名は任意。
+  (-s:サーバー名、-U:ユーザー名、-P:パスワードの意。"sa"はAdministrator権限を持ち、
+   パスワードはＭＳＤＥインストール時に設定する。デフォルトは空白。)
+  
+3.さらに続けて「CreateDataBase.sql」のフルパスを入力する。
+  
+4.最後にEnterキーを押す。
+  
+  (例) C:\Documents and Settings\Administrator>osql -U sa -P < C:\TEMP\CreateDB\CreateDataBase.sql
+
+
+■コマンド例
+  
+  ●ユーザーを作成する
+  sp_addlogin (ユーザー名), (パスワード)
+  
+  ●ユーザーを削除する
+  sp_droplogin (ユーザー名)
+  
+  ●パスワードを変更する
+  sp_password (古いパスワード), (新しいパスワード), (ユーザー名)
+  ※空白は"null"と入力する
+  
+  ●データベースを作成する
+  create database (データベース名)
+  
+  ●データベースを削除する
+  drop database (データベース名)
+  
+  ●カレントデータベースを設定する
+  use (データベース名)
+  
+  ※以下４つのコマンドは全てカレントデータベースに対するコマンドです
+  
+  ●指定のユーザーにカレントデータベースのアクセス権を与える
+  sp_grantdbaccess (ユーザー名)
+  
+  ●アクセス権を削除する
+  sp_revokedbaccess (ユーザー名)
+  
+  ●指定のユーザーをカレントデータベースのオーナーに設定する
+  sp_addrolemember db_owner, (ユーザー名)
+  
+  ●オーナーを削除する
+  sp_droprolemember db_owner, (ユーザー名)

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsBUK0003_report" targetNamespace="http://tempuri.org/dsBUK0003_report.xsd" xmlns:mstns="http://tempuri.org/dsBUK0003_report.xsd" xmlns="http://tempuri.org/dsBUK0003_report.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsBUK0003_report" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsBUK0003_report" msprop:Generator_UserDSName="dsBUK0003_report">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="HEAD" msprop:Generator_TableClassName="HEADDataTable" msprop:Generator_TableVarName="tableHEAD" msprop:Generator_RowChangedName="HEADRowChanged" msprop:Generator_TablePropName="HEAD" msprop:Generator_RowDeletingName="HEADRowDeleting" msprop:Generator_RowChangingName="HEADRowChanging" msprop:Generator_RowEvHandlerName="HEADRowChangeEventHandler" msprop:Generator_RowDeletedName="HEADRowDeleted" msprop:Generator_RowClassName="HEADRow" msprop:Generator_UserTableName="HEAD" msprop:Generator_RowEvArgName="HEADRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="JYUCHUKINGAKU_SUM" msprop:Generator_ColumnVarNameInTable="columnJYUCHUKINGAKU_SUM" msprop:Generator_ColumnPropNameInRow="JYUCHUKINGAKU_SUM" msprop:Generator_ColumnPropNameInTable="JYUCHUKINGAKU_SUMColumn" msprop:Generator_UserColumnName="JYUCHUKINGAKU_SUM" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SHIHARAIGENKA_SUM" msprop:Generator_ColumnVarNameInTable="columnSHIHARAIGENKA_SUM" msprop:Generator_ColumnPropNameInRow="SHIHARAIGENKA_SUM" msprop:Generator_ColumnPropNameInTable="SHIHARAIGENKA_SUMColumn" msprop:Generator_UserColumnName="SHIHARAIGENKA_SUM" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ARARIGAKU_SUM" msprop:Generator_ColumnVarNameInTable="columnARARIGAKU_SUM" msprop:Generator_ColumnPropNameInRow="ARARIGAKU_SUM" msprop:Generator_ColumnPropNameInTable="ARARIGAKU_SUMColumn" msprop:Generator_UserColumnName="ARARIGAKU_SUM" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ARARIRITU_SUM" msprop:Generator_ColumnVarNameInTable="columnARARIRITU_SUM" msprop:Generator_ColumnPropNameInRow="ARARIRITU_SUM" msprop:Generator_ColumnPropNameInTable="ARARIRITU_SUMColumn" msprop:Generator_UserColumnName="ARARIRITU_SUM" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DETAIL" msprop:Generator_TableClassName="DETAILDataTable" msprop:Generator_TableVarName="tableDETAIL" msprop:Generator_RowChangedName="DETAILRowChanged" msprop:Generator_TablePropName="DETAIL" msprop:Generator_RowDeletingName="DETAILRowDeleting" msprop:Generator_RowChangingName="DETAILRowChanging" msprop:Generator_RowEvHandlerName="DETAILRowChangeEventHandler" msprop:Generator_RowDeletedName="DETAILRowDeleted" msprop:Generator_RowClassName="DETAILRow" msprop:Generator_UserTableName="DETAIL" msprop:Generator_RowEvArgName="DETAILRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BUKKENNO" msprop:Generator_ColumnVarNameInTable="columnBUKKENNO" msprop:Generator_ColumnPropNameInRow="BUKKENNO" msprop:Generator_ColumnPropNameInTable="BUKKENNOColumn" msprop:Generator_UserColumnName="BUKKENNO" type="xs:string" minOccurs="0" />
+              <xs:element name="KOUSHU" msdata:Caption="JYUCHUKINGAKU_SUM" msprop:Generator_ColumnVarNameInTable="columnKOUSHU" msprop:Generator_ColumnPropNameInRow="KOUSHU" msprop:Generator_ColumnPropNameInTable="KOUSHUColumn" msprop:Generator_UserColumnName="KOUSHU" type="xs:string" minOccurs="0" />
+              <xs:element name="BUKKENNAME" msdata:Caption="SHIHARAIGENKA_SUM" msprop:Generator_ColumnVarNameInTable="columnBUKKENNAME" msprop:Generator_ColumnPropNameInRow="BUKKENNAME" msprop:Generator_ColumnPropNameInTable="BUKKENNAMEColumn" msprop:Generator_UserColumnName="BUKKENNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="ADDRESS" msdata:Caption="ARARIGAKU_SUM" msprop:Generator_ColumnVarNameInTable="columnADDRESS" msprop:Generator_ColumnPropNameInRow="ADDRESS" msprop:Generator_ColumnPropNameInTable="ADDRESSColumn" msprop:Generator_UserColumnName="ADDRESS" type="xs:string" minOccurs="0" />
+              <xs:element name="MOTOUKENAME" msprop:Generator_ColumnVarNameInTable="columnMOTOUKENAME" msprop:Generator_ColumnPropNameInRow="MOTOUKENAME" msprop:Generator_ColumnPropNameInTable="MOTOUKENAMEColumn" msprop:Generator_UserColumnName="MOTOUKENAME" type="xs:string" minOccurs="0" />
+              <xs:element name="SHITAUKEGYOSHA" msprop:Generator_ColumnVarNameInTable="columnSHITAUKEGYOSHA" msprop:Generator_ColumnPropNameInRow="SHITAUKEGYOSHA" msprop:Generator_ColumnPropNameInTable="SHITAUKEGYOSHAColumn" msprop:Generator_UserColumnName="SHITAUKEGYOSHA" type="xs:string" minOccurs="0" />
+              <xs:element name="JYUCHUKINGAKU" msprop:Generator_ColumnVarNameInTable="columnJYUCHUKINGAKU" msprop:Generator_ColumnPropNameInRow="JYUCHUKINGAKU" msprop:Generator_ColumnPropNameInTable="JYUCHUKINGAKUColumn" msprop:Generator_UserColumnName="JYUCHUKINGAKU" type="xs:string" minOccurs="0" />
+              <xs:element name="SHIHARAIGENKA" msprop:Generator_ColumnVarNameInTable="columnSHIHARAIGENKA" msprop:Generator_ColumnPropNameInRow="SHIHARAIGENKA" msprop:Generator_ColumnPropNameInTable="SHIHARAIGENKAColumn" msprop:Generator_UserColumnName="SHIHARAIGENKA" type="xs:string" minOccurs="0" />
+              <xs:element name="ARARIGAKU" msprop:Generator_ColumnVarNameInTable="columnARARIGAKU" msprop:Generator_ColumnPropNameInRow="ARARIGAKU" msprop:Generator_ColumnPropNameInTable="ARARIGAKUColumn" msprop:Generator_UserColumnName="ARARIGAKU" type="xs:string" minOccurs="0" />
+              <xs:element name="ARARIRITU" msprop:Generator_ColumnVarNameInTable="columnARARIRITU" msprop:Generator_ColumnPropNameInRow="ARARIRITU" msprop:Generator_ColumnPropNameInTable="ARARIRITUColumn" msprop:Generator_UserColumnName="ARARIRITU" type="xs:string" minOccurs="0" />
+              <xs:element name="CHAKKOUDATE" msprop:Generator_ColumnVarNameInTable="columnCHAKKOUDATE" msprop:Generator_ColumnPropNameInRow="CHAKKOUDATE" msprop:Generator_ColumnPropNameInTable="CHAKKOUDATEColumn" msprop:Generator_UserColumnName="CHAKKOUDATE" type="xs:string" minOccurs="0" />
+              <xs:element name="KANKOUDATE" msdata:Caption="ARARIRITU_SUM" msprop:Generator_ColumnVarNameInTable="columnKANKOUDATE" msprop:Generator_ColumnPropNameInRow="KANKOUDATE" msprop:Generator_ColumnPropNameInTable="KANKOUDATEColumn" msprop:Generator_UserColumnName="KANKOUDATE" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

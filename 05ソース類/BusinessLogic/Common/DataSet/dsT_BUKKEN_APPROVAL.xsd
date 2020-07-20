@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsT_BUKKEN_APPROVAL" targetNamespace="http://tempuri.org/dsT_BUKKEN_APPROVAL.xsd" xmlns:mstns="http://tempuri.org/dsT_BUKKEN_APPROVAL.xsd" xmlns="http://tempuri.org/dsT_BUKKEN_APPROVAL.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsT_BUKKEN_APPROVAL" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsT_BUKKEN_APPROVAL" msprop:Generator_UserDSName="dsT_BUKKEN_APPROVAL">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="T_BUKKEN_APPROVAL" msprop:Generator_TableClassName="T_BUKKEN_APPROVALDataTable" msprop:Generator_TableVarName="tableT_BUKKEN_APPROVAL" msprop:Generator_RowChangedName="T_BUKKEN_APPROVALRowChanged" msprop:Generator_TablePropName="T_BUKKEN_APPROVAL" msprop:Generator_RowDeletingName="T_BUKKEN_APPROVALRowDeleting" msprop:Generator_RowChangingName="T_BUKKEN_APPROVALRowChanging" msprop:Generator_RowEvHandlerName="T_BUKKEN_APPROVALRowChangeEventHandler" msprop:Generator_RowDeletedName="T_BUKKEN_APPROVALRowDeleted" msprop:Generator_RowClassName="T_BUKKEN_APPROVALRow" msprop:Generator_UserTableName="T_BUKKEN_APPROVAL" msprop:Generator_RowEvArgName="T_BUKKEN_APPROVALRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BUKKENNO" msprop:Generator_ColumnVarNameInTable="columnBUKKENNO" msprop:Generator_ColumnPropNameInRow="BUKKENNO" msprop:Generator_ColumnPropNameInTable="BUKKENNOColumn" msprop:Generator_UserColumnName="BUKKENNO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="GYOMUKBN" msprop:Generator_ColumnVarNameInTable="columnGYOMUKBN" msprop:Generator_ColumnPropNameInRow="GYOMUKBN" msprop:Generator_ColumnPropNameInTable="GYOMUKBNColumn" msprop:Generator_UserColumnName="GYOMUKBN" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EDABAN" msprop:Generator_ColumnVarNameInTable="columnEDABAN" msprop:Generator_ColumnPropNameInRow="EDABAN" msprop:Generator_ColumnPropNameInTable="EDABANColumn" msprop:Generator_UserColumnName="EDABAN" type="xs:decimal" minOccurs="0" />
+              <xs:element name="APPROVALKBN" msprop:Generator_ColumnVarNameInTable="columnAPPROVALKBN" msprop:Generator_ColumnPropNameInRow="APPROVALKBN" msprop:Generator_ColumnPropNameInTable="APPROVALKBNColumn" msprop:Generator_UserColumnName="APPROVALKBN" type="xs:decimal" minOccurs="0" />
+              <xs:element name="UPDATEPGID" msprop:Generator_ColumnVarNameInTable="columnUPDATEPGID" msprop:Generator_ColumnPropNameInRow="UPDATEPGID" msprop:Generator_ColumnPropNameInTable="UPDATEPGIDColumn" msprop:Generator_UserColumnName="UPDATEPGID" type="xs:string" minOccurs="0" />
+              <xs:element name="UPDATEUSERCODE" msprop:Generator_ColumnVarNameInTable="columnUPDATEUSERCODE" msprop:Generator_ColumnPropNameInRow="UPDATEUSERCODE" msprop:Generator_ColumnPropNameInTable="UPDATEUSERCODEColumn" msprop:Generator_UserColumnName="UPDATEUSERCODE" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EDF158FC-B01D-42E1-B94D-73068B075F14}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>BLL.Common</RootNamespace>
+    <AssemblyName>BLL.Common</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Empty</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <StartupObject>
+    </StartupObject>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</WarningsAsErrors>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</WarningsAsErrors>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLogicBase.vb" />
+    <Compile Include="CodeNumbering.vb" />
+    <Compile Include="DataAccess.vb" />
+    <Compile Include="DataSet\dsM_DAIKAMOKU.Designer.vb">
+      <DependentUpon>dsM_DAIKAMOKU.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSet\dsM_DAIKAMOKU.vb">
+      <DependentUpon>dsM_DAIKAMOKU.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsM_GENGO.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsM_GENGO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsM_KBN.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsM_KBN.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsM_KBN.vb">
+      <DependentUpon>dsM_KBN.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsM_NOWUSER.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsM_NOWUSER.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsM_NOWUSER.vb">
+      <DependentUpon>dsM_NOWUSER.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsM_SIIRE.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsM_SIIRE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsM_SIIRE.vb">
+      <DependentUpon>dsM_SIIRE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsM_TOKUI.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsM_TOKUI.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsM_TOKUI.vb">
+      <DependentUpon>dsM_TOKUI.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsSENTAKU.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSENTAKU.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsSENTAKU.vb">
+      <DependentUpon>dsSENTAKU.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsS_MESSAGE.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsS_MESSAGE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsS_MESSAGE.vb">
+      <DependentUpon>dsS_MESSAGE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsS_SCB.Designer.vb">
+      <DependentUpon>dsS_SCB.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSet\dsS_SCB.vb">
+      <DependentUpon>dsS_SCB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsM_CYUKAMOKU.Designer.vb">
+      <DependentUpon>dsM_CYUKAMOKU.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSet\dsM_CYUKAMOKU.vb">
+      <DependentUpon>dsM_CYUKAMOKU.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsM_SYOKAMOKU.Designer.vb">
+      <DependentUpon>dsM_SYOKAMOKU.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSet\dsM_SYOKAMOKU.vb">
+      <DependentUpon>dsM_SYOKAMOKU.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsS_SYSTEM.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsS_SYSTEM.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsS_SYSTEM.vb">
+      <DependentUpon>dsS_SYSTEM.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsT_BUKKEN.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsT_BUKKEN.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsT_BUKKEN.vb">
+      <DependentUpon>dsT_BUKKEN.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsT_HATYU.vb">
+      <DependentUpon>dsT_HATYU.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsT_JYUTYU.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsT_JYUTYU.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsT_JYUTYU.vb">
+      <DependentUpon>dsT_JYUTYU.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsT_SEIKYU.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsT_SEIKYU.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsT_HATYU.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsT_HATYU.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataTransferObject\parambase.vb" />
+    <Compile Include="DataTransferObject\SENTAKUInit.vb" />
+    <Compile Include="DataTransferObject\SentakuKey.vb" />
+    <Compile Include="DataSet\dsT_BUKKEN_APPROVAL.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsT_BUKKEN_APPROVAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GetCnvSW.vb" />
+    <Compile Include="GetNowUserInfo.vb" />
+    <Compile Include="IValueState.vb" />
+    <Compile Include="ComboBox.vb" />
+    <Compile Include="ExecuteQuery.vb" />
+    <Compile Include="GetDate.vb" />
+    <Compile Include="GetDbValue.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="M_DAIKAMOKURead.vb" />
+    <Compile Include="M_TOKUIRead.vb" />
+    <Compile Include="PrimaryKey\S_SYSTEM_Key.vb" />
+    <Compile Include="MessageInfo.vb" />
+    <Compile Include="SiyoKinouAuthority.vb" />
+    <Compile Include="S_API_KEYRead.vb" />
+    <Compile Include="S_SCBRead.vb" />
+    <Compile Include="S_SYSTEMRead.vb" />
+    <Compile Include="M_CYUKAMOKURead.vb" />
+    <Compile Include="M_SYOKAMOKURead.vb" />
+    <Compile Include="M_KBNRead.vb" />
+    <Compile Include="M_SIIRERead.vb" />
+    <Compile Include="T_BUKKENRead.vb" />
+    <Compile Include="T_BUKKEN_APPROVALRead.vb" />
+    <Compile Include="T_HATYURead.vb" />
+    <Compile Include="T_JYUTYURead.vb" />
+    <Compile Include="T_MITUMORIRead.vb" />
+    <Compile Include="T_SEIKYURead.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Microsoft.ApplicationBlocks.Data\Microsoft.ApplicationBlocks.Data.vbproj">
+      <Project>{0ED3D747-FA56-4481-8A26-4A0E39BA7D03}</Project>
+      <Name>Microsoft.ApplicationBlocks.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Model\Model.vbproj">
+      <Project>{3FB45F5C-4234-49E1-95D3-31D51493C5D3}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\OperationLog\OperationLog.vbproj">
+      <Project>{D0C02E5A-BD42-4432-8E20-97FA4C1C9585}</Project>
+      <Name>OperationLog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Utility\DBUtility\DBUtility.vbproj">
+      <Project>{22A44628-C937-4783-BF06-5F607F96EAAD}</Project>
+      <Name>DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Utility\Utility\Utility.vbproj">
+      <Project>{905BFF01-B835-418B-AB78-5604767009BA}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DataSet\dsM_DAIKAMOKU.xsc">
+      <DependentUpon>dsM_DAIKAMOKU.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsM_DAIKAMOKU.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsM_DAIKAMOKU.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\dsM_DAIKAMOKU.xss">
+      <DependentUpon>dsM_DAIKAMOKU.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsM_GENGO.xsc">
+      <DependentUpon>dsM_GENGO.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsM_GENGO.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsM_GENGO.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsM_GENGO.xss">
+      <DependentUpon>dsM_GENGO.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsM_KBN.xsc">
+      <DependentUpon>dsM_KBN.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsM_KBN.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsM_KBN.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsM_KBN.xss">
+      <DependentUpon>dsM_KBN.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsM_NOWUSER.xsc">
+      <DependentUpon>dsM_NOWUSER.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsM_NOWUSER.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsM_NOWUSER.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsM_NOWUSER.xss">
+      <DependentUpon>dsM_NOWUSER.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsM_SIIRE.xsc">
+      <DependentUpon>dsM_SIIRE.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsM_SIIRE.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsM_SIIRE.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsM_SIIRE.xss">
+      <DependentUpon>dsM_SIIRE.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsM_TOKUI.xsc">
+      <DependentUpon>dsM_TOKUI.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsM_TOKUI.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsM_TOKUI.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsM_TOKUI.xss">
+      <DependentUpon>dsM_TOKUI.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsSENTAKU.xsc">
+      <DependentUpon>dsSENTAKU.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsSENTAKU.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSENTAKU.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsSENTAKU.xss">
+      <DependentUpon>dsSENTAKU.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsS_MESSAGE.xsc">
+      <DependentUpon>dsS_MESSAGE.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsS_MESSAGE.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsS_MESSAGE.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsS_MESSAGE.xss">
+      <DependentUpon>dsS_MESSAGE.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsS_SCB.xsc">
+      <DependentUpon>dsS_SCB.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsS_SCB.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsS_SCB.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\dsS_SCB.xss">
+      <DependentUpon>dsS_SCB.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsM_CYUKAMOKU.xsc">
+      <DependentUpon>dsM_CYUKAMOKU.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsM_CYUKAMOKU.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsM_CYUKAMOKU.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\dsM_CYUKAMOKU.xss">
+      <DependentUpon>dsM_CYUKAMOKU.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsM_SYOKAMOKU.xsc">
+      <DependentUpon>dsM_SYOKAMOKU.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsM_SYOKAMOKU.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsM_SYOKAMOKU.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\dsM_SYOKAMOKU.xss">
+      <DependentUpon>dsM_SYOKAMOKU.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsS_SYSTEM.xsc">
+      <DependentUpon>dsS_SYSTEM.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsS_SYSTEM.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsS_SYSTEM.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsS_SYSTEM.xss">
+      <DependentUpon>dsS_SYSTEM.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsT_BUKKEN.xsc">
+      <DependentUpon>dsT_BUKKEN.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsT_BUKKEN.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsT_BUKKEN.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsT_BUKKEN.xss">
+      <DependentUpon>dsT_BUKKEN.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsT_BUKKEN_APPROVAL.xsc">
+      <DependentUpon>dsT_BUKKEN_APPROVAL.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsT_BUKKEN_APPROVAL.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsT_BUKKEN_APPROVAL.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsT_BUKKEN_APPROVAL.xss">
+      <DependentUpon>dsT_BUKKEN_APPROVAL.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsT_JYUTYU.xsc">
+      <DependentUpon>dsT_JYUTYU.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsT_JYUTYU.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsT_JYUTYU.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsT_JYUTYU.xss">
+      <DependentUpon>dsT_JYUTYU.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsT_SEIKYU.xsc">
+      <DependentUpon>dsT_SEIKYU.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsT_SEIKYU.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsT_SEIKYU.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsT_SEIKYU.xss">
+      <DependentUpon>dsT_SEIKYU.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsT_HATYU.xsc">
+      <DependentUpon>dsT_HATYU.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsT_HATYU.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsT_HATYU.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsT_HATYU.xss">
+      <DependentUpon>dsT_HATYU.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

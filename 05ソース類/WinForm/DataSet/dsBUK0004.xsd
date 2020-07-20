@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsBUK0004" targetNamespace="http://tempuri.org/dsBUK0004.xsd" xmlns:mstns="http://tempuri.org/dsBUK0004.xsd" xmlns="http://tempuri.org/dsBUK0004.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsBUK0004" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsBUK0004" msprop:Generator_UserDSName="dsBUK0004">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dbgMeisai" msprop:Generator_TableClassName="dbgMeisaiDataTable" msprop:Generator_TableVarName="tabledbgMeisai" msprop:Generator_TablePropName="dbgMeisai" msprop:Generator_RowDeletingName="dbgMeisaiRowDeleting" msprop:Generator_RowChangingName="dbgMeisaiRowChanging" msprop:Generator_RowEvHandlerName="dbgMeisaiRowChangeEventHandler" msprop:Generator_RowDeletedName="dbgMeisaiRowDeleted" msprop:Generator_UserTableName="dbgMeisai" msprop:Generator_RowChangedName="dbgMeisaiRowChanged" msprop:Generator_RowEvArgName="dbgMeisaiRowChangeEvent" msprop:Generator_RowClassName="dbgMeisaiRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FILE_NAME" msprop:Generator_ColumnVarNameInTable="columnFILE_NAME" msprop:Generator_ColumnPropNameInRow="FILE_NAME" msprop:Generator_ColumnPropNameInTable="FILE_NAMEColumn" msprop:Generator_UserColumnName="FILE_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="SAVE_DATE" msprop:Generator_ColumnVarNameInTable="columnSAVE_DATE" msprop:Generator_ColumnPropNameInRow="SAVE_DATE" msprop:Generator_ColumnPropNameInTable="SAVE_DATEColumn" msprop:Generator_UserColumnName="SAVE_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="UPLOAD_USER" msprop:Generator_ColumnVarNameInTable="columnUPLOAD_USER" msprop:Generator_ColumnPropNameInRow="UPLOAD_USER" msprop:Generator_ColumnPropNameInTable="UPLOAD_USERColumn" msprop:Generator_UserColumnName="UPLOAD_USER" type="xs:string" minOccurs="0" />
+              <xs:element name="SAKUJO" msprop:Generator_ColumnVarNameInTable="columnSAKUJO" msprop:Generator_ColumnPropNameInRow="SAKUJO" msprop:Generator_ColumnPropNameInTable="SAKUJOColumn" msprop:Generator_UserColumnName="SAKUJO" type="xs:boolean" minOccurs="0" />
+              <xs:element name="FILENO" msprop:Generator_ColumnVarNameInTable="columnFILENO" msprop:Generator_ColumnPropNameInRow="FILENO" msprop:Generator_ColumnPropNameInTable="FILENOColumn" msprop:Generator_UserColumnName="FILENO" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

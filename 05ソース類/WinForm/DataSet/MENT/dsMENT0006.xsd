@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsMENT0006" targetNamespace="http://tempuri.org/dsMENT0006.xsd" xmlns:mstns="http://tempuri.org/dsMENT0006.xsd" xmlns="http://tempuri.org/dsMENT0006.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=171.2.3.159;Initial Catalog=DB_SANKO;Persist Security Info=True;User ID=U_SANKO;Password=SANKO" IsAppSettingsProperty="false" Modifier="Assembly" Name="wpc3159.DB_SANKO.U_SANKO" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="M_SIIREMAXTableAdapter" GeneratorDataComponentClassName="M_SIIREMAXTableAdapter" Name="M_SIIREMAX" UserDataComponentName="M_SIIREMAXTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="wpc3159.DB_SANKO.U_SANKO" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MAX(ITAKUCODE)  ITAKUCODE
+FROM M_SIIRE
+WHERE ITAKUCODE IS NOT NULL OR ITAKUCODE &lt;&gt; '' </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ITAKUCODE" DataSetColumn="ITAKUCODE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ITAKUCODEMINTableAdapter" GeneratorDataComponentClassName="ITAKUCODEMINTableAdapter" Name="ITAKUCODEMIN" UserDataComponentName="ITAKUCODEMINTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="wpc3159.DB_SANKO.U_SANKO" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MIN(tblA.ITAKUCODE + 1 ) AS ITAKUCODE
+FROM ( SELECT DISTINCT(ISNULL(ITAKUCODE, 00000)) AS ITAKUCODE FROM M_SIIRE ) tblA 
+WHERE (tblA.ITAKUCODE+ 1) NOT IN ( SELECT DISTINCT(ISNULL(ITAKUCODE, 00000)) AS ITAKUCODE FROM M_SIIRE tblB) </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ITAKUCODE" DataSetColumn="ITAKUCODE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsMENT0006" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsMENT0006" msprop:Generator_UserDSName="dsMENT0006">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="M_SIIREMAX" msprop:Generator_TableClassName="M_SIIREMAXDataTable" msprop:Generator_TableVarName="tableM_SIIREMAX" msprop:Generator_TablePropName="M_SIIREMAX" msprop:Generator_RowDeletingName="M_SIIREMAXRowDeleting" msprop:Generator_RowChangingName="M_SIIREMAXRowChanging" msprop:Generator_RowEvHandlerName="M_SIIREMAXRowChangeEventHandler" msprop:Generator_RowDeletedName="M_SIIREMAXRowDeleted" msprop:Generator_UserTableName="M_SIIREMAX" msprop:Generator_RowChangedName="M_SIIREMAXRowChanged" msprop:Generator_RowEvArgName="M_SIIREMAXRowChangeEvent" msprop:Generator_RowClassName="M_SIIREMAXRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ITAKUCODE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnITAKUCODE" msprop:Generator_ColumnPropNameInRow="ITAKUCODE" msprop:Generator_ColumnPropNameInTable="ITAKUCODEColumn" msprop:Generator_UserColumnName="ITAKUCODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ITAKUCODEMIN" msprop:Generator_TableClassName="ITAKUCODEMINDataTable" msprop:Generator_TableVarName="tableITAKUCODEMIN" msprop:Generator_TablePropName="ITAKUCODEMIN" msprop:Generator_RowDeletingName="ITAKUCODEMINRowDeleting" msprop:Generator_RowChangingName="ITAKUCODEMINRowChanging" msprop:Generator_RowEvHandlerName="ITAKUCODEMINRowChangeEventHandler" msprop:Generator_RowDeletedName="ITAKUCODEMINRowDeleted" msprop:Generator_UserTableName="ITAKUCODEMIN" msprop:Generator_RowChangedName="ITAKUCODEMINRowChanged" msprop:Generator_RowEvArgName="ITAKUCODEMINRowChangeEvent" msprop:Generator_RowClassName="ITAKUCODEMINRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ITAKUCODE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnITAKUCODE" msprop:Generator_ColumnPropNameInRow="ITAKUCODE" msprop:Generator_ColumnPropNameInTable="ITAKUCODEColumn" msprop:Generator_UserColumnName="ITAKUCODE" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="M_SIIRE_COPY" msprop:Generator_TableClassName="M_SIIRE_COPYDataTable" msprop:Generator_TableVarName="tableM_SIIRE_COPY" msprop:Generator_TablePropName="M_SIIRE_COPY" msprop:Generator_RowDeletingName="M_SIIRE_COPYRowDeleting" msprop:Generator_RowChangingName="M_SIIRE_COPYRowChanging" msprop:Generator_RowEvHandlerName="M_SIIRE_COPYRowChangeEventHandler" msprop:Generator_RowDeletedName="M_SIIRE_COPYRowDeleted" msprop:Generator_UserTableName="M_SIIRE_COPY" msprop:Generator_RowChangedName="M_SIIRE_COPYRowChanged" msprop:Generator_RowEvArgName="M_SIIRE_COPYRowChangeEvent" msprop:Generator_RowClassName="M_SIIRE_COPYRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SIIRECODE" msprop:Generator_ColumnVarNameInTable="columnSIIRECODE" msprop:Generator_ColumnPropNameInRow="SIIRECODE" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="SIIRECODEColumn" msprop:Generator_UserColumnName="SIIRECODE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SIIRENAME" msprop:Generator_ColumnVarNameInTable="columnSIIRENAME" msprop:Generator_ColumnPropNameInRow="SIIRENAME" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="SIIRENAMEColumn" msprop:Generator_UserColumnName="SIIRENAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RYAKUNAME" msprop:Generator_ColumnVarNameInTable="columnRYAKUNAME" msprop:Generator_ColumnPropNameInRow="RYAKUNAME" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="RYAKUNAMEColumn" msprop:Generator_UserColumnName="RYAKUNAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MENUKEY" msprop:Generator_ColumnVarNameInTable="columnMENUKEY" msprop:Generator_ColumnPropNameInRow="MENUKEY" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="MENUKEYColumn" msprop:Generator_UserColumnName="MENUKEY" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="POSTNO" msprop:Generator_ColumnVarNameInTable="columnPOSTNO" msprop:Generator_ColumnPropNameInRow="POSTNO" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="POSTNOColumn" msprop:Generator_UserColumnName="POSTNO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ADDRESS" msprop:Generator_ColumnVarNameInTable="columnADDRESS" msprop:Generator_ColumnPropNameInRow="ADDRESS" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="ADDRESSColumn" msprop:Generator_UserColumnName="ADDRESS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ADDRESS1" msprop:Generator_ColumnVarNameInTable="columnADDRESS1" msprop:Generator_ColumnPropNameInRow="ADDRESS1" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="ADDRESS1Column" msprop:Generator_UserColumnName="ADDRESS1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ADDRESS2" msprop:Generator_ColumnVarNameInTable="columnADDRESS2" msprop:Generator_ColumnPropNameInRow="ADDRESS2" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="ADDRESS2Column" msprop:Generator_UserColumnName="ADDRESS2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MAILADDRESS" msprop:Generator_ColumnVarNameInTable="columnMAILADDRESS" msprop:Generator_ColumnPropNameInRow="MAILADDRESS" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="MAILADDRESSColumn" msprop:Generator_UserColumnName="MAILADDRESS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MAILACCOUNT" msprop:Generator_ColumnVarNameInTable="columnMAILACCOUNT" msprop:Generator_ColumnPropNameInRow="MAILACCOUNT" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="MAILACCOUNTColumn" msprop:Generator_UserColumnName="MAILACCOUNT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MAILDOMAINNAME" msprop:Generator_ColumnVarNameInTable="columnMAILDOMAINNAME" msprop:Generator_ColumnPropNameInRow="MAILDOMAINNAME" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="MAILDOMAINNAMEColumn" msprop:Generator_UserColumnName="MAILDOMAINNAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MAILSENDFLG" msprop:Generator_ColumnVarNameInTable="columnMAILSENDFLG" msprop:Generator_ColumnPropNameInRow="MAILSENDFLG" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="MAILSENDFLGColumn" msprop:Generator_UserColumnName="MAILSENDFLG" type="xs:string" minOccurs="0" />
+              <xs:element name="MAILADDRESS1" msprop:Generator_ColumnVarNameInTable="columnMAILADDRESS1" msprop:Generator_ColumnPropNameInRow="MAILADDRESS1" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="MAILADDRESS1Column" msprop:Generator_UserColumnName="MAILADDRESS1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MAILACCOUNT1" msprop:Generator_ColumnVarNameInTable="columnMAILACCOUNT1" msprop:Generator_ColumnPropNameInRow="MAILACCOUNT1" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="MAILACCOUNT1Column" msprop:Generator_UserColumnName="MAILACCOUNT1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MAILDOMAINNAME1" msprop:Generator_ColumnVarNameInTable="columnMAILDOMAINNAME1" msprop:Generator_ColumnPropNameInRow="MAILDOMAINNAME1" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="MAILDOMAINNAME1Column" msprop:Generator_UserColumnName="MAILDOMAINNAME1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MAILSENDFLG1" msprop:Generator_ColumnVarNameInTable="columnMAILSENDFLG1" msprop:Generator_ColumnPropNameInRow="MAILSENDFLG1" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="MAILSENDFLG1Column" msprop:Generator_UserColumnName="MAILSENDFLG1" type="xs:string" minOccurs="0" />
+              <xs:element name="MAILDISPFLG" msprop:Generator_ColumnVarNameInTable="columnMAILDISPFLG" msprop:Generator_ColumnPropNameInRow="MAILDISPFLG" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="MAILDISPFLGColumn" msprop:Generator_UserColumnName="MAILDISPFLG" type="xs:string" minOccurs="0" />
+              <xs:element name="MAILTANKADISPFLG" msprop:Generator_ColumnVarNameInTable="columnMAILTANKADISPFLG" msprop:Generator_ColumnPropNameInRow="MAILTANKADISPFLG" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="MAILTANKADISPFLGColumn" msprop:Generator_UserColumnName="MAILTANKADISPFLG" type="xs:string" minOccurs="0" />
+              <xs:element name="MAILSENDOBJECTKBN" msprop:Generator_ColumnVarNameInTable="columnMAILSENDOBJECTKBN" msprop:Generator_ColumnPropNameInRow="MAILSENDOBJECTKBN" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="MAILSENDOBJECTKBNColumn" msprop:Generator_UserColumnName="MAILSENDOBJECTKBN" type="xs:string" minOccurs="0" />
+              <xs:element name="PRICEPRIKBN" msprop:Generator_ColumnVarNameInTable="columnPRICEPRIKBN" msprop:Generator_ColumnPropNameInRow="PRICEPRIKBN" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="PRICEPRIKBNColumn" msprop:Generator_UserColumnName="PRICEPRIKBN" type="xs:string" minOccurs="0" />
+              <xs:element name="LABEL_NAME" msprop:Generator_ColumnVarNameInTable="columnLABEL_NAME" msprop:Generator_ColumnPropNameInRow="LABEL_NAME" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="LABEL_NAMEColumn" msprop:Generator_UserColumnName="LABEL_NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LABEL_TELNO" msprop:Generator_ColumnVarNameInTable="columnLABEL_TELNO" msprop:Generator_ColumnPropNameInRow="LABEL_TELNO" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="LABEL_TELNOColumn" msprop:Generator_UserColumnName="LABEL_TELNO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TELNO" msprop:Generator_ColumnVarNameInTable="columnTELNO" msprop:Generator_ColumnPropNameInRow="TELNO" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="TELNOColumn" msprop:Generator_UserColumnName="TELNO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FAXNO" msprop:Generator_ColumnVarNameInTable="columnFAXNO" msprop:Generator_ColumnPropNameInRow="FAXNO" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="FAXNOColumn" msprop:Generator_UserColumnName="FAXNO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TELNO_K" msprop:Generator_ColumnVarNameInTable="columnTELNO_K" msprop:Generator_ColumnPropNameInRow="TELNO_K" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="TELNO_KColumn" msprop:Generator_UserColumnName="TELNO_K" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GINKOU" msprop:Generator_ColumnVarNameInTable="columnGINKOU" msprop:Generator_ColumnPropNameInRow="GINKOU" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="GINKOUColumn" msprop:Generator_UserColumnName="GINKOU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BANKCODE" msprop:Generator_ColumnVarNameInTable="columnBANKCODE" msprop:Generator_ColumnPropNameInRow="BANKCODE" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="BANKCODEColumn" msprop:Generator_UserColumnName="BANKCODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BANKSUBCODE" msprop:Generator_ColumnVarNameInTable="columnBANKSUBCODE" msprop:Generator_ColumnPropNameInRow="BANKSUBCODE" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="BANKSUBCODEColumn" msprop:Generator_UserColumnName="BANKSUBCODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BANKKOUZAKBN" msprop:Generator_ColumnVarNameInTable="columnBANKKOUZAKBN" msprop:Generator_ColumnPropNameInRow="BANKKOUZAKBN" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="BANKKOUZAKBNColumn" msprop:Generator_UserColumnName="BANKKOUZAKBN" type="xs:string" minOccurs="0" />
+              <xs:element name="KOUZA" msprop:Generator_ColumnVarNameInTable="columnKOUZA" msprop:Generator_ColumnPropNameInRow="KOUZA" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="KOUZAColumn" msprop:Generator_UserColumnName="KOUZA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BANKMEIGI" msprop:Generator_ColumnVarNameInTable="columnBANKMEIGI" msprop:Generator_ColumnPropNameInRow="BANKMEIGI" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="BANKMEIGIColumn" msprop:Generator_UserColumnName="BANKMEIGI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BANKMEIGIKANA" msprop:Generator_ColumnVarNameInTable="columnBANKMEIGIKANA" msprop:Generator_ColumnPropNameInRow="BANKMEIGIKANA" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="BANKMEIGIKANAColumn" msprop:Generator_UserColumnName="BANKMEIGIKANA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOCALCODE" msprop:Generator_ColumnVarNameInTable="columnLOCALCODE" msprop:Generator_ColumnPropNameInRow="LOCALCODE" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="LOCALCODEColumn" msprop:Generator_UserColumnName="LOCALCODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TANKACODE" msprop:Generator_ColumnVarNameInTable="columnTANKACODE" msprop:Generator_ColumnPropNameInRow="TANKACODE" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="TANKACODEColumn" msprop:Generator_UserColumnName="TANKACODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SOSINCODE" msprop:Generator_ColumnVarNameInTable="columnSOSINCODE" msprop:Generator_ColumnPropNameInRow="SOSINCODE" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="SOSINCODEColumn" msprop:Generator_UserColumnName="SOSINCODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TANTOCODE" msprop:Generator_ColumnVarNameInTable="columnTANTOCODE" msprop:Generator_ColumnPropNameInRow="TANTOCODE" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="TANTOCODEColumn" msprop:Generator_UserColumnName="TANTOCODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITAKUCODE" msprop:Generator_ColumnVarNameInTable="columnITAKUCODE" msprop:Generator_ColumnPropNameInRow="ITAKUCODE" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="ITAKUCODEColumn" msprop:Generator_UserColumnName="ITAKUCODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SIMEBI1" msprop:Generator_ColumnVarNameInTable="columnSIMEBI1" msprop:Generator_ColumnPropNameInRow="SIMEBI1" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="SIMEBI1Column" msprop:Generator_UserColumnName="SIMEBI1" type="xs:string" minOccurs="0" />
+              <xs:element name="SIMEBI2" msprop:Generator_ColumnVarNameInTable="columnSIMEBI2" msprop:Generator_ColumnPropNameInRow="SIMEBI2" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="SIMEBI2Column" msprop:Generator_UserColumnName="SIMEBI2" type="xs:string" minOccurs="0" />
+              <xs:element name="SIMEBI3" msprop:Generator_ColumnVarNameInTable="columnSIMEBI3" msprop:Generator_ColumnPropNameInRow="SIMEBI3" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="SIMEBI3Column" msprop:Generator_UserColumnName="SIMEBI3" type="xs:string" minOccurs="0" />
+              <xs:element name="SIHARAIKBN1" msprop:Generator_ColumnVarNameInTable="columnSIHARAIKBN1" msprop:Generator_ColumnPropNameInRow="SIHARAIKBN1" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="SIHARAIKBN1Column" msprop:Generator_UserColumnName="SIHARAIKBN1" type="xs:string" minOccurs="0" />
+              <xs:element name="SIHARAIKBN2" msprop:Generator_ColumnVarNameInTable="columnSIHARAIKBN2" msprop:Generator_ColumnPropNameInRow="SIHARAIKBN2" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="SIHARAIKBN2Column" msprop:Generator_UserColumnName="SIHARAIKBN2" type="xs:string" minOccurs="0" />
+              <xs:element name="SIHARAIKBN3" msprop:Generator_ColumnVarNameInTable="columnSIHARAIKBN3" msprop:Generator_ColumnPropNameInRow="SIHARAIKBN3" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="SIHARAIKBN3Column" msprop:Generator_UserColumnName="SIHARAIKBN3" type="xs:string" minOccurs="0" />
+              <xs:element name="SIHARAIBI1" msprop:Generator_ColumnVarNameInTable="columnSIHARAIBI1" msprop:Generator_ColumnPropNameInRow="SIHARAIBI1" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="SIHARAIBI1Column" msprop:Generator_UserColumnName="SIHARAIBI1" type="xs:string" minOccurs="0" />
+              <xs:element name="SIHARAIBI2" msprop:Generator_ColumnVarNameInTable="columnSIHARAIBI2" msprop:Generator_ColumnPropNameInRow="SIHARAIBI2" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="SIHARAIBI2Column" msprop:Generator_UserColumnName="SIHARAIBI2" type="xs:string" minOccurs="0" />
+              <xs:element name="SIHARAIBI3" msprop:Generator_ColumnVarNameInTable="columnSIHARAIBI3" msprop:Generator_ColumnPropNameInRow="SIHARAIBI3" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="SIHARAIBI3Column" msprop:Generator_UserColumnName="SIHARAIBI3" type="xs:string" minOccurs="0" />
+              <xs:element name="SEISANTINAME" msprop:Generator_ColumnVarNameInTable="columnSEISANTINAME" msprop:Generator_ColumnPropNameInRow="SEISANTINAME" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="SEISANTINAMEColumn" msprop:Generator_UserColumnName="SEISANTINAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ZEIROUND" msprop:Generator_ColumnVarNameInTable="columnZEIROUND" msprop:Generator_ColumnPropNameInRow="ZEIROUND" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="ZEIROUNDColumn" msprop:Generator_UserColumnName="ZEIROUND" type="xs:string" minOccurs="0" />
+              <xs:element name="SUROUND" msprop:Generator_ColumnVarNameInTable="columnSUROUND" msprop:Generator_ColumnPropNameInRow="SUROUND" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="SUROUNDColumn" msprop:Generator_UserColumnName="SUROUND" type="xs:string" minOccurs="0" />
+              <xs:element name="KINROUND" msprop:Generator_ColumnVarNameInTable="columnKINROUND" msprop:Generator_ColumnPropNameInRow="KINROUND" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="KINROUNDColumn" msprop:Generator_UserColumnName="KINROUND" type="xs:string" minOccurs="0" />
+              <xs:element name="SYOHIZEIKBN" msprop:Generator_ColumnVarNameInTable="columnSYOHIZEIKBN" msprop:Generator_ColumnPropNameInRow="SYOHIZEIKBN" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="SYOHIZEIKBNColumn" msprop:Generator_UserColumnName="SYOHIZEIKBN" type="xs:string" minOccurs="0" />
+              <xs:element name="ZANKANRIKBN" msprop:Generator_ColumnVarNameInTable="columnZANKANRIKBN" msprop:Generator_ColumnPropNameInRow="ZANKANRIKBN" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="ZANKANRIKBNColumn" msprop:Generator_UserColumnName="ZANKANRIKBN" type="xs:string" minOccurs="0" />
+              <xs:element name="GENKAKAKIKAEKBN" msprop:Generator_ColumnVarNameInTable="columnGENKAKAKIKAEKBN" msprop:Generator_ColumnPropNameInRow="GENKAKAKIKAEKBN" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="GENKAKAKIKAEKBNColumn" msprop:Generator_UserColumnName="GENKAKAKIKAEKBN" type="xs:string" minOccurs="0" />
+              <xs:element name="ZEIKBN" msprop:Generator_ColumnVarNameInTable="columnZEIKBN" msprop:Generator_ColumnPropNameInRow="ZEIKBN" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="ZEIKBNColumn" msprop:Generator_UserColumnName="ZEIKBN" type="xs:string" minOccurs="0" />
+              <xs:element name="SOSINFLG" msprop:Generator_ColumnVarNameInTable="columnSOSINFLG" msprop:Generator_ColumnPropNameInRow="SOSINFLG" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="SOSINFLGColumn" msprop:Generator_UserColumnName="SOSINFLG" type="xs:string" minOccurs="0" />
+              <xs:element name="TESURITU_1" msprop:Generator_ColumnVarNameInTable="columnTESURITU_1" msprop:Generator_ColumnPropNameInRow="TESURITU_1" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="TESURITU_1Column" msprop:Generator_UserColumnName="TESURITU_1" type="xs:string" minOccurs="0" />
+              <xs:element name="TESURITU_2" msprop:Generator_ColumnVarNameInTable="columnTESURITU_2" msprop:Generator_ColumnPropNameInRow="TESURITU_2" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="TESURITU_2Column" msprop:Generator_UserColumnName="TESURITU_2" type="xs:string" minOccurs="0" />
+              <xs:element name="KEIYAKUDATE" msprop:Generator_ColumnVarNameInTable="columnKEIYAKUDATE" msprop:Generator_ColumnPropNameInRow="KEIYAKUDATE" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="KEIYAKUDATEColumn" msprop:Generator_UserColumnName="KEIYAKUDATE" type="xs:string" minOccurs="0" />
+              <xs:element name="KENSYU_DEKIDAKA" msprop:Generator_ColumnVarNameInTable="columnKENSYU_DEKIDAKA" msprop:Generator_ColumnPropNameInRow="KENSYU_DEKIDAKA" msprop:Generator_ColumnPropNameInTable="KENSYU_DEKIDAKAColumn" msprop:Generator_UserColumnName="KENSYU_DEKIDAKA" type="xs:string" minOccurs="0" />
+              <xs:element name="SIHARAI_GENKINRITU" msprop:Generator_ColumnVarNameInTable="columnSIHARAI_GENKINRITU" msprop:Generator_ColumnPropNameInRow="SIHARAI_GENKINRITU" msprop:Generator_ColumnPropNameInTable="SIHARAI_GENKINRITUColumn" msprop:Generator_UserColumnName="SIHARAI_GENKINRITU" type="xs:string" minOccurs="0" />
+              <xs:element name="SIHARAI_TEGATARITU" msprop:Generator_ColumnVarNameInTable="columnSIHARAI_TEGATARITU" msprop:Generator_ColumnPropNameInRow="SIHARAI_TEGATARITU" msprop:Generator_ColumnPropNameInTable="SIHARAI_TEGATARITUColumn" msprop:Generator_UserColumnName="SIHARAI_TEGATARITU" type="xs:string" minOccurs="0" />
+              <xs:element name="DAIHYONAME" msprop:Generator_ColumnVarNameInTable="columnDAIHYONAME" msprop:Generator_ColumnPropNameInRow="DAIHYONAME" msprop:Generator_ColumnPropNameInTable="DAIHYONAMEColumn" msprop:Generator_UserColumnName="DAIHYONAME" type="xs:string" minOccurs="0" />
+              <xs:element name="KEISYOUCODE" msprop:Generator_ColumnVarNameInTable="columnKEISYOUCODE" msprop:Generator_ColumnPropNameInRow="KEISYOUCODE" msprop:Generator_ColumnPropNameInTable="KEISYOUCODEColumn" msprop:Generator_UserColumnName="KEISYOUCODE" type="xs:string" minOccurs="0" />
+              <xs:element name="SITE" msprop:Generator_ColumnVarNameInTable="columnSITE" msprop:Generator_ColumnPropNameInRow="SITE" msprop:Generator_ColumnPropNameInTable="SITEColumn" msprop:Generator_UserColumnName="SITE" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:M_SIIRE_COPY" />
+      <xs:field xpath="mstns:SIIRECODE" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

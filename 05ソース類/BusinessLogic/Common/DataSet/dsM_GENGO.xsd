@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsM_GENGO" targetNamespace="http://tempuri.org/dsM_GENGO.xsd" xmlns:mstns="http://tempuri.org/dsM_GENGO.xsd" xmlns="http://tempuri.org/dsM_GENGO.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="DB_SANKOConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DB_SANKOConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BLL.Common.My.MySettings.GlobalReference.Default.DB_SANKOConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="M_GENGOTableAdapter" GeneratorDataComponentClassName="M_GENGOTableAdapter" Name="M_GENGO" UserDataComponentName="M_GENGOTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DB_SANKOConnectionString (MySettings)" DbObjectName="DB_SANKO.U_SANKO.M_GENGO" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT GENGOCODE, GENGONAME, KAISISEIREKI FROM M_GENGO ORDER BY KAISISEIREKI DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="GENGOCODE" DataSetColumn="GENGOCODE" />
+              <Mapping SourceColumn="GENGONAME" DataSetColumn="GENGONAME" />
+              <Mapping SourceColumn="KAISISEIREKI" DataSetColumn="KAISISEIREKI" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsM_GENGO" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="dsM_GENGO" msprop:Generator_UserDSName="dsM_GENGO" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="M_GENGO" msprop:Generator_UserTableName="M_GENGO" msprop:Generator_RowDeletedName="M_GENGORowDeleted" msprop:Generator_TableClassName="M_GENGODataTable" msprop:Generator_RowChangedName="M_GENGORowChanged" msprop:Generator_RowClassName="M_GENGORow" msprop:Generator_RowChangingName="M_GENGORowChanging" msprop:Generator_RowEvArgName="M_GENGORowChangeEvent" msprop:Generator_RowEvHandlerName="M_GENGORowChangeEventHandler" msprop:Generator_TablePropName="M_GENGO" msprop:Generator_TableVarName="tableM_GENGO" msprop:Generator_RowDeletingName="M_GENGORowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="GENGOCODE" msprop:Generator_UserColumnName="GENGOCODE" msprop:Generator_ColumnPropNameInRow="GENGOCODE" msprop:Generator_ColumnVarNameInTable="columnGENGOCODE" msprop:Generator_ColumnPropNameInTable="GENGOCODEColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GENGONAME" msprop:Generator_UserColumnName="GENGONAME" msprop:Generator_ColumnPropNameInRow="GENGONAME" msprop:Generator_ColumnVarNameInTable="columnGENGONAME" msprop:Generator_ColumnPropNameInTable="GENGONAMEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KAISISEIREKI" msprop:Generator_UserColumnName="KAISISEIREKI" msprop:Generator_ColumnPropNameInRow="KAISISEIREKI" msprop:Generator_ColumnVarNameInTable="columnKAISISEIREKI" msprop:Generator_ColumnPropNameInTable="KAISISEIREKIColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:M_GENGO" />
+      <xs:field xpath="mstns:GENGOCODE" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<doc>
+    <assembly>
+        <name>ActiveReports.PdfExport</name>
+    </assembly>
+    <members>
+        <member name="N:DataDynamics.ActiveReports.Export.Pdf">
+            <summary>DataDynamics.ActiveReports.Export.Pdfl名前空間には、PDFエクスポートコントロールが含まれています。</summary>
+        </member>
+        <member name="T:DataDynamics.ActiveReports.Export.Pdf.DisplayMode">
+            <summary> DisplayMode プロパティの各値です。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.DisplayMode.None">
+            <summary>表示状態に関して何も設定しません。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.DisplayMode.Outlines">
+            <summary>ブックマークを別ウィンドウで表示するように設定します。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.DisplayMode.Thumbs">
+            <summary>サムネールを開いた状態で表示するように設定します。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.DisplayMode.FullScreen">
+            <summary>フルスクリーンで表示するように設定します。</summary>
+        </member>
+        <member name="T:DataDynamics.ActiveReports.Export.Pdf.ImageQuality">
+            <summary> ImageQuality プロパティの値です。PDFエクスポート時の、メタファイルの品質を指定します。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.ImageQuality.Lowest">
+            <summary>低品質</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.ImageQuality.Medium">
+            <summary>中程度の品質</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.ImageQuality.Highest">
+            <summary>高品質</summary>
+        </member>
+        <member name="T:DataDynamics.ActiveReports.Export.Pdf.PdfPermissions">
+            <summary>PDFドキュメントで利用可能な許可属性を指定します。これらの値はビットごとのOR演算を使用してビット フィールドを組み合わせることができます。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.PdfPermissions.None">
+            <summary>読み込みはできますが、すべての属性を許可しません。値は０です。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.PdfPermissions.AllowPrint">
+            <summary>「印刷」をすべて許可します。値は4です。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.PdfPermissions.AllowModifyContents">
+            <summary>「文書の変更」と「文書アセンブリ」を許可します。値は8です。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.PdfPermissions.AllowCopy">
+            <summary>「内容のコピーまたは抽出」を許可します。値は16です。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.PdfPermissions.AllowModifyAnnotations">
+            <summary>「注釈とフォームフィールドの作成」と「フォームフィールドの入力または署名」を許可します。値は32です。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.PdfPermissions.AllowFillIn">
+            <summary>「フォームフィールドの入力または署名」を許可します。値は256です。PdfSecurity.Use128BitプロパティをTrueに設定しておく必要があります。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.PdfPermissions.AllowAccessibleReaders">
+            <summary>「アクセシビリティを有効にする」を許可します。値は512です。PdfSecurity.Use128BitプロパティをTrueに設定しておく必要があります。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.PdfPermissions.AllowAssembly">
+            <summary>「文書アセンブリ」を許可します。値は1024です。PdfSecurity.Use128BitプロパティをTrueに設定しておく必要があります。</summary>
+        </member>
+        <member name="T:DataDynamics.ActiveReports.Export.Pdf.PdfVersion">
+            <summary>PDFドキュメントのファイルフォーマットバージョンを示します。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.PdfVersion.Pdf11">
+            <summary>PDFバージョン1.1。ビューワのバージョンが古い場合に使用します。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.PdfVersion.Pdf12">
+            <summary>PDFバージョン1.2。これはAcrobat 3.0のネイティブファイルフォーマットです。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.PdfVersion.Pdf13">
+            <summary>PDFバージョン1.3。これはAcrobat 4.0のネイティブファイルフォーマットです。DBCS（２バイトコード）文字を出力する場合は、必ずこの形式以降を指定してください。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.PdfVersion.Pdf14">
+            <summary>PDFバージョン1.4。これはAcrobat 5.0のネイティブファイルフォーマットです。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.PdfVersion.Pdf15">
+            <summary>PDFバージョン1.5。これはAcrobat 6.0のネイティブファイルフォーマットです。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.PdfVersion.Pdf16">
+            <summary>PDFバージョン1.6。これはAcrobat 7.0のネイティブファイルフォーマットです。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.PdfVersion.Pdf17">
+            <summary>PDFバージョン1.7。これはAcrobat 8.0のネイティブファイルフォーマットです。</summary>
+        </member>
+        <member name="T:DataDynamics.ActiveReports.Export.Pdf.FontFactorySectionHandler">
+            <summary>プロジェクト内の設定ファイルに記載されたFontFactoryセクションを処理します。</summary>
+        </member>
+        <member name="M:DataDynamics.ActiveReports.Export.Pdf.FontFactorySectionHandler.#ctor">
+            <summary>FontFactorySectionHandlerクラスの新しいインスタンスを初期化します。</summary>
+        </member>
+        <member name="T:DataDynamics.ActiveReports.Export.Pdf.PdfDocumentOptions">
+            <summary>出力するPDFドキュメントの属性情報とビューワの表示形態をカプセル化します。</summary>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfDocumentOptions.Application">
+            <summary>PDFリーダーの［文書のプロパティ］ダイアログの［概要］ダブの［アプリケーション］フィールドに表示する値を返します。</summary>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfDocumentOptions.Author">
+            <summary>ドキュメントの作成者名を設定します。</summary>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfDocumentOptions.CenterWindow">
+            <summary>Trueに設定すると、ドキュメントは画面の中央に表示されます。</summary>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfDocumentOptions.DisplayMode">
+            <summary>開いたときにどのようにドキュメントを表示すべきかを指定します。</summary>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfDocumentOptions.DisplayTitle">
+            <summary>Trueに設定すると、ドキュメントのタイトルが設定されている場合に、ウィンドウのタイトルバーにそのタイトルが表示されます。Falseに設定すると、PDFファイル名が表示されます。</summary>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfDocumentOptions.FitWindow">
+            <summary>Trueに設定すると、ドキュメントのウィンドウ（ビューワの内部ウィンドウ）は必ず初期設定のサイズで表示されます。デフォルト値はFalseです。</summary>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfDocumentOptions.HideMenubar">
+            <summary>Trueに設定すると、ドキュメントを表示するビューワアプリケーションのメニューバーを非表示にします。デフォルト値はFalseです。</summary>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfDocumentOptions.HideToolbar">
+            <summary>Trueに設定すると、ドキュメントを表示するビューワアプリケーションのツールバーを非表示にします。デフォルト値はFalseです。</summary>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfDocumentOptions.HideWindowUI">
+            <summary>Trueに設定すると、ドキュメントウィンドウのユーザーインタフェース要素（たとえばスクロールバーやナビゲーションコントロール）を非表示にします。つまりドキュメントの内容のみを表示します。デフォルト値はFalseです。</summary>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfDocumentOptions.Keywords">
+            <summary>ドキュメントに関連したキーワードを設定します。</summary>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfDocumentOptions.Subject">
+            <summary>ドキュメントのサブタイトルを設定します。</summary>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfDocumentOptions.Title">
+            <summary>ドキュメントのタイトルを設定します。</summary>
+        </member>
+        <member name="T:DataDynamics.ActiveReports.Export.Pdf.PdfExport">
+            <summary>ActiveReportsドキュメントからPDFドキュメントを作成するための機能を提供します。</summary>
+        </member>
+        <member name="M:DataDynamics.ActiveReports.Export.Pdf.PdfExport.#ctor">
+            <summary>PdfExport クラスの新しいインスタンスを初期化します。</summary>
+        </member>
+        <member name="M:DataDynamics.ActiveReports.Export.Pdf.PdfExport.Export">
+            <summary>指定したドキュメントをPDF形式にエクスポートします。</summary>
+        </member>
+        <member name="M:DataDynamics.ActiveReports.Export.Pdf.PdfExport.Export(DataDynamics.ActiveReports.Document.Document,System.String)">
+            <summary>指定したドキュメントをPDFファイルにエクスポートします。</summary>
+            <param name="document">エクスポートするActiveReportsのDocumentオブジェクト。</param>
+            <param name="filePath">PDFファイルを保存するファイル名とパス。</param>
+        </member>
+        <member name="M:DataDynamics.ActiveReports.Export.Pdf.PdfExport.Export(DataDynamics.ActiveReports.Document.Document,System.String,System.String)">
+            <summary>指定したドキュメントをPDFファイルにエクスポートします。</summary>
+            <param name="document">エクスポートするActiveReportsのDocumentオブジェクト。</param>
+            <param name="filePath">PDFファイルを保存するファイル名とパス。</param>
+            <param name="pageRange">エクスポートするページを、カンマで区切って指定するか、2-8のように開始ページと終了ページを指定します。</param>
+        </member>
+        <member name="M:DataDynamics.ActiveReports.Export.Pdf.PdfExport.Export(DataDynamics.ActiveReports.Document.Document,System.IO.Stream)">
+            <summary>指定したドキュメントをPDFストリームにエクスポートします。</summary>
+            <param name="document">エクスポートするActiveReportsのDocumentオブジェクト。</param>
+            <param name="stream">PDFドキュメントを保存するSystem.IO.Stream。</param>
+        </member>
+        <member name="M:DataDynamics.ActiveReports.Export.Pdf.PdfExport.Export(DataDynamics.ActiveReports.Document.Document,System.IO.Stream,System.String)">
+            <summary>指定したドキュメントをPDFストリームにエクスポートします。</summary>
+            <param name="document">エクスポートするActiveReportsのDocumentオブジェクト。</param>
+            <param name="stream">PDFドキュメントを保存するSystem.IO.Stream。</param>
+            <param name="pageRange">エクスポートするページを、カンマで区切って指定するか、2-8のように開始ページと終了ページを指定します。</param>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfExport.ConvertMetaToPng">
+            <summary>エクスポートされたPDFドキュメント内でWindowsメタファイルをPNGファイルに変換するかどうかを取得または設定します。</summary>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfExport.ExportBookmarks">
+            <summary>ブックマークをPDFドキュメントにエクスポートするかどうかを取得または設定します。</summary>
+            <remarks>エクスポートされたブックマークの表示方法を制御するには、Options.DisplayModeを使用します。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfExport.FontFallback">
+            <summary>         コントロールに指定したフォントにおいて出力対象の字体（グリフ）が見つからない場合、検索するフォント名を示すカンマ区切りの文字列を設定または参照します。（Professionalのみ）</summary>
+            <remarks>    この機能はProfessionalでのみ使用可能です。          注意：Standardで使用した場合、この設定値は無視されます。PDFに出力した際に正しく出力されないフォント、または、特定のフォントで何らかの問題が発生する場合は、製品の制限事項となります。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfExport.ImageQuality">
+            <summary>画像ファイルをエクスポートする際の画像の品質を指定します。</summary>
+            <remarks>    WMF（Windows Metafile）とEMF（Enhanced     Metafile：拡張メタファイル）をエクスポートする場合、エクスポートされた画像が期待したものとなるよう、ImageResolution     プロパティとこのプロパティの値を調整します。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfExport.ImageResolution">
+            <summary>メタファイルを、Pictureコントロールの画像として設定するか、もしくはPage.DrawPictureを使用して設定する場合に、PDFにエクスポートするメタファイルの画像の解像度を設定または取得します。</summary>
+            <remarks>    このプロパティは、メタファイルを使用する場合に有効に働きます。     標準的な値は、75 - 2400     dpiです。低解像度で容量を節約する場合には75dpi、画面に表示するだけであれば150dpi、印刷を行う場合には300     dpi以上が目安となります。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfExport.NeverEmbedFonts">
+            <summary>PDFドキュメントに埋め込む必要のないフォントを示す、一連の値のセミコロン区切りの文字列を取得または設定します。"*"を指定すると、レポート内で使用している全てのフォントを非埋め込みに設定できます。</summary>
+            <remarks>         このプロパティに設定されたフォントは、PDFデータ内にフォントデータとして埋め込まれません（非埋め込みフォントとなります）。デフォルトは、"Arial;Courier     New;Times New Roman" です。     ActiveReports for .NET Professional     エディションを使用している場合、PDFファイルに外字を出力できます。Professionalではフォントに外字が含まれていると、外字の部分だけはこのプロパティの設定内容に関わらず、必ずPDFデータ内に埋め込んで出力します。これにより、外字が存在しないマシン上でPDFファイルを閲覧した場合でも、正しい表示結果を得ることができます。詳細については     PDF外字     を参照してください。     ■ 注記 ■          Standardでは、欧文フォント（CopdPage     1252）のみ非埋め込みフォントとすることができます。日本語フォントのフォント名をこのプロパティに設定した場合には、不正なPDFファイルが出力されますので、ご注意ください。Professionalは、欧文フォント以外のフォントについても、非埋め込みフォントとすることが可能です。     </remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfExport.Options">
+            <summary>エクスポートしたPDFドキュメントをビューワで表示したときの状態やドキュメント情報のオプション指定が行えるオブジェクトを返します。</summary>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfExport.Security">
+            <summary>ドキュメントの暗号化とセキュリティを初期化するために  PdfSecurity オブジェクトを返します。</summary>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfExport.ShowBookmarks">
+            <summary>このプロパティは使用が廃止されています。代わりに、ExportBookmarksプロパティをご使用ください。</summary>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfExport.Signature">
+            <summary>電子証明書を表すPdfSignature オブジェクトを取得します。</summary>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfExport.Version">
+            <summary>エクスポートするドキュメントが保存されるPDFフォーマットのバージョンを取得または設定します。</summary>
+        </member>
+        <member name="T:DataDynamics.ActiveReports.Export.Pdf.PdfExportException">
+            <summary>致命的でないPdfExport固有のアプリケーションエラーが発生したときにスローされる例外です。</summary>
+        </member>
+        <member name="M:DataDynamics.ActiveReports.Export.Pdf.PdfExportException.#ctor">
+            <summary>PdfExportExceptionクラスの新しいインスタンスを初期化します。</summary>
+        </member>
+        <member name="M:DataDynamics.ActiveReports.Export.Pdf.PdfExportException.#ctor">
+            <summary>PdfExportExceptionクラスの新しいインスタンスを初期化します。</summary>
+        </member>
+        <member name="M:DataDynamics.ActiveReports.Export.Pdf.PdfExportException.#ctor(System.String)">
+            <summary>エラー メッセージを指定して、PdfExportExceptionクラスの新しいインスタンスを初期化します。</summary>
+            <param name="message">例外の原因を説明するエラーメッセージ。</param>
+        </member>
+        <member name="M:DataDynamics.ActiveReports.Export.Pdf.PdfExportException.#ctor(System.String,System.Exception)">
+            <summary>エラーメッセージ、およびこの例外の原因である内部例外への参照を指定して、PdfExportExceptionクラスの新しいインスタンスを初期化します。</summary>
+            <param name="message">例外の原因を説明するエラーメッセージ。</param>
+            <param name="innerException">現在の例外の原因であるExceptionインスタンス。innerExceptionパラメーターがnull参照(Visual Basicの場合はNothing)でない場合、現在の例外は、内部の例外を処理するcatchブロック発生します。</param>
+        </member>
+        <member name="T:DataDynamics.ActiveReports.Export.Pdf.PdfSecurity">
+            <summary>PDFドキュメントのセキュリティと暗号化を提供するのに必要な情報をカプセル化します。</summary>
+            <remarks>         ユーザーパスワードが設定されている場合、ビューワアプリケーションはパスワードの入力を要求します。ユーザーパスワードが設定されていない場合、ドキュメントを開いたときにパスワードは要求されません。ユーザーパスワードあるいはオーナーパスワードのいずれかをユーザーが正しく入力することによって、暗号化されたドキュメントが復号化され、ビューワアプリケーション上で表示できます。開かれたドキュメントにおいて、このクラスの          Permissions     プロパティで設定した許可属性が有効になるには、ユーザーパスワードが入力される必要があります。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfSecurity.Encrypt">
+            <summary>ドキュメントが暗号化されるかどうかを決定します。</summary>
+            <remarks>ドキュメントの暗号化と認証を行わせるためには、このプロパティ値をTrueに設定しなければなりません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfSecurity.OwnerPassword">
+            <summary>リーダーに入力するオーナーパスワードを設定します。これは指定されたユーザー許可にかかわらずドキュメントへのフルアクセスを許可します。オーナーパスワードを設定しない場合、セキュリティ設定を変更できません。</summary>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfSecurity.Permissions">
+            <summary>ドキュメントのためのユーザー許可を指定します。PdfPermissions の値は、ビットごとのOR演算を使用してビット フィールドを組み合わせることができます。</summary>
+            <remarks>デフォルトはすべて許可された状態です。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfSecurity.Use128Bit">
+            <summary>    Trueに設定すると、高水準の128ビットRC4暗号方式を使用します。この方式はAcrobat     5.0以上と互換性があります。Falseに設定すると、低水準の40ビットRC4暗号方式を使用します。この方式は、Acrobat     3.0およびAcrobat 4.0と互換性があります。PdfPermissions列挙体のAllowFillIn、AllowAccessibleReadersおよびAllowAssembly許可は、このプロパティ値がTrueに設定されている必要があります。</summary>
+            <remarks>デフォルト値はTrueです。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.PdfSecurity.UserPassword">
+            <summary>リーダーに入力するユーザーパスワードを設定します。このプロパティ値が空白の場合、ドキュメントを開いたときにパスワードを入力するダイアログは表示されません。それ以外の場合、ユーザーはドキュメントを開いたときにパスワードを入力する必要があります。</summary>
+        </member>
+        <member name="T:DataDynamics.ActiveReports.Export.Pdf.PdfSigningException">
+            <summary>PDF署名に関する致命的ではないアプリケーションエラーが発生した場合の例外を表します。</summary>
+        </member>
+        <member name="M:DataDynamics.ActiveReports.Export.Pdf.PdfSigningException.#ctor">
+            <summary>PdfSigningException クラスの新しいインスタンスを初期化します。</summary>
+        </member>
+        <member name="M:DataDynamics.ActiveReports.Export.Pdf.PdfSigningException.#ctor">
+            <summary>PdfSigningException クラスの新しいインスタンスを初期化します。</summary>
+        </member>
+        <member name="M:DataDynamics.ActiveReports.Export.Pdf.PdfSigningException.#ctor(System.String)">
+            <summary>エラーメッセージを指定して、PdfSigningException クラスの新しいインスタンスを初期化します。</summary>
+            <param name="message">例外の原因を説明するエラーメッセージ。</param>
+        </member>
+        <member name="M:DataDynamics.ActiveReports.Export.Pdf.PdfSigningException.#ctor(System.String,System.Exception)">
+            <summary>エラーメッセージ、およびこの例外の原因である内部例外の参照を指定して、PdfSigningException クラスの新しいインスタンスを初期化します。</summary>
+            <param name="message">例外の原因を説明するエラーメッセージ。</param>
+            <param name="innerException">現在の例外の原因であるExceptionインスタンス。innerExceptionパラメーターがnull参照(Visual Basicの場合はNothing)でない場合、現在の例外は、内部の例外を処理するcatchブロックで発生します。</param>
+        </member>
+        <member name="N:DataDynamics.ActiveReports.Export.Pdf.Signing">
+            <summary>本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。</summary>
+            <remarks>    注:暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="T:DataDynamics.ActiveReports.Export.Pdf.Signing.Alignment">
+            <summary>テキストあるいは画像の配置方法を設定します。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.Signing.Alignment.Right">
+            <summary>署名スタンプ領域の右端に配置します。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.Signing.Alignment.Left">
+            <summary>署名スタンプ領域の左端に配置します。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.Signing.Alignment.Center">
+            <summary>署名スタンプ領域の中央に配置します。</summary>
+        </member>
+        <member name="T:DataDynamics.ActiveReports.Export.Pdf.Signing.CertificationLevel">
+            <summary>Adobe Acrobatの［証明済み文書として保存］で指定できる、「証明後に許可する操作」を指定します。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.Signing.CertificationLevel.NotCertified">
+            <summary>文書は、許可する操作が指定されません。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.Signing.CertificationLevel.NoChangesAllowed">
+            <summary>文書は「変更を許可しない」で証明されます。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.Signing.CertificationLevel.FormFilling">
+            <summary>文書は「フォームフィールドの入力のみを許可」で証明されます。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.Signing.CertificationLevel.FormFillingAnnotations">
+            <summary>文書は「「注釈の作成、フォームフィールドの入力のみを許可」で証明されます。</summary>
+        </member>
+        <member name="T:DataDynamics.ActiveReports.Export.Pdf.Signing.VisibilityType">
+            <summary>PDF文書内で証明を表示するかどうか、表示方法を指定する値を設定します。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.Signing.VisibilityType.Invisible">
+            <summary>証明を表示しません。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.Signing.VisibilityType.Text">
+            <summary>テキストのみを表示します。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.Signing.VisibilityType.Image">
+            <summary>グラフィックのみを表示します。</summary>
+        </member>
+        <member name="F:DataDynamics.ActiveReports.Export.Pdf.Signing.VisibilityType.ImageText">
+            <summary>テキストとグラフィックの両方を表示します。</summary>
+        </member>
+        <member name="T:DataDynamics.ActiveReports.Export.Pdf.Signing.PdfSignature">
+            <summary>PDFへ電子署名および証明を設定するのに必要な情報をカプセル化します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注:暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.PdfSignature.Certificate">
+            <summary>署名で使用するX.509証明書を取得します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.PdfSignature.CertificationLevel">
+            <summary>Adobe Acrobatの「証明済み文書として保存」で許可されている操作の列挙値を設定します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.PdfSignature.Contact">
+            <summary>署名者の連絡先情報を取得または設定します。</summary>
+            <remarks>    Adobe     Acrobatでは、これはオプションフィールドになります。本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.PdfSignature.DistinguishedName">
+            <summary>署名で表示する名前を取得します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.PdfSignature.Location">
+            <summary>署名地に関する情報を取得または設定します。例：都道府県名</summary>
+            <remarks>    Adobe     Acrobatでは、これはオプションフィールドになります。本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.PdfSignature.Name">
+            <summary>署名フィールドに表示する名前を取得します。</summary>
+            <remarks>         名前は署名者として表示されます。本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.PdfSignature.Reason">
+            <summary>文書に電子署名を付加する理由を追加します。</summary>
+            <remarks>    Adobe     Acrobatの［証明済み文書として保存］で指定できる、「理由」を以下から選択できます。:                       この文書の著者         この文書の校正者         この文書の証明者         この文書の正確さおよび完全性を証明する         この文書の署名位置に定義されている項目に同意する         この文書の指定部分に同意する               本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。     参考：Adobe Acrobat9で「理由」を選択できるようにするには、Adobe     Acrobat9のメニューから［編集］を選択し、［環境設定］ダイアログの左側の「セキュリティ」をクリックします。そして、［詳細環境設定］ボタンをクリックし、［作成］タブから［署名時に理由を表示する］チェックボックスをチェックします。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.PdfSignature.SignDate">
+            <summary>文書に電子署名が付加された日付を取得または設定します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.PdfSignature.Stamp">
+            <summary>署名で使用されたPdfStampオブジェクトを取得します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.PdfSignature.TimeStamp">
+            <summary>署名で使用されたTimeStampオブジェクトを取得します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.PdfSignature.VisibilityType">
+            <summary>文書で電子証明書を表示するかどうか、表示方法を示す列挙値を取得または設定します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="T:DataDynamics.ActiveReports.Export.Pdf.Signing.PdfStamp">
+            <summary>PDF文書に電子署名および証明書を付加するのに必要な情報をカプセル化します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.PdfStamp.Bounds">
+            <summary>証明書を描画する領域を取得または設定します。</summary>
+            <remarks>    Adobe     Acrobatでは、ユーザーがPDF文書の上をドラッグ＆ドロップして、証明書を追加する領域を指定できます。本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.PdfStamp.CustomText">
+            <summary>署名に文字列を取得または設定します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.PdfStamp.Font">
+            <summary>署名テキストで使用するフォントを取得または設定します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.PdfStamp.Image">
+            <summary>署名で使用するSystem.Drawing.Imageファイルを取得または設定します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.PdfStamp.ImageAlignment">
+            <summary>署名内の画像の配置を決定するAlignment列挙値を取得または設定します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.PdfStamp.ImageRectangle">
+            <summary>署名内の画像の位置を決定するRectangleF値を取得または設定します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.PdfStamp.PageIndex">
+            <summary>署名を表示するページのインデックスを取得または設定します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.PdfStamp.TextAlignment">
+            <summary>署名内のテキストの配置を決定するAlignment列挙値を取得または設定します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.PdfStamp.TextColor">
+            <summary>署名で使用するテキストの色を取得または設定します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.PdfStamp.TextRectangle">
+            <summary>署名内のテキストの位置を決定するRectangleF値を取得または設定します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="T:DataDynamics.ActiveReports.Export.Pdf.Signing.SignatureField`1">
+            <summary>PDF文書の電子署名フィールドを定義するのに必要な情報をカプセル化します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="M:DataDynamics.ActiveReports.Export.Pdf.Signing.SignatureField`1.#ctor">
+            <summary>generic型のSignatureFieldの新しいインスタンスを初期化します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="M:DataDynamics.ActiveReports.Export.Pdf.Signing.SignatureField`1.#ctor(T)">
+            <summary>generic型のSignatureFieldクラスの新しいインスタンスを初期化します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+            <param name="value">generic型。</param>
+        </member>
+        <member name="M:DataDynamics.ActiveReports.Export.Pdf.Signing.SignatureField`1.#ctor(T,System.Boolean)">
+            <summary>generic型のSignatureField クラスの新しいインスタンスを初期化します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+            <param name="value">generic型。</param>
+            <param name="visible">署名を表示するかどうかを指定するブール値。</param>
+        </member>
+        <member name="M:DataDynamics.ActiveReports.Export.Pdf.Signing.SignatureField`1.#ctor(T,System.Boolean,System.Boolean)">
+            <summary>generic型のSignatureField クラスの新しいインスタンスを初期化します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+            <param name="value">generic型。</param>
+            <param name="visible">署名を表示するかどうかを指定するブール値。</param>
+            <param name="showLabel">署名フィールドにラベルを付けるかどうかを指定するブール値。</param>
+        </member>
+        <member name="M:DataDynamics.ActiveReports.Export.Pdf.Signing.SignatureField`1.CreateEmpty">
+            <summary>空のgeneric型の署名フィールドを作成します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="M:DataDynamics.ActiveReports.Export.Pdf.Signing.SignatureField`1.ToString">
+            <summary>現在のインスタンスの値を文字列表記に変換します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.SignatureField`1.op_Implicit">
+            <summary>generic型を変換します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+            <param name="value">変換するgeneric型。</param>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.SignatureField`1.ShowLabel">
+            <summary>署名フィールドにラベルを付けるかどうかを取得または設定します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.SignatureField`1.Value">
+            <summary>コンストラクタからgeneric型を取得します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.SignatureField`1.Visible">
+            <summary>署名フィールドを表示するかどうかを指定する値を取得または設定します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="T:DataDynamics.ActiveReports.Export.Pdf.Signing.TimeStamp">
+            <summary>電子署名にタイムスタンプを含めるために、タイムスタンプ局（TSA:Time Stamping Authority）から受け取る必要な情報をカプセル化します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="M:DataDynamics.ActiveReports.Export.Pdf.Signing.TimeStamp.#ctor">
+            <summary>TimeStampクラスの新しいインスタンスを初期化します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="M:DataDynamics.ActiveReports.Export.Pdf.Signing.TimeStamp.#ctor(System.String,System.String,System.String)">
+            <summary>サーバー文字列、ユーザー名とパスワードを指定し、TimeStampクラスの新しいインスタンスを初期化します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+            <param name="server">タイムスタンプ局（TSA:Time Stamping Authority）サーバーの場所を指定する文字列。</param>
+            <param name="user">TSAサーバーに渡すユーザー名。タイムスタンプサービスを使用するには、TSAにアカウントがある必要があります。</param>
+            <param name="password">TSAサーバーに渡すパスワード。</param>
+        </member>
+        <member name="M:DataDynamics.ActiveReports.Export.Pdf.Signing.TimeStamp.#ctor(System.Uri,System.String,System.String)">
+            <summary>URI、ユーザー名とパスワードを指定し、TimeStampクラスの新しいインスタンスを初期化します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+            <param name="serverUrl">タイムスタンプ局（TSA）サーバーの場所を指定するリソース識別子。</param>
+            <param name="user">TSAサーバーに渡すユーザー名。タイムスタンプサービスを使用するには、TSAにアカウントがある必要があります。</param>
+            <param name="password">TSAサーバーに渡すパスワード。</param>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.TimeStamp.Password">
+            <summary>タイムスタンプ局（TSA）サーバーに渡すパスワード。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.TimeStamp.ServerUrl">
+            <summary>タイムスタンプを提供するタイムスタンプ局（TSA）の場所を指定するリソース識別子を取得または設定します。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+        <member name="P:DataDynamics.ActiveReports.Export.Pdf.Signing.TimeStamp.UserName">
+            <summary>タイムスタンプ局（TSA）サーバーに渡すユーザーID。</summary>
+            <remarks>         本機能は、Professionalのみ対応しています。Standardでは、出力したPDFにProfessionalのライセンスが必要なことを示すバナーが表示されます。     注: 暗号化されたPDF     文書へエクスポートする場合、電子署名を付加することはできません。</remarks>
+        </member>
+    </members>
+</doc>

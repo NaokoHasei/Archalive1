@@ -1,0 +1,614 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>GrapeCity.ActiveReports.Viewer.Win.v9</name>
+  </assembly>
+  <members>
+    <member name="T:GrapeCity.ActiveReports.PrintExtension">
+      <summary>ページとセクションドキュメントに対して、印刷方法を提供します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.PrintExtension.Print">
+      <summary>セクションドキュメントまたはページドキュメントを印刷します。このメソッドは、SectionDocumentクラスまたはPageDocumentクラスから使用するPrintメソッドの静的メソッドです。<br /></summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.PrintExtension.Print(GrapeCity.ActiveReports.Document.SectionDocument)">
+      <summary>セクションドキュメントを印刷します。</summary>
+      <param name="sectionDocument">印刷するドキュメント。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.PrintExtension.Print(GrapeCity.ActiveReports.Document.SectionDocument,System.Boolean)">
+      <summary>セクションドキュメントを印刷します。</summary>
+      <param name="sectionDocument">印刷するドキュメント。</param>
+      <param name="showPrintDialog">Trueの場合は、印刷ダイアログが表示されます。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.PrintExtension.Print(GrapeCity.ActiveReports.Document.SectionDocument,System.Boolean,System.Boolean)">
+      <summary>セクションドキュメントを印刷します。</summary>
+      <param name="sectionDocument">印刷するドキュメント。</param>
+      <param name="showPrintDialog">Trueの場合は、印刷ダイアログが表示されます。</param>
+      <param name="showPrintProgressDialog">Trueの場合は、印刷状態の情報を示すダイアログが表示されます。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.PrintExtension.Print(GrapeCity.ActiveReports.Document.SectionDocument,System.Boolean,System.Boolean,System.Boolean)">
+      <summary>セクションドキュメントを印刷します。</summary>
+      <param name="sectionDocument">印刷するドキュメント。</param>
+      <param name="showPrintDialog">Trueの場合は、印刷ダイアログが表示されます。</param>
+      <param name="showPrintProgressDialog">Trueの場合は印刷状態の情報を示すダイアログが表示されます。</param>
+      <param name="usePrintingThread">Trueの場合は、印刷が個別のスレッドで行われます。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.PrintExtension.Print(GrapeCity.ActiveReports.Document.PageDocument)">
+      <summary>ページドキュメントを印刷します。</summary>
+      <param name="pageDocument">印刷するドキュメント。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.PrintExtension.Print(GrapeCity.ActiveReports.Document.PageDocument,System.Boolean)">
+      <summary>ページドキュメントを印刷します。</summary>
+      <param name="pageDocument">印刷するドキュメント。</param>
+      <param name="showPrintDialog">Trueの場合は、印刷ダイアログが表示されます。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.PrintExtension.Print(GrapeCity.ActiveReports.Document.PageDocument,System.Boolean,System.Boolean)">
+      <summary>ページドキュメントを印刷します。</summary>
+      <param name="pageDocument">印刷するドキュメント。</param>
+      <param name="showPrintDialog">Trueの場合は、印刷ダイアログが表示されます。</param>
+      <param name="showPrintProgressDialog">Trueの場合は、印刷状態の情報を示すダイアログが表示されます。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.PrintExtension.Print(GrapeCity.ActiveReports.Document.PageDocument,System.Boolean,System.Boolean,System.Boolean)">
+      <summary>ページドキュメントを印刷します。</summary>
+      <param name="pageDocument">印刷するドキュメント。</param>
+      <param name="showPrintDialog">Trueの場合は、印刷ダイアログが表示されます。</param>
+      <param name="showPrintProgressDialog">Trueの場合は、印刷状態の情報を示すダイアログが表示されます。</param>
+      <param name="usePrintingThread">Trueの場合は、印刷が個別のスレッドで行われます。</param>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Viewer.Win.TargetView">
+      <summary>ビューワ内の現在アクティブなビューを決定します。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Viewer.Win.TargetView.Primary">
+      <summary>プライマリ（下の）ビューがアクティブなビューです。</summary>
+    </member>
+    <member name="F:GrapeCity.ActiveReports.Viewer.Win.TargetView.Secondary">
+      <summary>セカンダリ（上の）ビューがアクティブなビューです。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Viewer.Win.FindEventArgs">
+      <summary>Findイベントのデータを提供します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Viewer.Win.HyperLinkEventArgs">
+      <summary>HyperLinkイベントのデータを提供します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Viewer.Win.ParametersPanel">
+      <summary>ビューワのパラメータパネルを表します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Viewer.Win.ReportParameter">
+      <summary>レポートのパラメータを表します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Viewer.Win.SearchPanel">
+      <summary>Viewerコントロールの検索パネルを表します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Viewer.Win.Sidebar">
+      <summary>ビューワのサイドバーを表します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Viewer.Win.ThumbnailsPanel">
+      <summary>Viewerコントロールのサムネールのパネルを表します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Viewer.Win.TocPanel">
+      <summary>Viewerコントロールの目次パネルを表します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Viewer.Win.Viewer">
+      <summary>Viewerコントロールは、レポートドキュメントを画面でプレビューするときに使用します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Viewer.Win.Viewer.ActionEventArgs">
+      <summary>Actionイベントのデータを提供します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Viewer.Win.Viewer.ViewerToolbar">
+      <summary>ビューワのツールバープロパティの管理します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Viewer.Win.ZoomChangedEventArgs">
+      <summary>ZoomChangedイベントのデータを提供します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.FindEventArgs.#ctor">
+      <summary>FindEventArgsクラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.FindEventArgs.#ctor(System.Boolean,System.Int32)">
+      <summary>FindEventArgsクラスの新しいインスタンスを初期化し、<see cref="GrapeCity.ActiveReports.Viewer.Win.v9~GrapeCity.ActiveReports.Viewer.Win.FindEventArgs~Found.html">Found</see>プロパティと<see cref="GrapeCity.ActiveReports.Viewer.Win.v9~GrapeCity.ActiveReports.Viewer.Win.FindEventArgs~PageIndex.html">PageIndex</see>プロパティを設定します。</summary>
+      <param name="found">テキストが見つかったかどうかを表します。</param>
+      <param name="pageIndex">テキストが見つかったページ番号。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.FindEventArgs.#ctor">
+      <summary>FindEventArgsクラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.FindEventArgs.Found">
+      <summary>テキストが見つかったかどうかを表す値を取得します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.FindEventArgs.PageIndex">
+      <summary>テキストが見つかったページ番号を取得します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.HyperLinkEventArgs.#ctor(System.Windows.Forms.MouseButtons,System.String)">
+      <summary>HyperLinkEventArgsクラスの新しいインスタンスを初期化し、<see cref="GrapeCity.ActiveReports.Viewer.Win.v9~GrapeCity.ActiveReports.Viewer.Win.HyperLinkEventArgs~Button.html">Button</see>プロパティと<see cref="GrapeCity.ActiveReports.Viewer.Win.v9~GrapeCity.ActiveReports.Viewer.Win.HyperLinkEventArgs~HyperLink.html">HyperLink</see>プロパティに指定した値を設定します。</summary>
+      <param name="button">クリックしたマウスボタン。</param>
+      <param name="hyperLink">ハイパーリンクの対象。</param>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.HyperLinkEventArgs.Button">
+      <summary>このイベントが発生するときにユーザーがクリックしたマウスボタンを取得します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.HyperLinkEventArgs.CreateNewTab">
+      <summary>新しいタブが作成されたかどうかされたかどうかを示す値を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.HyperLinkEventArgs.Handled">
+      <summary>このイベントが処理されたかどうかを示す値を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.HyperLinkEventArgs.HyperLink">
+      <summary>ハイパーリンクの対象を取得します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.ParametersPanel.Refresh">
+      <summary>
+        <div style="color: rgb(0, 0, 0); padding-top: 2px; padding-bottom: 2px; margin-bottom: 5px; border-bottom-color: rgb(208, 208, 208); border-bottom-width: 1px; border-bottom-style: none;">
+このメソッドはパラメータパネルを更新します。
+</div>
+      </summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.ParametersPanel.Text">
+      <summary>パラメータパネルのキャプションを取得または設定します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.ReportParameter.#ctor">
+      <summary>ReportParameterクラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.ReportParameter.#ctor(System.String,System.Object)">
+      <summary>1つの値で新しいインスタンスを初期化します。</summary>
+      <param name="name">パラメータの名前。</param>
+      <param name="value">パラメータの値。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.ReportParameter.#ctor(System.String,System.Collections.Generic.ICollection{System.Object})">
+      <summary>複数の値で新しいインスタンスを初期化します。</summary>
+      <param name="name">パラメータの名前。</param>
+      <param name="values">パラメータ値のコレクション。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.ReportParameter.#ctor(System.String)">
+      <summary>値なしで新しいインスタンスを初期化します。</summary>
+      <param name="name">パラメータの名前。</param>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.ReportParameter.Name">
+      <summary>レポートパラメータの名前を取得します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.ReportParameter.Values">
+      <summary>レポートパラメーターに対する0以上の値のコレクションを取得します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.SearchPanel.Clear">
+      <summary>このメソッドは、検索パラメータのリセットまたは検索結果の削除のようなSearchPanelのUIをクリアします。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.SearchPanel.Text">
+      <summary>検索パネルのキャプションを取得または設定します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.Sidebar.ToggleVisibility">
+      <summary>サイドバーの表示を切り替えます。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Sidebar.ParametersPanel">
+      <summary>パラメータパネルオブジェクトを取得します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Sidebar.SearchPanel">
+      <summary>検索パネルオブジェクトを取得します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Sidebar.SelectedIndex">
+      <summary>選択パネルのインデックスを取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Sidebar.ThumbnailsPanel">
+      <summary>サムネイルパネルオブジェクトを取得します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Sidebar.TocPanel">
+      <summary>目次パネルオブジェクトを取得します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Sidebar.Visible">
+      <summary>サイドバーを表示するかどうかを指定する値を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Sidebar.Width">
+      <summary>サイドバーの幅を取得または設定します。</summary>
+    </member>
+    <member name="E:GrapeCity.ActiveReports.Viewer.Win.Sidebar.SelectedIndexChanged">
+      <summary>選択されたパネルのインデックスが変更されたとき、発生します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.ThumbnailsPanel.Text">
+      <summary>サムネイルパネルのキャプションを取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.ThumbnailsPanel.Zoom">
+      <summary>ThumbnailsPanelにあるアイテムのズームレベルを取得または設定します。</summary>
+    </member>
+    <member name="E:GrapeCity.ActiveReports.Viewer.Win.ThumbnailsPanel.ZoomChanged">
+      <summary>ThumbnailsPanelでズームの値が変更されたときに発生します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.TocPanel.Clear">
+      <summary>目次パネルをクリアします。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.TocPanel.Refresh">
+      <summary>目次パネルを、強制的にクライアント側を無効にさせて、直後に目次と目次の子コントロールが再描画されるようにします。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.TocPanel.ContextMenu">
+      <summary>ユーザが目次パネルを右クリックする際に使用されるコンテキスト <wbr />メニューの取得、または設定を行います。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.TocPanel.Expanded">
+      <summary>TOCPanelが展開されているかどうかを示すブール値を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.TocPanel.Text">
+      <summary>目次パネルのキャプションを取得または設定します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.Viewer.#ctor">
+      <summary>Viewerコントロールの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.Viewer.HandleError(System.Exception)">
+      <summary>
+        <span style="TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 13px arial, sans-serif; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(34,34,34); WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px">
+実行時のエラーを報告します。</span>
+      </summary>
+      <param name="ex">
+        <span style="TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 13px arial, sans-serif; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(34,34,34); WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px">
+報告する例外。</span>
+      </param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.Viewer.Print">
+      <summary>現在開いているドキュメント（セクションまたはページ）を印刷します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.Viewer.Render(GrapeCity.ActiveReports.Extensibility.Rendering.IRenderingExtension,GrapeCity.ActiveReports.Extensibility.Rendering.IO.StreamProvider,System.Collections.Specialized.NameValueCollection)">
+      <summary>
+        <para>ロードしたレポートを指定した描画拡張で、指定されたファイル（またはファイルのグループ）にエクスポートします。</para>
+        <para>注意： このメソッドは、ページレポートでのみ使用可能です。</para>
+      </summary>
+      <param name="extension">現在ロードしたレポートを描画する描画拡張です。</param>
+      <param name="streamProvider">描画出力を保存するストリームプロバイダーです。</param>
+      <param name="settings">描画拡張の設定です。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.Viewer.SetParametersValues(System.Collections.Generic.IEnumerable{GrapeCity.Viewer.Common.IParameter})">
+      <summary>表示されているレポートのパラメータの値を設定します。</summary>
+      <param name="parameters">
+        <para>設定するパラメータの値</para>
+      </param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.Viewer.ShowFindDialog">
+      <summary>検索ダイアログを表示します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.Viewer.Export(GrapeCity.ActiveReports.Export.IDocumentExportEx,System.IO.FileInfo)">
+      <summary>指定したエクスポートフィルタを使用し、現在ロードされたレポートを指定した範囲で指定したファイルにエクスポートします。</summary>
+      <param name="filter">現在ロードしたレポートをエクスポートするフィルタです。</param>
+      <param name="file">エクスポートされた結果を保存するファイル。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.Viewer.Export(GrapeCity.ActiveReports.Export.IDocumentExportEx,System.IO.FileInfo,System.String)">
+      <summary>指定したエクスポートフィルタを使用し、現在ロードされたレポートを指定した範囲で指定したファイルにエクスポートします。</summary>
+      <param name="filter">現在ロードしたレポートをエクスポートするフィルタです。</param>
+      <param name="file">エクスポートされた結果を保存するファイル。</param>
+      <param name="pageRange">
+        <div>
+    ページ番号の範囲を示します。範囲は、 <wbr />最初の場号と最後の番号の間に「-」 <wbr />を使用して示すことができます。単一のページも含めることができます。 <wbr />各範囲または単一のページはカンマ区きりにより分割されます。
+</div>
+      </param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.Viewer.Export(GrapeCity.ActiveReports.Export.IDocumentExportEx,System.IO.Stream)">
+      <summary>指定したエクスポートフィルタを使用し、現在ロードされたレポートを指定した範囲で指定したファイルにエクスポートします。</summary>
+      <param name="filter">現在ロードしたレポートをエクスポートするフィルタです。</param>
+      <param name="stream">クスポートされた結果を保存するSystem.IO. <wbr />Streamです。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.Viewer.Export(GrapeCity.ActiveReports.Export.IDocumentExportEx,System.IO.Stream,System.String)">
+      <summary>指定したエクスポートフィルタを使用し、現在ロードされたレポートを指定した範囲で指定したファイルにエクスポートします。</summary>
+      <param name="filter">現在ロードしたレポートをエクスポートするフィルタです。</param>
+      <param name="stream">クスポートされた結果を保存するSystem.IO. <wbr />Streamです。</param>
+      <param name="pageRange">
+        <div>
+    ページ番号の範囲を示します。範囲は、 <wbr />最初の場号と最後の番号の間に「-」 <wbr />を使用して示すことができます。単一のページも含めることができます。 <wbr />各範囲または単一のページはカンマ区きりにより分割されます。
+</div>
+      </param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.Viewer.LoadDocument(System.IO.Stream,GrapeCity.Viewer.Common.DocumentFormat)">
+      <summary>レポートドキュメントをロードします。</summary>
+      <param name="stream">レポートをロードするSystem.IO.Streamです。</param>
+      <param name="format">ロードするレポートの形式です。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.Viewer.LoadDocument(System.String)">
+      <summary>レポートを指定したファイルパスからロードします。</summary>
+      <param name="filePath">レポートをロードするファイルへのパスです。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.Viewer.LoadDocument(GrapeCity.ActiveReports.Document.PageDocument)">
+      <summary>指定したページドキュメントをロードします。</summary>
+      <param name="pageDocument">Viewer上で開くページレポートです。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.Viewer.LoadDocument(GrapeCity.ActiveReports.SectionReport)">
+      <summary>指定したセクションレポートをロードします。</summary>
+      <param name="report">Viewer上で開くセクションレポートです。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.Viewer.LoadDocument(GrapeCity.ActiveReports.Document.SectionDocument)">
+      <summary>指定したセクションドキュメントをロードします。</summary>
+      <param name="document">Viewer上で開くセクションドキュメントです。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.Viewer.Print(System.Boolean)">
+      <summary>現在開いているドキュメント（セクションまたはページ）を印刷します。</summary>
+      <param name="showPrintDialog">印刷ダイアログを表示するかどうかを指定します。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.Viewer.Print(System.Boolean,System.Boolean)">
+      <summary>現在開いているドキュメント（セクションまたはページ）を印刷します。</summary>
+      <param name="showPrintDialog">印刷ダイアログを表示するかどうかを指定します。</param>
+      <param name="showPrintProgressDialog">印刷進行状況ダイアログを表示するかどうかを指定 <wbr />します。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.Viewer.Print(System.Boolean,System.Boolean,System.Boolean)">
+      <summary>現在開いているドキュメント（セクションまたはページ）を印刷します。</summary>
+      <param name="showPrintDialog">Trueに設定すると、 <wbr />ドキュメントの内容をプリンタに送信する前に、 <wbr />ユーザーがプリンタオプションを設定できる、 <wbr />印刷ダイアログを表示します。</param>
+      <param name="showPrintProgressDialog">Trueに設定すると、 <wbr />ユーザーが印刷ジョブを停止できる進行状況ダイアログが表示され <wbr />ます。</param>
+      <param name="usePrintingThread">印刷が個別のスレッドにおいて行われるかどうかを指定します。</param>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.AllowSplitter">
+      <summary>ユーザーはビューを分割できるかどうかを許可する値を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.AnnotationDropDownVisible">
+      <summary>注釈ツールバーのドロップダウンを取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.AnnotationToolbarVisible">
+      <summary>注釈ツールバーの表示を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.CanExport">
+      <summary>現在ロードしたレポートがエクスポートできるかどうかを示します <wbr />。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.CurrentPage">
+      <summary>ビューワに表示される現在のドキュメントのページ数を取得または設定します。 1ベースの値。 レポートがロードされていない場合は、0を返します。 履歴に影響を与えます。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.Document">
+      <summary>Viewerコントロールで表示するActiveReportsドキュメントを取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.History">
+      <summary>ページ表示履歴を管理します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.HyperlinkBackColor">
+      <summary>ハイパリンクをホストするコントロールの背景色を取得または設定します。デフォルトは「Transparent」です（セクションレポートのみ）。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.HyperlinkForeColor">
+      <summary>ハイパリンクをホストするコントロールのテキストの色を取得または設定します。デフォルトは青です（セクションレポートのみ）。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.HyperlinkUnderline">
+      <summary>ハイパリンクをホストするコントロールで下線付きテキストを取得または設定します。デフォルトはTrueです（セクションレポートのみ）。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.MouseMode">
+      <summary>
+        <span style="TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 13px arial, sans-serif; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(34,34,34); WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px" dir="ltr" id=":c0">ビューワのマウスモードを取得ま <wbr />たは設定します。</span>
+      </summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.MouseModeButtonsVisible">
+      <summary>ビューワツールバーに、「パンモード」、「選択モード」、「 <wbr />スナップショット」、 <wbr />のボタンが表示されるかどうかを指定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.MultiplePageCols">
+      <summary>ビューワでMultiPageModeが設定されている場合、表示される水平ページ数を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.MultiplePageRows">
+      <summary>ビューワでMultiPageModeが設定されている場合、表示される垂直ページ数を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.PageOffset">
+      <summary>ビューワ内のページの位置を指定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.PagesBackColor">
+      <summary>レポートペインの背景色用の公開API。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.PreviewPages">
+      <summary>ロードするページ。 すべてをロードするために0より小さいまたは等しい値を渡します。 SectionReportまたはPageDocumentインスタンスからロードする場合のみに適用されます。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.PrintingSettings">
+      <summary>印刷設定を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.RepositionPage">
+      <summary>プレビュー時に、ページをスクロールさせて、ページの下の方を表示させた状態で他のページへ移動したときに、ページの先頭から表示するかどうかを決定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.ScrollbarEnabled">
+      <summary>レポートペイン内にスクロールバーを表示・非表示にします。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.SearchResultsBackColor">
+      <summary>ビューワコントロールの検索機能を使用し、検索結果のハイライトの背景色を設定または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.SearchResultsForeColor">
+      <summary>ビューワコントロールの検索機能を使用し、検索結果のハイライトの前傾色を設定または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.Sidebar">
+      <summary>
+        <span style="TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 13px arial, sans-serif; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(34,34,34); WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px">
+Viewerコントロールのサイ</span>
+        <wbr style="TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 13px arial, sans-serif; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(34,34,34); WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px" />
+        <span style="TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 13px arial, sans-serif; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(34,34,34); WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px">ドバーコンポーネントを取得しま</span>
+        <wbr style="TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 13px arial, sans-serif; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(34,34,34); WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px" />
+        <span style="TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 13px arial, sans-serif; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(34,34,34); WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px">す。</span>
+      </summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.SplitView">
+      <summary>ビューワが2つにビューに分割されるかどうかを示す値を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.TableOfContents">
+      <summary>TableOfContentsObjectへの参照を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.TargetView">
+      <summary>SplitViewがTrueである場合は、現在のターゲットのビューを指定する値を取得または設定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.Toolbar">
+      <summary>コントロールのToolbarObjectへの参照を取得します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.TouchContextMenuStrip">
+      <summary>ビューワのタッチモードのコンテキストメニューを取得または設定します。<br /></summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.TouchMode">
+      <summary>タッチモードを有効にするかを指定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.TouchModeButtonVisibility">
+      <summary>ビューワのツールバー上にタッチモードのボタンを表示するかを指定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.TouchModeToolbar">
+      <summary>タッチモードのツールバーを処理するためのパブリックAPIです。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.UseHyperlinkSettings">
+      <summary>ビューワにハイパーリンクが表示されるとき、ハイパーリンクの設定を適用するかどうかを取得または設定します（セクションレポートのみ）。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.ViewType">
+      <summary>ビューワでページの表示方法を示す値を取得または設定します（単一/複数/連続ページ）。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.Zoom">
+      <summary>ビューワの表示倍率を取得または設定します。 -1 はページ幅を基準、または、-2 はページ全体。 無効な値がある場合は、ArgumentOutOfRangeExceptionが発生します。</summary>
+    </member>
+    <member name="E:GrapeCity.ActiveReports.Viewer.Win.Viewer.Action">
+      <summary>このイベントは、レポートのプレビューコントロールで、指定されたアクションのレポートアイテムがクリックされたときに発生します。</summary>
+    </member>
+    <member name="E:GrapeCity.ActiveReports.Viewer.Win.Viewer.Find">
+      <summary>検索ダイアログがドキュメント内で要求されたテキストを見つけたときに発生します。</summary>
+    </member>
+    <member name="E:GrapeCity.ActiveReports.Viewer.Win.Viewer.HyperLink">
+      <summary>ユーザーがハイパーリンクを割り当てられたテキストまたは画像をクリックしたときに発生します。</summary>
+    </member>
+    <member name="E:GrapeCity.ActiveReports.Viewer.Win.Viewer.LoadCompleted">
+      <summary>ビューワのすべてのページが完全にロードされた後に発生します。</summary>
+    </member>
+    <member name="E:GrapeCity.ActiveReports.Viewer.Win.Viewer.LocateCredentials">
+      <summary>レポートをプレビューすると資格が必要とされるときに発生します。</summary>
+    </member>
+    <member name="E:GrapeCity.ActiveReports.Viewer.Win.Viewer.LocateDataSource">
+      <summary>プレビューレポートのデータプロバイダは、実行時にデータを検索する必要がある場合に発生します。</summary>
+    </member>
+    <member name="E:GrapeCity.ActiveReports.Viewer.Win.Viewer.TableOfContentsAfterSelect">
+      <summary>見出し一覧でアイテムが選択された後に発生します。</summary>
+    </member>
+    <member name="E:GrapeCity.ActiveReports.Viewer.Win.Viewer.TableOfContentsClick">
+      <summary>ユーザーが見出し一覧のアイテムをクリックしたときに発生します。</summary>
+    </member>
+    <member name="E:GrapeCity.ActiveReports.Viewer.Win.Viewer.TableOfContentsSelectedIndexChanged">
+      <summary>目次で現在選択されている項目のインデックスが変更されるときに発生します。</summary>
+    </member>
+    <member name="E:GrapeCity.ActiveReports.Viewer.Win.Viewer.ZoomChanged">
+      <summary>ビューワでズームの値が変更されたときに発生します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.Viewer.ActionEventArgs.#ctor">
+      <summary>
+        <span style="TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 13px arial, sans-serif; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(34,34,34); WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px">
+Viewer.ActionEv</span>
+        <wbr style="TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 13px arial, sans-serif; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(34,34,34); WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px" />
+        <span style="TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 13px arial, sans-serif; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(34,34,34); WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px">entArgsクラスの新しいイ</span>
+        <wbr style="TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 13px arial, sans-serif; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(34,34,34); WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px" />
+        <span style="TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 13px arial, sans-serif; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(34,34,34); WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px">ンスタンスを初期化します。</span>
+      </summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.Viewer.ActionEventArgs.#ctor">
+      <summary>デフォルトはctorです。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.Viewer.ActionEventArgs.#ctor(GrapeCity.Viewer.Common.Model.Interactivity.IAction)">
+      <summary>によりレンダリングイベントのデータを初期化します。</summary>
+      <param name="action">このイベントに対して行われる行動。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.Viewer.ActionEventArgs.#ctor(GrapeCity.Viewer.Common.Model.Interactivity.IAction,System.Int32)">
+      <summary>によりレンダリングイベントのデータを初期化します。</summary>
+      <param name="action">このイベントに対して行われる行動。</param>
+      <param name="pageNumber">現在のレイアウトツリー内の、遷移するページ番号。</param>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.ActionEventArgs.Action">
+      <summary>イベントが発生したときに行われたアクションを指定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.ActionEventArgs.PageNumber">
+      <summary>現在のレイアウトツリーで移動するページの番号を指定します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.ViewerToolbar.MainBar">
+      <summary>主なツールストリップ。※旧形式のため、使用しません。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.ViewerToolbar.MouseModeBar">
+      <summary>マウスモード用のツールストリップ。※旧形式のため、使用しません。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.ViewerToolbar.NavigationBar">
+      <summary>ナビゲーション用のツールストリップ。※旧形式のため、使用しません。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.Viewer.ViewerToolbar.ToolStrip">
+      <summary>ToolStripを参照します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.ZoomChangedEventArgs.#ctor">
+      <summary>ZoomChangedEventArgsクラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.ZoomChangedEventArgs.#ctor(System.Double)">
+      <summary>ZoomChangedEventArgsクラスの新しいインスタンスを初期化し、Zoomプロパティ値を設定します。</summary>
+      <param name="zoom">新しいズーム値。</param>
+    </member>
+    <member name="M:GrapeCity.ActiveReports.Viewer.Win.ZoomChangedEventArgs.#ctor">
+      <summary>ZoomChangedEventArgsクラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="P:GrapeCity.ActiveReports.Viewer.Win.ZoomChangedEventArgs.Zoom">
+      <summary>ビューワの新しいZoom値を返します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Viewer.Win.FindEventHandler">
+      <summary>Findイベントを処理するメソッドを表します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Viewer.Win.HyperLinkEventHandler">
+      <summary>ViewerコントロールのHyperLinkイベントを処理するメソッドを表します。</summary>
+    </member>
+    <member name="T:GrapeCity.ActiveReports.Viewer.Win.ZoomChangedEventHandler">
+      <summary>ZoomChangedイベントを処理するメソッドを表します。</summary>
+    </member>
+    <member name="T:GrapeCity.Viewer.Common.IHistoryApi">
+      <summary>HistoryServiceを使用する用のパブリックインタフェースです。</summary>
+    </member>
+    <member name="M:GrapeCity.Viewer.Common.IHistoryApi.Clear">
+      <summary>ページ表示履歴を削除します。</summary>
+    </member>
+    <member name="M:GrapeCity.Viewer.Common.IHistoryApi.MoveNext">
+      <summary>履歴の次のページへ移動します</summary>
+    </member>
+    <member name="M:GrapeCity.Viewer.Common.IHistoryApi.MovePrev">
+      <summary>履歴の前のページへ移動します。</summary>
+    </member>
+    <member name="P:GrapeCity.Viewer.Common.IHistoryApi.Count">
+      <summary>履歴にあるページ表示の数を返します。</summary>
+    </member>
+    <member name="P:GrapeCity.Viewer.Common.IHistoryApi.Position">
+      <summary>ナビゲーションの履歴で現在のページの位置を取得します。</summary>
+    </member>
+    <member name="T:GrapeCity.Viewer.Common.PrintingSettings">
+      <summary>PrintingSettingsプロパティでは、以下のオプションが使用可能です。</summary>
+    </member>
+    <member name="F:GrapeCity.Viewer.Common.PrintingSettings.None">
+      <summary>任意の印刷ダイアログを表示しません。</summary>
+    </member>
+    <member name="F:GrapeCity.Viewer.Common.PrintingSettings.ShowPrintDialog">
+      <summary>ドキュメントの内容をプリンタに送信する前に、ユーザーがプリンタオプションを設定できる、印刷ダイアログを表示します。</summary>
+    </member>
+    <member name="F:GrapeCity.Viewer.Common.PrintingSettings.ShowPrintProgressDialog">
+      <summary>ユーザーが印刷ジョブを停止できる進行状況ダイアログを表示します。</summary>
+    </member>
+    <member name="F:GrapeCity.Viewer.Common.PrintingSettings.UsePrintingThread">
+      <summary>印刷が個別のスレッドにおいて行われるかどうかを指定します。</summary>
+    </member>
+    <member name="F:GrapeCity.Viewer.Common.PrintingSettings.UseStandardDialog">
+      <summary>ドキュメント（セクションまたはページ）の印刷時に、.NET Framework標準の印刷設定ダイアログ（System.Windows.Forms.PrintDialog）を使用するかどうかを指定します。</summary>
+    </member>
+    <member name="T:GrapeCity.Viewer.Common.Model.MouseMode">
+      <summary>マウスモードを指定します。</summary>
+    </member>
+    <member name="F:GrapeCity.Viewer.Common.Model.MouseMode.Default">
+      <summary>デフォールトモードです。</summary>
+    </member>
+    <member name="F:GrapeCity.Viewer.Common.Model.MouseMode.Pan">
+      <summary>ページを移動します。</summary>
+    </member>
+    <member name="F:GrapeCity.Viewer.Common.Model.MouseMode.Snapshot">
+      <summary>選択範囲のスナップショットを作成します。</summary>
+    </member>
+    <member name="F:GrapeCity.Viewer.Common.Model.MouseMode.CopySelect">
+      <summary>選択範囲をコピーします。</summary>
+    </member>
+    <member name="T:GrapeCity.Viewer.Common.Model.TouchMode">
+      <summary>タッチモードを有効にするかを指定します。</summary>
+    </member>
+    <member name="F:GrapeCity.Viewer.Common.Model.TouchMode.True">
+      <summary>タッチモードを有効にします。</summary>
+    </member>
+    <member name="F:GrapeCity.Viewer.Common.Model.TouchMode.False">
+      <summary>タッチモードを無効にします。</summary>
+    </member>
+    <member name="F:GrapeCity.Viewer.Common.Model.TouchMode.Auto">
+      <summary>自動的にエンドユーザー環境を検出します。エンドユーザーの環境がタッチをサポートしている場合、タッチモードは有効になります。それ以外の場合、タッチモードはFalseになります。</summary>
+    </member>
+    <member name="T:GrapeCity.Viewer.Common.Model.TouchModeButtonVisibility">
+      <summary>ビューワのツールバー上にタッチモードのボタンを表示するかを指定します。</summary>
+    </member>
+    <member name="F:GrapeCity.Viewer.Common.Model.TouchModeButtonVisibility.Hidden">
+      <summary>タッチモードのボタンを非表示にします。</summary>
+    </member>
+    <member name="F:GrapeCity.Viewer.Common.Model.TouchModeButtonVisibility.Auto">
+      <summary>自動的にエンドユーザー環境を検出します。アプリケーションがタッチをサポートしている環境にある場合は、タッチモードボタンが表示されます。 そうでない場合は表示されません。</summary>
+    </member>
+    <member name="T:GrapeCity.Viewer.Common.Model.ViewType">
+      <summary>ビューワコントロールの表示方法を設定します。</summary>
+    </member>
+    <member name="F:GrapeCity.Viewer.Common.Model.ViewType.SinglePage">
+      <summary>［単一ページ］で表示します。</summary>
+    </member>
+    <member name="F:GrapeCity.Viewer.Common.Model.ViewType.MultiPage">
+      <summary>［複数ページ］で表示します。</summary>
+    </member>
+    <member name="F:GrapeCity.Viewer.Common.Model.ViewType.Continuous">
+      <summary>［連続ページ］で表示します。</summary>
+    </member>
+  </members>
+</doc>

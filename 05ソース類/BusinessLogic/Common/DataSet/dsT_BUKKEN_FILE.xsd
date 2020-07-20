@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsT_BUKKEN_FILE" targetNamespace="http://tempuri.org/dsT_BUKKEN_FILE.xsd" xmlns:mstns="http://tempuri.org/dsT_BUKKEN_FILE.xsd" xmlns="http://tempuri.org/dsT_BUKKEN_FILE.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsT_BUKKEN_FILE" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsT_BUKKEN_FILE" msprop:Generator_UserDSName="dsT_BUKKEN_FILE">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="T_BUKKEN_FILE" msprop:Generator_TableClassName="T_BUKKEN_FILEDataTable" msprop:Generator_TableVarName="tableT_BUKKEN_FILE" msprop:Generator_TablePropName="T_BUKKEN_FILE" msprop:Generator_RowDeletingName="T_BUKKEN_FILERowDeleting" msprop:Generator_RowChangingName="T_BUKKEN_FILERowChanging" msprop:Generator_RowEvHandlerName="T_BUKKEN_FILERowChangeEventHandler" msprop:Generator_RowDeletedName="T_BUKKEN_FILERowDeleted" msprop:Generator_UserTableName="T_BUKKEN_FILE" msprop:Generator_RowChangedName="T_BUKKEN_FILERowChanged" msprop:Generator_RowEvArgName="T_BUKKEN_FILERowChangeEvent" msprop:Generator_RowClassName="T_BUKKEN_FILERow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BUKKENNO" msprop:Generator_ColumnVarNameInTable="columnBUKKENNO" msprop:Generator_ColumnPropNameInRow="BUKKENNO" msprop:Generator_ColumnPropNameInTable="BUKKENNOColumn" msprop:Generator_UserColumnName="BUKKENNO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FILENO" msprop:Generator_ColumnVarNameInTable="columnFILENO" msprop:Generator_ColumnPropNameInRow="FILENO" msprop:Generator_ColumnPropNameInTable="FILENOColumn" msprop:Generator_UserColumnName="FILENO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FILEPATH" msprop:Generator_ColumnVarNameInTable="columnFILEPATH" msprop:Generator_ColumnPropNameInRow="FILEPATH" msprop:Generator_ColumnPropNameInTable="FILEPATHColumn" msprop:Generator_UserColumnName="FILEPATH" type="xs:string" minOccurs="0" />
+              <xs:element name="FILENNAME" msprop:Generator_ColumnVarNameInTable="columnFILENNAME" msprop:Generator_ColumnPropNameInRow="FILENNAME" msprop:Generator_ColumnPropNameInTable="FILENNAMEColumn" msprop:Generator_UserColumnName="FILENNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="UPDATEUSERCODE" msprop:Generator_ColumnVarNameInTable="columnUPDATEUSERCODE" msprop:Generator_ColumnPropNameInRow="UPDATEUSERCODE" msprop:Generator_ColumnPropNameInTable="UPDATEUSERCODEColumn" msprop:Generator_UserColumnName="UPDATEUSERCODE" type="xs:string" minOccurs="0" />
+              <xs:element name="TANTONAME" msprop:Generator_ColumnVarNameInTable="columnTANTONAME" msprop:Generator_ColumnPropNameInRow="TANTONAME" msprop:Generator_ColumnPropNameInTable="TANTONAMEColumn" msprop:Generator_UserColumnName="TANTONAME" type="xs:string" minOccurs="0" />
+              <xs:element name="UPDATEPGID" msprop:Generator_ColumnVarNameInTable="columnUPDATEPGID" msprop:Generator_ColumnPropNameInRow="UPDATEPGID" msprop:Generator_ColumnPropNameInTable="UPDATEPGIDColumn" msprop:Generator_UserColumnName="UPDATEPGID" type="xs:string" minOccurs="0" />
+              <xs:element name="UDATE" msprop:Generator_ColumnVarNameInTable="columnUDATE" msprop:Generator_ColumnPropNameInRow="UDATE" msprop:Generator_ColumnPropNameInTable="UDATEColumn" msprop:Generator_UserColumnName="UDATE" type="xs:string" minOccurs="0" />
+              <xs:element name="UPDATEMENT" msprop:Generator_ColumnVarNameInTable="columnUPDATEMENT" msprop:Generator_ColumnPropNameInRow="UPDATEMENT" msprop:Generator_ColumnPropNameInTable="UPDATEMENTColumn" msprop:Generator_UserColumnName="UPDATEMENT" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsMENT0002" targetNamespace="http://tempuri.org/dsMENT0002.xsd" xmlns:mstns="http://tempuri.org/dsMENT0002.xsd" xmlns="http://tempuri.org/dsMENT0002.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="DB_SANKOConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="DB_SANKOConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WinForm.My.MySettings.GlobalReference.Default.DB_SANKOConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsMENT0002" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsMENT0002" msprop:Generator_UserDSName="dsMENT0002">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="M_KAMOKU" msprop:Generator_TableClassName="M_KAMOKUDataTable" msprop:Generator_TableVarName="tableM_KAMOKU" msprop:Generator_RowChangedName="M_KAMOKURowChanged" msprop:Generator_TablePropName="M_KAMOKU" msprop:Generator_RowDeletingName="M_KAMOKURowDeleting" msprop:Generator_RowChangingName="M_KAMOKURowChanging" msprop:Generator_RowEvHandlerName="M_KAMOKURowChangeEventHandler" msprop:Generator_RowDeletedName="M_KAMOKURowDeleted" msprop:Generator_RowClassName="M_KAMOKURow" msprop:Generator_UserTableName="M_KAMOKU" msprop:Generator_RowEvArgName="M_KAMOKURowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="KAMOKU_TYPE" msprop:Generator_ColumnVarNameInTable="columnKAMOKU_TYPE" msprop:Generator_ColumnPropNameInRow="KAMOKU_TYPE" msprop:Generator_ColumnPropNameInTable="KAMOKU_TYPEColumn" msprop:Generator_UserColumnName="KAMOKU_TYPE" type="xs:string" minOccurs="0" />
+              <xs:element name="KAMOKU" msprop:Generator_ColumnVarNameInTable="columnKAMOKU" msprop:Generator_ColumnPropNameInRow="KAMOKU" msprop:Generator_ColumnPropNameInTable="KAMOKUColumn" msprop:Generator_UserColumnName="KAMOKU" type="xs:string" minOccurs="0" />
+              <xs:element name="CODE" msprop:Generator_ColumnVarNameInTable="columnCODE" msprop:Generator_ColumnPropNameInRow="CODE" msprop:Generator_ColumnPropNameInTable="CODEColumn" msprop:Generator_UserColumnName="CODE" type="xs:string" minOccurs="0" />
+              <xs:element name="NAME" msprop:Generator_ColumnVarNameInTable="columnNAME" msprop:Generator_ColumnPropNameInRow="NAME" msprop:Generator_ColumnPropNameInTable="NAMEColumn" msprop:Generator_UserColumnName="NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="NAME2" msprop:Generator_ColumnVarNameInTable="columnNAME2" msprop:Generator_ColumnPropNameInRow="NAME2" msprop:Generator_ColumnPropNameInTable="NAME2Column" msprop:Generator_UserColumnName="NAME2" type="xs:string" minOccurs="0" />
+              <xs:element name="TANI" msprop:Generator_ColumnVarNameInTable="columnTANI" msprop:Generator_ColumnPropNameInRow="TANI" msprop:Generator_ColumnPropNameInTable="TANIColumn" msprop:Generator_UserColumnName="TANI" type="xs:string" minOccurs="0" />
+              <xs:element name="GENTANKA" msprop:Generator_ColumnVarNameInTable="columnGENTANKA" msprop:Generator_ColumnPropNameInRow="GENTANKA" msprop:Generator_ColumnPropNameInTable="GENTANKAColumn" msprop:Generator_UserColumnName="GENTANKA" type="xs:string" minOccurs="0" />
+              <xs:element name="MIT_JYU_TANAKA" msprop:Generator_ColumnVarNameInTable="columnMIT_JYU_TANAKA" msprop:Generator_ColumnPropNameInRow="MIT_JYU_TANAKA" msprop:Generator_ColumnPropNameInTable="MIT_JYU_TANAKAColumn" msprop:Generator_UserColumnName="MIT_JYU_TANAKA" type="xs:string" minOccurs="0" />
+              <xs:element name="JYOUI_CODE" msprop:Generator_ColumnVarNameInTable="columnJYOUI_CODE" msprop:Generator_ColumnPropNameInRow="JYOUI_CODE" msprop:Generator_ColumnPropNameInTable="JYOUI_CODEColumn" msprop:Generator_UserColumnName="JYOUI_CODE" type="xs:string" minOccurs="0" />
+              <xs:element name="JYOUI_NAME" msprop:Generator_ColumnVarNameInTable="columnJYOUI_NAME" msprop:Generator_ColumnPropNameInRow="JYOUI_NAME" msprop:Generator_ColumnPropNameInTable="JYOUI_NAMEColumn" msprop:Generator_UserColumnName="JYOUI_NAME" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
