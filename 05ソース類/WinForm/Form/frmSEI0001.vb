@@ -474,7 +474,13 @@ Public Class frmSEI0001
                 FunctionKey_Delete()
 
             Case "プレビュー"
-                ReportPrint(True)
+
+                Try
+                    FunctionKey.ItemEnabled("プレビュー") = False
+                    ReportPrint(True)
+                Finally
+                    FunctionKey.ItemEnabled("プレビュー") = True
+                End Try
 
             Case "登録/印刷"
                 FunctionKey_EntryPrint()
