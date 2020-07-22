@@ -758,7 +758,12 @@ Public Class frmMIT0001
             Case SYSFC_PREVIEW
                 'プレビュー
 
-                Call subRep_Prnt(True)
+                Try
+                    FunctionKey.ItemEnabled(SYSFC_PREVIEW) = False
+                    Call subRep_Prnt(True)
+                Finally
+                    FunctionKey.ItemEnabled(SYSFC_PREVIEW) = True
+                End Try
 
             Case SYSFC_EXECUT
                 '登録
