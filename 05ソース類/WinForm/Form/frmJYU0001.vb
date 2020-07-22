@@ -25,8 +25,8 @@ Public Class frmJYU0001
     Private Const COL_GENKAGAKU As Integer = 8                              '原価金額
     Private Const COL_KAKERITU As Integer = 9                               '掛率（％）
     Private Const COL_G_BIKO As Integer = 10                                '行備考
-    Private Const COL_SIIRECODE As Integer = 11                             '仕入先コード（担当業者コード）
-    Private Const COL_SIIRENAME As Integer = 12                             '仕入先名称（担当業者名称）
+    Private Const COL_SIIRECODE As Integer = 11                             '仕入先コード（担当下請コード）
+    Private Const COL_SIIRENAME As Integer = 12                             '仕入先名称（担当下請名称）
     Private Const COL_KAISOCODE As Integer = 13                             '階層コード
     Private Const COL_ARARIGAKU As Integer = 14                             '粗利金額
     Private Const COL_IKATU_KAKERITU As Integer = 15                        '一括掛率
@@ -1653,8 +1653,8 @@ Public Class frmJYU0001
             .Columns(COL_GENKAGAKU).Caption = "原価金額"
             .Columns(COL_KAKERITU).Caption = "掛率(%)"
             .Columns(COL_G_BIKO).Caption = "備考"
-            .Columns(COL_SIIRECODE).Caption = "担当業者"
-            .Columns(COL_SIIRENAME).Caption = "担当業者"
+            .Columns(COL_SIIRECODE).Caption = "担当下請"
+            .Columns(COL_SIIRENAME).Caption = "担当下請"
 
             '*** TrueDBGrid DataWidth プロパティ設定 ***
             .Columns(COL_KAMOKU_HINMOKU).DataWidth = 40
@@ -1806,7 +1806,7 @@ Public Class frmJYU0001
 
             If Not (TitleBar.EditMode <> EditMode.Create AndAlso TitleBar.EditMode <> EditMode.Edit) Then
 
-                '担当業者
+                '担当下請
                 ' コンボボックスを設定します
                 subRefreshComboSiire()
 
@@ -1847,7 +1847,7 @@ Public Class frmJYU0001
         'ﾂﾘｰ初期化
         trvWorkInfo.Nodes.Clear()
 
-        '第１階層．顧客名
+        '第１階層．元請名
         trvWorkInfo.Nodes.Add(txtKokyakuName.Text)
         intKaisoCnt(0) += 1
         trvWorkInfo.Nodes(intKaisoCnt(0)).Name = txtKokyakuName.Text
@@ -2166,8 +2166,8 @@ Public Class frmJYU0001
                     End If
                 Next
 
-                dr.SIIRECODE = ""                           '担当業者
-                dr.SIIRENAME = ""                           '担当業者
+                dr.SIIRECODE = ""                           '担当下請
+                dr.SIIRENAME = ""                           '担当下請
                 dr.SUU = "1"                                '数量
                 dr.TANI = "式"                              '単位
                 dr.GENTANKA = "0"                           '原単価
@@ -3134,10 +3134,10 @@ Public Class frmJYU0001
                         GoTo CheckError
                     End If
 
-                    '担当業者
+                    '担当下請
                 Case COL_SIIRECODE
 
-                    strCtrlName = "担当業者"
+                    strCtrlName = "担当下請"
                     If Not NUCheck(.Columns(e.ColIndex).Text) Then
 
                         '存在チェック
@@ -3957,7 +3957,7 @@ CheckError:
             '外観をコンボボックスに設定
             Dim co1 As C1DataColumn
 
-            '担当業者
+            '担当下請
             ' コンボボックスを設定します
             co1 = .Columns(COL_SIIRECODE)
             With co1.ValueItems

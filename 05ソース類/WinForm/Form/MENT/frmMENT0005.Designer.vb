@@ -174,7 +174,7 @@ Partial Class frmMENT0005
         '
         Me.txtTokuiCode.AutoValidate = System.Windows.Forms.AutoValidate.Disable
         Me.txtTokuiCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtTokuiCode.DisplayName = "顧客コード"
+        Me.txtTokuiCode.DisplayName = "元請コード"
         Me.txtTokuiCode.Font = New System.Drawing.Font("メイリオ", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.txtTokuiCode.ImeMode = System.Windows.Forms.ImeMode.Disable
         Me.txtTokuiCode.Location = New System.Drawing.Point(122, 52)
@@ -188,7 +188,7 @@ Partial Class frmMENT0005
         'txtTokuiName
         '
         Me.txtTokuiName.BackColor = System.Drawing.Color.White
-        Me.txtTokuiName.DisplayName = "顧客名称"
+        Me.txtTokuiName.DisplayName = "元請名称"
         Me.txtTokuiName.Font = New System.Drawing.Font("メイリオ", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.txtTokuiName.ImeMode = System.Windows.Forms.ImeMode.Hiragana
         Me.txtTokuiName.Location = New System.Drawing.Point(110, 3)
@@ -206,7 +206,7 @@ Partial Class frmMENT0005
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(63, 17)
         Me.Label1.TabIndex = 4
-        Me.Label1.Text = "顧客コード"
+        Me.Label1.Text = "元請コード"
         '
         'fraMeisai
         '
@@ -1801,7 +1801,7 @@ Partial Class frmMENT0005
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(52, 17)
         Me.Label2.TabIndex = 5
-        Me.Label2.Text = "顧客名称"
+        Me.Label2.Text = "元請名称"
         '
         'lblKakeInfo
         '

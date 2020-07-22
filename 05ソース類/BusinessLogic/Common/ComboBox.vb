@@ -58,7 +58,7 @@ Public Class TypComboBox
                 MultipleField = "TANTOCODE AS コード, TANTONAME AS " & FieldName & " "
 
             Case ComboBoxTableName.M_TOKUI
-                FieldName = "顧客名"
+                FieldName = "元請名"
                 SingleField = "TOKUICODE AS コード, TOKUICODE + ' ' + ISNULL(TOKUINAME,'') AS 名称 "
                 MultipleField = "TOKUICODE AS コード, TOKUINAME AS " & FieldName & " "
                 If Utility.NUCheck(requestParam.ConditionCode) = False Then
@@ -68,7 +68,7 @@ Public Class TypComboBox
                 End If
 
             Case ComboBoxTableName.M_SIIRE
-                FieldName = "業者名"
+                FieldName = "下請名"
                 SingleField = "SIIRECODE AS コード, SIIRECODE + ' ' + ISNULL(SIIRENAME,'') AS 名称 "
                 MultipleField = "SIIRECODE AS コード, SIIRENAME AS " & FieldName & " "
 
@@ -77,7 +77,7 @@ Public Class TypComboBox
                 SingleField = "RIGHT('0000000000' + convert(varchar,HED.MITUMORINO), 10) AS 見積Ｎｏ, RIGHT('0000000000' + convert(varchar,HED.MITUMORINO), 10) + ' ' + ISNULL(RIGHT('00' + convert(varchar,HED.MITUMORIEDABAN), 2),'') AS 名称 "
                 MultipleField = "   RIGHT('0000000000' + convert(varchar,HED.MITUMORINO), 10) + '-' + RIGHT('00' + convert(varchar,HED.MITUMORIEDABAN), 2) AS 見積Ｎｏ "
                 MultipleField += ", CONVERT(NVARCHAR, HED.MITUMORIDATE, 111) 提出日付 "
-                MultipleField += ", TOK.TOKUINAME AS 顧客名 "
+                MultipleField += ", TOK.TOKUINAME AS 元請名 "
                 MultipleField += ", HED.KOUJINAME AS 工事名 "
                 MultipleField += ", HED.KOUJINO AS 工事番号 "
                 MultipleField += ", HED.KOUJIBASYO AS 工事場所 "
@@ -99,7 +99,7 @@ Public Class TypComboBox
                 SingleField = "RIGHT('0000000000' + convert(varchar,HED.HATYUNO), 10) AS 受注Ｎｏ, RIGHT('0000000000' + convert(varchar,HED.HATYUNO), 10) + ' ' + ISNULL(RIGHT('00' + convert(varchar,HED.HATYUEDABAN), 2),'') AS 名称 "
                 MultipleField = "   RIGHT('0000000000' + convert(varchar,HED.HATYUNO), 10) + '-' + RIGHT('00' + convert(varchar,HED.HATYUEDABAN), 2) + '-' + RIGHT('00' + convert(varchar,HED.HATYUEDABAN2), 2) AS 発注Ｎｏ "
                 MultipleField += ", CASE WHEN SUB.HATYUNO IS NULL THEN '済' WHEN APP.APPROVALKBN = 2 THEN '済' ELSE '' END                             AS 承認"
-                MultipleField += ", ISNULL(SII.SIIRENAME, '')                                                                                          AS 業者名 "
+                MultipleField += ", ISNULL(SII.SIIRENAME, '')                                                                                          AS 下請名 "
                 MultipleField += ", CONVERT(NVARCHAR, HED.HATYUDATE, 111)                                                                              AS 発注日付 "
                 MultipleField += ",  RIGHT('0000000000' + convert(varchar,HED.HATYUNO), 10) + '-' + RIGHT('00' + convert(varchar,HED.JYUTYUEDABAN), 2) AS 受注Ｎｏ "
                 MultipleField += ", REPLACE(CONVERT(nvarchar,CONVERT(money, HED.GKGENKAGAKU_NUKI), 1), '.00', '')                                      AS 発注金額 "

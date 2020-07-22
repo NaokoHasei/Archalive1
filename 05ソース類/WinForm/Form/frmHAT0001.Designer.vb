@@ -30,7 +30,7 @@ Partial Class frmHAT0001
         Me.txtHATYUDATE = New CommonUtility.WinFormControls.DateTextBoxEx()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.Label37 = New System.Windows.Forms.Label()
-        Me.pnl対象業者情報 = New System.Windows.Forms.Panel()
+        Me.pnl対象下請情報 = New System.Windows.Forms.Panel()
         Me.cmbHATTYUNO = New CommonUtility.WinFormControls.MitumoriNoComboBox()
         Me.lblHATYUNO = New CommonUtility.WinFormControls.TextBoxEx()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -86,7 +86,7 @@ Partial Class frmHAT0001
         Me.lblTAX = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.pnl対象業者情報.SuspendLayout()
+        Me.pnl対象下請情報.SuspendLayout()
         CType(Me.dbgMeisai, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.fraMeisaikei.SuspendLayout()
         Me.SuspendLayout()
@@ -191,59 +191,59 @@ Partial Class frmHAT0001
         Me.Label37.TabIndex = 3
         Me.Label37.Text = "発注Ｎｏ"
         '
-        'pnl対象業者情報
+        'pnl対象下請情報
         '
-        Me.pnl対象業者情報.BackColor = System.Drawing.Color.Thistle
-        Me.pnl対象業者情報.Controls.Add(Me.cmbHATTYUNO)
-        Me.pnl対象業者情報.Controls.Add(Me.Label14)
-        Me.pnl対象業者情報.Controls.Add(Me.txtHATYUEDABAN2)
-        Me.pnl対象業者情報.Controls.Add(Me.txtSIIRECODE)
-        Me.pnl対象業者情報.Controls.Add(Me.Label12)
-        Me.pnl対象業者情報.Controls.Add(Me.Label17)
-        Me.pnl対象業者情報.Controls.Add(Me.txtSIHARAI_COMMENT_01)
-        Me.pnl対象業者情報.Controls.Add(Me.Label27)
-        Me.pnl対象業者情報.Controls.Add(Me.lblKOUJIBASYO)
-        Me.pnl対象業者情報.Controls.Add(Me.txtSIHARAI_COMMENT_03)
-        Me.pnl対象業者情報.Controls.Add(Me.lblHATYUDATE)
-        Me.pnl対象業者情報.Controls.Add(Me.txtAITE_MITUMORINO)
-        Me.pnl対象業者情報.Controls.Add(Me.lblKOUJINO)
-        Me.pnl対象業者情報.Controls.Add(Me.lblKOUJINAME)
-        Me.pnl対象業者情報.Controls.Add(Me.txtSIHARAI_COMMENT_05)
-        Me.pnl対象業者情報.Controls.Add(Me.txtKEIYAKUNO)
-        Me.pnl対象業者情報.Controls.Add(Me.Label11)
-        Me.pnl対象業者情報.Controls.Add(Me.txtSIHARAI_COMMENT_02)
-        Me.pnl対象業者情報.Controls.Add(Me.Label13)
-        Me.pnl対象業者情報.Controls.Add(Me.txtSIHARAI_COMMENT_04)
-        Me.pnl対象業者情報.Controls.Add(Me.txtJYUTYUEDABAN)
-        Me.pnl対象業者情報.Controls.Add(Me.Label9)
-        Me.pnl対象業者情報.Controls.Add(Me.txtSIHARAI_COMMENT_06)
-        Me.pnl対象業者情報.Controls.Add(Me.chkHATYUDATE)
-        Me.pnl対象業者情報.Controls.Add(Me.Label32)
-        Me.pnl対象業者情報.Controls.Add(Me.txtJYUTYUNO)
-        Me.pnl対象業者情報.Controls.Add(Me.Label10)
-        Me.pnl対象業者情報.Controls.Add(Me.Label26)
-        Me.pnl対象業者情報.Controls.Add(Me.lblTANTONAME)
-        Me.pnl対象業者情報.Controls.Add(Me.Label7)
-        Me.pnl対象業者情報.Controls.Add(Me.txtHATYUEDABAN)
-        Me.pnl対象業者情報.Controls.Add(Me.Label31)
-        Me.pnl対象業者情報.Controls.Add(Me.txtNOUKI_END)
-        Me.pnl対象業者情報.Controls.Add(Me.Label6)
-        Me.pnl対象業者情報.Controls.Add(Me.Label1)
-        Me.pnl対象業者情報.Controls.Add(Me.txtNOUKI_START)
-        Me.pnl対象業者情報.Controls.Add(Me.txtHATYUNO)
-        Me.pnl対象業者情報.Controls.Add(Me.txtHATYUDATE)
-        Me.pnl対象業者情報.Controls.Add(Me.Label33)
-        Me.pnl対象業者情報.Controls.Add(Me.Label4)
-        Me.pnl対象業者情報.Controls.Add(Me.txtKEISYOUNAME)
-        Me.pnl対象業者情報.Controls.Add(Me.Label37)
-        Me.pnl対象業者情報.Controls.Add(Me.Label2)
-        Me.pnl対象業者情報.Controls.Add(Me.txtSIIRENAME)
-        Me.pnl対象業者情報.Controls.Add(Me.txtKEISYOUCODE)
-        Me.pnl対象業者情報.Controls.Add(Me.Label56)
-        Me.pnl対象業者情報.Location = New System.Drawing.Point(0, 62)
-        Me.pnl対象業者情報.Name = "pnl対象業者情報"
-        Me.pnl対象業者情報.Size = New System.Drawing.Size(1018, 167)
-        Me.pnl対象業者情報.TabIndex = 0
+        Me.pnl対象下請情報.BackColor = System.Drawing.Color.Thistle
+        Me.pnl対象下請情報.Controls.Add(Me.cmbHATTYUNO)
+        Me.pnl対象下請情報.Controls.Add(Me.Label14)
+        Me.pnl対象下請情報.Controls.Add(Me.txtHATYUEDABAN2)
+        Me.pnl対象下請情報.Controls.Add(Me.txtSIIRECODE)
+        Me.pnl対象下請情報.Controls.Add(Me.Label12)
+        Me.pnl対象下請情報.Controls.Add(Me.Label17)
+        Me.pnl対象下請情報.Controls.Add(Me.txtSIHARAI_COMMENT_01)
+        Me.pnl対象下請情報.Controls.Add(Me.Label27)
+        Me.pnl対象下請情報.Controls.Add(Me.lblKOUJIBASYO)
+        Me.pnl対象下請情報.Controls.Add(Me.txtSIHARAI_COMMENT_03)
+        Me.pnl対象下請情報.Controls.Add(Me.lblHATYUDATE)
+        Me.pnl対象下請情報.Controls.Add(Me.txtAITE_MITUMORINO)
+        Me.pnl対象下請情報.Controls.Add(Me.lblKOUJINO)
+        Me.pnl対象下請情報.Controls.Add(Me.lblKOUJINAME)
+        Me.pnl対象下請情報.Controls.Add(Me.txtSIHARAI_COMMENT_05)
+        Me.pnl対象下請情報.Controls.Add(Me.txtKEIYAKUNO)
+        Me.pnl対象下請情報.Controls.Add(Me.Label11)
+        Me.pnl対象下請情報.Controls.Add(Me.txtSIHARAI_COMMENT_02)
+        Me.pnl対象下請情報.Controls.Add(Me.Label13)
+        Me.pnl対象下請情報.Controls.Add(Me.txtSIHARAI_COMMENT_04)
+        Me.pnl対象下請情報.Controls.Add(Me.txtJYUTYUEDABAN)
+        Me.pnl対象下請情報.Controls.Add(Me.Label9)
+        Me.pnl対象下請情報.Controls.Add(Me.txtSIHARAI_COMMENT_06)
+        Me.pnl対象下請情報.Controls.Add(Me.chkHATYUDATE)
+        Me.pnl対象下請情報.Controls.Add(Me.Label32)
+        Me.pnl対象下請情報.Controls.Add(Me.txtJYUTYUNO)
+        Me.pnl対象下請情報.Controls.Add(Me.Label10)
+        Me.pnl対象下請情報.Controls.Add(Me.Label26)
+        Me.pnl対象下請情報.Controls.Add(Me.lblTANTONAME)
+        Me.pnl対象下請情報.Controls.Add(Me.Label7)
+        Me.pnl対象下請情報.Controls.Add(Me.txtHATYUEDABAN)
+        Me.pnl対象下請情報.Controls.Add(Me.Label31)
+        Me.pnl対象下請情報.Controls.Add(Me.txtNOUKI_END)
+        Me.pnl対象下請情報.Controls.Add(Me.Label6)
+        Me.pnl対象下請情報.Controls.Add(Me.Label1)
+        Me.pnl対象下請情報.Controls.Add(Me.txtNOUKI_START)
+        Me.pnl対象下請情報.Controls.Add(Me.txtHATYUNO)
+        Me.pnl対象下請情報.Controls.Add(Me.txtHATYUDATE)
+        Me.pnl対象下請情報.Controls.Add(Me.Label33)
+        Me.pnl対象下請情報.Controls.Add(Me.Label4)
+        Me.pnl対象下請情報.Controls.Add(Me.txtKEISYOUNAME)
+        Me.pnl対象下請情報.Controls.Add(Me.Label37)
+        Me.pnl対象下請情報.Controls.Add(Me.Label2)
+        Me.pnl対象下請情報.Controls.Add(Me.txtSIIRENAME)
+        Me.pnl対象下請情報.Controls.Add(Me.txtKEISYOUCODE)
+        Me.pnl対象下請情報.Controls.Add(Me.Label56)
+        Me.pnl対象下請情報.Location = New System.Drawing.Point(0, 62)
+        Me.pnl対象下請情報.Name = "pnl対象下請情報"
+        Me.pnl対象下請情報.Size = New System.Drawing.Size(1018, 167)
+        Me.pnl対象下請情報.TabIndex = 0
         '
         'cmbHATTYUNO
         '
@@ -307,7 +307,7 @@ Partial Class frmHAT0001
         'txtSIIRECODE
         '
         Me.txtSIIRECODE.AutoValidate = System.Windows.Forms.AutoValidate.Disable
-        Me.txtSIIRECODE.DisplayName = "業者コード"
+        Me.txtSIIRECODE.DisplayName = "下請コード"
         Me.txtSIIRECODE.Font = New System.Drawing.Font("メイリオ", 8.0!)
         Me.txtSIIRECODE.LinkedTextBox = Me.txtSIIRENAME
         Me.txtSIIRECODE.Location = New System.Drawing.Point(374, 9)
@@ -325,7 +325,7 @@ Partial Class frmHAT0001
         '
         Me.txtSIIRENAME.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(233, Byte), Integer), CType(CType(216, Byte), Integer))
         Me.txtSIIRENAME.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtSIIRENAME.DisplayName = "業者名"
+        Me.txtSIIRENAME.DisplayName = "下請名"
         Me.txtSIIRENAME.Enabled = False
         Me.txtSIIRENAME.Font = New System.Drawing.Font("メイリオ", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.txtSIIRENAME.ImeMode = System.Windows.Forms.ImeMode.Hiragana
@@ -354,7 +354,7 @@ Partial Class frmHAT0001
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(41, 17)
         Me.Label17.TabIndex = 91
-        Me.Label17.Text = "業者名"
+        Me.Label17.Text = "下請名"
         '
         'txtSIHARAI_COMMENT_01
         '
@@ -379,7 +379,7 @@ Partial Class frmHAT0001
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(63, 17)
         Me.Label27.TabIndex = 93
-        Me.Label27.Text = "業者コード"
+        Me.Label27.Text = "下請コード"
         '
         'lblKOUJIBASYO
         '
@@ -968,11 +968,11 @@ Partial Class frmHAT0001
         Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.txtZeiKbn)
         Me.Controls.Add(Me.dbgMeisai)
-        Me.Controls.Add(Me.pnl対象業者情報)
+        Me.Controls.Add(Me.pnl対象下請情報)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmHAT0001"
         Me.Text = ""
-        Me.Controls.SetChildIndex(Me.pnl対象業者情報, 0)
+        Me.Controls.SetChildIndex(Me.pnl対象下請情報, 0)
         Me.Controls.SetChildIndex(Me.TitleBar, 0)
         Me.Controls.SetChildIndex(Me.dbgMeisai, 0)
         Me.Controls.SetChildIndex(Me.txtZeiKbn, 0)
@@ -983,8 +983,8 @@ Partial Class frmHAT0001
         Me.Controls.SetChildIndex(Me.lblHATYUNO, 0)
         Me.Controls.SetChildIndex(Me.Label15, 0)
         Me.Controls.SetChildIndex(Me.lblSURYO_SYOSUIKAKETA, 0)
-        Me.pnl対象業者情報.ResumeLayout(False)
-        Me.pnl対象業者情報.PerformLayout()
+        Me.pnl対象下請情報.ResumeLayout(False)
+        Me.pnl対象下請情報.PerformLayout()
         CType(Me.dbgMeisai, System.ComponentModel.ISupportInitialize).EndInit()
         Me.fraMeisaikei.ResumeLayout(False)
         Me.fraMeisaikei.PerformLayout()
@@ -993,7 +993,7 @@ Partial Class frmHAT0001
 
     End Sub
     Friend WithEvents txtHATYUDATE As CommonUtility.WinFormControls.DateTextBoxEx
-    Friend WithEvents pnl対象業者情報 As System.Windows.Forms.Panel
+    Friend WithEvents pnl対象下請情報 As System.Windows.Forms.Panel
     Friend WithEvents txtSIIRENAME As CommonUtility.WinFormControls.TextBoxEx
     Friend WithEvents lblHATYUDATE As System.Windows.Forms.Label
     Friend WithEvents txtKEISYOUNAME As CommonUtility.WinFormControls.TextBoxEx

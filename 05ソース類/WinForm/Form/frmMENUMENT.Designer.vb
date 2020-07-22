@@ -80,7 +80,7 @@ Partial Class frmMENUMENT
         Me.btnMENT0005.Name = "btnMENT0005"
         Me.btnMENT0005.Size = New System.Drawing.Size(200, 50)
         Me.btnMENT0005.TabIndex = 6
-        Me.btnMENT0005.Text = "顧客マスタ登録"
+        Me.btnMENT0005.Text = "元請マスタ登録"
         Me.btnMENT0005.UseVisualStyleBackColor = False
         '
         'btnMENT0006
@@ -92,7 +92,7 @@ Partial Class frmMENUMENT
         Me.btnMENT0006.Name = "btnMENT0006"
         Me.btnMENT0006.Size = New System.Drawing.Size(200, 50)
         Me.btnMENT0006.TabIndex = 7
-        Me.btnMENT0006.Text = "業者マスタ登録"
+        Me.btnMENT0006.Text = "下請マスタ登録"
         Me.btnMENT0006.UseVisualStyleBackColor = False
         '
         'btnMENT0002

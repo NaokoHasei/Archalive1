@@ -385,7 +385,7 @@ Partial Class frmMIT0001
         '
         Me.txtKokyakuName.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(233, Byte), Integer), CType(CType(216, Byte), Integer))
         Me.txtKokyakuName.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtKokyakuName.DisplayName = "顧客名称"
+        Me.txtKokyakuName.DisplayName = "元請名称"
         Me.txtKokyakuName.Enabled = False
         Me.txtKokyakuName.Font = New System.Drawing.Font("メイリオ", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.txtKokyakuName.ImeMode = System.Windows.Forms.ImeMode.Hiragana
@@ -666,7 +666,7 @@ Partial Class frmMIT0001
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(53, 17)
         Me.Label16.TabIndex = 14
-        Me.Label16.Text = "顧 客 名 "
+        Me.Label16.Text = "元 請 名 "
         '
         'Label15
         '
@@ -1356,7 +1356,7 @@ Partial Class frmMIT0001
         Me.btnMENT0006.Size = New System.Drawing.Size(126, 22)
         Me.btnMENT0006.TabIndex = 80
         Me.btnMENT0006.TabStop = False
-        Me.btnMENT0006.Text = "業者登録"
+        Me.btnMENT0006.Text = "下請登録"
         Me.btnMENT0006.UseVisualStyleBackColor = False
         '
         'lblSyosuName

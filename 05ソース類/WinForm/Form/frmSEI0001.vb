@@ -48,7 +48,7 @@ Public Class frmSEI0001
         '画面情報
         Public 請求Ｎｏ As String
         Public 請求日付 As String
-        Public 顧客名 As String
+        Public 元請名 As String
         Public 今回請求額 As Decimal
         Public 工事名称 As String
         Public 請負金額 As Decimal

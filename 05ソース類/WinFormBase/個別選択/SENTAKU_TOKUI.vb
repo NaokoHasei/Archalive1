@@ -13,7 +13,7 @@
     End Function
 
     Public Overrides Function PROGRAM_NAME() As String
-        Return "顧客個別選択"
+        Return "元請個別選択"
     End Function
 
     Protected Overrides Function WorkLoadMethod() As BLL.Common.IBusinessLogic

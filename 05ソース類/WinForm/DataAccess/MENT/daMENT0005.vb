@@ -19,7 +19,7 @@ Public Class daMENT0005
 
                     Dim dsTOKUICODE As System.Data.DataSet = logic.ExecuteDataset(connection.ConnectionString, CommandType.Text, "select right('00000000'+convert(varchar,convert(decimal,isnull(max(TOKUICODE),'0'))+1),8) from M_TOKUI")
                     If dsTOKUICODE.Tables(0).Rows.Count = 0 OrElse dsTOKUICODE.Tables(0).Rows(0)(0).ToString = "00000000" Then
-                        Throw New ApplicationException("顧客コードの空き番が存在しません。" & vbCrLf & "コード取得に失敗しました。")
+                        Throw New ApplicationException("元請コードの空き番が存在しません。" & vbCrLf & "コード取得に失敗しました。")
                     Else
                         .TOKUICODE = dsTOKUICODE.Tables(0).Rows(0)(0).ToString
                     End If

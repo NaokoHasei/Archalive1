@@ -234,7 +234,7 @@ Partial Class frmMENT0006
         '
         Me.txtSIIRECODE.AutoValidate = System.Windows.Forms.AutoValidate.Disable
         Me.txtSIIRECODE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtSIIRECODE.DisplayName = "業者コード"
+        Me.txtSIIRECODE.DisplayName = "下請コード"
         Me.txtSIIRECODE.Font = New System.Drawing.Font("メイリオ", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.txtSIIRECODE.ImeMode = System.Windows.Forms.ImeMode.Disable
         Me.txtSIIRECODE.Location = New System.Drawing.Point(122, 52)
@@ -248,7 +248,7 @@ Partial Class frmMENT0006
         'txtSIIRENAME
         '
         Me.txtSIIRENAME.BackColor = System.Drawing.Color.White
-        Me.txtSIIRENAME.DisplayName = "業者名称"
+        Me.txtSIIRENAME.DisplayName = "下請名称"
         Me.txtSIIRENAME.Font = New System.Drawing.Font("メイリオ", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.txtSIIRENAME.ImeMode = System.Windows.Forms.ImeMode.Hiragana
         Me.txtSIIRENAME.Location = New System.Drawing.Point(110, 3)
@@ -266,7 +266,7 @@ Partial Class frmMENT0006
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(63, 17)
         Me.Label1.TabIndex = 4
-        Me.Label1.Text = "業者コード"
+        Me.Label1.Text = "下請コード"
         '
         'fraMeisai
         '
@@ -2554,7 +2554,7 @@ Partial Class frmMENT0006
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(52, 17)
         Me.Label2.TabIndex = 5
-        Me.Label2.Text = "業者名称"
+        Me.Label2.Text = "下請名称"
         '
         'lblKakeInfo
         '

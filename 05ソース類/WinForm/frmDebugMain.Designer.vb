@@ -64,7 +64,7 @@ Partial Class frmDebugMain
         Me.btnBUK0003.Name = "btnBUK0003"
         Me.btnBUK0003.Size = New System.Drawing.Size(141, 27)
         Me.btnBUK0003.TabIndex = 5
-        Me.btnBUK0003.Text = "物件一覧"
+        Me.btnBUK0003.Text = "実績一覧"
         Me.btnBUK0003.UseVisualStyleBackColor = True
         '
         'btnLogin
@@ -100,7 +100,7 @@ Partial Class frmDebugMain
         Me.btnMENT0005.Name = "btnMENT0005"
         Me.btnMENT0005.Size = New System.Drawing.Size(141, 27)
         Me.btnMENT0005.TabIndex = 8
-        Me.btnMENT0005.Text = "顧客マスタ登録"
+        Me.btnMENT0005.Text = "元請マスタ登録"
         Me.btnMENT0005.UseVisualStyleBackColor = True
         '
         'btnMENT0006
@@ -109,7 +109,7 @@ Partial Class frmDebugMain
         Me.btnMENT0006.Name = "btnMENT0006"
         Me.btnMENT0006.Size = New System.Drawing.Size(141, 27)
         Me.btnMENT0006.TabIndex = 9
-        Me.btnMENT0006.Text = "業者マスタ登録"
+        Me.btnMENT0006.Text = "下請マスタ登録"
         Me.btnMENT0006.UseVisualStyleBackColor = True
         '
         'btnMENT0002

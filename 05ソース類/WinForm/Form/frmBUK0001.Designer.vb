@@ -452,7 +452,7 @@ Partial Class frmBUK0001
         Me.btnMENT0005.Name = "btnMENT0005"
         Me.btnMENT0005.Size = New System.Drawing.Size(158, 22)
         Me.btnMENT0005.TabIndex = 10
-        Me.btnMENT0005.Text = "顧客マスタ登録"
+        Me.btnMENT0005.Text = "元請マスタ登録"
         Me.btnMENT0005.UseVisualStyleBackColor = False
         '
         'Label6

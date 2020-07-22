@@ -43,7 +43,7 @@ Public Class frmMENU
 
         btnBUK0001.Visible = siyoKinouAuthority.CheckUseKinou(SiyoKinouAuthority.CONST_物件登録)
         btnBUK0002.Visible = siyoKinouAuthority.CheckUseKinou(SiyoKinouAuthority.CONST_物件検索)
-        btnBUK0003.Visible = siyoKinouAuthority.CheckUseKinou(SiyoKinouAuthority.CONST_物件一覧)
+        btnBUK0003.Visible = siyoKinouAuthority.CheckUseKinou(siyoKinouAuthority.CONST_物件一覧)
         btnMENTMENU.Visible = siyoKinouAuthority.CheckUseKinou(SiyoKinouAuthority.CONST_メンテナンス)
     End Sub
 

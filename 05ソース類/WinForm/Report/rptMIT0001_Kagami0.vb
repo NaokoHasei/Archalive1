@@ -70,7 +70,7 @@ Public Class rptMIT0001_Kagami0
         txtMITUMORINO.DataField = "MITUMORINO"
         '提出日付
         txtTEISYUTUDATE.DataField = "TEISYUTUDATE"
-        '顧客名
+        '元請名
         txtKYAKUNAME.DataField = "TOKUINAME"
         '敬称
         txtKEISYOUNAME.DataField = "KEISYOUNAME"

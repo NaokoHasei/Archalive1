@@ -50,8 +50,8 @@ Public Class frmHAT0001
         Return "登録済"
     End Function
 
-    Public Shared Function 業者未選択() As String
-        Return "(業者未選択)"
+    Public Shared Function 下請未選択() As String
+        Return "(下請未選択)"
     End Function
 
     Public Shared Function NumberFormat(ByVal strSURYO_SYOSUIKAKETA As String) As String
@@ -845,7 +845,7 @@ Public Class frmHAT0001
 
             txtSIIRECODE.Text = f.SelectItem.Code
 
-            '業者変更処理
+            '下請変更処理
             ChangeSIIRECODE()
         End Using
     End Sub
@@ -1018,7 +1018,7 @@ Public Class frmHAT0001
 
         '空白の場合、エラー
         If NUCheck(txtSIIRECODE.Text) Then
-            MessageBoxEx.Show(CommonUtility.MessageCode_Arg1.M015は必ず入力して下さい, "業者コード", PROGRAM_NAME)
+            MessageBoxEx.Show(CommonUtility.MessageCode_Arg1.M015は必ず入力して下さい, "下請コード", PROGRAM_NAME)
             txtSIIRECODE.Focus()
             Return
         End If

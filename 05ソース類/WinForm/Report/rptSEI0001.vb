@@ -62,7 +62,7 @@ Public Class rptSEI0001
         '請求日付
         txtSyoriDate.DataField = "SeikyuDate"
 
-        '顧客名
+        '元請名
         txtKyakuName.DataField = "TokuiName"
 
         '今回請求額

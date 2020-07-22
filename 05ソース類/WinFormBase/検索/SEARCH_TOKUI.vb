@@ -37,7 +37,7 @@ Public Class SEARCH_TOKUI
     End Function
 
     Public Overrides Function PROGRAM_NAME() As String
-        Return "顧客検索"
+        Return "元請検索"
     End Function
 
     Private ItemSelectedValue As Boolean

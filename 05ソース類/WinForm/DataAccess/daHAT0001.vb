@@ -764,7 +764,7 @@ Namespace HAT0001DataAccess
             strSQL += "   , T_HATYUHED.HATYUDATE" + vbCrLf                                                  '発注日付
             strSQL += "   , T_HATYUHED.KEIYAKUNO" + vbCrLf                                                  '契約Ｎｏ
             If 帳票種類 = enum帳票種類.注文書 Then
-                strSQL += ",isnull(M_SIIRE.SIIRENAME,'') SIIRENAME" + vbCrLf                                              '業者名
+                strSQL += ",isnull(M_SIIRE.SIIRENAME,'') SIIRENAME" + vbCrLf                                              '下請名
                 '自社情報
                 strSQL += "   , isnull(S_SCB_JISYANAME.DATA,'') JISYANAME" + vbCrLf                         '自社名称
                 strSQL += "   , isnull(S_SCB_ADDRESS1.DATA,'')  ADDRESS1" + vbCrLf                          '住所１
@@ -772,8 +772,8 @@ Namespace HAT0001DataAccess
                 strSQL += "   , isnull(S_SCB_TELNO.DATA,'')     TELNO" + vbCrLf                             '電話番号
                 strSQL += "   , isnull(S_SCB_FAXNO.DATA,'')     FAXNO" + vbCrLf                             'ＦＡＸ番号
             Else
-                strSQL += ",isnull(S_SCB_JISYANAME.DATA,'') SIIRENAME" + vbCrLf                         '請書の場合は業者名は自社情報
-                '請書の場合は自社情報は業者情報
+                strSQL += ",isnull(S_SCB_JISYANAME.DATA,'') SIIRENAME" + vbCrLf                         '請書の場合は下請名は自社情報
+                '請書の場合は自社情報は下請情報
                 strSQL += "   , isnull(M_SIIRE.SIIRENAME,'') JISYANAME" + vbCrLf
                 strSQL += "   , isnull(M_SIIRE.ADDRESS1,'')  ADDRESS1" + vbCrLf
                 strSQL += "   , isnull(M_SIIRE.ADDRESS2,'')  ADDRESS2" + vbCrLf

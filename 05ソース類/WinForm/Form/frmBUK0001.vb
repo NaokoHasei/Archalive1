@@ -57,7 +57,7 @@ Public Class frmBUK0001
             'イベント設定
             InitEvent()
 
-            '顧客登録ボタンの表示制御
+            '元請登録ボタンの表示制御
             Dim siyoKinouAuthority = New SiyoKinouAuthority(TANTO_CODE)
             btnMENT0005.Visible = siyoKinouAuthority.CheckUseKinou(SiyoKinouAuthority.CONST_顧客マスタ登録)
 
@@ -353,7 +353,7 @@ Public Class frmBUK0001
     Private Sub ControlMessageLabel1(dr As dsT_BUKKEN.T_BUKKENRow)
         lblMessage1.Visible = False
 
-        '完工日が未入力、または、顧客マスタ．支払日が未入力の場合
+        '完工日が未入力、または、元請マスタ．支払日が未入力の場合
         If Utility.NUCheck(txtKankouDate.Text) OrElse txtKankouDate.Text = "    /  /" OrElse dr.SIHARAIBI = 0 Then Exit Sub
 
         'システム日付

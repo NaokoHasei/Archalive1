@@ -74,7 +74,7 @@ Partial Class frmMENU
         Me.btnBUK0003.Name = "btnBUK0003"
         Me.btnBUK0003.Size = New System.Drawing.Size(185, 66)
         Me.btnBUK0003.TabIndex = 5
-        Me.btnBUK0003.Text = "物件一覧"
+        Me.btnBUK0003.Text = "実績一覧"
         Me.btnBUK0003.UseVisualStyleBackColor = False
         '
         'btnMENTMENU

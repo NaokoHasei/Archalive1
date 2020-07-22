@@ -29,6 +29,7 @@ Partial Class SEARCH_TOKUI
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SEARCH_TOKUI))
         Me.fraMain = New System.Windows.Forms.GroupBox()
+        Me.btnManual1 = New System.Windows.Forms.LinkLabel()
         Me.lblPosition = New System.Windows.Forms.Label()
         Me.gridData = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
         Me.pnlKey = New System.Windows.Forms.Panel()
@@ -51,7 +52,6 @@ Partial Class SEARCH_TOKUI
         Me.Button1 = New System.Windows.Forms.Button()
         Me.txtINPUTWORD = New CommonUtility.WinFormControls.TextBoxEx()
         Me.lblTitle = New System.Windows.Forms.Label()
-        Me.btnManual1 = New System.Windows.Forms.LinkLabel()
         Me.fraMain.SuspendLayout()
         CType(Me.gridData, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlKey.SuspendLayout()
@@ -96,6 +96,20 @@ Partial Class SEARCH_TOKUI
         Me.fraMain.Size = New System.Drawing.Size(483, 316)
         Me.fraMain.TabIndex = 57
         Me.fraMain.TabStop = False
+        '
+        'btnManual1
+        '
+        Me.btnManual1.ActiveLinkColor = System.Drawing.Color.White
+        Me.btnManual1.AutoSize = True
+        Me.btnManual1.BackColor = System.Drawing.Color.DarkSlateBlue
+        Me.btnManual1.Font = New System.Drawing.Font("メイリオ", 9.0!)
+        Me.btnManual1.LinkColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(179, Byte), Integer))
+        Me.btnManual1.Location = New System.Drawing.Point(417, 15)
+        Me.btnManual1.Name = "btnManual1"
+        Me.btnManual1.Size = New System.Drawing.Size(56, 18)
+        Me.btnManual1.TabIndex = 98
+        Me.btnManual1.TabStop = True
+        Me.btnManual1.Text = "操作説明"
         '
         'lblPosition
         '
@@ -366,22 +380,8 @@ Partial Class SEARCH_TOKUI
         Me.lblTitle.Name = "lblTitle"
         Me.lblTitle.Size = New System.Drawing.Size(486, 28)
         Me.lblTitle.TabIndex = 58
-        Me.lblTitle.Text = "顧客　検索メニュー"
+        Me.lblTitle.Text = "元請　検索メニュー"
         Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'btnManual1
-        '
-        Me.btnManual1.ActiveLinkColor = System.Drawing.Color.White
-        Me.btnManual1.AutoSize = True
-        Me.btnManual1.BackColor = System.Drawing.Color.DarkSlateBlue
-        Me.btnManual1.Font = New System.Drawing.Font("メイリオ", 9.0!)
-        Me.btnManual1.LinkColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(179, Byte), Integer))
-        Me.btnManual1.Location = New System.Drawing.Point(417, 15)
-        Me.btnManual1.Name = "btnManual1"
-        Me.btnManual1.Size = New System.Drawing.Size(56, 18)
-        Me.btnManual1.TabIndex = 98
-        Me.btnManual1.TabStop = True
-        Me.btnManual1.Text = "操作説明"
         '
         'SEARCH_TOKUI
         '

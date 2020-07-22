@@ -37,7 +37,7 @@ Public Class SEARCH_SIIRE
     End Function
 
     Public Overrides Function PROGRAM_NAME() As String
-        Return "業者検索"
+        Return "下請検索"
     End Function
 
     Private ItemSelectedValue As Boolean

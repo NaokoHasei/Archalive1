@@ -384,7 +384,7 @@ Partial Class frmSEI0001
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(52, 17)
         Me.Label17.TabIndex = 15
-        Me.Label17.Text = "顧　　客"
+        Me.Label17.Text = "元　　請"
         '
         'Label15
         '
@@ -791,7 +791,7 @@ Partial Class frmSEI0001
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(75, 18)
         Me.Label45.TabIndex = 54
-        Me.Label45.Text = "顧客名　："
+        Me.Label45.Text = "元請名　："
         '
         'lblInfo_Tanto
         '

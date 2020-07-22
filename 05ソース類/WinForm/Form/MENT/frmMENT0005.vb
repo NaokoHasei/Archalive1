@@ -9,7 +9,7 @@ Public Class frmMENT0005
     End Function
 
     Public Overrides Function PROGRAM_NAME() As String
-        Return "顧客マスタ登録"
+        Return "元請マスタ登録"
     End Function
 
     Private Enum enumFormStatus
