@@ -8,7 +8,7 @@
     PAGE                decimal(3,0)    NOT NULL  DEFAULT 0,    /* 頁                   */
     KBN                 decimal(1,0)    NOT NULL  DEFAULT 0,    /* 区分                 */
     GYONO               decimal(3,0)    NOT NULL  DEFAULT 0,    /* 行番号               */
-    NAME                varchar(40)               DEFAULT '',   /* 名称・仕様           */
+    NAME                varchar(100)              DEFAULT '',   /* 名称・仕様           */
     SURYO               varchar(40)               DEFAULT '',   /* 数量                 */
     TANI                varchar(40)               DEFAULT '',   /* 単位                 */
     TANKA               varchar(40)               DEFAULT '',   /* 単価                 */
