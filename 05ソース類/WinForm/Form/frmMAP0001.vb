@@ -83,7 +83,7 @@ Public Class frmMAP0001
 
     'GoogleMapの表示
     'mode : （0：初期表示、1：表示ボタン押下）
-    Private Function GoogleMap() As String
+    Public Function GoogleMap() As String
         Dim txtHtml As String = ""
 
         '初期位置（緯度・経度・ズーム）の設定

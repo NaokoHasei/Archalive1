@@ -1,4 +1,5 @@
-﻿Imports CommonUtility
+﻿Imports System.IO
+Imports CommonUtility
 Imports CommonUtility.Utility
 Imports CommonUtility.WinForm
 Imports CommonUtility.WinFormControls
@@ -397,6 +398,13 @@ Public Class frmBUK0001
     ''' プロット　クリックイベント
     ''' </summary>
     Private Sub btnMAP0001_Click(sender As Object, e As EventArgs) Handles btnMAP0001.Click
+        ExecuteMap(False)
+    End Sub
+
+    ''' <summary>
+    ''' マップを開く
+    ''' </summary>
+    Private Sub ExecuteMap(ByVal browserFlg As Boolean)
         'MAP0001の呼び出し用のパラメータ
         Dim makerList(0) As requestMAP0001.Maker
         makerList(0) = New requestMAP0001.Maker
@@ -408,10 +416,47 @@ Public Class frmBUK0001
         makerList(0).LNG = txtLng.Text
         requestMAP0001.MAKER_LIST = makerList
 
-        'プロット画面の表示
         Dim f As New frmMAP0001(frmMAP0001.emumDispKbn.PLOT)
         f.requestMAP0001 = requestMAP0001
-        f.ShowDispDialog(Me)
+        If Not browserFlg Then
+            'プロット画面の表示
+            f.ShowDispDialog(Me)
+
+        Else
+            'ブラウザでGoogleMapを表示
+            Dim htmlDir = "html\"
+            Dim htmlFile = htmlDir + Now.ToString("yyyyMMddHHmmss") + ".html"
+
+            'ファイルの削除
+            Dim di As New System.IO.DirectoryInfo(htmlDir)
+            Dim files As System.IO.FileInfo() = di.GetFiles("*.html", System.IO.SearchOption.AllDirectories)
+
+            'ListBox1に結果を表示する
+            Try
+                For Each file As System.IO.FileInfo In files
+                    file.Delete()
+                Next
+            Catch ex As UnauthorizedAccessException
+                'ファイルが開いている場合、処理しない
+            End Try
+
+            'ディレクトリの作成
+            If Not Directory.Exists(htmlDir) Then
+                Directory.CreateDirectory(htmlDir)
+            End If
+
+            'ファイルの作成
+            Dim sw = New System.IO.StreamWriter(htmlFile)
+            Dim htmlSource = f.GoogleMap().Split(vbCrLf)
+            sw.WriteLine("<meta http-equiv=""content-type"""" charset=""utf-8"">")
+            For Each Str As String In htmlSource
+                sw.Write(Str)
+            Next
+            sw.Close()
+
+            'ブラウザで起動
+            System.Diagnostics.Process.Start(htmlFile)
+        End If
     End Sub
 
     ''' <summary>
@@ -503,7 +548,7 @@ Public Class frmBUK0001
                 ExecuteSearchForm()
 
             Case "マップ"
-                ExecuteMap()
+                ExecuteMap(True)
 
             Case "登録"
                 ExecuteRegist()
@@ -916,21 +961,6 @@ Public Class frmBUK0001
                     LastFocusedControl.Focus()
                 End Using
         End Select
-    End Sub
-
-    ''' <summary>
-    ''' 検索画面起動
-    ''' </summary>
-    Private Sub ExecuteMap()
-        Dim S_SCB As New S_SCBRead("google mapのURL", "")
-        Dim dsS_SCB As dsS_SCB = S_SCB.GetS_SCB
-
-        If dsS_SCB.S_SCB.Rows.Count = 0 Then
-            MessageBoxEx.Show(MessageCode_Arg1.M209, "基本設定マスタ（google mapのURL）が登録されていません。", PROGRAM_NAME)
-        Else
-            Process.Start(dsS_SCB.S_SCB(0).DATA)
-        End If
-
     End Sub
 
     ''' <summary>
