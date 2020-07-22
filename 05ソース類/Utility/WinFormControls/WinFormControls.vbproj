@@ -127,6 +127,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="RangeValidator.vb" />
+    <Compile Include="MitumoriNoTextBoxEx.Designer.vb">
+      <DependentUpon>MitumoriNoTextBoxEx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MitumoriNoTextBoxEx.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="TextBoxEx.Designer.vb">
       <DependentUpon>TextBoxEx.vb</DependentUpon>
     </Compile>
@@ -169,6 +175,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MitumoriNoTextBoxEx.resx">
+      <DependentUpon>MitumoriNoTextBoxEx.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TextBoxEx.resx">
       <DependentUpon>TextBoxEx.vb</DependentUpon>
