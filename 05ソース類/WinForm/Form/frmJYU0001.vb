@@ -575,6 +575,7 @@ Public Class frmJYU0001
         AddHandler txtJIKKOYOSAN.Leave, AddressOf Control_Leave
         AddHandler txtD_BIKO.Leave, AddressOf Control_Leave
 
+        AddHandler txtJYUTYUEDABAN.GotFocus, AddressOf ChangeFunctionKeyDisabled
         AddHandler txtJYUTYUDATE.GotFocus, AddressOf ChangeFunctionKeyDisabled
         AddHandler txtNOUKIDATE0.GotFocus, AddressOf ChangeFunctionKeyDisabled
         AddHandler txtNOUKIDATE1.GotFocus, AddressOf ChangeFunctionKeyDisabled
@@ -1363,9 +1364,6 @@ Public Class frmJYU0001
                 Else
                     lblJYUTYUGengo.Text = vbNullString
                 End If
-            Case 2
-                txtJYUTYUDATE.Text = strDate.ToString
-                lblJYUTYUGengo.Text = "(" & GetCnvSW.SfncYearSW(CDate(txtJYUTYUDATE.Text).ToString("yyyy/MM/dd"), True, True) & ")"
         End Select
         '担当者
         cmbTantoCode.Text = dr.Item("TANTOCODE").ToString

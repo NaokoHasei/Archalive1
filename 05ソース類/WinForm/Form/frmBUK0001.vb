@@ -761,13 +761,6 @@ Public Class frmBUK0001
             Return False
         End If
 
-        '完工日の必須チェック
-        If NUCheck(drBukken.KANKOUDATE) Then
-            MessageBoxEx.Show(MessageCode_Arg1.M224, txtKankouDate.DisplayName, PROGRAM_NAME)
-            txtKankouDate.Focus()
-            Return False
-        End If
-
         Return True
     End Function
 
@@ -1200,6 +1193,9 @@ Public Class frmBUK0001
 
         'ファンクションキー設定
         InitFunctionKey()
+
+        '住所変更イベント
+        ChangeAddress(Nothing, Nothing)
 
         txtBukkenName.Focus()
     End Sub
