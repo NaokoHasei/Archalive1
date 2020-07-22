@@ -245,6 +245,10 @@ Public Class frmHAT0001
                 FunctionKey.SetItem(8, "コメント", "コメント", True, FunctionKey.FONT_SMALL)
                 FunctionKey.SetItem(12, "登録", "登録", True)
 
+                If Not NUCheck(txtHATYUEDABAN2.Text) AndAlso CDec(txtHATYUEDABAN2.Text) <> 0 Then
+                    FunctionKey.SetItem(10, "前回発注", "前回発注", True, FunctionKey.FONT_SMALL)
+                End If
+
             Case EditMode.Edit
                 FunctionKey.SetItem(1, "取消", "取消", True)
                 FunctionKey.SetItem(3, "削除", "削除", True)
@@ -274,7 +278,6 @@ Public Class frmHAT0001
                 If CDec(txtHATYUEDABAN2.Text) <> 0 Then
                     FunctionKey.SetItem(10, "前回発注", "前回発注", True, FunctionKey.FONT_SMALL)
                 End If
-
 
             Case EditMode.EditNone
                 FunctionKey.SetItem(1, "取消", "取消", True)
@@ -378,17 +381,8 @@ Public Class frmHAT0001
             Case "取消"
                 If MessageBoxEx.Show(CommonUtility.MessageCode_Arg0.M003取消してもよろしいですか, PROGRAM_NAME) = Windows.Forms.DialogResult.No Then Return
 
-                If TitleBar.EditMode = EditMode.Create Then
-                    '発注変更の場合、発注枝番をクリア
-
-                    '画面の初期化
-                    Call InitDisp(True)
-
-                Else
-                    '画面の初期化
-                    Call InitDisp()
-                End If
-
+                '画面の初期化
+                Call InitDisp(True)
 
                 txtHATYUEDABAN.Focus()
 
@@ -485,9 +479,6 @@ Public Class frmHAT0001
         'コントール活性制御
         Call InitEnabledControl()
 
-        'ファンクションキーの初期化
-        Call InitFunctionKey()
-
         '発注情報の表示
         DispHatyuInfo()
 
@@ -498,6 +489,9 @@ Public Class frmHAT0001
 
         '発注日付
         txtHATYUDATE.Text = ServerDate.ToString("yyyy/MM/dd")
+
+        'ファンクションキーの初期化
+        Call InitFunctionKey()
 
         '受注情報の表示
         Call DispJyutyuInfo()
