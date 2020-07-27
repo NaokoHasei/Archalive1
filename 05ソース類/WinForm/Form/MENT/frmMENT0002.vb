@@ -236,6 +236,7 @@ Public Class frmMENT0002
 
         'ファンクションキー設定
         Call initFunctionKey()
+
     End Sub
 
     Private Sub ChangeRdoEnabled()
@@ -278,6 +279,9 @@ Public Class frmMENT0002
                     End If
                 End If
 
+                FunctionKey.SetItem(7, "検索", "検索", True)
+                FunctionKey.SetItem(8, "新規", "新規", True)
+
             Case enumFormStatus.REGIST
                 FunctionKey.SetItem(1, "取消", "取消", True)
 
@@ -293,6 +297,10 @@ Public Class frmMENT0002
                     '選択画面の場合
                     FunctionKey.SetItem(12, "登録/反映", "登録/反映", True, FunctionKey.FONT_SMALL)
                 End If
+
+                FunctionKey.SetItem(7, "検索", "検索", False)
+                FunctionKey.SetItem(8, "新規", "新規", False)
+
         End Select
 
     End Sub
@@ -693,6 +701,12 @@ Public Class frmMENT0002
 
                 ExecuteTorikesi(True)
 
+            Case "検索"
+                Call btnSearchClick()
+
+            Case "新規"
+                Call btnNewClick()
+
             Case "修正"
                 ExecuteSentaku(True)
 
@@ -821,61 +835,11 @@ Public Class frmMENT0002
     End Function
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-        '入力チェック
-        '上位科目
-        If InputErrorCheck_Control(cmbJyouiCode, 9999).HasValue Then Return
-
-        '検索する科目の設定を変更
-        Select Case True
-            Case rdoDKAMOKU.Checked
-                praKamokuTypeSelect = enumKamokuType.DKAMOKU
-            Case rdoCKAMOKU.Checked
-                praKamokuTypeSelect = enumKamokuType.CKAMOKU
-            Case rdoSKAMOKU.Checked
-                praKamokuTypeSelect = enumKamokuType.SKAMOKU
-            Case Else
-                praKamokuTypeSelect = enumKamokuType.SEARCH
-        End Select
-
-        'グリッドのデータ表示s
-        DoSearch()
-
-        '存在チェック
-        If CType(dbgMeisai.DataSource, DataTable).Rows.Count = 0 Then
-            MessageBoxEx.Show(CommonUtility.MessageCode_Arg0.M009該当データがありません, PROGRAM_NAME)
-            Return
-        End If
-
-        'フォームの状態変更
-        initFunctionKey()
+        Call btnSearchClick()
     End Sub
 
     Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
-        '入力チェック
-        '上位科目
-        If Not rdoDKAMOKU_NEW.Checked Then
-            '大科目以外を選択
-            If InputErrorCheck_Control(cmbJyouiCodeNew, 9999).HasValue Then Return
-        End If
-
-        '登録する科目の設定を変更
-        Select Case True
-            Case rdoDKAMOKU_NEW.Checked
-                praKamokuTypeRegist = enumKamokuType.DKAMOKU
-            Case rdoCKAMOKU_NEW.Checked
-                praKamokuTypeRegist = enumKamokuType.CKAMOKU
-            Case Else
-                praKamokuTypeRegist = enumKamokuType.SKAMOKU
-        End Select
-
-        '登録モードの変更
-        praRegistMode = enumRegistMode.INSERT
-
-        'グリッドのデータ表示
-        ShowGridDataInput()
-
-        'フォームの状態変更
-        ChangeFormMode(enumFormStatus.REGIST)
+        Call btnNewClick()
     End Sub
 
     Private Sub rdoKAMOKU_KeyDown(sender As Object, e As KeyEventArgs)
@@ -912,6 +876,64 @@ Public Class frmMENT0002
 
         '上位コードのコンボボックスの設定
         initComboBoxJyouiCode(cmbJyouiCodeNew, Nothing, rdoDKAMOKU_NEW, rdoCKAMOKU_NEW)
+    End Sub
+
+    Private Sub btnSearchClick()
+        '入力チェック
+        '上位科目
+        If InputErrorCheck_Control(cmbJyouiCode, 9999).HasValue Then Return
+
+        '検索する科目の設定を変更
+        Select Case True
+            Case rdoDKAMOKU.Checked
+                praKamokuTypeSelect = enumKamokuType.DKAMOKU
+            Case rdoCKAMOKU.Checked
+                praKamokuTypeSelect = enumKamokuType.CKAMOKU
+            Case rdoSKAMOKU.Checked
+                praKamokuTypeSelect = enumKamokuType.SKAMOKU
+            Case Else
+                praKamokuTypeSelect = enumKamokuType.SEARCH
+        End Select
+
+        'グリッドのデータ表示s
+        DoSearch()
+
+        '存在チェック
+        If CType(dbgMeisai.DataSource, DataTable).Rows.Count = 0 Then
+            MessageBoxEx.Show(CommonUtility.MessageCode_Arg0.M009該当データがありません, PROGRAM_NAME)
+            Return
+        End If
+
+        'フォームの状態変更
+        initFunctionKey()
+    End Sub
+
+    Private Sub btnNewClick()
+        '入力チェック
+        '上位科目
+        If Not rdoDKAMOKU_NEW.Checked Then
+            '大科目以外を選択
+            If InputErrorCheck_Control(cmbJyouiCodeNew, 9999).HasValue Then Return
+        End If
+
+        '登録する科目の設定を変更
+        Select Case True
+            Case rdoDKAMOKU_NEW.Checked
+                praKamokuTypeRegist = enumKamokuType.DKAMOKU
+            Case rdoCKAMOKU_NEW.Checked
+                praKamokuTypeRegist = enumKamokuType.CKAMOKU
+            Case Else
+                praKamokuTypeRegist = enumKamokuType.SKAMOKU
+        End Select
+
+        '登録モードの変更
+        praRegistMode = enumRegistMode.INSERT
+
+        'グリッドのデータ表示
+        ShowGridDataInput()
+
+        'フォームの状態変更
+        ChangeFormMode(enumFormStatus.REGIST)
     End Sub
 
     Private Sub dbgMeisai_Click(sender As Object, e As EventArgs) Handles dbgMeisai.Click
