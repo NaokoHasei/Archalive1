@@ -1889,4 +1889,19 @@ ErrorHandler:
         ' 「書式」「カルチャの書式情報」を使用し、文字列に変換します。
         Return dt.ToString("(ggyy年)", ci)
     End Function
+
+    ''' <summary>
+    ''' 支払条件Enterキー押下
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub txtSIHARAI_COMMENT_06_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSIHARAI_COMMENT_06.KeyDown
+        'キーコードチェック
+        If Not (e.KeyCode = Keys.Enter OrElse e.KeyCode = Keys.Tab) Then Exit Sub
+
+        dbgMeisai.Focus()
+
+    End Sub
+
 End Class

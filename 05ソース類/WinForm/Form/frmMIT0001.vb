@@ -2698,7 +2698,8 @@ OptimisticRepError:
 
         OutPutDebugLog(System.Reflection.MethodBase.GetCurrentMethod.Name)
 
-        txtTEISYUTUDATE.Focus()
+        dbgMEISAI.Focus()
+
     End Sub
 
     ''' <summary>

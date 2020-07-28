@@ -2730,11 +2730,8 @@ Public Class frmJYU0001
         'キーコードチェック
         If Not (e.KeyCode = Keys.Enter OrElse e.KeyCode = Keys.Tab) Then Exit Sub
 
-        If txtJYUTYUEDABAN.Enabled = False Then
-            txtJYUTYUDATE.Focus()
-        Else
-            txtJYUTYUEDABAN.Focus()
-        End If
+        dbgMEISAI.Focus()
+
     End Sub
 
     ''' <summary>
