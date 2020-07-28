@@ -140,6 +140,15 @@ Public Class TextBoxEx
                         'Enterキー処理
                         If MoveFocusAfterEnter = True Then
                             FindForm().SelectNextControl(Me, True, True, True, True)
+
+                            For i As Integer = 0 To 20
+                                Dim activeControl = FindForm.ActiveControl
+                                'ボタン以外の場合、処理終了
+                                If Not (TypeOf activeControl Is Button) Or e.KeyChar = ControlChars.Tab Then Exit For
+                                '次のコントロールをフォーカス
+                                FindForm().SelectNextControl(activeControl, True, True, True, True)
+                            Next
+
                         End If
                     End If
                     '            e.Handled = True
@@ -150,6 +159,15 @@ Public Class TextBoxEx
                     'Enterキー処理
                     If MoveFocusAfterEnter = True Then
                         FindForm().SelectNextControl(Me, True, True, True, True)
+
+                        For i As Integer = 0 To 20
+                            Dim activeControl = FindForm.ActiveControl
+                            'ボタン以外の場合、処理終了
+                            If Not (TypeOf activeControl Is Button) Or e.KeyChar = ControlChars.Tab Then Exit For
+                            '次のコントロールをフォーカス
+                            FindForm().SelectNextControl(activeControl, True, True, True, True)
+                        Next
+
                     End If
                 End If
 

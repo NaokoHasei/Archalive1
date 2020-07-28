@@ -284,8 +284,6 @@ Public Class SEN0040
 
         If Not loadComplete Then Exit Sub
 
-        Call subFilteringGrid()
-
         If CType(sender, Control).Name = txtTODOUFUKEN_SELECT.Name Then
             ComboBoxUpdateSIKUTYOUSON()
         ElseIf CType(sender, Control).Name = txtSIKUTYOUSON_SELECT.Name Then

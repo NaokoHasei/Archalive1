@@ -226,7 +226,7 @@ Partial Class SEN0040
         Me.cmdSearch2.Location = New System.Drawing.Point(514, 4)
         Me.cmdSearch2.Name = "cmdSearch2"
         Me.cmdSearch2.Size = New System.Drawing.Size(49, 25)
-        Me.cmdSearch2.TabIndex = 3
+        Me.cmdSearch2.TabIndex = 7
         Me.cmdSearch2.Text = "検索"
         Me.cmdSearch2.UseVisualStyleBackColor = True
         '
