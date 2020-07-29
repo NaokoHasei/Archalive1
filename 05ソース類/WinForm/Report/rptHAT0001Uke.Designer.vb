@@ -469,8 +469,9 @@ Partial Public Class rptHAT0001Uke
         Me.txtNAME12.Height = 0.1968504!
         Me.txtNAME12.Left = 0.01968504!
         Me.txtNAME12.Name = "txtNAME12"
+        Me.txtNAME12.ShrinkToFit = True
         Me.txtNAME12.Style = "font-family: 'ＭＳ 明朝'; font-size: 11.25pt; text-align: left; vertical-align: middl" &
-    "e"
+    "e; ddo-shrink-to-fit: true"
         Me.txtNAME12.Text = "1234567890123456789012345678901234567890"
         Me.txtNAME12.Top = 8.190947!
         Me.txtNAME12.Width = 3.188977!
@@ -1066,8 +1067,9 @@ Partial Public Class rptHAT0001Uke
         Me.txtNAME11.Height = 0.1968504!
         Me.txtNAME11.Left = 0.01968504!
         Me.txtNAME11.Name = "txtNAME11"
+        Me.txtNAME11.ShrinkToFit = True
         Me.txtNAME11.Style = "font-family: 'ＭＳ 明朝'; font-size: 11.25pt; text-align: left; vertical-align: middl" &
-    "e"
+    "e; ddo-shrink-to-fit: true"
         Me.txtNAME11.Text = "1234567890123456789012345678901234567890"
         Me.txtNAME11.Top = 7.994096!
         Me.txtNAME11.Width = 3.188977!
@@ -1280,8 +1282,9 @@ Partial Public Class rptHAT0001Uke
         Me.txtNAME01.Height = 0.1968504!
         Me.txtNAME01.Left = 0.01968504!
         Me.txtNAME01.Name = "txtNAME01"
+        Me.txtNAME01.ShrinkToFit = True
         Me.txtNAME01.Style = "font-family: 'ＭＳ 明朝'; font-size: 11.25pt; text-align: left; vertical-align: middl" &
-    "e"
+    "e; ddo-shrink-to-fit: true"
         Me.txtNAME01.Text = "1234567890123456789012345678901234567890"
         Me.txtNAME01.Top = 6.025593!
         Me.txtNAME01.Width = 3.188977!
@@ -1393,8 +1396,9 @@ Partial Public Class rptHAT0001Uke
         Me.txtNAME02.Height = 0.1968504!
         Me.txtNAME02.Left = 0.01968504!
         Me.txtNAME02.Name = "txtNAME02"
+        Me.txtNAME02.ShrinkToFit = True
         Me.txtNAME02.Style = "font-family: 'ＭＳ 明朝'; font-size: 11.25pt; text-align: left; vertical-align: middl" &
-    "e"
+    "e; ddo-shrink-to-fit: true"
         Me.txtNAME02.Text = "1234567890123456789012345678901234567890"
         Me.txtNAME02.Top = 6.222443!
         Me.txtNAME02.Width = 3.188977!
@@ -1405,8 +1409,9 @@ Partial Public Class rptHAT0001Uke
         Me.txtNAME03.Height = 0.1968504!
         Me.txtNAME03.Left = 0.01968504!
         Me.txtNAME03.Name = "txtNAME03"
+        Me.txtNAME03.ShrinkToFit = True
         Me.txtNAME03.Style = "font-family: 'ＭＳ 明朝'; font-size: 11.25pt; text-align: left; vertical-align: middl" &
-    "e"
+    "e; ddo-shrink-to-fit: true"
         Me.txtNAME03.Text = "1234567890123456789012345678901234567890"
         Me.txtNAME03.Top = 6.419295!
         Me.txtNAME03.Width = 3.188977!
@@ -1417,8 +1422,9 @@ Partial Public Class rptHAT0001Uke
         Me.txtNAME04.Height = 0.1968504!
         Me.txtNAME04.Left = 0.01968504!
         Me.txtNAME04.Name = "txtNAME04"
+        Me.txtNAME04.ShrinkToFit = True
         Me.txtNAME04.Style = "font-family: 'ＭＳ 明朝'; font-size: 11.25pt; text-align: left; vertical-align: middl" &
-    "e"
+    "e; ddo-shrink-to-fit: true"
         Me.txtNAME04.Text = "1234567890123456789012345678901234567890"
         Me.txtNAME04.Top = 6.616144!
         Me.txtNAME04.Width = 3.188977!
@@ -1429,8 +1435,9 @@ Partial Public Class rptHAT0001Uke
         Me.txtNAME05.Height = 0.1968504!
         Me.txtNAME05.Left = 0.01968504!
         Me.txtNAME05.Name = "txtNAME05"
+        Me.txtNAME05.ShrinkToFit = True
         Me.txtNAME05.Style = "font-family: 'ＭＳ 明朝'; font-size: 11.25pt; text-align: left; vertical-align: middl" &
-    "e"
+    "e; ddo-shrink-to-fit: true"
         Me.txtNAME05.Text = "1234567890123456789012345678901234567890"
         Me.txtNAME05.Top = 6.812995!
         Me.txtNAME05.Width = 3.188977!
@@ -1441,8 +1448,9 @@ Partial Public Class rptHAT0001Uke
         Me.txtNAME06.Height = 0.1968504!
         Me.txtNAME06.Left = 0.01968504!
         Me.txtNAME06.Name = "txtNAME06"
+        Me.txtNAME06.ShrinkToFit = True
         Me.txtNAME06.Style = "font-family: 'ＭＳ 明朝'; font-size: 11.25pt; text-align: left; vertical-align: middl" &
-    "e"
+    "e; ddo-shrink-to-fit: true"
         Me.txtNAME06.Text = "1234567890123456789012345678901234567890"
         Me.txtNAME06.Top = 7.009845!
         Me.txtNAME06.Width = 3.188977!
@@ -1453,8 +1461,9 @@ Partial Public Class rptHAT0001Uke
         Me.txtNAME07.Height = 0.1968504!
         Me.txtNAME07.Left = 0.01968504!
         Me.txtNAME07.Name = "txtNAME07"
+        Me.txtNAME07.ShrinkToFit = True
         Me.txtNAME07.Style = "font-family: 'ＭＳ 明朝'; font-size: 11.25pt; text-align: left; vertical-align: middl" &
-    "e"
+    "e; ddo-shrink-to-fit: true"
         Me.txtNAME07.Text = "1234567890123456789012345678901234567890"
         Me.txtNAME07.Top = 7.206695!
         Me.txtNAME07.Width = 3.188977!
@@ -1465,8 +1474,9 @@ Partial Public Class rptHAT0001Uke
         Me.txtNAME08.Height = 0.1968504!
         Me.txtNAME08.Left = 0.01968504!
         Me.txtNAME08.Name = "txtNAME08"
+        Me.txtNAME08.ShrinkToFit = True
         Me.txtNAME08.Style = "font-family: 'ＭＳ 明朝'; font-size: 11.25pt; text-align: left; vertical-align: middl" &
-    "e"
+    "e; ddo-shrink-to-fit: true"
         Me.txtNAME08.Text = "1234567890123456789012345678901234567890"
         Me.txtNAME08.Top = 7.403546!
         Me.txtNAME08.Width = 3.188977!
@@ -1477,8 +1487,9 @@ Partial Public Class rptHAT0001Uke
         Me.txtNAME09.Height = 0.1968504!
         Me.txtNAME09.Left = 0.01968504!
         Me.txtNAME09.Name = "txtNAME09"
+        Me.txtNAME09.ShrinkToFit = True
         Me.txtNAME09.Style = "font-family: 'ＭＳ 明朝'; font-size: 11.25pt; text-align: left; vertical-align: middl" &
-    "e"
+    "e; ddo-shrink-to-fit: true"
         Me.txtNAME09.Text = "1234567890123456789012345678901234567890"
         Me.txtNAME09.Top = 7.600397!
         Me.txtNAME09.Width = 3.188977!
@@ -1489,8 +1500,9 @@ Partial Public Class rptHAT0001Uke
         Me.txtNAME10.Height = 0.1968504!
         Me.txtNAME10.Left = 0.01968504!
         Me.txtNAME10.Name = "txtNAME10"
+        Me.txtNAME10.ShrinkToFit = True
         Me.txtNAME10.Style = "font-family: 'ＭＳ 明朝'; font-size: 11.25pt; text-align: left; vertical-align: middl" &
-    "e"
+    "e; ddo-shrink-to-fit: true"
         Me.txtNAME10.Text = "1234567890123456789012345678901234567890"
         Me.txtNAME10.Top = 7.797247!
         Me.txtNAME10.Width = 3.188977!

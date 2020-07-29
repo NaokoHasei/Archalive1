@@ -203,8 +203,9 @@ Partial Public Class rptHAT0001Uchiwake
         Me.txtNAME.Height = 0.1992116!
         Me.txtNAME.Left = 0.1968504!
         Me.txtNAME.Name = "txtNAME"
+        Me.txtNAME.ShrinkToFit = True
         Me.txtNAME.Style = "font-family: 'ＭＳ 明朝'; font-size: 11.25pt; text-align: left; vertical-align: middl" &
-    "e"
+    "e; ddo-shrink-to-fit: true"
         Me.txtNAME.Text = "123456789012345678901234567890"
         Me.txtNAME.Top = 0!
         Me.txtNAME.Width = 2.82559!
