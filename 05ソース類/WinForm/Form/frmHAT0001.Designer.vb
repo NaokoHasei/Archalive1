@@ -34,7 +34,6 @@ Partial Class frmHAT0001
         Me.cmbHATTYUNO = New CommonUtility.WinFormControls.MitumoriNoComboBox()
         Me.lblHATYUNO = New CommonUtility.WinFormControls.TextBoxEx()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.txtHATYUEDABAN2 = New CommonUtility.WinFormControls.TextBoxEx()
         Me.txtSIIRECODE = New CommonUtility.WinFormControls.TypComboBox()
         Me.txtSIIRENAME = New CommonUtility.WinFormControls.TextBoxEx()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -86,6 +85,7 @@ Partial Class frmHAT0001
         Me.lblTAX = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
+        Me.txtHATYUEDABAN2 = New CommonUtility.WinFormControls.MitumoriNoTextBoxEx()
         Me.pnl対象下請情報.SuspendLayout()
         CType(Me.dbgMeisai, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.fraMeisaikei.SuspendLayout()
@@ -194,9 +194,9 @@ Partial Class frmHAT0001
         'pnl対象下請情報
         '
         Me.pnl対象下請情報.BackColor = System.Drawing.Color.Thistle
+        Me.pnl対象下請情報.Controls.Add(Me.txtHATYUEDABAN2)
         Me.pnl対象下請情報.Controls.Add(Me.cmbHATTYUNO)
         Me.pnl対象下請情報.Controls.Add(Me.Label14)
-        Me.pnl対象下請情報.Controls.Add(Me.txtHATYUEDABAN2)
         Me.pnl対象下請情報.Controls.Add(Me.txtSIIRECODE)
         Me.pnl対象下請情報.Controls.Add(Me.Label12)
         Me.pnl対象下請情報.Controls.Add(Me.Label17)
@@ -285,24 +285,6 @@ Partial Class frmHAT0001
         Me.Label14.Size = New System.Drawing.Size(13, 17)
         Me.Label14.TabIndex = 108
         Me.Label14.Text = "-"
-        '
-        'txtHATYUEDABAN2
-        '
-        Me.txtHATYUEDABAN2.BackColor = System.Drawing.Color.White
-        Me.txtHATYUEDABAN2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtHATYUEDABAN2.DigitOnly = True
-        Me.txtHATYUEDABAN2.DisplayName = "発注枝番"
-        Me.txtHATYUEDABAN2.Enabled = False
-        Me.txtHATYUEDABAN2.Font = New System.Drawing.Font("メイリオ", 8.0!)
-        Me.txtHATYUEDABAN2.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtHATYUEDABAN2.Location = New System.Drawing.Point(230, 9)
-        Me.txtHATYUEDABAN2.MaxLength = 2
-        Me.txtHATYUEDABAN2.Name = "txtHATYUEDABAN2"
-        Me.txtHATYUEDABAN2.Size = New System.Drawing.Size(22, 16)
-        Me.txtHATYUEDABAN2.TabIndex = 2
-        Me.txtHATYUEDABAN2.Text = "1234567890123456789012345678901234567890"
-        Me.txtHATYUEDABAN2.UseZeroPadding = True
-        Me.txtHATYUEDABAN2.ZeroPaddingLength = 2
         '
         'txtSIIRECODE
         '
@@ -955,6 +937,25 @@ Partial Class frmHAT0001
         Me.Label18.Text = "変更前小計"
         Me.Label18.Visible = False
         '
+        'txtHATYUEDABAN2
+        '
+        Me.txtHATYUEDABAN2.BackColor = System.Drawing.Color.White
+        Me.txtHATYUEDABAN2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtHATYUEDABAN2.DigitOnly = True
+        Me.txtHATYUEDABAN2.DisplayName = "発注枝番"
+        Me.txtHATYUEDABAN2.Enabled = False
+        Me.txtHATYUEDABAN2.Font = New System.Drawing.Font("メイリオ", 8.0!)
+        Me.txtHATYUEDABAN2.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.txtHATYUEDABAN2.LinkedComboBox = Me.cmbHATTYUNO
+        Me.txtHATYUEDABAN2.Location = New System.Drawing.Point(230, 9)
+        Me.txtHATYUEDABAN2.MaxLength = 2
+        Me.txtHATYUEDABAN2.Name = "txtHATYUEDABAN2"
+        Me.txtHATYUEDABAN2.Size = New System.Drawing.Size(22, 16)
+        Me.txtHATYUEDABAN2.TabIndex = 2
+        Me.txtHATYUEDABAN2.Text = "1234567890123456789012345678901234567890"
+        Me.txtHATYUEDABAN2.UseZeroPadding = True
+        Me.txtHATYUEDABAN2.ZeroPaddingLength = 2
+        '
         'frmHAT0001
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
@@ -1044,7 +1045,6 @@ Partial Class frmHAT0001
     Private WithEvents Label12 As Label
     Friend WithEvents cmbHATTYUNO As CommonUtility.WinFormControls.MitumoriNoComboBox
     Friend WithEvents Label14 As Label
-    Friend WithEvents txtHATYUEDABAN2 As CommonUtility.WinFormControls.TextBoxEx
     Friend WithEvents fraMeisaikei As Panel
     Friend WithEvents lblGKGENKAGAKU_NUKIBefore As Label
     Friend WithEvents lblGKGENKAGAKU As Label
@@ -1055,4 +1055,5 @@ Partial Class frmHAT0001
     Friend WithEvents Label16 As Label
     Friend WithEvents Label18 As Label
     Friend WithEvents lblHATYUNO As CommonUtility.WinFormControls.TextBoxEx
+    Friend WithEvents txtHATYUEDABAN2 As CommonUtility.WinFormControls.MitumoriNoTextBoxEx
 End Class

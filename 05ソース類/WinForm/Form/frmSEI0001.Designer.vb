@@ -25,8 +25,8 @@ Partial Class frmSEI0001
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSEI0001))
         Me.Label18 = New System.Windows.Forms.Label()
         Me.fraHeader = New System.Windows.Forms.Panel()
+        Me.txtSeikyuEdaban = New CommonUtility.WinFormControls.MitumoriNoTextBoxEx()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.txtSeikyuEdaban = New CommonUtility.WinFormControls.TextBoxEx()
         Me.txtSeikyuNo = New CommonUtility.WinFormControls.TextBoxEx()
         Me.cmbSeikyuNo = New CommonUtility.WinFormControls.MitumoriNoComboBox()
         Me.lblSEIKYUNO = New CommonUtility.WinFormControls.TextBoxEx()
@@ -133,8 +133,8 @@ Partial Class frmSEI0001
         'fraHeader
         '
         Me.fraHeader.BackColor = System.Drawing.Color.Thistle
-        Me.fraHeader.Controls.Add(Me.Label13)
         Me.fraHeader.Controls.Add(Me.txtSeikyuEdaban)
+        Me.fraHeader.Controls.Add(Me.Label13)
         Me.fraHeader.Controls.Add(Me.txtSeikyuNo)
         Me.fraHeader.Controls.Add(Me.cmbSeikyuNo)
         Me.fraHeader.Controls.Add(Me.txtKokyakuCode)
@@ -156,6 +156,23 @@ Partial Class frmSEI0001
         Me.fraHeader.Size = New System.Drawing.Size(505, 84)
         Me.fraHeader.TabIndex = 0
         '
+        'txtSeikyuEdaban
+        '
+        Me.txtSeikyuEdaban.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtSeikyuEdaban.DigitOnly = True
+        Me.txtSeikyuEdaban.DisplayName = "請求枝番"
+        Me.txtSeikyuEdaban.Font = New System.Drawing.Font("メイリオ", 8.0!)
+        Me.txtSeikyuEdaban.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.txtSeikyuEdaban.LinkedComboBox = Me.cmbSeikyuNo
+        Me.txtSeikyuEdaban.Location = New System.Drawing.Point(162, 8)
+        Me.txtSeikyuEdaban.MaxLength = 2
+        Me.txtSeikyuEdaban.Name = "txtSeikyuEdaban"
+        Me.txtSeikyuEdaban.Size = New System.Drawing.Size(22, 16)
+        Me.txtSeikyuEdaban.TabIndex = 1
+        Me.txtSeikyuEdaban.Text = "1234567890123456789012345678901234567890"
+        Me.txtSeikyuEdaban.UseZeroPadding = True
+        Me.txtSeikyuEdaban.ZeroPaddingLength = 2
+        '
         'Label13
         '
         Me.Label13.AutoSize = True
@@ -165,22 +182,6 @@ Partial Class frmSEI0001
         Me.Label13.Size = New System.Drawing.Size(13, 17)
         Me.Label13.TabIndex = 94
         Me.Label13.Text = "-"
-        '
-        'txtSeikyuEdaban
-        '
-        Me.txtSeikyuEdaban.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtSeikyuEdaban.DigitOnly = True
-        Me.txtSeikyuEdaban.DisplayName = "請求枝番"
-        Me.txtSeikyuEdaban.Font = New System.Drawing.Font("メイリオ", 8.0!)
-        Me.txtSeikyuEdaban.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtSeikyuEdaban.Location = New System.Drawing.Point(162, 8)
-        Me.txtSeikyuEdaban.MaxLength = 2
-        Me.txtSeikyuEdaban.Name = "txtSeikyuEdaban"
-        Me.txtSeikyuEdaban.Size = New System.Drawing.Size(22, 16)
-        Me.txtSeikyuEdaban.TabIndex = 1
-        Me.txtSeikyuEdaban.Text = "1234567890123456789012345678901234567890"
-        Me.txtSeikyuEdaban.UseZeroPadding = True
-        Me.txtSeikyuEdaban.ZeroPaddingLength = 2
         '
         'txtSeikyuNo
         '
@@ -1253,7 +1254,6 @@ Partial Class frmSEI0001
     Friend WithEvents txtKokyakuCode As CommonUtility.WinFormControls.TextBoxEx
     Protected WithEvents dbgMEISAI As C1.Win.C1TrueDBGrid.C1TrueDBGrid
     Friend WithEvents Label13 As Label
-    Friend WithEvents txtSeikyuEdaban As CommonUtility.WinFormControls.TextBoxEx
     Friend WithEvents txtSeikyuNo As CommonUtility.WinFormControls.TextBoxEx
     Friend WithEvents cmbSeikyuNo As CommonUtility.WinFormControls.MitumoriNoComboBox
     Friend WithEvents lblInfo_JyutyuNo As Label
@@ -1271,4 +1271,5 @@ Partial Class frmSEI0001
     Friend WithEvents txtSURYO_SYOSUIKAKETA As CommonUtility.WinFormControls.TextBoxEx
     Friend WithEvents Label8 As Label
     Friend WithEvents Label6 As Label
+    Friend WithEvents txtSeikyuEdaban As CommonUtility.WinFormControls.MitumoriNoTextBoxEx
 End Class

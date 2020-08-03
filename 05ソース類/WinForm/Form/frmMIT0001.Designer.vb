@@ -25,15 +25,16 @@ Partial Class frmMIT0001
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMIT0001))
         Me.trvWorkInfo = New System.Windows.Forms.TreeView()
         Me.fraKeyInput = New System.Windows.Forms.Panel()
+        Me.txtSAI_MITUMORIEDABAN = New CommonUtility.WinFormControls.MitumoriNoTextBoxEx()
+        Me.cmbMITUMORINO = New CommonUtility.WinFormControls.MitumoriNoComboBox()
+        Me.lblMITUMORINO = New CommonUtility.WinFormControls.TextBoxEx()
         Me.txtKokyakuCode = New CommonUtility.WinFormControls.TextBoxEx()
         Me.lblSAN_MITUMORINO = New CommonUtility.WinFormControls.TextBoxEx()
         Me.Label32 = New System.Windows.Forms.Label()
-        Me.txtSAN_MITUMORIEDABAN = New CommonUtility.WinFormControls.TextBoxEx()
         Me.txtSAN_MITUMORINO = New CommonUtility.WinFormControls.TextBoxEx()
         Me.cmbSAN_MITUMORINO = New CommonUtility.WinFormControls.MitumoriNoComboBox()
         Me.lblSAI_MITUMORINO = New CommonUtility.WinFormControls.TextBoxEx()
         Me.Label30 = New System.Windows.Forms.Label()
-        Me.txtSAI_MITUMORIEDABAN = New CommonUtility.WinFormControls.TextBoxEx()
         Me.txtSAI_MITUMORINO = New CommonUtility.WinFormControls.TextBoxEx()
         Me.cmbSAI_MITUMORINO = New CommonUtility.WinFormControls.MitumoriNoComboBox()
         Me.txtKEISYOUNAME = New CommonUtility.WinFormControls.TextBoxEx()
@@ -103,15 +104,14 @@ Partial Class frmMIT0001
         Me.trvWorkInfo_Reference = New System.Windows.Forms.TreeView()
         Me.lblSyosu = New System.Windows.Forms.Label()
         Me.fraMITUMORINO = New System.Windows.Forms.Panel()
-        Me.lblMITUMORINO = New CommonUtility.WinFormControls.TextBoxEx()
+        Me.txtMITUMORIEDABAN = New CommonUtility.WinFormControls.MitumoriNoTextBoxEx()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.txtMITUMORIEDABAN = New CommonUtility.WinFormControls.TextBoxEx()
         Me.txtMITUMORINO = New CommonUtility.WinFormControls.TextBoxEx()
-        Me.cmbMITUMORINO = New CommonUtility.WinFormControls.MitumoriNoComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnMENT0002 = New System.Windows.Forms.Button()
         Me.btnMENT0006 = New System.Windows.Forms.Button()
         Me.lblSyosuName = New System.Windows.Forms.Button()
+        Me.txtSAN_MITUMORIEDABAN = New CommonUtility.WinFormControls.MitumoriNoTextBoxEx()
         Me.fraKeyInput.SuspendLayout()
         Me.fraMeisaikei.SuspendLayout()
         Me.fraSogokei.SuspendLayout()
@@ -149,15 +149,15 @@ Partial Class frmMIT0001
         'fraKeyInput
         '
         Me.fraKeyInput.BackColor = System.Drawing.Color.Thistle
+        Me.fraKeyInput.Controls.Add(Me.txtSAN_MITUMORIEDABAN)
+        Me.fraKeyInput.Controls.Add(Me.txtSAI_MITUMORIEDABAN)
         Me.fraKeyInput.Controls.Add(Me.txtKokyakuCode)
         Me.fraKeyInput.Controls.Add(Me.lblSAN_MITUMORINO)
         Me.fraKeyInput.Controls.Add(Me.Label32)
-        Me.fraKeyInput.Controls.Add(Me.txtSAN_MITUMORIEDABAN)
         Me.fraKeyInput.Controls.Add(Me.txtSAN_MITUMORINO)
         Me.fraKeyInput.Controls.Add(Me.cmbSAN_MITUMORINO)
         Me.fraKeyInput.Controls.Add(Me.lblSAI_MITUMORINO)
         Me.fraKeyInput.Controls.Add(Me.Label30)
-        Me.fraKeyInput.Controls.Add(Me.txtSAI_MITUMORIEDABAN)
         Me.fraKeyInput.Controls.Add(Me.txtSAI_MITUMORINO)
         Me.fraKeyInput.Controls.Add(Me.cmbSAI_MITUMORINO)
         Me.fraKeyInput.Controls.Add(Me.txtKEISYOUNAME)
@@ -194,6 +194,54 @@ Partial Class frmMIT0001
         Me.fraKeyInput.Name = "fraKeyInput"
         Me.fraKeyInput.Size = New System.Drawing.Size(1018, 106)
         Me.fraKeyInput.TabIndex = 1
+        '
+        'txtSAI_MITUMORIEDABAN
+        '
+        Me.txtSAI_MITUMORIEDABAN.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtSAI_MITUMORIEDABAN.DigitOnly = True
+        Me.txtSAI_MITUMORIEDABAN.DisplayName = "再見積枝番"
+        Me.txtSAI_MITUMORIEDABAN.Font = New System.Drawing.Font("メイリオ", 8.0!)
+        Me.txtSAI_MITUMORIEDABAN.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.txtSAI_MITUMORIEDABAN.LinkedComboBox = Me.cmbSAI_MITUMORINO
+        Me.txtSAI_MITUMORIEDABAN.Location = New System.Drawing.Point(576, 4)
+        Me.txtSAI_MITUMORIEDABAN.MaxLength = 2
+        Me.txtSAI_MITUMORIEDABAN.Name = "txtSAI_MITUMORIEDABAN"
+        Me.txtSAI_MITUMORIEDABAN.Size = New System.Drawing.Size(22, 16)
+        Me.txtSAI_MITUMORIEDABAN.TabIndex = 12
+        Me.txtSAI_MITUMORIEDABAN.Text = "1234567890123456789012345678901234567890"
+        Me.txtSAI_MITUMORIEDABAN.UseZeroPadding = True
+        Me.txtSAI_MITUMORIEDABAN.ZeroPaddingLength = 2
+        '
+        'cmbMITUMORINO
+        '
+        Me.cmbMITUMORINO.DisplayName = "見積Ｎｏ"
+        Me.cmbMITUMORINO.LinkedTextBox = Me.lblMITUMORINO
+        Me.cmbMITUMORINO.Location = New System.Drawing.Point(192, 1)
+        Me.cmbMITUMORINO.Margin = New System.Windows.Forms.Padding(3, 6, 3, 6)
+        Me.cmbMITUMORINO.MaxLength = 32767
+        Me.cmbMITUMORINO.Name = "cmbMITUMORINO"
+        Me.cmbMITUMORINO.PopupErrorDialog = False
+        Me.cmbMITUMORINO.Size = New System.Drawing.Size(17, 18)
+        Me.cmbMITUMORINO.TabIndex = 3
+        Me.cmbMITUMORINO.TabStop = False
+        Me.cmbMITUMORINO.UseUpdateLinkedTextByCodeChange = True
+        '
+        'lblMITUMORINO
+        '
+        Me.lblMITUMORINO.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(233, Byte), Integer), CType(CType(216, Byte), Integer))
+        Me.lblMITUMORINO.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lblMITUMORINO.DisplayName = "見積Ｎｏ"
+        Me.lblMITUMORINO.Enabled = False
+        Me.lblMITUMORINO.Font = New System.Drawing.Font("メイリオ", 8.0!)
+        Me.lblMITUMORINO.ImeMode = System.Windows.Forms.ImeMode.Hiragana
+        Me.lblMITUMORINO.Location = New System.Drawing.Point(217, 2)
+        Me.lblMITUMORINO.MaxLength = 10
+        Me.lblMITUMORINO.Name = "lblMITUMORINO"
+        Me.lblMITUMORINO.ReadOnly = True
+        Me.lblMITUMORINO.Size = New System.Drawing.Size(94, 16)
+        Me.lblMITUMORINO.TabIndex = 81
+        Me.lblMITUMORINO.Text = "1234567890-01"
+        Me.lblMITUMORINO.Visible = False
         '
         'txtKokyakuCode
         '
@@ -242,22 +290,6 @@ Partial Class frmMIT0001
         Me.Label32.Size = New System.Drawing.Size(13, 17)
         Me.Label32.TabIndex = 15
         Me.Label32.Text = "-"
-        '
-        'txtSAN_MITUMORIEDABAN
-        '
-        Me.txtSAN_MITUMORIEDABAN.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtSAN_MITUMORIEDABAN.DigitOnly = True
-        Me.txtSAN_MITUMORIEDABAN.DisplayName = "参照見積枝番"
-        Me.txtSAN_MITUMORIEDABAN.Font = New System.Drawing.Font("メイリオ", 8.0!)
-        Me.txtSAN_MITUMORIEDABAN.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtSAN_MITUMORIEDABAN.Location = New System.Drawing.Point(576, 23)
-        Me.txtSAN_MITUMORIEDABAN.MaxLength = 2
-        Me.txtSAN_MITUMORIEDABAN.Name = "txtSAN_MITUMORIEDABAN"
-        Me.txtSAN_MITUMORIEDABAN.Size = New System.Drawing.Size(22, 16)
-        Me.txtSAN_MITUMORIEDABAN.TabIndex = 14
-        Me.txtSAN_MITUMORIEDABAN.Text = "1234567890123456789012345678901234567890"
-        Me.txtSAN_MITUMORIEDABAN.UseZeroPadding = True
-        Me.txtSAN_MITUMORIEDABAN.ZeroPaddingLength = 2
         '
         'txtSAN_MITUMORINO
         '
@@ -316,22 +348,6 @@ Partial Class frmMIT0001
         Me.Label30.Size = New System.Drawing.Size(13, 17)
         Me.Label30.TabIndex = 79
         Me.Label30.Text = "-"
-        '
-        'txtSAI_MITUMORIEDABAN
-        '
-        Me.txtSAI_MITUMORIEDABAN.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtSAI_MITUMORIEDABAN.DigitOnly = True
-        Me.txtSAI_MITUMORIEDABAN.DisplayName = "再見積枝番"
-        Me.txtSAI_MITUMORIEDABAN.Font = New System.Drawing.Font("メイリオ", 8.0!)
-        Me.txtSAI_MITUMORIEDABAN.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtSAI_MITUMORIEDABAN.Location = New System.Drawing.Point(576, 4)
-        Me.txtSAI_MITUMORIEDABAN.MaxLength = 2
-        Me.txtSAI_MITUMORIEDABAN.Name = "txtSAI_MITUMORIEDABAN"
-        Me.txtSAI_MITUMORIEDABAN.Size = New System.Drawing.Size(22, 16)
-        Me.txtSAI_MITUMORIEDABAN.TabIndex = 12
-        Me.txtSAI_MITUMORIEDABAN.Text = "1234567890123456789012345678901234567890"
-        Me.txtSAI_MITUMORIEDABAN.UseZeroPadding = True
-        Me.txtSAI_MITUMORIEDABAN.ZeroPaddingLength = 2
         '
         'txtSAI_MITUMORINO
         '
@@ -1235,9 +1251,9 @@ Partial Class frmMIT0001
         'fraMITUMORINO
         '
         Me.fraMITUMORINO.BackColor = System.Drawing.Color.Thistle
+        Me.fraMITUMORINO.Controls.Add(Me.txtMITUMORIEDABAN)
         Me.fraMITUMORINO.Controls.Add(Me.lblMITUMORINO)
         Me.fraMITUMORINO.Controls.Add(Me.Label13)
-        Me.fraMITUMORINO.Controls.Add(Me.txtMITUMORIEDABAN)
         Me.fraMITUMORINO.Controls.Add(Me.txtMITUMORINO)
         Me.fraMITUMORINO.Controls.Add(Me.cmbMITUMORINO)
         Me.fraMITUMORINO.Controls.Add(Me.Label2)
@@ -1246,22 +1262,22 @@ Partial Class frmMIT0001
         Me.fraMITUMORINO.Size = New System.Drawing.Size(318, 22)
         Me.fraMITUMORINO.TabIndex = 1
         '
-        'lblMITUMORINO
+        'txtMITUMORIEDABAN
         '
-        Me.lblMITUMORINO.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(233, Byte), Integer), CType(CType(216, Byte), Integer))
-        Me.lblMITUMORINO.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lblMITUMORINO.DisplayName = "見積Ｎｏ"
-        Me.lblMITUMORINO.Enabled = False
-        Me.lblMITUMORINO.Font = New System.Drawing.Font("メイリオ", 8.0!)
-        Me.lblMITUMORINO.ImeMode = System.Windows.Forms.ImeMode.Hiragana
-        Me.lblMITUMORINO.Location = New System.Drawing.Point(217, 2)
-        Me.lblMITUMORINO.MaxLength = 10
-        Me.lblMITUMORINO.Name = "lblMITUMORINO"
-        Me.lblMITUMORINO.ReadOnly = True
-        Me.lblMITUMORINO.Size = New System.Drawing.Size(94, 16)
-        Me.lblMITUMORINO.TabIndex = 81
-        Me.lblMITUMORINO.Text = "1234567890-01"
-        Me.lblMITUMORINO.Visible = False
+        Me.txtMITUMORIEDABAN.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtMITUMORIEDABAN.DigitOnly = True
+        Me.txtMITUMORIEDABAN.DisplayName = "見積枝番"
+        Me.txtMITUMORIEDABAN.Font = New System.Drawing.Font("メイリオ", 8.0!)
+        Me.txtMITUMORIEDABAN.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.txtMITUMORIEDABAN.LinkedComboBox = Me.cmbMITUMORINO
+        Me.txtMITUMORIEDABAN.Location = New System.Drawing.Point(167, 2)
+        Me.txtMITUMORIEDABAN.MaxLength = 2
+        Me.txtMITUMORIEDABAN.Name = "txtMITUMORIEDABAN"
+        Me.txtMITUMORIEDABAN.Size = New System.Drawing.Size(22, 16)
+        Me.txtMITUMORIEDABAN.TabIndex = 3
+        Me.txtMITUMORIEDABAN.Text = "1234567890123456789012345678901234567890"
+        Me.txtMITUMORIEDABAN.UseZeroPadding = True
+        Me.txtMITUMORIEDABAN.ZeroPaddingLength = 2
         '
         'Label13
         '
@@ -1272,22 +1288,6 @@ Partial Class frmMIT0001
         Me.Label13.Size = New System.Drawing.Size(13, 17)
         Me.Label13.TabIndex = 2
         Me.Label13.Text = "-"
-        '
-        'txtMITUMORIEDABAN
-        '
-        Me.txtMITUMORIEDABAN.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtMITUMORIEDABAN.DigitOnly = True
-        Me.txtMITUMORIEDABAN.DisplayName = "見積枝番"
-        Me.txtMITUMORIEDABAN.Font = New System.Drawing.Font("メイリオ", 8.0!)
-        Me.txtMITUMORIEDABAN.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtMITUMORIEDABAN.Location = New System.Drawing.Point(167, 2)
-        Me.txtMITUMORIEDABAN.MaxLength = 2
-        Me.txtMITUMORIEDABAN.Name = "txtMITUMORIEDABAN"
-        Me.txtMITUMORIEDABAN.Size = New System.Drawing.Size(22, 16)
-        Me.txtMITUMORIEDABAN.TabIndex = 3
-        Me.txtMITUMORIEDABAN.Text = "1234567890123456789012345678901234567890"
-        Me.txtMITUMORIEDABAN.UseZeroPadding = True
-        Me.txtMITUMORIEDABAN.ZeroPaddingLength = 2
         '
         'txtMITUMORINO
         '
@@ -1306,20 +1306,6 @@ Partial Class frmMIT0001
         Me.txtMITUMORINO.Text = "1234567890"
         Me.txtMITUMORINO.UseZeroPadding = True
         Me.txtMITUMORINO.ZeroPaddingLength = 10
-        '
-        'cmbMITUMORINO
-        '
-        Me.cmbMITUMORINO.DisplayName = "見積Ｎｏ"
-        Me.cmbMITUMORINO.LinkedTextBox = Me.lblMITUMORINO
-        Me.cmbMITUMORINO.Location = New System.Drawing.Point(192, 1)
-        Me.cmbMITUMORINO.Margin = New System.Windows.Forms.Padding(3, 6, 3, 6)
-        Me.cmbMITUMORINO.MaxLength = 32767
-        Me.cmbMITUMORINO.Name = "cmbMITUMORINO"
-        Me.cmbMITUMORINO.PopupErrorDialog = False
-        Me.cmbMITUMORINO.Size = New System.Drawing.Size(17, 18)
-        Me.cmbMITUMORINO.TabIndex = 3
-        Me.cmbMITUMORINO.TabStop = False
-        Me.cmbMITUMORINO.UseUpdateLinkedTextByCodeChange = True
         '
         'Label2
         '
@@ -1369,6 +1355,23 @@ Partial Class frmMIT0001
         Me.lblSyosuName.TabStop = False
         Me.lblSyosuName.Text = "数量小数点以下桁数：０位"
         Me.lblSyosuName.UseVisualStyleBackColor = True
+        '
+        'txtSAN_MITUMORIEDABAN
+        '
+        Me.txtSAN_MITUMORIEDABAN.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtSAN_MITUMORIEDABAN.DigitOnly = True
+        Me.txtSAN_MITUMORIEDABAN.DisplayName = "参照見積枝番"
+        Me.txtSAN_MITUMORIEDABAN.Font = New System.Drawing.Font("メイリオ", 8.0!)
+        Me.txtSAN_MITUMORIEDABAN.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.txtSAN_MITUMORIEDABAN.LinkedComboBox = Me.cmbSAN_MITUMORINO
+        Me.txtSAN_MITUMORIEDABAN.Location = New System.Drawing.Point(576, 23)
+        Me.txtSAN_MITUMORIEDABAN.MaxLength = 2
+        Me.txtSAN_MITUMORIEDABAN.Name = "txtSAN_MITUMORIEDABAN"
+        Me.txtSAN_MITUMORIEDABAN.Size = New System.Drawing.Size(22, 16)
+        Me.txtSAN_MITUMORIEDABAN.TabIndex = 14
+        Me.txtSAN_MITUMORIEDABAN.Text = "1234567890123456789012345678901234567890"
+        Me.txtSAN_MITUMORIEDABAN.UseZeroPadding = True
+        Me.txtSAN_MITUMORIEDABAN.ZeroPaddingLength = 2
         '
         'frmMIT0001
         '
@@ -1481,18 +1484,15 @@ Partial Class frmMIT0001
     Friend WithEvents lblSyosu As System.Windows.Forms.Label
     Friend WithEvents lblSAI_MITUMORINO As CommonUtility.WinFormControls.TextBoxEx
     Friend WithEvents Label30 As System.Windows.Forms.Label
-    Friend WithEvents txtSAI_MITUMORIEDABAN As CommonUtility.WinFormControls.TextBoxEx
     Friend WithEvents txtSAI_MITUMORINO As CommonUtility.WinFormControls.TextBoxEx
     Friend WithEvents cmbSAI_MITUMORINO As CommonUtility.WinFormControls.MitumoriNoComboBox
     Friend WithEvents lblSAN_MITUMORINO As CommonUtility.WinFormControls.TextBoxEx
     Friend WithEvents Label32 As System.Windows.Forms.Label
-    Friend WithEvents txtSAN_MITUMORIEDABAN As CommonUtility.WinFormControls.TextBoxEx
     Friend WithEvents txtSAN_MITUMORINO As CommonUtility.WinFormControls.TextBoxEx
     Friend WithEvents cmbSAN_MITUMORINO As CommonUtility.WinFormControls.MitumoriNoComboBox
     Friend WithEvents fraMITUMORINO As System.Windows.Forms.Panel
     Friend WithEvents lblMITUMORINO As CommonUtility.WinFormControls.TextBoxEx
     Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents txtMITUMORIEDABAN As CommonUtility.WinFormControls.TextBoxEx
     Friend WithEvents txtMITUMORINO As CommonUtility.WinFormControls.TextBoxEx
     Friend WithEvents cmbMITUMORINO As CommonUtility.WinFormControls.MitumoriNoComboBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
@@ -1514,4 +1514,7 @@ Partial Class frmMIT0001
     Protected WithEvents dbgMEISAI As C1.Win.C1TrueDBGrid.C1TrueDBGrid
     Friend WithEvents cmbMitumoriJouken As ComboBox
     Friend WithEvents btnMitumoriEdit As Button
+    Friend WithEvents txtMITUMORIEDABAN As CommonUtility.WinFormControls.MitumoriNoTextBoxEx
+    Friend WithEvents txtSAI_MITUMORIEDABAN As CommonUtility.WinFormControls.MitumoriNoTextBoxEx
+    Friend WithEvents txtSAN_MITUMORIEDABAN As CommonUtility.WinFormControls.MitumoriNoTextBoxEx
 End Class
