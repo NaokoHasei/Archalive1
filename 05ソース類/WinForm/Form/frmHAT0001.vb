@@ -729,32 +729,51 @@ Public Class frmHAT0001
     End Sub
 
     Private Sub ClickKamokuHinmokuButton()
+        Dim row = dbgMeisai.Row
+
+        Dim mode As frmMENT0002.enumDispMode
+        If dbgMeisai.RowCount <= dbgMeisai.Row Then
+            mode = frmMENT0002.enumDispMode.SELECT_KAMOKU_HINMOKU_MULTI
+        Else
+            mode = frmMENT0002.enumDispMode.SELECT_KAMOKU_HINMOKU
+        End If
 
         ''*** 検索画面表示 ***
-        Using f As New frmMENT0002(frmMENT0002.enumDispMode.SELECT_KAMOKU_HINMOKU, frmMENT0002.enumKamokuType.SEARCH, "")
+        Using f As New frmMENT0002(mode, frmMENT0002.enumKamokuType.SEARCH, "")
             f.Owner = Me
             f.ShowDialog()
 
-            If f.outKamokuCode Is Nothing Then Return
+            If f.outKamokuCode.Count = 0 Then Return
 
-            '科目のデータの取得
-            Dim dr = CType(daMENT0002.GetMeisai(f.outKamokuType, f.outKamokuCode, "", "").Rows(0), dsMENT0002.M_KAMOKURow)
+            '戻り値の処理
+            For idx = 0 To f.outKamokuCode.Count - 1
 
-            'データのセット
-            Dim col As Integer
-            If f.outKamokuType = frmMENT0002.enumKamokuType.DKAMOKU Then
-                col = COLMeisai.DAIKAMOKUCODE
-            ElseIf f.outKamokuType = frmMENT0002.enumKamokuType.CKAMOKU Then
-                col = COLMeisai.CYUKAMOKUCODE
-            Else
-                col = COLMeisai.SYOKAMOKUCODE
-            End If
+                If idx <> 0 Then
+                    dbgMeisai.Row = dbgMeisai.Row + 1
+                End If
 
-            dbgMeisai.Columns(col).Value = f.outKamokuCode
-            dbgMeisai.Columns(COLMeisai.KAMOKU_HINMOKU).Value = dr.NAME
-            dbgMeisai.Columns(COLMeisai.HINSITU_KIKAKU_SIYO).Value = dr.NAME2
-            dbgMeisai.Columns(COLMeisai.TANI).Value = dr.TANI
-            dbgMeisai.Columns(COLMeisai.GENTANKA).Value = dr.GENTANKA
+                Dim outKamokuCode = f.outKamokuCode(idx)
+                Dim outKamokuType = f.outKamokuType(idx)
+
+                '科目のデータの取得
+                Dim dr = CType(daMENT0002.GetMeisai(outKamokuType, outKamokuCode, "", "").Rows(0), dsMENT0002.M_KAMOKURow)
+
+                'データのセット
+                Dim col As Integer
+                If outKamokuType = frmMENT0002.enumKamokuType.DKAMOKU Then
+                    col = COLMeisai.DAIKAMOKUCODE
+                ElseIf outKamokuType = frmMENT0002.enumKamokuType.CKAMOKU Then
+                    col = COLMeisai.CYUKAMOKUCODE
+                Else
+                    col = COLMeisai.SYOKAMOKUCODE
+                End If
+
+                dbgMeisai.Columns(col).Value = f.outKamokuCode
+                dbgMeisai.Columns(COLMeisai.KAMOKU_HINMOKU).Value = dr.NAME
+                dbgMeisai.Columns(COLMeisai.HINSITU_KIKAKU_SIYO).Value = dr.NAME2
+                dbgMeisai.Columns(COLMeisai.TANI).Value = dr.TANI
+                dbgMeisai.Columns(COLMeisai.GENTANKA).Value = dr.GENTANKA
+            Next
 
             '金額の計算
             subDbgCalcKingaku()
@@ -766,6 +785,8 @@ Public Class frmHAT0001
             dbgMeisai.Focus()
             dbgMeisai.Col = COLMeisai.HINSITU_KIKAKU_SIYO
         End Using
+
+        dbgMeisai.Row = row
     End Sub
 
     ''' <summary>

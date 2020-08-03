@@ -1135,12 +1135,19 @@ Public Class frmJYU0001
             kamokuCode = ""
         End If
 
+        Dim mode As frmMENT0002.enumDispMode
+        If dbgMEISAI.RowCount <= dbgMEISAI.Row Then
+            mode = frmMENT0002.enumDispMode.SELECT_KAMOKU_HINMOKU_MULTI
+        Else
+            mode = frmMENT0002.enumDispMode.SELECT_KAMOKU_HINMOKU
+        End If
+
         '*** 検索画面表示 ***
-        Using f As New frmMENT0002(frmMENT0002.enumDispMode.SELECT_KAMOKU_HINMOKU, kamokuType, kamokuCode)
+        Using f As New frmMENT0002(mode, kamokuType, kamokuCode)
             f.Owner = Me
             f.ShowDialog()
 
-            If f.outKamokuCode Is Nothing Then Return
+            If f.outKamokuCode.Count = 0 Then Return
 
             '新規行以外の場合、確認メッセージ表示
             If dbgMEISAI.Row <> dbgMEISAI.RowCount Then
@@ -1149,48 +1156,62 @@ Public Class frmJYU0001
                 End If
             End If
 
-            '科目のデータの取得
-            Dim dr = CType(daMENT0002.GetMeisai(f.outKamokuType, f.outKamokuCode, "", "").Rows(0), dsMENT0002.M_KAMOKURow)
+            '戻り値の処理
+            For idx = 0 To f.outKamokuCode.Count - 1
 
-            'データのセット
-            Dim col As Integer
-            If f.outKamokuType = frmMENT0002.enumKamokuType.DKAMOKU Then
-                col = COL_DAIKAMOKUCODE
-            ElseIf f.outKamokuType = frmMENT0002.enumKamokuType.CKAMOKU Then
-                col = COL_CYUKAMOKUCODE
-            Else
-                col = COL_SYOKAMOKUCODE
-            End If
-
-            dbgMEISAI.Columns(col).Value = f.outKamokuCode
-            dbgMEISAI.Columns(COL_KAMOKU_HINMOKU).Value = dr.NAME
-            dbgMEISAI.Columns(COL_HINSITU_KIKAKU_SIYO).Value = dr.NAME2
-
-            '合計行以外の場合
-            If Not CheckGokeiLine(dbgMEISAI.Row) Then
-                dbgMEISAI.Columns(COL_TANI).Value = dr.TANI
-                dbgMEISAI.Columns(COL_GENTANKA).Value = dr.GENTANKA
-
-                '金額の計算
-                subDbgCalcKingaku("ONE")
-
-                '見積/受注単価の反映
-                If dr.MIT_JYU_TANAKA <> 0 Then
-                    dbgMEISAI.Columns(COL_TANKA).Value = dr.MIT_JYU_TANAKA
-
-                    '受注単価に変更が加わった場合、見積金額再計算
-                    '受注金額（数量 * 見積単価）
-                    dbgMEISAI.Columns(COL_GAKU).Value = Utility.Round(GetRoundValue(NZ(dbgMEISAI.Columns(COL_SUU).Value).ToString) * NZ(dbgMEISAI.Columns(COL_TANKA).Value), 0, CInt(strS_SCB_ROUND_JYUKAKIN))
-                    '受注金額税抜（数量 * 見積単価）
-                    dbgMEISAI.Columns(COL_GAKU_NUKI).Value = Utility.Round(GetRoundValue(NZ(dbgMEISAI.Columns(COL_SUU).Value).ToString) * NZ(dbgMEISAI.Columns(COL_TANKA).Value), 0, CInt(strS_SCB_ROUND_JYUKAKIN))
-                    '計算結果桁数チェック
-                    If CDec(dbgMEISAI.Columns(COL_GAKU).Value) > 999999999999 Then dbgMEISAI.Columns(COL_GAKU).Value = 999999999999
-                    If CDec(dbgMEISAI.Columns(COL_GAKU_NUKI).Value) > 999999999999 Then dbgMEISAI.Columns(COL_GAKU_NUKI).Value = 999999999999
+                If idx <> 0 Then
+                    dbgMEISAI.Row = dbgMEISAI.Row + 1
                 End If
 
-                'グリッドの確定
-                DbgMeisaiSetBinding(dbgMEISAI.DataSource, True)
-            End If
+                Dim outKamokuCode = f.outKamokuCode(idx)
+                Dim outKamokuType = f.outKamokuType(idx)
+
+                '科目のデータの取得
+                Dim dr = CType(daMENT0002.GetMeisai(outKamokuType, outKamokuCode, "", "").Rows(0), dsMENT0002.M_KAMOKURow)
+
+                'データのセット
+                Dim col As Integer
+                If outKamokuType = frmMENT0002.enumKamokuType.DKAMOKU Then
+                    col = COL_DAIKAMOKUCODE
+                ElseIf outKamokuType = frmMENT0002.enumKamokuType.CKAMOKU Then
+                    col = COL_CYUKAMOKUCODE
+                Else
+                    col = COL_SYOKAMOKUCODE
+                End If
+
+                dbgMEISAI.Columns(col).Value = f.outKamokuCode
+                dbgMEISAI.Columns(COL_KAMOKU_HINMOKU).Value = dr.NAME
+                dbgMEISAI.Columns(COL_HINSITU_KIKAKU_SIYO).Value = dr.NAME2
+
+                '合計行以外の場合
+                If Not CheckGokeiLine(dbgMEISAI.Row) Then
+                    dbgMEISAI.Columns(COL_TANI).Value = dr.TANI
+                    dbgMEISAI.Columns(COL_GENTANKA).Value = dr.GENTANKA
+
+                    '金額の計算
+                    subDbgCalcKingaku("ONE")
+
+                    '見積/受注単価の反映
+                    If dr.MIT_JYU_TANAKA <> 0 Then
+                        dbgMEISAI.Columns(COL_TANKA).Value = dr.MIT_JYU_TANAKA
+
+                        '受注単価に変更が加わった場合、見積金額再計算
+                        '受注金額（数量 * 見積単価）
+                        dbgMEISAI.Columns(COL_GAKU).Value = Utility.Round(GetRoundValue(NZ(dbgMEISAI.Columns(COL_SUU).Value).ToString) * NZ(dbgMEISAI.Columns(COL_TANKA).Value), 0, CInt(strS_SCB_ROUND_JYUKAKIN))
+                        '受注金額税抜（数量 * 見積単価）
+                        dbgMEISAI.Columns(COL_GAKU_NUKI).Value = Utility.Round(GetRoundValue(NZ(dbgMEISAI.Columns(COL_SUU).Value).ToString) * NZ(dbgMEISAI.Columns(COL_TANKA).Value), 0, CInt(strS_SCB_ROUND_JYUKAKIN))
+                        '計算結果桁数チェック
+                        If CDec(dbgMEISAI.Columns(COL_GAKU).Value) > 999999999999 Then dbgMEISAI.Columns(COL_GAKU).Value = 999999999999
+                        If CDec(dbgMEISAI.Columns(COL_GAKU_NUKI).Value) > 999999999999 Then dbgMEISAI.Columns(COL_GAKU_NUKI).Value = 999999999999
+                    End If
+
+                    'グリッドの確定
+                    DbgMeisaiSetBinding(dbgMEISAI.DataSource, True)
+                End If
+
+                'ツリービューの更新
+                TrvWorkInfoUpdate()
+            Next
         End Using
 
         'ツリービューの更新

@@ -29,6 +29,7 @@ Public Class frmMENT0002
     Public Enum enumDispMode
         REGIST
         SELECT_KAMOKU_HINMOKU
+        SELECT_KAMOKU_HINMOKU_MULTI
     End Enum
 
     Private Enum enumFormStatus
@@ -52,8 +53,8 @@ Public Class frmMENT0002
     Public Const CONST_CKAMOKU = "中科目"
     Public Const CONST_SKAMOKU = "小科目"
 
-    Public outKamokuType As Integer
-    Public outKamokuCode As String
+    Public outKamokuType As New List(Of Integer)
+    Public outKamokuCode As New List(Of String)
 
     Private blnDbgKeyCtrlFlg As Boolean     'KeyDown()で判定、KeyPress()でTrueの場合キーを無効に
     Private praDipsMode As Integer
@@ -63,6 +64,10 @@ Public Class frmMENT0002
     Private praFormStatus As Integer
     Private praRegistMode As Integer
     Private praProgramName As String
+    Private keybordShift As Boolean
+    Private keybordContorl As Boolean
+    Private selectedRowsDbgMeisai As New List(Of Integer)
+    Private selectedRowsLast As Integer
 
     Private daMENT0002 As New daMENT0002
     Private CodeNumbering As New CodeNumbering
@@ -122,6 +127,10 @@ Public Class frmMENT0002
 
     Private Sub DoSearch()
         dbgMeisai.SetDataBinding(daMENT0002.GetMeisai(praKamokuTypeSelect, "", cmbJyouiCode.Text, txtKamokuHinmoku.Text), "", True)
+        dbgMeisai.SelectedRows.Add(0)
+        selectedRowsLast = 0
+        selectedRowsDbgMeisai = New List(Of Integer)
+        selectedRowsDbgMeisai.Add(0)
     End Sub
 
     Private Sub initDisp()
@@ -270,7 +279,7 @@ Public Class frmMENT0002
                     FunctionKey.SetItem(12, "選択", "選択", False)
                 End If
 
-                If praDipsMode = enumDispMode.SELECT_KAMOKU_HINMOKU Then
+                If praDipsMode <> enumDispMode.REGIST Then
                     '選択画面の場合
                     If blnDbgMeisaiRowExists Then
                         FunctionKey.SetItem(10, "修正", "修正", True)
@@ -636,7 +645,6 @@ Public Class frmMENT0002
         'クリック位置のチェック
         If WinFormUtility.GridPointAtCell(dbgMeisai) = False Then Exit Sub
 
-
         ExecuteSentaku()
     End Sub
 
@@ -711,14 +719,7 @@ Public Class frmMENT0002
                 ExecuteSentaku(True)
 
             Case "選択"
-                If praDipsMode = enumDispMode.REGIST Then
-                    ExecuteSentaku()
-                Else
-                    outKamokuType = dbgMeisai.Columns(COL.KAMOKU_TYPE).Value
-                    outKamokuCode = dbgMeisai.Columns(COL.CODE).Value
-
-                    Me.Close()
-                End If
+                ExecuteSentaku()
 
             Case "登録"
                 If Not ExecuteRegist() Then Return
@@ -764,8 +765,16 @@ Public Class frmMENT0002
             ChangeFormMode(enumFormStatus.REGIST)
 
         Else
-            outKamokuType = dbgMeisai.Columns(COL.KAMOKU_TYPE).Value
-            outKamokuCode = dbgMeisai.Columns(COL.CODE).Value
+            If praDipsMode <> enumDispMode.SELECT_KAMOKU_HINMOKU_MULTI Then
+                outKamokuType.Add(dbgMeisai.Columns(COL.KAMOKU_TYPE).Value)
+                outKamokuCode.Add(dbgMeisai.Columns(COL.CODE).Value)
+
+            Else
+                For Each idx As Integer In selectedRowsDbgMeisai
+                    outKamokuType.Add(dbgMeisai(idx, COL.KAMOKU_TYPE))
+                    outKamokuCode.Add(dbgMeisai(idx, COL.CODE))
+                Next
+            End If
 
             Me.Close()
         End If
@@ -895,7 +904,7 @@ Public Class frmMENT0002
                 praKamokuTypeSelect = enumKamokuType.SEARCH
         End Select
 
-        'グリッドのデータ表示s
+        'グリッドのデータ表示
         DoSearch()
 
         '存在チェック
@@ -936,7 +945,88 @@ Public Class frmMENT0002
         ChangeFormMode(enumFormStatus.REGIST)
     End Sub
 
-    Private Sub dbgMeisai_Click(sender As Object, e As EventArgs) Handles dbgMeisai.Click
+    Private Sub dbgMeisai_MouseClick(sender As Object, e As Windows.Forms.MouseEventArgs) Handles dbgMeisai.MouseClick
+        MultiSelect(True)
+    End Sub
 
+    Private Sub MultiSelect(ByVal mouseClick As Boolean)
+        Dim idxSt As Integer
+        Dim idxEd As Integer
+
+        If praDipsMode <> enumDispMode.SELECT_KAMOKU_HINMOKU_MULTI Then Return
+
+        If keybordShift Then
+            'シフト押下時の場合
+            If selectedRowsLast < dbgMeisai.Row Then
+                idxSt = selectedRowsLast
+                idxEd = dbgMeisai.Row
+            Else
+                idxSt = dbgMeisai.Row
+                idxEd = selectedRowsLast
+            End If
+
+            '範囲を選択
+            For idx = idxSt To idxEd
+                dbgMeisai.SelectedRows.Add(idx)
+            Next
+
+        ElseIf keybordContorl And mouseClick Then
+            'コントロール押下時の場合
+            Dim onFLg As Boolean = True
+            selectedRowsLast = dbgMeisai.Row
+
+            '複数選択する
+            For Each idx As Integer In selectedRowsDbgMeisai
+                If idx = dbgMeisai.Row Then
+                    onFLg = False
+                    Continue For
+                End If
+
+                dbgMeisai.SelectedRows.Add(idx)
+            Next
+
+            '未選択行、または、選択したが行が無くなる場合、選択した行を選択する
+            If onFLg OrElse dbgMeisai.SelectedRows.Count = 0 Then
+                dbgMeisai.SelectedRows.Add(dbgMeisai.Row)
+            Else
+                dbgMeisai.Row = dbgMeisai.SelectedRows(dbgMeisai.SelectedRows.Count - 1)
+            End If
+
+        Else
+            '上記以外の場合
+            dbgMeisai.SelectedRows.Add(dbgMeisai.Row)
+            selectedRowsLast = dbgMeisai.Row
+        End If
+
+        selectedRowsDbgMeisai = New List(Of Integer)
+        For Each idx As Integer In dbgMeisai.SelectedRows
+            selectedRowsDbgMeisai.Add(idx)
+        Next
+    End Sub
+
+    Private Sub frmMENT0002_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyCode = Keys.ControlKey Then
+            keybordContorl = True
+        End If
+
+        If e.KeyCode = Keys.ShiftKey Then
+            keybordShift = True
+        End If
+    End Sub
+
+    Private Sub frmMENT0002_KeyUp(sender As Object, e As KeyEventArgs) Handles MyBase.KeyUp
+        If e.KeyCode = Keys.ControlKey Then
+            keybordContorl = False
+        End If
+
+        If e.KeyCode = Keys.ShiftKey Then
+            keybordShift = False
+        End If
+    End Sub
+
+    Private Sub dbgMeisai_KeyUp(sender As Object, e As KeyEventArgs) Handles dbgMeisai.KeyUp
+        If e.KeyCode = Keys.Down OrElse e.KeyCode = Keys.Up Then
+            MultiSelect(False)
+        End If
     End Sub
 End Class
