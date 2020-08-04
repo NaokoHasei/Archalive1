@@ -1312,6 +1312,11 @@ Public Class frmHAT0001
                 .Splits(0).DisplayColumns(intI).AllowSizing = True
             Next intI
 
+            '*** TrueDBGrid FetchStyle プロパティ設定 ***
+            For intI As Integer = 0 To dbgMEISAI.Columns.Count - 1
+                .Splits(0).DisplayColumns(intI).FetchStyle = True
+            Next intI
+
             '*** TrueDBGrid WrapText プロパティ設定 ***
             For intI As Integer = 0 To dbgMeisai.Columns.Count - 1
                 .Splits(0).DisplayColumns(intI).Style.WrapText = True
@@ -1921,8 +1926,15 @@ ErrorHandler:
         'キーコードチェック
         If Not (e.KeyCode = Keys.Enter OrElse e.KeyCode = Keys.Tab) Then Exit Sub
 
-        dbgMeisai.Focus()
+        dbgMEISAI.Focus()
+    End Sub
 
+    Private Sub dbgMEISAI_FetchCellStyle(ByVal sender As Object, ByVal e As C1.Win.C1TrueDBGrid.FetchCellStyleEventArgs) Handles dbgMEISAI.FetchCellStyle
+
+        If Me.ActiveControl.Name <> dbgMEISAI.Name Then Return
+
+        'MarqueeStyleでハイライトするようにしているが、タブ移動でハイライトされないので、強制的にハイライトする
+        e.CellStyle.BackColor = SystemColors.MenuHighlight
     End Sub
 
 End Class

@@ -31,6 +31,7 @@ Partial Class frmHAT0001
         Me.Label33 = New System.Windows.Forms.Label()
         Me.Label37 = New System.Windows.Forms.Label()
         Me.pnl対象下請情報 = New System.Windows.Forms.Panel()
+        Me.txtHATYUEDABAN2 = New CommonUtility.WinFormControls.MitumoriNoTextBoxEx()
         Me.cmbHATTYUNO = New CommonUtility.WinFormControls.MitumoriNoComboBox()
         Me.lblHATYUNO = New CommonUtility.WinFormControls.TextBoxEx()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -73,7 +74,6 @@ Partial Class frmHAT0001
         Me.lblJYUTYUNO = New CommonUtility.WinFormControls.TextBoxEx()
         Me.txtZeiKbn = New CommonUtility.WinFormControls.NumberTextBoxEx()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.dbgMeisai = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.lblSURYO_SYOSUIKAKETA = New System.Windows.Forms.Label()
         Me.fraMeisaikei = New System.Windows.Forms.Panel()
@@ -85,10 +85,10 @@ Partial Class frmHAT0001
         Me.lblTAX = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.txtHATYUEDABAN2 = New CommonUtility.WinFormControls.MitumoriNoTextBoxEx()
+        Me.dbgMEISAI = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
         Me.pnl対象下請情報.SuspendLayout()
-        CType(Me.dbgMeisai, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.fraMeisaikei.SuspendLayout()
+        CType(Me.dbgMEISAI, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TitleBar
@@ -244,6 +244,25 @@ Partial Class frmHAT0001
         Me.pnl対象下請情報.Name = "pnl対象下請情報"
         Me.pnl対象下請情報.Size = New System.Drawing.Size(1018, 167)
         Me.pnl対象下請情報.TabIndex = 0
+        '
+        'txtHATYUEDABAN2
+        '
+        Me.txtHATYUEDABAN2.BackColor = System.Drawing.Color.White
+        Me.txtHATYUEDABAN2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtHATYUEDABAN2.DigitOnly = True
+        Me.txtHATYUEDABAN2.DisplayName = "発注枝番"
+        Me.txtHATYUEDABAN2.Enabled = False
+        Me.txtHATYUEDABAN2.Font = New System.Drawing.Font("メイリオ", 8.0!)
+        Me.txtHATYUEDABAN2.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.txtHATYUEDABAN2.LinkedComboBox = Me.cmbHATTYUNO
+        Me.txtHATYUEDABAN2.Location = New System.Drawing.Point(230, 9)
+        Me.txtHATYUEDABAN2.MaxLength = 2
+        Me.txtHATYUEDABAN2.Name = "txtHATYUEDABAN2"
+        Me.txtHATYUEDABAN2.Size = New System.Drawing.Size(22, 16)
+        Me.txtHATYUEDABAN2.TabIndex = 2
+        Me.txtHATYUEDABAN2.Text = "1234567890123456789012345678901234567890"
+        Me.txtHATYUEDABAN2.UseZeroPadding = True
+        Me.txtHATYUEDABAN2.ZeroPaddingLength = 2
         '
         'cmbHATTYUNO
         '
@@ -780,33 +799,6 @@ Partial Class frmHAT0001
         Me.Label25.Text = "基本情報"
         Me.Label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'dbgMeisai
-        '
-        Me.dbgMeisai.BackColor = System.Drawing.Color.Thistle
-        Me.dbgMeisai.BorderColor = System.Drawing.SystemColors.WindowFrame
-        Me.dbgMeisai.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dbgMeisai.CaptionHeight = 16
-        Me.dbgMeisai.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dbgMeisai.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.dbgMeisai.GroupByCaption = "列でグループ化するには、ここに列ヘッダをドラッグします。"
-        Me.dbgMeisai.Images.Add(CType(resources.GetObject("dbgMeisai.Images"), System.Drawing.Image))
-        Me.dbgMeisai.Location = New System.Drawing.Point(0, 235)
-        Me.dbgMeisai.MarqueeStyle = C1.Win.C1TrueDBGrid.MarqueeEnum.HighlightRow
-        Me.dbgMeisai.Name = "dbgMeisai"
-        Me.dbgMeisai.PreviewInfo.Caption = "印刷プレビューウィンドウ"
-        Me.dbgMeisai.PreviewInfo.Location = New System.Drawing.Point(0, 0)
-        Me.dbgMeisai.PreviewInfo.Size = New System.Drawing.Size(0, 0)
-        Me.dbgMeisai.PreviewInfo.ZoomFactor = 75.0R
-        Me.dbgMeisai.PrintInfo.PageSettings = CType(resources.GetObject("dbgMeisai.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
-        Me.dbgMeisai.RowDivider.Color = System.Drawing.Color.DarkGray
-        Me.dbgMeisai.RowDivider.Style = C1.Win.C1TrueDBGrid.LineStyleEnum.None
-        Me.dbgMeisai.RowHeight = 14
-        Me.dbgMeisai.Size = New System.Drawing.Size(1018, 365)
-        Me.dbgMeisai.TabIndex = 200
-        Me.dbgMeisai.TabStop = False
-        Me.dbgMeisai.UseCompatibleTextRendering = False
-        Me.dbgMeisai.PropBag = resources.GetString("dbgMeisai.PropBag")
-        '
         'Label15
         '
         Me.Label15.AutoSize = True
@@ -937,30 +929,39 @@ Partial Class frmHAT0001
         Me.Label18.Text = "変更前小計"
         Me.Label18.Visible = False
         '
-        'txtHATYUEDABAN2
+        'dbgMEISAI
         '
-        Me.txtHATYUEDABAN2.BackColor = System.Drawing.Color.White
-        Me.txtHATYUEDABAN2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtHATYUEDABAN2.DigitOnly = True
-        Me.txtHATYUEDABAN2.DisplayName = "発注枝番"
-        Me.txtHATYUEDABAN2.Enabled = False
-        Me.txtHATYUEDABAN2.Font = New System.Drawing.Font("メイリオ", 8.0!)
-        Me.txtHATYUEDABAN2.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtHATYUEDABAN2.LinkedComboBox = Me.cmbHATTYUNO
-        Me.txtHATYUEDABAN2.Location = New System.Drawing.Point(230, 9)
-        Me.txtHATYUEDABAN2.MaxLength = 2
-        Me.txtHATYUEDABAN2.Name = "txtHATYUEDABAN2"
-        Me.txtHATYUEDABAN2.Size = New System.Drawing.Size(22, 16)
-        Me.txtHATYUEDABAN2.TabIndex = 2
-        Me.txtHATYUEDABAN2.Text = "1234567890123456789012345678901234567890"
-        Me.txtHATYUEDABAN2.UseZeroPadding = True
-        Me.txtHATYUEDABAN2.ZeroPaddingLength = 2
+        Me.dbgMEISAI.BackColor = System.Drawing.Color.Thistle
+        Me.dbgMEISAI.BorderColor = System.Drawing.SystemColors.WindowFrame
+        Me.dbgMEISAI.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dbgMEISAI.CaptionHeight = 16
+        Me.dbgMEISAI.Cursor = System.Windows.Forms.Cursors.Default
+        Me.dbgMEISAI.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.dbgMEISAI.GroupByCaption = "列でグループ化するには、ここに列ヘッダをドラッグします。"
+        Me.dbgMEISAI.Images.Add(CType(resources.GetObject("dbgMEISAI.Images"), System.Drawing.Image))
+        Me.dbgMEISAI.Location = New System.Drawing.Point(0, 235)
+        Me.dbgMEISAI.MarqueeStyle = C1.Win.C1TrueDBGrid.MarqueeEnum.HighlightRow
+        Me.dbgMEISAI.Name = "dbgMEISAI"
+        Me.dbgMEISAI.PreviewInfo.Caption = "印刷プレビューウィンドウ"
+        Me.dbgMEISAI.PreviewInfo.Location = New System.Drawing.Point(0, 0)
+        Me.dbgMEISAI.PreviewInfo.Size = New System.Drawing.Size(0, 0)
+        Me.dbgMEISAI.PreviewInfo.ZoomFactor = 75.0R
+        Me.dbgMEISAI.PrintInfo.PageSettings = CType(resources.GetObject("dbgMEISAI.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
+        Me.dbgMEISAI.RowDivider.Color = System.Drawing.Color.DarkGray
+        Me.dbgMEISAI.RowDivider.Style = C1.Win.C1TrueDBGrid.LineStyleEnum.None
+        Me.dbgMEISAI.RowHeight = 14
+        Me.dbgMEISAI.Size = New System.Drawing.Size(1018, 347)
+        Me.dbgMEISAI.TabIndex = 203
+        Me.dbgMEISAI.TabStop = False
+        Me.dbgMEISAI.UseCompatibleTextRendering = False
+        Me.dbgMEISAI.PropBag = resources.GetString("dbgMEISAI.PropBag")
         '
         'frmHAT0001
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1018, 670)
+        Me.Controls.Add(Me.dbgMEISAI)
         Me.Controls.Add(Me.lblSURYO_SYOSUIKAKETA)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.lblHATYUNO)
@@ -968,14 +969,12 @@ Partial Class frmHAT0001
         Me.Controls.Add(Me.lblJYUTYUNO)
         Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.txtZeiKbn)
-        Me.Controls.Add(Me.dbgMeisai)
         Me.Controls.Add(Me.pnl対象下請情報)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmHAT0001"
         Me.Text = ""
         Me.Controls.SetChildIndex(Me.pnl対象下請情報, 0)
         Me.Controls.SetChildIndex(Me.TitleBar, 0)
-        Me.Controls.SetChildIndex(Me.dbgMeisai, 0)
         Me.Controls.SetChildIndex(Me.txtZeiKbn, 0)
         Me.Controls.SetChildIndex(Me.Label25, 0)
         Me.Controls.SetChildIndex(Me.lblJYUTYUNO, 0)
@@ -984,11 +983,12 @@ Partial Class frmHAT0001
         Me.Controls.SetChildIndex(Me.lblHATYUNO, 0)
         Me.Controls.SetChildIndex(Me.Label15, 0)
         Me.Controls.SetChildIndex(Me.lblSURYO_SYOSUIKAKETA, 0)
+        Me.Controls.SetChildIndex(Me.dbgMEISAI, 0)
         Me.pnl対象下請情報.ResumeLayout(False)
         Me.pnl対象下請情報.PerformLayout()
-        CType(Me.dbgMeisai, System.ComponentModel.ISupportInitialize).EndInit()
         Me.fraMeisaikei.ResumeLayout(False)
         Me.fraMeisaikei.PerformLayout()
+        CType(Me.dbgMEISAI, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1021,7 +1021,6 @@ Partial Class frmHAT0001
     Private WithEvents Label4 As Label
     Private WithEvents Label7 As Label
     Private WithEvents Label2 As Label
-    Protected WithEvents dbgMeisai As C1.Win.C1TrueDBGrid.C1TrueDBGrid
     Private WithEvents Label32 As Label
     Friend WithEvents lblTANTONAME As Label
     Private WithEvents Label31 As Label
@@ -1056,4 +1055,5 @@ Partial Class frmHAT0001
     Friend WithEvents Label18 As Label
     Friend WithEvents lblHATYUNO As CommonUtility.WinFormControls.TextBoxEx
     Friend WithEvents txtHATYUEDABAN2 As CommonUtility.WinFormControls.MitumoriNoTextBoxEx
+    Protected WithEvents dbgMEISAI As C1.Win.C1TrueDBGrid.C1TrueDBGrid
 End Class
