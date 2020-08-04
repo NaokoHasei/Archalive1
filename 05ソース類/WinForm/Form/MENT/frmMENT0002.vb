@@ -106,6 +106,13 @@ Public Class frmMENT0002
         'グリッドの初期化
         initGrid()
 
+        '複数選択のメッセージ
+        If praDipsMode = enumDispMode.SELECT_KAMOKU_HINMOKU_MULTI Then
+            lblMessage1.Visible = True
+        Else
+            lblMessage1.Visible = False
+        End If
+
         If praKamokuTypeSelect = enumKamokuType.SEARCH Then
             '初期表示の場合
 
@@ -654,7 +661,7 @@ Public Class frmMENT0002
         '明細（入力）のデータの取得
         If praRegistMode = enumRegistMode.UPDATE Then
             '更新モードの場合
-            dt = daMENT0002.GetMeisai(dbgMeisai.Columns(COL.KAMOKU_TYPE).Value.ToString, dbgMeisai.Columns(COL.CODE).Value.ToString, "", "")
+            dt = daMENT0002.GetMeisai(dbgMeisai(dbgMeisai.Row, COL.KAMOKU_TYPE).ToString, dbgMeisai(dbgMeisai.Row, COL.CODE).ToString, "", "")
 
         Else
             '新規モードの場合
@@ -729,8 +736,8 @@ Public Class frmMENT0002
             Case "登録/反映"
                 If Not ExecuteRegist() Then Return
 
-                outKamokuType = dbgInput.Columns(COL.KAMOKU_TYPE).Value
-                outKamokuCode = dbgInput.Columns(COL.CODE).Value
+                outKamokuType.Add(dbgInput.Columns(COL.KAMOKU_TYPE).Value)
+                outKamokuCode.Add(dbgInput.Columns(COL.CODE).Value)
 
                 Me.Close()
         End Select
@@ -752,8 +759,10 @@ Public Class frmMENT0002
 
     Private Sub ExecuteSentaku(Optional ByVal bntShuusei As Boolean = False)
         If praDipsMode = enumDispMode.REGIST OrElse bntShuusei Then
+            '登録画面、または、修正ボタンの場合
+
             '科目（登録）モードの変更
-            praKamokuTypeRegist = dbgMeisai.Columns(COL.KAMOKU_TYPE).Value
+            praKamokuTypeRegist = dbgMeisai(dbgMeisai.Row, COL.KAMOKU_TYPE)
 
             '登録モードの変更
             praRegistMode = enumRegistMode.UPDATE
@@ -765,11 +774,15 @@ Public Class frmMENT0002
             ChangeFormMode(enumFormStatus.REGIST)
 
         Else
+            '上記以外の場合、選択処理
             If praDipsMode <> enumDispMode.SELECT_KAMOKU_HINMOKU_MULTI Then
-                outKamokuType.Add(dbgMeisai.Columns(COL.KAMOKU_TYPE).Value)
-                outKamokuCode.Add(dbgMeisai.Columns(COL.CODE).Value)
-
+                '単一選択の場合
+                outKamokuType.Add(dbgMeisai(dbgMeisai.Row, COL.KAMOKU_TYPE))
+                outKamokuCode.Add(dbgMeisai(dbgMeisai.Row, COL.CODE))
             Else
+                '複数選択の場合
+                selectedRowsDbgMeisai.Sort()
+
                 For Each idx As Integer In selectedRowsDbgMeisai
                     outKamokuType.Add(dbgMeisai(idx, COL.KAMOKU_TYPE))
                     outKamokuCode.Add(dbgMeisai(idx, COL.CODE))
@@ -784,7 +797,7 @@ Public Class frmMENT0002
         If MessageBoxEx.Show(CommonUtility.MessageCode_Arg0.M002削除してもよろしいですか, PROGRAM_NAME) = System.Windows.Forms.DialogResult.No Then Return False
 
         '削除処理
-        daMENT0002.DeleteKAMOKU(praKamokuTypeRegist, dbgMeisai.Columns(COL.CODE).Value.ToString)
+        daMENT0002.DeleteKAMOKU(praKamokuTypeRegist, dbgMeisai(dbgMeisai.Row, COL.CODE).ToString)
 
         Return True
     End Function

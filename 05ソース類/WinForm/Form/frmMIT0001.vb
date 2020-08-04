@@ -1116,7 +1116,7 @@ Public Class frmMIT0001
                     col = COL_SYOKAMOKUCODE
                 End If
 
-                dbgMEISAI.Columns(col).Value = f.outKamokuCode
+                dbgMEISAI.Columns(col).Value = outKamokuCode
                 dbgMEISAI.Columns(COL_KAMOKU_HINMOKU).Value = dr.NAME
                 dbgMEISAI.Columns(COL_HINSITU_KIKAKU_SIYO).Value = dr.NAME2
 

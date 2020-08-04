@@ -52,6 +52,7 @@ Partial Class frmMENT0002
         Me.Label7 = New System.Windows.Forms.Label()
         Me.cmbJyouiCodeNew = New CommonUtility.WinFormControls.TypComboBox()
         Me.btnNew = New System.Windows.Forms.Button()
+        Me.lblMessage1 = New System.Windows.Forms.Label()
         CType(Me.dbgMeisai, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dbgInput, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -84,7 +85,7 @@ Partial Class frmMENT0002
         Me.dbgMeisai.PreviewInfo.ZoomFactor = 75.0R
         Me.dbgMeisai.PrintInfo.PageSettings = CType(resources.GetObject("dbgMeisai.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
         Me.dbgMeisai.RowHeight = 14
-        Me.dbgMeisai.Size = New System.Drawing.Size(1018, 346)
+        Me.dbgMeisai.Size = New System.Drawing.Size(1018, 325)
         Me.dbgMeisai.TabIndex = 5
         Me.dbgMeisai.TabStop = False
         Me.dbgMeisai.Text = "C1TrueDBGrid1"
@@ -413,11 +414,23 @@ Partial Class frmMENT0002
         Me.btnNew.Text = "新規"
         Me.btnNew.UseVisualStyleBackColor = False
         '
+        'lblMessage1
+        '
+        Me.lblMessage1.AutoSize = True
+        Me.lblMessage1.Font = New System.Drawing.Font("メイリオ", 8.0!)
+        Me.lblMessage1.ForeColor = System.Drawing.Color.Red
+        Me.lblMessage1.Location = New System.Drawing.Point(0, 463)
+        Me.lblMessage1.Name = "lblMessage1"
+        Me.lblMessage1.Size = New System.Drawing.Size(356, 17)
+        Me.lblMessage1.TabIndex = 109
+        Me.lblMessage1.Text = "※「Shiftキー or Ctrlキー」＋「クリック or 矢印キー」で複数選択可"
+        '
         'frmMENT0002
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1018, 670)
+        Me.Controls.Add(Me.lblMessage1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.dbgInput)
         Me.Controls.Add(Me.lblJyouiKamokuHinmoku)
@@ -449,6 +462,7 @@ Partial Class frmMENT0002
         Me.Controls.SetChildIndex(Me.lblJyouiKamokuHinmoku, 0)
         Me.Controls.SetChildIndex(Me.dbgInput, 0)
         Me.Controls.SetChildIndex(Me.Panel2, 0)
+        Me.Controls.SetChildIndex(Me.lblMessage1, 0)
         CType(Me.dbgMeisai, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dbgInput, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
@@ -484,4 +498,5 @@ Partial Class frmMENT0002
     Friend WithEvents Label7 As Label
     Friend WithEvents cmbJyouiCodeNew As CommonUtility.WinFormControls.TypComboBox
     Friend WithEvents rdoALL As RadioButton
+    Friend WithEvents lblMessage1 As Label
 End Class
