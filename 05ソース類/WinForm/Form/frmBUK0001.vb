@@ -427,11 +427,15 @@ Public Class frmBUK0001
             Dim htmlDir = "html\"
             Dim htmlFile = htmlDir + Now.ToString("yyyyMMddHHmmss") + ".html"
 
+            'ディレクトリの作成
+            If Not Directory.Exists(htmlDir) Then
+                Directory.CreateDirectory(htmlDir)
+            End If
+
             'ファイルの削除
             Dim di As New System.IO.DirectoryInfo(htmlDir)
             Dim files As System.IO.FileInfo() = di.GetFiles("*.html", System.IO.SearchOption.AllDirectories)
 
-            'ListBox1に結果を表示する
             Try
                 For Each file As System.IO.FileInfo In files
                     file.Delete()
@@ -439,11 +443,6 @@ Public Class frmBUK0001
             Catch ex As UnauthorizedAccessException
                 'ファイルが開いている場合、処理しない
             End Try
-
-            'ディレクトリの作成
-            If Not Directory.Exists(htmlDir) Then
-                Directory.CreateDirectory(htmlDir)
-            End If
 
             'ファイルの作成
             Dim sw = New System.IO.StreamWriter(htmlFile)
