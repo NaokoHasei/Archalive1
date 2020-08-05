@@ -2858,6 +2858,12 @@ Public Class frmJYU0001
 
     Private Sub lblSyosuName_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lblSyosuName.Click
 
+        '受注枝番＝0以外の場合、エラー
+        If CDec(txtJYUTYUEDABAN.Text) <> 0 Then
+            MessageBoxEx.Show(MessageCode_Arg0.M245, PROGRAM_NAME)
+            Return
+        End If
+
         'データが編集中なら確定させる
         If dbgMEISAI.DataChanged Then dbgMEISAI.UpdateData()
 
