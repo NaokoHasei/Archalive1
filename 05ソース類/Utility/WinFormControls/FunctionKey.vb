@@ -33,12 +33,20 @@
 
         i = CType(CType(sender, Control).Tag, Integer)
 
-        If TypeOf (Me.FindForm) Is ILastFocusedControl Then
-            Dim f As ILastFocusedControl = CType(Me.FindForm, ILastFocusedControl)
-            RaiseEvent Action(Me, New FunctionKeyEventArgs(i, ButtonName(i - 1), ButtonCaption(i - 1), f.GetLastFocusedControl))
-        Else
-            RaiseEvent Action(Me, New FunctionKeyEventArgs(i, ButtonName(i - 1), ButtonCaption(i - 1), Nothing))
-        End If
+        Try
+            Me.Enabled = False
+
+            If TypeOf (Me.FindForm) Is ILastFocusedControl Then
+                Dim f As ILastFocusedControl = CType(Me.FindForm, ILastFocusedControl)
+                RaiseEvent Action(Me, New FunctionKeyEventArgs(i, ButtonName(i - 1), ButtonCaption(i - 1), f.GetLastFocusedControl))
+            Else
+                RaiseEvent Action(Me, New FunctionKeyEventArgs(i, ButtonName(i - 1), ButtonCaption(i - 1), Nothing))
+            End If
+
+        Finally
+            Me.Enabled = True
+
+        End Try
 
     End Sub
 

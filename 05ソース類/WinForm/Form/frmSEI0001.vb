@@ -526,12 +526,7 @@ Public Class frmSEI0001
                 FunctionKey_KurikoshizanSaiseikyu()
 
             Case "プレビュー"
-                Try
-                    FunctionKey.ItemEnabled("プレビュー") = False
-                    ReportPrint(True, False)
-                Finally
-                    FunctionKey.ItemEnabled("プレビュー") = True
-                End Try
+                ReportPrint(True, False)
 
             Case "登録/印刷"
                 FunctionKey_EntryPrint()
