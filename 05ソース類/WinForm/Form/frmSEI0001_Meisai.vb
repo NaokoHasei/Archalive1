@@ -337,7 +337,6 @@ Public Class frmSEI0001_Meisai
 
                     .AllowHorizontalSizing = False
                     .AllowVerticalSizing = False
-
                     .SpringMode = False
                     .SplitSizeMode = SizeModeEnum.Exact         'SplitSizeをピクセルで指定
 
@@ -648,6 +647,8 @@ Public Class frmSEI0001_Meisai
     End Sub
 
     Private Sub dbgMEISAI_Leave(sender As Object, e As EventArgs) Handles dbgMEISAI.Leave
+        If dbgMEISAI.SplitIndex <> 3 Then Return
+
         dbgMEISAI_BeforeColUpdate(Nothing, Nothing)
     End Sub
 
