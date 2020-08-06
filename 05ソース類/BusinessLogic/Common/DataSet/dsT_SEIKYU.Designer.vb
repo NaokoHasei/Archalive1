@@ -333,6 +333,12 @@ Partial Public Class dsT_SEIKYU
         
         Private columnKONJYURYOKINGAKU As Global.System.Data.DataColumn
         
+        Private columnKURIKOSIZAN As Global.System.Data.DataColumn
+        
+        Private columnHORYUKIN As Global.System.Data.DataColumn
+        
+        Private columnKONHORYUKIN As Global.System.Data.DataColumn
+        
         Private columnD_BIKO As Global.System.Data.DataColumn
         
         Private columnKIGYOKBN As Global.System.Data.DataColumn
@@ -578,6 +584,30 @@ Partial Public Class dsT_SEIKYU
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property KURIKOSIZANColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnKURIKOSIZAN
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property HORYUKINColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnHORYUKIN
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property KONHORYUKINColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnKONHORYUKIN
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property D_BIKOColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnD_BIKO
@@ -671,12 +701,15 @@ Partial Public Class dsT_SEIKYU
                     ByVal GKSEIKYUGAKU As Decimal,  _
                     ByVal GKARARIGAKU As Decimal,  _
                     ByVal KONJYURYOKINGAKU As String,  _
+                    ByVal KURIKOSIZAN As String,  _
+                    ByVal HORYUKIN As String,  _
+                    ByVal KONHORYUKIN As String,  _
                     ByVal D_BIKO As String,  _
                     ByVal KIGYOKBN As Decimal,  _
                     ByVal SYORIKBN As Decimal,  _
                     ByVal SYORISTDATE As Date) As T_SEIKYUHEDRow
             Dim rowT_SEIKYUHEDRow As T_SEIKYUHEDRow = CType(Me.NewRow,T_SEIKYUHEDRow)
-            Dim columnValuesArray() As Object = New Object() {SEIKYUNO, SEIKYUEDABAN, JYUTYUEDABAN, SURYO_SYOSUIKAKETA, SEIKYUDATE, SEIKYUMETHOD, TOKUICODE, TANTOCODE, INP_TANTOCODE, KEISYOUCODE, KOUJINO, KOUJINAME, KOUJIBASYO, NOUKI_START, NOUKI_END, AITE_ORDERNO, JYUTYUNO, SAN_JYUTYUNO, AITEDENPYONO, GKGENKAGAKU, GKSEIKYUGAKU_NUKI, GKTAX, GKSEIKYUGAKU, GKARARIGAKU, KONJYURYOKINGAKU, D_BIKO, KIGYOKBN, SYORIKBN, SYORISTDATE}
+            Dim columnValuesArray() As Object = New Object() {SEIKYUNO, SEIKYUEDABAN, JYUTYUEDABAN, SURYO_SYOSUIKAKETA, SEIKYUDATE, SEIKYUMETHOD, TOKUICODE, TANTOCODE, INP_TANTOCODE, KEISYOUCODE, KOUJINO, KOUJINAME, KOUJIBASYO, NOUKI_START, NOUKI_END, AITE_ORDERNO, JYUTYUNO, SAN_JYUTYUNO, AITEDENPYONO, GKGENKAGAKU, GKSEIKYUGAKU_NUKI, GKTAX, GKSEIKYUGAKU, GKARARIGAKU, KONJYURYOKINGAKU, KURIKOSIZAN, HORYUKIN, KONHORYUKIN, D_BIKO, KIGYOKBN, SYORIKBN, SYORISTDATE}
             rowT_SEIKYUHEDRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowT_SEIKYUHEDRow)
             Return rowT_SEIKYUHEDRow
@@ -724,6 +757,9 @@ Partial Public Class dsT_SEIKYU
             Me.columnGKSEIKYUGAKU = MyBase.Columns("GKSEIKYUGAKU")
             Me.columnGKARARIGAKU = MyBase.Columns("GKARARIGAKU")
             Me.columnKONJYURYOKINGAKU = MyBase.Columns("KONJYURYOKINGAKU")
+            Me.columnKURIKOSIZAN = MyBase.Columns("KURIKOSIZAN")
+            Me.columnHORYUKIN = MyBase.Columns("HORYUKIN")
+            Me.columnKONHORYUKIN = MyBase.Columns("KONHORYUKIN")
             Me.columnD_BIKO = MyBase.Columns("D_BIKO")
             Me.columnKIGYOKBN = MyBase.Columns("KIGYOKBN")
             Me.columnSYORIKBN = MyBase.Columns("SYORIKBN")
@@ -783,6 +819,12 @@ Partial Public Class dsT_SEIKYU
             MyBase.Columns.Add(Me.columnGKARARIGAKU)
             Me.columnKONJYURYOKINGAKU = New Global.System.Data.DataColumn("KONJYURYOKINGAKU", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnKONJYURYOKINGAKU)
+            Me.columnKURIKOSIZAN = New Global.System.Data.DataColumn("KURIKOSIZAN", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnKURIKOSIZAN)
+            Me.columnHORYUKIN = New Global.System.Data.DataColumn("HORYUKIN", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnHORYUKIN)
+            Me.columnKONHORYUKIN = New Global.System.Data.DataColumn("KONHORYUKIN", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnKONHORYUKIN)
             Me.columnD_BIKO = New Global.System.Data.DataColumn("D_BIKO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnD_BIKO)
             Me.columnKIGYOKBN = New Global.System.Data.DataColumn("KIGYOKBN", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
@@ -1301,6 +1343,51 @@ Partial Public Class dsT_SEIKYU
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property KURIKOSIZAN() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableT_SEIKYUHED.KURIKOSIZANColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("テーブル 'T_SEIKYUHED' にある列 'KURIKOSIZAN' の値は DBNull です。", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableT_SEIKYUHED.KURIKOSIZANColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property HORYUKIN() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableT_SEIKYUHED.HORYUKINColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("テーブル 'T_SEIKYUHED' にある列 'HORYUKIN' の値は DBNull です。", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableT_SEIKYUHED.HORYUKINColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property KONHORYUKIN() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableT_SEIKYUHED.KONHORYUKINColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("テーブル 'T_SEIKYUHED' にある列 'KONHORYUKIN' の値は DBNull です。", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableT_SEIKYUHED.KONHORYUKINColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property D_BIKO() As String
             Get
                 If Me.IsD_BIKONull Then
@@ -1553,6 +1640,42 @@ Partial Public Class dsT_SEIKYU
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetKONJYURYOKINGAKUNull()
             Me(Me.tableT_SEIKYUHED.KONJYURYOKINGAKUColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsKURIKOSIZANNull() As Boolean
+            Return Me.IsNull(Me.tableT_SEIKYUHED.KURIKOSIZANColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetKURIKOSIZANNull()
+            Me(Me.tableT_SEIKYUHED.KURIKOSIZANColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsHORYUKINNull() As Boolean
+            Return Me.IsNull(Me.tableT_SEIKYUHED.HORYUKINColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetHORYUKINNull()
+            Me(Me.tableT_SEIKYUHED.HORYUKINColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsKONHORYUKINNull() As Boolean
+            Return Me.IsNull(Me.tableT_SEIKYUHED.KONHORYUKINColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetKONHORYUKINNull()
+            Me(Me.tableT_SEIKYUHED.KONHORYUKINColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _

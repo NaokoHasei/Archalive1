@@ -65,6 +65,9 @@ Public Class rptSEI0001
         '元請名
         txtKyakuName.DataField = "TokuiName"
 
+        '繰越残（ラベル）
+        txtKurikoshizanName.DataField = "KurikoshizanName"
+
         '今回請求額
         txtSeikyuGaku.DataField = "SeikyuGaku"
         txtSeikyuGaku.OutputFormat = "#,##0"
@@ -80,6 +83,14 @@ Public Class rptSEI0001
         '今回迄請求額
         txtMadeSeikyuGaku.DataField = "MadeSeikyuGaku"
         txtMadeSeikyuGaku.OutputFormat = "#,##0"
+
+        '保留金残
+        txtHoryukin.DataField = "Horyukin"
+        txtHoryukin.OutputFormat = "#,##0"
+
+        '繰越残
+        txtKurikoshizan.DataField = "Kurikoshizan"
+        txtKurikoshizan.OutputFormat = "#,##0"
 
         '今回請求金額
         txtKonSeikyuGaku.DataField = "SeikyuGaku"
@@ -130,30 +141,25 @@ Public Class rptSEI0001
     Private Sub Detail_BeforePrint(ByVal sender As Object, ByVal e As System.EventArgs) Handles Detail.BeforePrint
 
         lblKeisyo.Text = strKeisyo
-
         txtTEL.Text = frmSEI0001.ReportData.TEL固定値 + txtTEL.Text
-
         txtFAX.Text = frmSEI0001.ReportData.FAX固定値 + txtFAX.Text
-
         txtEmail.Text = frmSEI0001.ReportData.EMAIL固定値 + txtEmail.Text
-
         txtURL.Text = frmSEI0001.ReportData.URL固定値 + txtURL.Text
 
         '0データは不可視
         txtMadeJyuryogaku.Visible = (Not txtMadeJyuryogaku.Text = "0")
-
         txtMadeSeikyuGaku.Visible = (Not txtMadeSeikyuGaku.Text = "0")
+        txtHoryukin.Visible = (Not txtHoryukin.Text = "0")
+        txtKurikoshizan.Visible = (Not txtKurikoshizan.Text = "0")
 
 
         'Style
         txtSeikyuGaku.Text = "￥" + txtSeikyuGaku.Text + "－"
-
         txtJyutyuGaku.Text = "\" + txtJyutyuGaku.Text
-
         txtMadeJyuryogaku.Text = "\" + txtMadeJyuryogaku.Text
-
         txtMadeSeikyuGaku.Text = "\" + txtMadeSeikyuGaku.Text
-
+        txtHoryukin.Text = "\" + txtHoryukin.Text
+        txtKurikoshizan.Text = "\" + txtKurikoshizan.Text
         txtKonSeikyuGaku.Text = "\" + txtKonSeikyuGaku.Text
 
         lblNatsuin1.Text = natsuin1

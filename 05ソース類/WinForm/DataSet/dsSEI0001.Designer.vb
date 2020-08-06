@@ -33,8 +33,6 @@ Partial Public Class dsSEI0001
     
     Private tableM_KBN_GETZEIRITU As M_KBN_GETZEIRITUDataTable
     
-    Private tableGetMadeSeikyuGaku As GetMadeSeikyuGakuDataTable
-    
     Private tableT_SEIKYU As T_SEIKYUDataTable
     
     Private tableReportData0_1 As ReportData0_1DataTable
@@ -83,9 +81,6 @@ Partial Public Class dsSEI0001
             End If
             If (Not (ds.Tables("M_KBN_GETZEIRITU")) Is Nothing) Then
                 MyBase.Tables.Add(New M_KBN_GETZEIRITUDataTable(ds.Tables("M_KBN_GETZEIRITU")))
-            End If
-            If (Not (ds.Tables("GetMadeSeikyuGaku")) Is Nothing) Then
-                MyBase.Tables.Add(New GetMadeSeikyuGakuDataTable(ds.Tables("GetMadeSeikyuGaku")))
             End If
             If (Not (ds.Tables("T_SEIKYU")) Is Nothing) Then
                 MyBase.Tables.Add(New T_SEIKYUDataTable(ds.Tables("T_SEIKYU")))
@@ -153,16 +148,6 @@ Partial Public Class dsSEI0001
     Public ReadOnly Property M_KBN_GETZEIRITU() As M_KBN_GETZEIRITUDataTable
         Get
             Return Me.tableM_KBN_GETZEIRITU
-        End Get
-    End Property
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-     Global.System.ComponentModel.Browsable(false),  _
-     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property GetMadeSeikyuGaku() As GetMadeSeikyuGakuDataTable
-        Get
-            Return Me.tableGetMadeSeikyuGaku
         End Get
     End Property
     
@@ -285,9 +270,6 @@ Partial Public Class dsSEI0001
             If (Not (ds.Tables("M_KBN_GETZEIRITU")) Is Nothing) Then
                 MyBase.Tables.Add(New M_KBN_GETZEIRITUDataTable(ds.Tables("M_KBN_GETZEIRITU")))
             End If
-            If (Not (ds.Tables("GetMadeSeikyuGaku")) Is Nothing) Then
-                MyBase.Tables.Add(New GetMadeSeikyuGakuDataTable(ds.Tables("GetMadeSeikyuGaku")))
-            End If
             If (Not (ds.Tables("T_SEIKYU")) Is Nothing) Then
                 MyBase.Tables.Add(New T_SEIKYUDataTable(ds.Tables("T_SEIKYU")))
             End If
@@ -356,12 +338,6 @@ Partial Public Class dsSEI0001
                 Me.tableM_KBN_GETZEIRITU.InitVars
             End If
         End If
-        Me.tableGetMadeSeikyuGaku = CType(MyBase.Tables("GetMadeSeikyuGaku"),GetMadeSeikyuGakuDataTable)
-        If (initTable = true) Then
-            If (Not (Me.tableGetMadeSeikyuGaku) Is Nothing) Then
-                Me.tableGetMadeSeikyuGaku.InitVars
-            End If
-        End If
         Me.tableT_SEIKYU = CType(MyBase.Tables("T_SEIKYU"),T_SEIKYUDataTable)
         If (initTable = true) Then
             If (Not (Me.tableT_SEIKYU) Is Nothing) Then
@@ -404,8 +380,6 @@ Partial Public Class dsSEI0001
         MyBase.Tables.Add(Me.tableT_JYUTYUHED)
         Me.tableM_KBN_GETZEIRITU = New M_KBN_GETZEIRITUDataTable()
         MyBase.Tables.Add(Me.tableM_KBN_GETZEIRITU)
-        Me.tableGetMadeSeikyuGaku = New GetMadeSeikyuGakuDataTable()
-        MyBase.Tables.Add(Me.tableGetMadeSeikyuGaku)
         Me.tableT_SEIKYU = New T_SEIKYUDataTable()
         MyBase.Tables.Add(Me.tableT_SEIKYU)
         Me.tableReportData0_1 = New ReportData0_1DataTable()
@@ -437,12 +411,6 @@ Partial Public Class dsSEI0001
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Function ShouldSerializeM_KBN_GETZEIRITU() As Boolean
-        Return false
-    End Function
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Private Function ShouldSerializeGetMadeSeikyuGaku() As Boolean
         Return false
     End Function
     
@@ -541,9 +509,6 @@ Partial Public Class dsSEI0001
     Public Delegate Sub M_KBN_GETZEIRITURowChangeEventHandler(ByVal sender As Object, ByVal e As M_KBN_GETZEIRITURowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Delegate Sub GetMadeSeikyuGakuRowChangeEventHandler(ByVal sender As Object, ByVal e As GetMadeSeikyuGakuRowChangeEvent)
-    
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Delegate Sub T_SEIKYURowChangeEventHandler(ByVal sender As Object, ByVal e As T_SEIKYURowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -576,6 +541,8 @@ Partial Public Class dsSEI0001
         Private columnDEKIDAKA As Global.System.Data.DataColumn
         
         Private columnSEIKYURITU As Global.System.Data.DataColumn
+        
+        Private columnSEIKYURITU1 As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -669,6 +636,14 @@ Partial Public Class dsSEI0001
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property SEIKYURITU1Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSEIKYURITU1
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -705,9 +680,9 @@ Partial Public Class dsSEI0001
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddMainDataRow(ByVal JYUTYUNO As String, ByVal GKJYUTYUGAKU As Decimal, ByVal MADESEIKYUGAKU As Decimal, ByVal SEIKYUGAKU As Decimal, ByVal MISEIKYUGAKU As Decimal, ByVal DEKIDAKA As Decimal, ByVal SEIKYURITU As Decimal) As MainDataRow
+        Public Overloads Function AddMainDataRow(ByVal JYUTYUNO As String, ByVal GKJYUTYUGAKU As Decimal, ByVal MADESEIKYUGAKU As Decimal, ByVal SEIKYUGAKU As Decimal, ByVal MISEIKYUGAKU As Decimal, ByVal DEKIDAKA As Decimal, ByVal SEIKYURITU As Decimal, ByVal SEIKYURITU1 As Integer) As MainDataRow
             Dim rowMainDataRow As MainDataRow = CType(Me.NewRow,MainDataRow)
-            Dim columnValuesArray() As Object = New Object() {JYUTYUNO, GKJYUTYUGAKU, MADESEIKYUGAKU, SEIKYUGAKU, MISEIKYUGAKU, DEKIDAKA, SEIKYURITU}
+            Dim columnValuesArray() As Object = New Object() {JYUTYUNO, GKJYUTYUGAKU, MADESEIKYUGAKU, SEIKYUGAKU, MISEIKYUGAKU, DEKIDAKA, SEIKYURITU, SEIKYURITU1}
             rowMainDataRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowMainDataRow)
             Return rowMainDataRow
@@ -737,6 +712,7 @@ Partial Public Class dsSEI0001
             Me.columnMISEIKYUGAKU = MyBase.Columns("MISEIKYUGAKU")
             Me.columnDEKIDAKA = MyBase.Columns("DEKIDAKA")
             Me.columnSEIKYURITU = MyBase.Columns("SEIKYURITU")
+            Me.columnSEIKYURITU1 = MyBase.Columns("SEIKYURITU1")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -756,6 +732,8 @@ Partial Public Class dsSEI0001
             MyBase.Columns.Add(Me.columnDEKIDAKA)
             Me.columnSEIKYURITU = New Global.System.Data.DataColumn("SEIKYURITU", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnSEIKYURITU)
+            Me.columnSEIKYURITU1 = New Global.System.Data.DataColumn("SEIKYURITU1", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSEIKYURITU1)
             Me.columnJYUTYUNO.DefaultValue = CType("",String)
             Me.columnJYUTYUNO.MaxLength = 30
             Me.columnGKJYUTYUGAKU.DefaultValue = CType(0D,Decimal)
@@ -763,6 +741,8 @@ Partial Public Class dsSEI0001
             Me.columnSEIKYUGAKU.DefaultValue = CType(0D,Decimal)
             Me.columnMISEIKYUGAKU.DefaultValue = CType(0D,Decimal)
             Me.columnDEKIDAKA.DefaultValue = CType(0D,Decimal)
+            Me.columnSEIKYURITU1.ReadOnly = true
+            Me.columnSEIKYURITU1.Caption = "SEIKYURITU"
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2985,260 +2965,6 @@ Partial Public Class dsSEI0001
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class GetMadeSeikyuGakuDataTable
-        Inherits Global.System.Data.TypedTableBase(Of GetMadeSeikyuGakuRow)
-        
-        Private columnMADESEIKYUGAKU As Global.System.Data.DataColumn
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.TableName = "GetMadeSeikyuGaku"
-            Me.BeginInit
-            Me.InitClass
-            Me.EndInit
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Friend Sub New(ByVal table As Global.System.Data.DataTable)
-            MyBase.New
-            Me.TableName = table.TableName
-            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
-                Me.CaseSensitive = table.CaseSensitive
-            End If
-            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
-                Me.Locale = table.Locale
-            End If
-            If (table.Namespace <> table.DataSet.Namespace) Then
-                Me.Namespace = table.Namespace
-            End If
-            Me.Prefix = table.Prefix
-            Me.MinimumCapacity = table.MinimumCapacity
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
-            MyBase.New(info, context)
-            Me.InitVars
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property MADESEIKYUGAKUColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnMADESEIKYUGAKU
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property Count() As Integer
-            Get
-                Return Me.Rows.Count
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As GetMadeSeikyuGakuRow
-            Get
-                Return CType(Me.Rows(index),GetMadeSeikyuGakuRow)
-            End Get
-        End Property
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event GetMadeSeikyuGakuRowChanging As GetMadeSeikyuGakuRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event GetMadeSeikyuGakuRowChanged As GetMadeSeikyuGakuRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event GetMadeSeikyuGakuRowDeleting As GetMadeSeikyuGakuRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event GetMadeSeikyuGakuRowDeleted As GetMadeSeikyuGakuRowChangeEventHandler
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Sub AddGetMadeSeikyuGakuRow(ByVal row As GetMadeSeikyuGakuRow)
-            Me.Rows.Add(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddGetMadeSeikyuGakuRow(ByVal MADESEIKYUGAKU As Decimal) As GetMadeSeikyuGakuRow
-            Dim rowGetMadeSeikyuGakuRow As GetMadeSeikyuGakuRow = CType(Me.NewRow,GetMadeSeikyuGakuRow)
-            Dim columnValuesArray() As Object = New Object() {MADESEIKYUGAKU}
-            rowGetMadeSeikyuGakuRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowGetMadeSeikyuGakuRow)
-            Return rowGetMadeSeikyuGakuRow
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As GetMadeSeikyuGakuDataTable = CType(MyBase.Clone,GetMadeSeikyuGakuDataTable)
-            cln.InitVars
-            Return cln
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New GetMadeSeikyuGakuDataTable()
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Friend Sub InitVars()
-            Me.columnMADESEIKYUGAKU = MyBase.Columns("MADESEIKYUGAKU")
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Sub InitClass()
-            Me.columnMADESEIKYUGAKU = New Global.System.Data.DataColumn("MADESEIKYUGAKU", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnMADESEIKYUGAKU)
-            Me.columnMADESEIKYUGAKU.ReadOnly = true
-            Me.columnMADESEIKYUGAKU.DefaultValue = CType(0D,Decimal)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function NewGetMadeSeikyuGakuRow() As GetMadeSeikyuGakuRow
-            Return CType(Me.NewRow,GetMadeSeikyuGakuRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New GetMadeSeikyuGakuRow(builder)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(GetMadeSeikyuGakuRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanged(e)
-            If (Not (Me.GetMadeSeikyuGakuRowChangedEvent) Is Nothing) Then
-                RaiseEvent GetMadeSeikyuGakuRowChanged(Me, New GetMadeSeikyuGakuRowChangeEvent(CType(e.Row,GetMadeSeikyuGakuRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanging(e)
-            If (Not (Me.GetMadeSeikyuGakuRowChangingEvent) Is Nothing) Then
-                RaiseEvent GetMadeSeikyuGakuRowChanging(Me, New GetMadeSeikyuGakuRowChangeEvent(CType(e.Row,GetMadeSeikyuGakuRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleted(e)
-            If (Not (Me.GetMadeSeikyuGakuRowDeletedEvent) Is Nothing) Then
-                RaiseEvent GetMadeSeikyuGakuRowDeleted(Me, New GetMadeSeikyuGakuRowChangeEvent(CType(e.Row,GetMadeSeikyuGakuRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleting(e)
-            If (Not (Me.GetMadeSeikyuGakuRowDeletingEvent) Is Nothing) Then
-                RaiseEvent GetMadeSeikyuGakuRowDeleting(Me, New GetMadeSeikyuGakuRowChangeEvent(CType(e.Row,GetMadeSeikyuGakuRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub RemoveGetMadeSeikyuGakuRow(ByVal row As GetMadeSeikyuGakuRow)
-            Me.Rows.Remove(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
-            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As dsSEI0001 = New dsSEI0001()
-            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
-            any1.MinOccurs = New Decimal(0)
-            any1.MaxOccurs = Decimal.MaxValue
-            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any1)
-            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
-            any2.MinOccurs = New Decimal(1)
-            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any2)
-            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute1.Name = "namespace"
-            attribute1.FixedValue = ds.Namespace
-            type.Attributes.Add(attribute1)
-            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "GetMadeSeikyuGakuDataTable"
-            type.Attributes.Add(attribute2)
-            type.Particle = sequence
-            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
-            If xs.Contains(dsSchema.TargetNamespace) Then
-                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try 
-                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
-                    dsSchema.Write(s1)
-                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
-                    Do While schemas.MoveNext
-                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
-                        s2.SetLength(0)
-                        schema.Write(s2)
-                        If (s1.Length = s2.Length) Then
-                            s1.Position = 0
-                            s2.Position = 0
-                            
-                            Do While ((s1.Position <> s1.Length)  _
-                                        AndAlso (s1.ReadByte = s2.ReadByte))
-                                
-                                
-                            Loop
-                            If (s1.Position = s1.Length) Then
-                                Return type
-                            End If
-                        End If
-                        
-                    Loop
-                Finally
-                    If (Not (s1) Is Nothing) Then
-                        s1.Close
-                    End If
-                    If (Not (s2) Is Nothing) Then
-                        s2.Close
-                    End If
-                End Try
-            End If
-            xs.Add(dsSchema)
-            Return type
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the strongly named DataTable class.
-    '''</summary>
-    <Global.System.Serializable(),  _
-     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
     Partial Public Class T_SEIKYUDataTable
         Inherits Global.System.Data.TypedTableBase(Of T_SEIKYURow)
         
@@ -4083,6 +3809,12 @@ Partial Public Class dsSEI0001
         
         Private columnMadeSeikyuGaku As Global.System.Data.DataColumn
         
+        Private columnHoryukin As Global.System.Data.DataColumn
+        
+        Private columnKurikoshizan As Global.System.Data.DataColumn
+        
+        Private columnKurikoshizanName As Global.System.Data.DataColumn
+        
         Private columnBiko As Global.System.Data.DataColumn
         
         Private columnJisyaName As Global.System.Data.DataColumn
@@ -4211,6 +3943,30 @@ Partial Public Class dsSEI0001
         Public ReadOnly Property MadeSeikyuGakuColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnMadeSeikyuGaku
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property HoryukinColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnHoryukin
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property KurikoshizanColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnKurikoshizan
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property KurikoshizanNameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnKurikoshizanName
             End Get
         End Property
         
@@ -4388,6 +4144,9 @@ Partial Public Class dsSEI0001
                     ByVal UkeoiGaku As Decimal,  _
                     ByVal MadeJyuryoGaku As Decimal,  _
                     ByVal MadeSeikyuGaku As Decimal,  _
+                    ByVal Horyukin As Decimal,  _
+                    ByVal Kurikoshizan As Decimal,  _
+                    ByVal KurikoshizanName As String,  _
                     ByVal Biko As String,  _
                     ByVal JisyaName As String,  _
                     ByVal YubinNo As String,  _
@@ -4405,7 +4164,7 @@ Partial Public Class dsSEI0001
                     ByVal Web As String,  _
                     ByVal Isoqer As String) As ReportDataRow
             Dim rowReportDataRow As ReportDataRow = CType(Me.NewRow,ReportDataRow)
-            Dim columnValuesArray() As Object = New Object() {SeikyuNo, SeikyuDate, TokuiName, SeikyuGaku, KoujiName, UkeoiGaku, MadeJyuryoGaku, MadeSeikyuGaku, Biko, JisyaName, YubinNo, Address1, Address2, TelNo, FaxNo, Kouza1, Kouza2, Kouza3, KouzaMeigi, KouzaMeigiKana, Comment1, Email, Web, Isoqer}
+            Dim columnValuesArray() As Object = New Object() {SeikyuNo, SeikyuDate, TokuiName, SeikyuGaku, KoujiName, UkeoiGaku, MadeJyuryoGaku, MadeSeikyuGaku, Horyukin, Kurikoshizan, KurikoshizanName, Biko, JisyaName, YubinNo, Address1, Address2, TelNo, FaxNo, Kouza1, Kouza2, Kouza3, KouzaMeigi, KouzaMeigiKana, Comment1, Email, Web, Isoqer}
             rowReportDataRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowReportDataRow)
             Return rowReportDataRow
@@ -4436,6 +4195,9 @@ Partial Public Class dsSEI0001
             Me.columnUkeoiGaku = MyBase.Columns("UkeoiGaku")
             Me.columnMadeJyuryoGaku = MyBase.Columns("MadeJyuryoGaku")
             Me.columnMadeSeikyuGaku = MyBase.Columns("MadeSeikyuGaku")
+            Me.columnHoryukin = MyBase.Columns("Horyukin")
+            Me.columnKurikoshizan = MyBase.Columns("Kurikoshizan")
+            Me.columnKurikoshizanName = MyBase.Columns("KurikoshizanName")
             Me.columnBiko = MyBase.Columns("Biko")
             Me.columnJisyaName = MyBase.Columns("JisyaName")
             Me.columnYubinNo = MyBase.Columns("YubinNo")
@@ -4473,6 +4235,12 @@ Partial Public Class dsSEI0001
             MyBase.Columns.Add(Me.columnMadeJyuryoGaku)
             Me.columnMadeSeikyuGaku = New Global.System.Data.DataColumn("MadeSeikyuGaku", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnMadeSeikyuGaku)
+            Me.columnHoryukin = New Global.System.Data.DataColumn("Horyukin", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnHoryukin)
+            Me.columnKurikoshizan = New Global.System.Data.DataColumn("Kurikoshizan", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnKurikoshizan)
+            Me.columnKurikoshizanName = New Global.System.Data.DataColumn("KurikoshizanName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnKurikoshizanName)
             Me.columnBiko = New Global.System.Data.DataColumn("Biko", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnBiko)
             Me.columnJisyaName = New Global.System.Data.DataColumn("JisyaName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -5341,6 +5109,21 @@ Partial Public Class dsSEI0001
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property SEIKYURITU1() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableMainData.SEIKYURITU1Column),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("テーブル 'MainData' にある列 'SEIKYURITU1' の値は DBNull です。", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableMainData.SEIKYURITU1Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsJYUTYUNONull() As Boolean
             Return Me.IsNull(Me.tableMainData.JYUTYUNOColumn)
         End Function
@@ -5421,6 +5204,18 @@ Partial Public Class dsSEI0001
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetSEIKYURITUNull()
             Me(Me.tableMainData.SEIKYURITUColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsSEIKYURITU1Null() As Boolean
+            Return Me.IsNull(Me.tableMainData.SEIKYURITU1Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetSEIKYURITU1Null()
+            Me(Me.tableMainData.SEIKYURITU1Column) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -6929,49 +6724,6 @@ Partial Public Class dsSEI0001
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class GetMadeSeikyuGakuRow
-        Inherits Global.System.Data.DataRow
-        
-        Private tableGetMadeSeikyuGaku As GetMadeSeikyuGakuDataTable
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tableGetMadeSeikyuGaku = CType(Me.Table,GetMadeSeikyuGakuDataTable)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property MADESEIKYUGAKU() As Decimal
-            Get
-                Try 
-                    Return CType(Me(Me.tableGetMadeSeikyuGaku.MADESEIKYUGAKUColumn),Decimal)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("テーブル 'GetMadeSeikyuGaku' にある列 'MADESEIKYUGAKU' の値は DBNull です。", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableGetMadeSeikyuGaku.MADESEIKYUGAKUColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsMADESEIKYUGAKUNull() As Boolean
-            Return Me.IsNull(Me.tableGetMadeSeikyuGaku.MADESEIKYUGAKUColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetMADESEIKYUGAKUNull()
-            Me(Me.tableGetMadeSeikyuGaku.MADESEIKYUGAKUColumn) = Global.System.Convert.DBNull
-        End Sub
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
     Partial Public Class T_SEIKYURow
         Inherits Global.System.Data.DataRow
         
@@ -7610,6 +7362,51 @@ Partial Public Class dsSEI0001
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Horyukin() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableReportData.HoryukinColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("テーブル 'ReportData' にある列 'Horyukin' の値は DBNull です。", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableReportData.HoryukinColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Kurikoshizan() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableReportData.KurikoshizanColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("テーブル 'ReportData' にある列 'Kurikoshizan' の値は DBNull です。", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableReportData.KurikoshizanColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property KurikoshizanName() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableReportData.KurikoshizanNameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("テーブル 'ReportData' にある列 'KurikoshizanName' の値は DBNull です。", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableReportData.KurikoshizanNameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Biko() As String
             Get
                 If Me.IsBikoNull Then
@@ -7942,6 +7739,42 @@ Partial Public Class dsSEI0001
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetMadeSeikyuGakuNull()
             Me(Me.tableReportData.MadeSeikyuGakuColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsHoryukinNull() As Boolean
+            Return Me.IsNull(Me.tableReportData.HoryukinColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetHoryukinNull()
+            Me(Me.tableReportData.HoryukinColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsKurikoshizanNull() As Boolean
+            Return Me.IsNull(Me.tableReportData.KurikoshizanColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetKurikoshizanNull()
+            Me(Me.tableReportData.KurikoshizanColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsKurikoshizanNameNull() As Boolean
+            Return Me.IsNull(Me.tableReportData.KurikoshizanNameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetKurikoshizanNameNull()
+            Me(Me.tableReportData.KurikoshizanNameColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8922,42 +8755,6 @@ Partial Public Class dsSEI0001
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Class GetMadeSeikyuGakuRowChangeEvent
-        Inherits Global.System.EventArgs
-        
-        Private eventRow As GetMadeSeikyuGakuRow
-        
-        Private eventAction As Global.System.Data.DataRowAction
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New(ByVal row As GetMadeSeikyuGakuRow, ByVal action As Global.System.Data.DataRowAction)
-            MyBase.New
-            Me.eventRow = row
-            Me.eventAction = action
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Row() As GetMadeSeikyuGakuRow
-            Get
-                Return Me.eventRow
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
-            Get
-                Return Me.eventAction
-            End Get
-        End Property
-    End Class
-    
-    '''<summary>
-    '''Row event argument class
-    '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Class T_SEIKYURowChangeEvent
         Inherits Global.System.EventArgs
         
@@ -9234,6 +9031,7 @@ Namespace dsSEI0001TableAdapters
             tableMapping.ColumnMappings.Add("SEIKYUGAKU", "SEIKYUGAKU")
             tableMapping.ColumnMappings.Add("MISEIKYUGAKU", "MISEIKYUGAKU")
             tableMapping.ColumnMappings.Add("DEKIDAKA", "DEKIDAKA")
+            tableMapping.ColumnMappings.Add("SEIKYURITU", "SEIKYURITU1")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -9262,33 +9060,27 @@ Namespace dsSEI0001TableAdapters
                 "e SEIKYUNO = @SEIKYUNO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"    and   SEIKYUEDABAN = @SEIKYUEDABAN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  ) as STRN "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  "& _ 
                 "  on STRN.JYUTYUNO = JHED.JYUTYUNO "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  left outer join ( "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"    select"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"        J"& _ 
                 "YUTYUNO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"      , SUM(SEIKYUGAKU) as MADESEIKYUGAKU "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"    from"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"      T_SEIKYU as"& _ 
-                " T_SEIKYU_1 "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"    where T_SEIKYU_1.JYUTYUNO = @JYUTYUNO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"    and    T_SEIKYU_1.S"& _ 
-                "EIKYUDATE < @SEIKYUDATE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"    group by"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"      JYUTYUNO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  ) as STRN_KEI "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"    on "& _ 
-                "JHED.JYUTYUNO = STRN_KEI.JYUTYUNO "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"where JHED.JYUTYUNO = @JYUTYUNO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"and  JHED.J"& _ 
-                "YUTYUEDABAN = @JYUTYUEDABAN"
+                " SUB"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"    where SUB.JYUTYUNO     = @JYUTYUNO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"    and   SUB.SEIKYUEDABAN < @SEIK"& _ 
+                "YUEDABAN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"    group by"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"      JYUTYUNO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  ) as STRN_KEI "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"    on JHED.JYUTYUNO ="& _ 
+                " STRN_KEI.JYUTYUNO "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"where JHED.JYUTYUNO = @JYUTYUNO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"and  JHED.JYUTYUEDABAN = @"& _ 
+                "JYUTYUEDABAN"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@JYUTYUNO", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 10, 0, "JYUTYUNO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@JYUTYUEDABAN", Global.System.Data.SqlDbType.[Decimal], 5, Global.System.Data.ParameterDirection.Input, 2, 0, "JYUTYUEDABAN", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SEIKYUNO", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 10, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SEIKYUEDABAN", Global.System.Data.SqlDbType.[Decimal], 5, Global.System.Data.ParameterDirection.Input, 2, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SEIKYUDATE", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As dsSEI0001.MainDataDataTable, ByVal JYUTYUNO As Decimal, ByVal JYUTYUEDABAN As Decimal, ByVal SEIKYUNO As Decimal, ByVal SEIKYUEDABAN As Decimal, ByVal SEIKYUDATE As Global.System.Nullable(Of Date)) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As dsSEI0001.MainDataDataTable, ByVal JYUTYUNO As Decimal, ByVal JYUTYUEDABAN As Decimal, ByVal SEIKYUNO As Decimal, ByVal SEIKYUEDABAN As Decimal) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(JYUTYUNO,Decimal)
             Me.Adapter.SelectCommand.Parameters(1).Value = CType(JYUTYUEDABAN,Decimal)
             Me.Adapter.SelectCommand.Parameters(2).Value = CType(SEIKYUNO,Decimal)
             Me.Adapter.SelectCommand.Parameters(3).Value = CType(SEIKYUEDABAN,Decimal)
-            If (SEIKYUDATE.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(4).Value = CType(SEIKYUDATE.Value,Date)
-            Else
-                Me.Adapter.SelectCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -9300,17 +9092,12 @@ Namespace dsSEI0001TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal JYUTYUNO As Decimal, ByVal JYUTYUEDABAN As Decimal, ByVal SEIKYUNO As Decimal, ByVal SEIKYUEDABAN As Decimal, ByVal SEIKYUDATE As Global.System.Nullable(Of Date)) As dsSEI0001.MainDataDataTable
+        Public Overloads Overridable Function GetData(ByVal JYUTYUNO As Decimal, ByVal JYUTYUEDABAN As Decimal, ByVal SEIKYUNO As Decimal, ByVal SEIKYUEDABAN As Decimal) As dsSEI0001.MainDataDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(JYUTYUNO,Decimal)
             Me.Adapter.SelectCommand.Parameters(1).Value = CType(JYUTYUEDABAN,Decimal)
             Me.Adapter.SelectCommand.Parameters(2).Value = CType(SEIKYUNO,Decimal)
             Me.Adapter.SelectCommand.Parameters(3).Value = CType(SEIKYUEDABAN,Decimal)
-            If (SEIKYUDATE.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(4).Value = CType(SEIKYUDATE.Value,Date)
-            Else
-                Me.Adapter.SelectCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
             Dim dataTable As dsSEI0001.MainDataDataTable = New dsSEI0001.MainDataDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -9940,194 +9727,6 @@ Namespace dsSEI0001TableAdapters
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(SEIKYUDATE,Decimal)
             Dim dataTable As dsSEI0001.M_KBN_GETZEIRITUDataTable = New dsSEI0001.M_KBN_GETZEIRITUDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the connection and commands used to retrieve and save data.
-    '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class GetMadeSeikyuGakuTableAdapter
-        Inherits Global.System.ComponentModel.Component
-        
-        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
-        
-        Private _connection As Global.System.Data.SqlClient.SqlConnection
-        
-        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
-        
-        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
-        
-        Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
-            Get
-                If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
-                End If
-                Return Me._adapter
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
-            Get
-                If (Me._connection Is Nothing) Then
-                    Me.InitConnection
-                End If
-                Return Me._connection
-            End Get
-            Set
-                Me._connection = value
-                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
-                    Me.Adapter.InsertCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
-                    Me.Adapter.DeleteCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
-                    Me.Adapter.UpdateCommand.Connection = value
-                End If
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
-                    End If
-                    i = (i + 1)
-                Loop
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
-            Get
-                Return Me._transaction
-            End Get
-            Set
-                Me._transaction = value
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    Me.CommandCollection(i).Transaction = Me._transaction
-                    i = (i + 1)
-                Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
-                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
-                    Me.Adapter.InsertCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
-                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
-                End If
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
-            Get
-                If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
-                End If
-                Return Me._commandCollection
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property ClearBeforeFill() As Boolean
-            Get
-                Return Me._clearBeforeFill
-            End Get
-            Set
-                Me._clearBeforeFill = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Sub InitAdapter()
-            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
-            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
-            tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "GetMadeSeikyuGaku"
-            tableMapping.ColumnMappings.Add("MADESEIKYUGAKU", "MADESEIKYUGAKU")
-            Me._adapter.TableMappings.Add(tableMapping)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Sub InitConnection()
-            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = "Data Source=171.2.3.159;Initial Catalog=DB_Archalive1;User ID=U_Archalive1;Passwo"& _ 
-                "rd=Archalive1"
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
-            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT             SUM(SEIKYUGAKU) AS MADESEIKYUGAKU"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM              T_SEIKYU"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE   JYUTYUNO = @JYUTYUNO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"and         SEIKYUDATE < @SEIKYUDATE"
-            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@JYUTYUNO", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 10, 0, "JYUTYUNO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SEIKYUDATE", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SEIKYUDATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As dsSEI0001.GetMadeSeikyuGakuDataTable, ByVal JYUTYUNO As Decimal, ByVal SEIKYUDATE As Global.System.Nullable(Of Date)) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(JYUTYUNO,Decimal)
-            If (SEIKYUDATE.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(SEIKYUDATE.Value,Date)
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal JYUTYUNO As Decimal, ByVal SEIKYUDATE As Global.System.Nullable(Of Date)) As dsSEI0001.GetMadeSeikyuGakuDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(JYUTYUNO,Decimal)
-            If (SEIKYUDATE.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(SEIKYUDATE.Value,Date)
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            Dim dataTable As dsSEI0001.GetMadeSeikyuGakuDataTable = New dsSEI0001.GetMadeSeikyuGakuDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function

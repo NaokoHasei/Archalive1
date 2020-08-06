@@ -136,6 +136,7 @@ Partial Public Class rptSEI0001_DekidakaTyousho
         Me.Line82 = New GrapeCity.ActiveReports.SectionReportModel.Line()
         Me.Line83 = New GrapeCity.ActiveReports.SectionReportModel.Line()
         Me.Line84 = New GrapeCity.ActiveReports.SectionReportModel.Line()
+        Me.txtKAISOCODE_HEADER = New GrapeCity.ActiveReports.SectionReportModel.TextBox()
         Me.GroupFooter1 = New GrapeCity.ActiveReports.SectionReportModel.GroupFooter()
         Me.Label14 = New GrapeCity.ActiveReports.SectionReportModel.Label()
         Me.txtJYUTYUGAKU_SYOKEI = New GrapeCity.ActiveReports.SectionReportModel.TextBox()
@@ -232,6 +233,7 @@ Partial Public Class rptSEI0001_DekidakaTyousho
         CType(Me.txtSEIKYUGAKU_RUIKEI_GOUKEI, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtSEIKYUGAKU_KONKAI_GOUKEI, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtKAMOKU_HINMOKU_DAIKAMOKU, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtKAISOCODE_HEADER, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label14, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtJYUTYUGAKU_SYOKEI, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtSEIKYUGAKU_ZENKAI_SYOKEI, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1489,8 +1491,8 @@ Partial Public Class rptSEI0001_DekidakaTyousho
         '
         'GroupHeader1
         '
-        Me.GroupHeader1.Controls.AddRange(New GrapeCity.ActiveReports.SectionReportModel.ARControl() {Me.txtKAMOKU_HINMOKU_DAIKAMOKU, Me.Line58, Me.Line59, Me.Line60, Me.Line71, Me.Line72, Me.Line73, Me.Line74, Me.Line75, Me.Line76, Me.Line77, Me.Line78, Me.Line80, Me.Line81, Me.Line82, Me.Line83, Me.Line84})
-        Me.GroupHeader1.Height = 0.2362205!
+        Me.GroupHeader1.Controls.AddRange(New GrapeCity.ActiveReports.SectionReportModel.ARControl() {Me.txtKAMOKU_HINMOKU_DAIKAMOKU, Me.Line58, Me.Line59, Me.Line60, Me.Line71, Me.Line72, Me.Line73, Me.Line74, Me.Line75, Me.Line76, Me.Line77, Me.Line78, Me.Line80, Me.Line81, Me.Line82, Me.Line83, Me.Line84, Me.txtKAISOCODE_HEADER})
+        Me.GroupHeader1.Height = 0.2431649!
         Me.GroupHeader1.Name = "GroupHeader1"
         '
         'txtKAMOKU_HINMOKU_DAIKAMOKU
@@ -1713,6 +1715,20 @@ Partial Public Class rptSEI0001_DekidakaTyousho
         Me.Line84.X2 = 5.11811!
         Me.Line84.Y1 = -0.003937008!
         Me.Line84.Y2 = 0.2401575!
+        '
+        'txtKAISOCODE_HEADER
+        '
+        Me.txtKAISOCODE_HEADER.Height = 0.1468504!
+        Me.txtKAISOCODE_HEADER.Left = 5.487206!
+        Me.txtKAISOCODE_HEADER.Name = "txtKAISOCODE_HEADER"
+        Me.txtKAISOCODE_HEADER.ShrinkToFit = True
+        Me.txtKAISOCODE_HEADER.Style = "font-family: ＭＳ 明朝; font-size: 9.75pt; font-weight: normal; text-align: left; whi" &
+    "te-space: nowrap; ddo-char-set: 1; ddo-shrink-to-fit: true; ddo-wrap-mode: nowra" &
+    "p"
+        Me.txtKAISOCODE_HEADER.Text = "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ"
+        Me.txtKAISOCODE_HEADER.Top = 0.04468504!
+        Me.txtKAISOCODE_HEADER.Visible = False
+        Me.txtKAISOCODE_HEADER.Width = 0.3051186!
         '
         'GroupFooter1
         '
@@ -2423,6 +2439,7 @@ Partial Public Class rptSEI0001_DekidakaTyousho
         CType(Me.txtSEIKYUGAKU_RUIKEI_GOUKEI, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtSEIKYUGAKU_KONKAI_GOUKEI, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtKAMOKU_HINMOKU_DAIKAMOKU, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtKAISOCODE_HEADER, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Label14, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtJYUTYUGAKU_SYOKEI, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtSEIKYUGAKU_ZENKAI_SYOKEI, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2607,4 +2624,5 @@ Partial Public Class rptSEI0001_DekidakaTyousho
     Private WithEvents txtSEIKYUGAKU_RUIKEI_SOUGOUKEI As GrapeCity.ActiveReports.SectionReportModel.TextBox
     Private WithEvents txtSEIKYUGAKU_KONKAI_SOUGOUKEI As GrapeCity.ActiveReports.SectionReportModel.TextBox
     Private WithEvents Line100 As GrapeCity.ActiveReports.SectionReportModel.Line
+    Private WithEvents txtKAISOCODE_HEADER As GrapeCity.ActiveReports.SectionReportModel.TextBox
 End Class

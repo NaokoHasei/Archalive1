@@ -35,6 +35,8 @@ Public Class frmSEI0001_Meisai
     Public Const COL_SIZE_KINGAKU As Integer = 9 * 8 + 4
     Public Const COL_SIZE_BORDER As Integer = 2
 
+    Private T_SEIKYU As New T_SEIKYURead
+
     '明細部列番号
     Public Enum COL
         SEIKYU_FLG
@@ -64,6 +66,8 @@ Public Class frmSEI0001_Meisai
     Private strS_SCB_ROUND_MITSUURYO As String
     Private strDialogResult As String
     Private blnDbgKeyCtrlFlg As Boolean     'KeyDown()で判定、KeyPress()でTrueの場合キーを無効に
+    Private strFuncBtnTyoseikin As String
+    Private strFuncBtnTyoseikinName As String
 
     Public Overrides Function PROGRAM_ID() As String
         Return "SEI0001"
@@ -99,9 +103,6 @@ Public Class frmSEI0001_Meisai
             'イベントの定義
             AddHandler chkSeikyuAll.CheckedChanged, AddressOf chkSeikyuAll_CheckedChanged
 
-            'ファンクションキー設定
-            subFunctionKeySettings()
-
             'グリッドの初期化
             subInitGrid()
 
@@ -116,7 +117,15 @@ Public Class frmSEI0001_Meisai
             ChnageChkSeikyuAll()
 
             '表示制御
-            chkSeikyuAll.Enabled = IIf(editMode = EditMode.Create OrElse editMode = EditMode.Edit, True, False)
+            Dim enabeld = IIf(editMode = EditMode.Create OrElse editMode = EditMode.Edit, True, False)
+            chkSeikyuAll.Enabled = enabeld
+
+            '調整金のボタン名の設定
+            strFuncBtnTyoseikin = parentFormSEI0001.strS_SCB_TYOSEIGAKU + "追加"
+            strFuncBtnTyoseikinName = parentFormSEI0001.strS_SCB_TYOSEIGAKU + vbCrLf + "追加"
+
+            'ファンクションキー設定
+            subFunctionKeySettings()
         End Using
 
         chkSeikyuAll.Focus()
@@ -130,7 +139,16 @@ Public Class frmSEI0001_Meisai
         FunctionKey.ClearAll()
 
         FunctionKey.SetItem(1, "戻る", "戻る", True)
+
         If editMode = EditMode.Create OrElse editMode = EditMode.Edit Then
+            '調整金が追加されている場合、非活性にする。
+            Dim dr = CType(dbgMEISAI.DataSource, dsSEI0001.T_SEIKYU_MEISAIDataTable).Select("KAISOCODE_DAIKAMOKU = 999")
+            If dr.Count = 0 Then
+                FunctionKey.SetItem(9, strFuncBtnTyoseikin, strFuncBtnTyoseikinName, True, FunctionKey.FONT_SMALL)
+            Else
+                FunctionKey.SetItem(9, strFuncBtnTyoseikin, strFuncBtnTyoseikinName, False, FunctionKey.FONT_SMALL)
+            End If
+
             FunctionKey.SetItem(12, "登録", "登録", True)
         End If
     End Sub
@@ -147,12 +165,57 @@ Public Class frmSEI0001_Meisai
 
                 Me.Close()
 
+            Case strFuncBtnTyoseikin
+                '調整金の追加処理
+                Dim dt = CType(dbgMEISAI.DataSource, dsSEI0001.T_SEIKYU_MEISAIDataTable)
+                Dim dr = CType(dt.NewRow, dsSEI0001.T_SEIKYU_MEISAIRow)
+                dr.SEIKYU_FLG = False
+                dr.KAMOKU_HINMOKU = parentFormSEI0001.strS_SCB_TYOSEIGAKU
+                dr.HINSITU_KIKAKU_SIYO = ""
+                dr.TANI = ""
+                dr.JYUTYUSUU = ""
+                dr.JYUTYUTANKA = ""
+                dr.JYUTYUGAKU = ""
+                dr.JYUTYUSUU_HENKO = ""
+                dr.JYUTYUGAKU_HENKO = ""
+                dr.SEIKYUSUU_ZENKAI = ""
+                dr.SEIKYUGAKU_ZENKAI = "0"
+                dr.SEIKYUSUU_KONKAI = ""
+                dr.SEIKYUGAKU_KONKAI = "0"
+                dr.SEIKYUSUU_RUIKEI = ""
+                dr.SEIKYUGAKU_RUIKEI = "0"
+                dr.KAISOCODE = "999"
+                dr.KAISOCODE_ZENKAI = "0"
+                dr.DELETE_FLG = "0"
+                dr.JYUTYUEDABAN = parentFormSEI0001.txtJyutyuEdaban.Text
+                dr.JYUTYUEDABAN_DAIKAMOKU = parentFormSEI0001.txtJyutyuEdaban.Text
+                dr.KAISOCODE_DAIKAMOKU = "999"
+                dr.KAMOKU_HINMOKU_DAIKAMOKU = ""
+                dr.GROUP_HEADER = ""
+                dt.Rows.Add(dr)
+                dbgMEISAI.SetDataBinding(dt, "", True)
+                dbgMEISAI.Refresh()
+
+                'ファンクションキー設定
+                subFunctionKeySettings()
+
             Case "登録"
                 If CommonUtility.WinForm.MessageBoxEx.Show(CommonUtility.MessageCode_Arg0.M001登録してもよろしいですか, PROGRAM_NAME) = Windows.Forms.DialogResult.No Then Return
 
+                '呼び出し元に明細情報を返却
                 dbgMEISAI.Update()
                 dtT_SEIKYU_MEISAI.AcceptChanges()
                 parentFormSEI0001.dtT_SEIKYU_MEISAI = dtT_SEIKYU_MEISAI.Copy
+
+                '呼び出し元に保留金を返却
+                Dim horyukin = CType(dtT_SEIKYU_MEISAI.Rows(0), dsSEI0001.T_SEIKYU_MEISAIRow).SEIKYUGAKU_KONKAI
+
+                '外税以外の場合、消費税を加算する
+                If parentFormSEI0001.strS_SCB_ROUND_ZEIKBN = "0" Then
+                    horyukin = horyukin + parentFormSEI0001.CalcSyohizei(horyukin)
+                End If
+
+                parentFormSEI0001.txtHoryukin.Value = horyukin * (-1)
 
                 '戻り処理の呼び出し
                 parentFormSEI0001.SEI0001_Meisai_return(strDialogResult)
@@ -418,23 +481,26 @@ Public Class frmSEI0001_Meisai
 
         Dim dec As Decimal = Decimal.Parse(e.Value)
 
+        'フォーマットの設定
         With CType(sender, C1TrueDBGrid)
             Select Case e.ColIndex
                 Case COL.JYUTYUSUU, COL.JYUTYUSUU_HENKO, COL.SEIKYUSUU_ZENKAI, COL.SEIKYUSUU_KONKAI, COL.SEIKYUSUU_RUIKEI
-                    dec = GetRoundValue(dec.ToString)
-                    Select Case CInt(parentFormSEI0001.txtSURYO_SYOSUIKAKETA.Text)
+                    '数量の場合
+                    dec = GetRoundValue(dec.ToString, parentFormSEI0001.lblSyosu.Text)
+                    Select Case CInt(parentFormSEI0001.lblSyosu.Text)
                         Case 0 : e.Value = dec.ToString("#,##0")
-                        Case Else : e.Value = dec.ToString("#,##0." & StrDup(CInt(parentFormSEI0001.txtSURYO_SYOSUIKAKETA.Text), "0"))
+                        Case Else : e.Value = dec.ToString("#,##0." & StrDup(CInt(parentFormSEI0001.lblSyosu.Text), "0"))
                     End Select
 
                 Case COL.JYUTYUTANKA, COL.JYUTYUGAKU, COL.JYUTYUGAKU_HENKO, COL.SEIKYUGAKU_ZENKAI, COL.SEIKYUGAKU_KONKAI, COL.SEIKYUGAKU_RUIKEI, COL.KAISOCODE_ZENKAI
+                    '金額の場合
                     e.Value = dec.ToString("#,##0")
             End Select
         End With
     End Sub
 
-    Private Function GetRoundValue(ByVal obj As String) As Decimal
-        Return clsMIT0001.CnvToDecimalPoint(obj, parentFormSEI0001.txtSURYO_SYOSUIKAKETA.Text, strS_SCB_ROUND_MITSUURYO)
+    Private Function GetRoundValue(ByVal obj As String, ByVal syosu As String) As Decimal
+        Return clsMIT0001.CnvToDecimalPoint(obj, syosu, strS_SCB_ROUND_MITSUURYO)
     End Function
 
     Private Sub dbgMEISAI_FetchCellStyle(ByVal sender As Object, ByVal e As C1.Win.C1TrueDBGrid.FetchCellStyleEventArgs) Handles dbgMEISAI.FetchCellStyle
@@ -444,16 +510,22 @@ Public Class frmSEI0001_Meisai
 
         Select Case e.Col
             Case COL.SEIKYU_FLG
-                '調整額の場合
+                '保証金の場合
                 If dbgMEISAI(e.Row, COL.KAISOCODE) = "0" Then Return
+
+                '調整額の場合
+                If dbgMEISAI(e.Row, COL.KAISOCODE) = "999" Then Return
 
                 '削除行の場合
                 If dbgMEISAI(e.Row, COL.DELETE_FLG) = "1" Then Return
 
                 e.CellStyle.BackColor = Color.White
             Case COL.SEIKYUSUU_KONKAI
-                '調整額の場合
+                '保証金の場合
                 If dbgMEISAI(e.Row, COL.KAISOCODE) = "0" Then Return
+
+                '調整額の場合
+                If dbgMEISAI(e.Row, COL.KAISOCODE) = "999" Then Return
 
                 '削除行の場合
                 If dbgMEISAI(e.Row, COL.DELETE_FLG) = "1" Then Return
@@ -478,8 +550,11 @@ Public Class frmSEI0001_Meisai
         '*** キー入力無効制御 ***
         Select Case dbgMEISAI.Col
             Case COL.SEIKYU_FLG
-                '調整額の場合
+                '保証金の場合
                 If dbgMEISAI.Columns(COL.KAISOCODE).Value = "0" Then e.KeyChar = CChar("")
+
+                '調整額の場合
+                If dbgMEISAI.Columns(COL.KAISOCODE).Value = "999" Then e.KeyChar = CChar("")
 
                 '削除行の場合
                 If dbgMEISAI.Columns(COL.DELETE_FLG).Value = "1" Then e.KeyChar = CChar("")
@@ -491,8 +566,11 @@ Public Class frmSEI0001_Meisai
                 End If
 
             Case COL.SEIKYUSUU_KONKAI
-                '調整額の場合
+                '保証金の場合
                 If dbgMEISAI.Columns(COL.KAISOCODE).Value = "0" Then e.KeyChar = CChar("")
+
+                '調整額の場合
+                If dbgMEISAI.Columns(COL.KAISOCODE).Value = "999" Then e.KeyChar = CChar("")
 
                 '削除行の場合
                 If dbgMEISAI.Columns(COL.DELETE_FLG).Value = "1" Then e.KeyChar = CChar("")
@@ -540,8 +618,22 @@ Public Class frmSEI0001_Meisai
 
         Select Case dbgMEISAI.Col
 
-            '原単価
-            Case COL.SEIKYUSUU_KONKAI, COL.SEIKYUGAKU_KONKAI
+            '数量
+            Case COL.SEIKYUSUU_KONKAI
+                '数値以外の入力を無効にする
+                blnDbgKeyCtrlFlg = False
+                If e.KeyCode >= Keys.LButton And e.KeyCode <= Keys.Help Then            '=== 色々キーコード
+                ElseIf e.KeyCode >= Keys.D0 And e.KeyCode <= Keys.D9 Then               '=== ０～９キー
+                ElseIf e.KeyCode >= Keys.NumPad0 And e.KeyCode <= Keys.NumPad9 Then     '=== テンキー
+                ElseIf e.KeyCode = Keys.NumLock Then                                  '=== NumLockキー
+                ElseIf e.KeyCode = Keys.Decimal Then                                  '=== 小数点
+                ElseIf e.KeyCode = Keys.Subtract Then                                 '=== マイナスキー
+                Else
+                    blnDbgKeyCtrlFlg = True
+                End If
+
+            '金額
+            Case COL.SEIKYUGAKU_KONKAI
                 '数値以外の入力を無効にする
                 blnDbgKeyCtrlFlg = False
                 If e.KeyCode >= Keys.LButton And e.KeyCode <= Keys.Help Then            '=== 色々キーコード
@@ -568,8 +660,9 @@ Public Class frmSEI0001_Meisai
         Select Case dbgMEISAI.Col
             Case COL.SEIKYU_FLG
 
-                '調整額は処理しない
+                '保証金、調整額は処理しない
                 If dbgMEISAI.Columns(COL.KAISOCODE).Value = "0" Then GoTo CheckError
+                If dbgMEISAI.Columns(COL.KAISOCODE).Value = "999" Then GoTo CheckError
 
                 If dbgMEISAI.Columns(COL.SEIKYU_FLG).Value = True Then
                     dbgMEISAI.Columns(COL.SEIKYUSUU_KONKAI).Value = CDec(dbgMEISAI.Columns(COL.JYUTYUSUU).Value) - CDec(dbgMEISAI.Columns(COL.SEIKYUSUU_ZENKAI).Value)
@@ -598,10 +691,12 @@ Public Class frmSEI0001_Meisai
                     GoTo CheckError
                 End If
 
+                '保証金、調整額は処理しない
                 If dbgMEISAI.Columns(COL.KAISOCODE).Value = "0" Then Return
+                If dbgMEISAI.Columns(COL.KAISOCODE).Value = "999" Then Return
 
                 If CDec(dbgMEISAI.Columns(COL.JYUTYUTANKA).Value <> "0") Then
-                    dbgMEISAI.Columns(COL.SEIKYUGAKU_KONKAI).Value = CDec(dbgMEISAI.Columns(COL.SEIKYUSUU_KONKAI).Value) * CDec(dbgMEISAI.Columns(COL.JYUTYUTANKA).Value)
+                    dbgMEISAI.Columns(COL.SEIKYUGAKU_KONKAI).Value = GetRoundValue(dbgMEISAI.Columns(COL.SEIKYUSUU_KONKAI).Value, parentFormSEI0001.lblSyosu.Text) * CDec(dbgMEISAI.Columns(COL.JYUTYUTANKA).Value)
                 End If
 
                 dbgMEISAI.Columns(COL.SEIKYUSUU_RUIKEI).Value = CDec(dbgMEISAI.Columns(COL.SEIKYUSUU_ZENKAI).Value) + CDec(dbgMEISAI.Columns(COL.SEIKYUSUU_KONKAI).Value)
@@ -627,12 +722,15 @@ Public Class frmSEI0001_Meisai
                     GoTo CheckError
                 End If
 
-                If dbgMEISAI.Columns(COL.KAISOCODE).Value = "0" Then
-                    dbgMEISAI.Columns(COL.SEIKYUGAKU_RUIKEI).Value = CDec(dbgMEISAI.Columns(COL.SEIKYUGAKU_KONKAI).Value)
-                    Return
-                End If
 
                 dbgMEISAI.Columns(COL.SEIKYUGAKU_RUIKEI).Value = CDec(dbgMEISAI.Columns(COL.SEIKYUGAKU_ZENKAI).Value) + CDec(dbgMEISAI.Columns(COL.SEIKYUGAKU_KONKAI).Value)
+
+                '調整額、保留金
+                If dbgMEISAI.Columns(COL.KAISOCODE).Value = "999" OrElse dbgMEISAI.Columns(COL.KAISOCODE).Value = "0" Then
+                    If dbgMEISAI.Columns(COL.SEIKYUGAKU_RUIKEI).Value > 999999999999 Then dbgMEISAI.Columns(COL.SEIKYUGAKU_RUIKEI).Value = 999999999999
+                    If dbgMEISAI.Columns(COL.SEIKYUGAKU_RUIKEI).Value < -999999999999 Then dbgMEISAI.Columns(COL.SEIKYUGAKU_RUIKEI).Value = -999999999999
+                    Return
+                End If
 
                 If CDec(dbgMEISAI.Columns(COL.SEIKYUGAKU_RUIKEI).Value) >= CDec(dbgMEISAI.Columns(COL.JYUTYUGAKU).Value) Then
                     dbgMEISAI.Columns(COL.SEIKYU_FLG).Value = True
@@ -661,8 +759,11 @@ CheckError:
     Private Sub chkSeikyuAll_CheckedChanged(sender As Object, e As EventArgs)
         For Each row In CType(dbgMEISAI.DataSource, dsSEI0001.T_SEIKYU_MEISAIDataTable)
 
-            '調整額は処理しない
+            '保証金は処理しない
             If row.KAISOCODE = "0" Then Continue For
+
+            '調整額は処理しない
+            If row.KAISOCODE = "999" Then Continue For
 
             '削除行は処理しない
             If row.DELETE_FLG = "1" Then Continue For
@@ -731,8 +832,11 @@ CheckError:
 
         Dim checkValue = True
         For Each row In CType(dbgMEISAI.DataSource, dsSEI0001.T_SEIKYU_MEISAIDataTable)
-            '調整額は処理しない
+            '保証金は処理しない
             If row.KAISOCODE = "0" Then Continue For
+
+            '調整額は処理しない
+            If row.KAISOCODE = "999" Then Continue For
 
             '削除行は処理しない
             If row.DELETE_FLG = "1" Then Continue For
@@ -750,8 +854,13 @@ CheckError:
     End Sub
 
     Private Sub dbgMEISAI_BeforeColEdit(sender As Object, e As BeforeColEditEventArgs) Handles dbgMEISAI.BeforeColEdit
-        '調整額の数量は処理しない
+        '保証金の数量は処理しない
         If dbgMEISAI.Columns(COL.KAISOCODE).Value = "0" AndAlso dbgMEISAI.Col = COL.SEIKYUSUU_KONKAI Then
+            e.Cancel = True
+        End If
+
+        '調整額の数量は処理しない
+        If dbgMEISAI.Columns(COL.KAISOCODE).Value = "999" AndAlso dbgMEISAI.Col = COL.SEIKYUSUU_KONKAI Then
             e.Cancel = True
         End If
 

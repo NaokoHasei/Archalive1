@@ -1,5 +1,4 @@
 ﻿Imports BLL.Common
-Imports CommonUtility.Utility
 
 Public Class TitleBar
 
@@ -21,6 +20,8 @@ Public Class TitleBar
 
     Private editModeValue As EditMode
     Private appearanceTypeValue As AppearanceType
+    Private strS_SCB_KURIKOSHIZAN As String
+    Private GUIDE_SEIKYU_KURIKOSHIZAN_SAISEIKYU As String
 
     Private Sub ChangeEditMode()
         If AppearanceType = WinFormControls.AppearanceType.Normal Or AppearanceType = WinFormControls.AppearanceType.MainMenu Then
@@ -55,6 +56,9 @@ Public Class TitleBar
 
                 Case WinFormControls.EditMode.EditNoneHatyuZenaki
                     lblMODE.Text = GUIDE_EDIT_NON_HATYU_ZENKAI
+
+                Case WinFormControls.EditMode.SeikyuKurikoshizanSaiseikyu
+                    lblMODE.Text = GUIDE_SEIKYU_KURIKOSHIZAN_SAISEIKYU
             End Select
         Else
             lblMODE.Visible = False
@@ -78,9 +82,9 @@ Public Class TitleBar
         ChangeEditMode()
     End Sub
 
-    <Category("Appearance")> _
-    <DefaultValue("タイトル")> _
-    <Description("タイトルを指定します。")> _
+    <Category("Appearance")>
+    <DefaultValue("タイトル")>
+    <Description("タイトルを指定します。")>
     Public Property Title() As String
         Get
             Return lblTitle.Text
@@ -90,10 +94,10 @@ Public Class TitleBar
         End Set
     End Property
 
-    <DefaultValue(WinFormControls.EditMode.None)> _
-    <Category("Appearance")> _
-    <Description("編集モードラベルを指定します。")> _
-        Public Property EditMode() As EditMode
+    <DefaultValue(WinFormControls.EditMode.None)>
+    <Category("Appearance")>
+    <Description("編集モードラベルを指定します。")>
+    Public Property EditMode() As EditMode
         Get
             Return editModeValue
         End Get
@@ -104,9 +108,9 @@ Public Class TitleBar
         End Set
     End Property
 
-    <DefaultValue(AppearanceType.Normal)> _
-    <Category("Appearance")> _
-    <Description("タイトルバーの種類を指定します。")> _
+    <DefaultValue(AppearanceType.Normal)>
+    <Category("Appearance")>
+    <Description("タイトルバーの種類を指定します。")>
     Public Property AppearanceType() As AppearanceType
         Get
             Return appearanceTypeValue
@@ -129,6 +133,12 @@ Public Class TitleBar
 
         ' InitializeComponent() 呼び出しの後で初期化を追加します。
 
+        '繰越残の初期値
+        Dim S_SCB = New S_SCBRead("請求登録画面", "繰越残の初期値")
+        Dim dsS_SCB = S_SCB.GetS_SCB
+        strS_SCB_KURIKOSHIZAN = dsS_SCB.S_SCB(0).DATA
+
+        GUIDE_SEIKYU_KURIKOSHIZAN_SAISEIKYU = strS_SCB_KURIKOSHIZAN & "再請求"
     End Sub
 
     Private Manual As Manual
@@ -163,6 +173,7 @@ Public Enum EditMode
     EditNoneJyutyuMisyonin
     EditNoneJyutyuZenaki
     EditNoneHatyuZenaki
+    SeikyuKurikoshizanSaiseikyu
 End Enum
 
 Public Enum AppearanceType

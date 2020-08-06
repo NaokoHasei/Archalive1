@@ -65,22 +65,12 @@ Public Class daSEI0001
         Return Decimal.Parse(resultDataSet.Rows(0)("KBNNAME").ToString)
     End Function
 
-    Public Function ReadMainData(ByVal Key_JyuchuNo As Decimal, ByVal Key_JyuchuEdaban As Decimal, ByVal Key_SeikyuNo As Decimal, ByVal Key_SeikyuEdaban As Decimal, ByVal Key_SeikyuDate As DateTime) As dsSEI0001.MainDataDataTable
+    Public Function ReadMainData(ByVal Key_JyuchuNo As Decimal, ByVal Key_JyuchuEdaban As Decimal, ByVal Key_SeikyuNo As Decimal, ByVal Key_SeikyuEdaban As Decimal) As dsSEI0001.MainDataDataTable
         Dim resultDataSet As New dsSEI0001.MainDataDataTable
         Using adp As New dsSEI0001TableAdapters.MainDataTableAdapter,
             connection As New SqlConnection(connectionString)
             adp.Connection = connection : CommonUtility.DBUtility.SetCommandTimeout(adp)
-            adp.Fill(resultDataSet, Key_JyuchuNo, Key_JyuchuEdaban, Key_SeikyuNo, Key_SeikyuEdaban, Key_SeikyuDate)
-        End Using
-        Return resultDataSet
-    End Function
-
-    Public Function ReadMadeSeikyuGaku(ByVal jyutyuNo As Decimal, ByVal Key_SeikyuDate As Date) As dsSEI0001.GetMadeSeikyuGakuDataTable
-        Dim resultDataSet As New dsSEI0001.GetMadeSeikyuGakuDataTable
-        Using adp As New dsSEI0001TableAdapters.GetMadeSeikyuGakuTableAdapter,
-            connection As New System.Data.SqlClient.SqlConnection(connectionString)
-            adp.Connection = connection : CommonUtility.DBUtility.SetCommandTimeout(adp)
-            adp.Fill(resultDataSet, jyutyuNo, Key_SeikyuDate)
+            adp.Fill(resultDataSet, Key_JyuchuNo, Key_JyuchuEdaban, Key_SeikyuNo, Key_SeikyuEdaban)
         End Using
         Return resultDataSet
     End Function
@@ -122,7 +112,11 @@ Public Class daSEI0001
         strSQL += " from T_SEIKYU_MEISAI"
         strSQL += " where SEIKYUNO     = @SEIKYUNO"
         strSQL += " and   SEIKYUEDABAN = @SEIKYUEDABAN"
-        strSQL += " order by KAISOCODE"
+        strSQL += " order by"
+        strSQL += "     KAISOCODE_DAIKAMOKU"
+        strSQL += "   , JYUTYUEDABAN_DAIKAMOKU"
+        strSQL += "   , KAISOCODE"
+        strSQL += "   , DELETE_FLG desc"
 
         Dim param = New SqlParameter() {
             New SqlParameter("@SEIKYUNO", seikyuNo),
@@ -132,8 +126,21 @@ Public Class daSEI0001
         Dim dt = logic.ExecuteDataset(connectionString, CommandType.Text, strSQL, param).Tables(0)
 
         '調整額の編集
+        Dim dr As dsSEI0001.T_SEIKYU_MEISAIRow
         Dim dtResult = ConvertDataTableToT_SEIKYU_MEISAI(dt)
-        Dim dr As dsSEI0001.T_SEIKYU_MEISAIRow = dtResult.Select("KAISOCODE = '0'")(0)
+        If dtResult.Select("KAISOCODE = '999'").Count <> 0 Then
+            dr = dtResult.Select("KAISOCODE = '999'")(0)
+            ClearMeisaiTyoseigakuHoryukin(dr)
+        End If
+
+        '保留金の編集
+        dr = dtResult.Select("KAISOCODE = '0'")(0)
+        ClearMeisaiTyoseigakuHoryukin(dr)
+
+        Return dtResult
+    End Function
+
+    Private Sub ClearMeisaiTyoseigakuHoryukin(ByRef dr As dsSEI0001.T_SEIKYU_MEISAIRow)
         dr.SEIKYU_FLG = False
         dr.JYUTYUSUU = ""
         dr.JYUTYUTANKA = ""
@@ -141,13 +148,10 @@ Public Class daSEI0001
         dr.JYUTYUSUU_HENKO = ""
         dr.JYUTYUGAKU_HENKO = ""
         dr.SEIKYUSUU_ZENKAI = ""
-        dr.SEIKYUGAKU_ZENKAI = ""
         dr.SEIKYUSUU_KONKAI = ""
         dr.SEIKYUSUU_RUIKEI = ""
         dr.GROUP_HEADER = ""
-
-        Return dtResult
-    End Function
+    End Sub
 
     ''' <summary>
     ''' 請求明細トランの取得（受注トランから取得）
@@ -157,7 +161,13 @@ Public Class daSEI0001
     ''' <param name="jyutyuEdaban">受注枝番</param>
     ''' <param name="jyutyuEdaban_seikyu">受注枝番（請求情報）</param>
     ''' <remarks></remarks>
-    Public Function ReadT_SEIKYU_MEISAI_JYUTYU(ByVal seikyuNo As Decimal, ByVal seikyuEdaban As Decimal, ByVal jyutyuEdaban As Decimal, ByVal jyutyuEdaban_seikyu As Decimal) As dsSEI0001.T_SEIKYU_MEISAIDataTable
+    Public Function ReadT_SEIKYU_MEISAI_JYUTYU(
+              ByVal seikyuNo As Decimal _
+            , ByVal seikyuEdaban As Decimal _
+            , ByVal jyutyuEdaban As Decimal _
+            , ByVal jyutyuEdaban_seikyu As Decimal _
+            , ByVal tyouseigakuName As String
+            ) As dsSEI0001.T_SEIKYU_MEISAIDataTable
         Dim logic As New BLL.Common.ExecuteQuery
         Dim strSQL = ""
         Dim strSQL_select = ""
@@ -352,20 +362,76 @@ Public Class daSEI0001
 
         Dim dt = logic.ExecuteDataset(connectionString, CommandType.Text, strSQL, param).Tables(0)
 
-        '調整額の追加
+        'データテーブルのコンバート
+        Dim dtResult = ConvertDataTableToT_SEIKYU_MEISAI(dt)
 
-        Dim S_SCB = New S_SCBRead("請求登録画面", "調整額の初期値")
-        Dim ds = S_SCB.GetS_SCB
+        '直近の請求の保留金、調整額の取得
+        Dim horyukinZenaki As String = "0"
+        Dim tyouseigakuZenaki As String = "0"
+        Dim T_SEIKYU As New T_SEIKYURead
+        Dim seikyuEdabanMax = T_SEIKYU.fncSelectMAX_SEIKYUEDABAN(seikyuNo).Rows(0).Item("SEIKYUEDABAN")
 
-        Dim tyouseigakuName = "調整額"
-        If ds.Tables(0).Rows.Count <> 0 Then
-            tyouseigakuName = ds.Tables(0).Rows(0).Item("DATA").ToString
+        If Not Utility.NUCheck(seikyuEdabanMax) Then
+            '保留金の前回請求額を取得
+            horyukinZenaki = GetTyoseigakuHoryukin(False, seikyuNo, seikyuEdabanMax)
+
+            '調整額の前回請求額を取得
+            tyouseigakuZenaki = GetTyoseigakuHoryukin(True, seikyuNo, seikyuEdabanMax)
         End If
 
-        Dim dtResult = ConvertDataTableToT_SEIKYU_MEISAI(dt)
+        '保留金の追加
+        AddTyoseigakuHoryukin(False, dtResult, "保留金", horyukinZenaki, jyutyuEdaban)
+
+        '調整額の追加
+        If tyouseigakuZenaki <> "0" Then
+            AddTyoseigakuHoryukin(True, dtResult, tyouseigakuName, tyouseigakuZenaki, jyutyuEdaban)
+        End If
+
+        Return dtResult
+    End Function
+
+    Private Function GetTyoseigakuHoryukin(ByVal tyoseigaku As Boolean, ByVal seikyuNo As Decimal, ByVal seikyuEdabanMax As Decimal) As String
+        Dim result As String = "0"
+        Dim kaisoCode As String
+
+        If tyoseigaku Then
+            kaisoCode = "999"
+        Else
+            kaisoCode = "0"
+        End If
+
+        Dim dtSeikyu = GetDbValue.Execute(
+              "T_SEIKYU_MEISAI" _
+            , "SEIKYUGAKU_ZENKAI, SEIKYUGAKU_KONKAI" _
+            , "SEIKYUNO = " + CStr(seikyuNo) + " AND SEIKYUEDABAN = " + CStr(seikyuEdabanMax) + " AND KAISOCODE = '" + kaisoCode + "'"
+            ).Tables(0)
+
+        If dtSeikyu.Rows.Count <> 0 Then
+            result = dtSeikyu.Rows(0)(0) + dtSeikyu.Rows(0)(1)
+            If result > 999999999999 Then result = 999999999999
+            If result < -999999999999 Then result = -999999999999
+        End If
+
+        Return result
+    End Function
+
+    Private Sub AddTyoseigakuHoryukin(
+              ByVal tyoseigaku As Boolean _
+            , ByRef dtResult As DataTable _
+            , ByVal kamokuNmae As String _
+            , ByVal gakuZenkai As String _
+            , ByVal jyutyuEdaban As Decimal)
+        Dim kaisoCode As String
+
+        If tyoseigaku Then
+            kaisoCode = "999"
+        Else
+            kaisoCode = "0"
+        End If
+
         Dim dr = CType(dtResult.NewRow, dsSEI0001.T_SEIKYU_MEISAIRow)
         dr.SEIKYU_FLG = False
-        dr.KAMOKU_HINMOKU = tyouseigakuName
+        dr.KAMOKU_HINMOKU = kamokuNmae
         dr.HINSITU_KIKAKU_SIYO = ""
         dr.TANI = ""
         dr.JYUTYUSUU = ""
@@ -374,23 +440,26 @@ Public Class daSEI0001
         dr.JYUTYUSUU_HENKO = ""
         dr.JYUTYUGAKU_HENKO = ""
         dr.SEIKYUSUU_ZENKAI = ""
-        dr.SEIKYUGAKU_ZENKAI = ""
+        dr.SEIKYUGAKU_ZENKAI = gakuZenkai
         dr.SEIKYUSUU_KONKAI = ""
         dr.SEIKYUGAKU_KONKAI = "0"
         dr.SEIKYUSUU_RUIKEI = ""
-        dr.SEIKYUGAKU_RUIKEI = "0"
-        dr.KAISOCODE = "0"
-        dr.KAISOCODE_ZENKAI = "0"
+        dr.SEIKYUGAKU_RUIKEI = gakuZenkai
+        dr.KAISOCODE = kaisoCode
+        dr.KAISOCODE_ZENKAI = kaisoCode
         dr.DELETE_FLG = "0"
         dr.JYUTYUEDABAN = jyutyuEdaban
         dr.JYUTYUEDABAN_DAIKAMOKU = jyutyuEdaban
-        dr.KAISOCODE_DAIKAMOKU = "0"
+        dr.KAISOCODE_DAIKAMOKU = kaisoCode
         dr.KAMOKU_HINMOKU_DAIKAMOKU = ""
         dr.GROUP_HEADER = ""
-        dtResult.Rows.InsertAt(dr, 0)
 
-        Return dtResult
-    End Function
+        If tyoseigaku Then
+            dtResult.Rows.Add(dr)
+        Else
+            dtResult.Rows.InsertAt(dr, 0)
+        End If
+    End Sub
 
     Private Function ConvertDataTableToT_SEIKYU_MEISAI(ByVal dt As DataTable) As dsSEI0001.T_SEIKYU_MEISAIDataTable
 
@@ -527,7 +596,6 @@ Public Class daSEI0001
         strSQL += " SEIKYUNO, "
         strSQL += " SEIKYUEDABAN, "
         strSQL += " JYUTYUEDABAN, "
-        strSQL += " SURYO_SYOSUIKAKETA, "
         strSQL += " SEIKYUDATE, "
         strSQL += " SEIKYUMETHOD, "
         strSQL += " TOKUICODE, "
@@ -535,17 +603,20 @@ Public Class daSEI0001
         strSQL += " KEISYOUCODE, "
         strSQL += " GKSEIKYUGAKU, "
         strSQL += " KONJYURYOKINGAKU, "
+        strSQL += " KURIKOSIZAN, "
+        strSQL += " HORYUKIN, "
+        strSQL += " KONHORYUKIN, "
         strSQL += " D_BIKO, "
         strSQL += " KIGYOKBN, "
         strSQL += " SYORIKBN, "
         strSQL += " SYORISTDATE, "
+        strSQL += " SURYO_SYOSUIKAKETA, "
         strSQL += " UPDATEPGID, "
         strSQL += " UPDATEUSERCODE "
         strSQL += " ) values ( "
         strSQL += " @SEIKYUNO, "
         strSQL += " @SEIKYUEDABAN, "
         strSQL += " @JYUTYUEDABAN, "
-        strSQL += " @SURYO_SYOSUIKAKETA, "
         strSQL += " @SEIKYUDATE, "
         strSQL += " @SEIKYUMETHOD, "
         strSQL += " @TOKUICODE, "
@@ -553,10 +624,14 @@ Public Class daSEI0001
         strSQL += " @KEISYOUCODE, "
         strSQL += " @GKSEIKYUGAKU, "
         strSQL += " @KONJYURYOKINGAKU, "
+        strSQL += " @KURIKOSIZAN, "
+        strSQL += " @HORYUKIN, "
+        strSQL += " @KONHORYUKIN, "
         strSQL += " @D_BIKO, "
         strSQL += " @KIGYOKBN, "
         strSQL += " @SYORIKBN, "
         strSQL += " getdate(), "
+        strSQL += " @SURYO_SYOSUIKAKETA, "
         strSQL += " @UPDATEPGID, "
         strSQL += " @UPDATEUSERCODE ) "
 
@@ -568,17 +643,20 @@ Public Class daSEI0001
                 New SqlClient.SqlParameter("@SEIKYUNO", f.txtSeikyuNo.Text),
                 New SqlClient.SqlParameter("@SEIKYUEDABAN", f.txtSeikyuEdaban.Text),
                 New SqlClient.SqlParameter("@JYUTYUEDABAN", f.txtJyutyuEdaban.Text),
-                New SqlClient.SqlParameter("@SURYO_SYOSUIKAKETA", f.txtSURYO_SYOSUIKAKETA.Text),
                 New SqlClient.SqlParameter("@SEIKYUDATE", Date.Parse(f.txtSeikyuDate.Text)),
                 New SqlClient.SqlParameter("@SEIKYUMETHOD", IIf(f.rdoSeikyuHouhou_0.Checked, 1, 2)),
                 New SqlClient.SqlParameter("@TOKUICODE", f.txtKokyakuCode.Text),
                 New SqlClient.SqlParameter("@INP_TANTOCODE", f.GetLoginTantoCode),
                 New SqlClient.SqlParameter("@KEISYOUCODE", f.txtKeisyo.Text),
                 New SqlClient.SqlParameter("@GKSEIKYUGAKU", f.ReplaceCalcString(f.MainData.Rows(0)(frmSEI0001.FLD_今回請求額))),
-                New SqlClient.SqlParameter("@KONJYURYOKINGAKU", Decimal.Parse(f.txtKonMadeJyuryoGaku.Value)),
+                New SqlClient.SqlParameter("@KONJYURYOKINGAKU", Decimal.Parse(f.txtKonMadeJyuryoGaku.Text)),
+                New SqlClient.SqlParameter("@KURIKOSIZAN", f.ReplaceCalcString(f.txtKurikoshiZan.Text)),
+                New SqlClient.SqlParameter("@HORYUKIN", f.ReplaceCalcString(f.txtHoryukin.Text)),
+                New SqlClient.SqlParameter("@KONHORYUKIN", f.ReplaceCalcString(f.txtHoryukinKonkai.Text)),
                 New SqlClient.SqlParameter("@D_BIKO", Utility.LeftBSA(f.txtBiko.Text, 200)),
                 New SqlClient.SqlParameter("@KIGYOKBN", Decimal.Parse(0)),
                 New SqlClient.SqlParameter("@SYORIKBN", 0),
+                New SqlClient.SqlParameter("@SURYO_SYOSUIKAKETA", f.lblSyosu.Text),
                 New SqlClient.SqlParameter("@UPDATEPGID", f.PROGRAM_ID),
                 New SqlClient.SqlParameter("@UPDATEUSERCODE", f.TANTO_CODE)})
 
@@ -633,6 +711,11 @@ Public Class daSEI0001
         conn.Open()
 
         For Each row As dsSEI0001.T_SEIKYU_MEISAIRow In f.dtT_SEIKYU_MEISAI.Rows
+            '調整金（階層コード＝999）かつ、請求金額_今回＝0の情報は登録しない
+            If row.KAISOCODE = "999" _
+                AndAlso row.SEIKYUGAKU_ZENKAI = 0 _
+                AndAlso row.SEIKYUGAKU_KONKAI = 0 Then Continue For
+
             '調整額は数値に空白を保持しているので、「0」に書き換える
             If row.JYUTYUSUU = "" Then row.JYUTYUSUU = 0
             If row.JYUTYUTANKA = "" Then row.JYUTYUTANKA = 0

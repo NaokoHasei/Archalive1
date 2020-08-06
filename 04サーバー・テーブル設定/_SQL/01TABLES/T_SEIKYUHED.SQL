@@ -7,7 +7,6 @@
     SEIKYUNO            decimal(10,0)   NOT NULL  DEFAULT 0,            /* 請求Ｎｏ             */
     SEIKYUEDABAN        decimal(2,0)    NOT NULL  DEFAULT 0,            /* 請求枝番             */
     JYUTYUEDABAN        decimal(2,0)    NOT NULL  DEFAULT 0,            /* 受注枝番             */
-    SURYO_SYOSUIKAKETA  decimal(1,0)    NOT NULL  DEFAULT 0,            /* 数量小数点以下桁数   */
     SEIKYUDATE          datetime,                                       /* 請求日付             */
     SEIKYUMETHOD        decimal(1,0)    NOT NULL  DEFAULT 0,            /* 請求方法             */
     TOKUICODE           varchar(8),                                     /* 得意先コード         */
@@ -29,10 +28,14 @@
     GKSEIKYUGAKU        decimal(12,0)   NOT NULL  DEFAULT 0,            /* 合計請求金額         */
     GKARARIGAKU         decimal(12,0)   NOT NULL  DEFAULT 0,            /* 合計粗利金額         */
     KONJYURYOKINGAKU    decimal(12,0)   NOT NULL  DEFAULT 0,            /* 今回迄受領金額       */
+    KURIKOSIZAN         decimal(12,0)   NOT NULL  DEFAULT 0,            /* 繰越残               */
+    HORYUKIN            decimal(12,0)   NOT NULL  DEFAULT 0,            /* 保留金               */
+    KONHORYUKIN         decimal(12,0)   NOT NULL  DEFAULT 0,            /* 今回迄保留金         */
     D_BIKO              varchar(200),                                   /* 伝票備考             */
     KIGYOKBN            decimal(2,0)    NOT NULL  DEFAULT 0,            /* 企業区分             */
     SYORIKBN            decimal(2,0)    NOT NULL  DEFAULT 0,            /* 処理区分             */
     SYORISTDATE         datetime,                                       /* 処理開始日付         */
+    SURYO_SYOSUIKAKETA  decimal(1,0)    NOT NULL  DEFAULT 0,            /* 数量小数点以下桁数   */
     UPDATEMENT          datetime        NOT NULL  DEFAULT GETDATE(),    /* 最新メンテ日時       */
     UPDATEPGID          Varchar(20)     NOT NULL,                       /* 更新プログラムID     */
     UPDATEUSERCODE      Varchar(15)     NOT NULL,                       /* ユーザーID           */

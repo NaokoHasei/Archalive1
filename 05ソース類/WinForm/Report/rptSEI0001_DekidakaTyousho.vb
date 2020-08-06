@@ -65,6 +65,7 @@ Public Class rptSEI0001_DekidakaTyousho
         GroupHeader1.DataField = "GROUP_HEADER"
 
         txtKAMOKU_HINMOKU_DAIKAMOKU.DataField = "KAMOKU_HINMOKU_DAIKAMOKU"
+        txtKAISOCODE_HEADER.DataField = "KAISOCODE"
 
         '明細
         txtKAISOCODE.DataField = "KAISOCODE"
@@ -157,8 +158,8 @@ Public Class rptSEI0001_DekidakaTyousho
             txtSEIKYUGAKU_RUIKEI_SOUGOUKEI.Text = Format(CDec(dr.SEIKYUGAKU_RUIKEI), "#,##0")
         End If
 
-        '調整額のグループヘッダを非表示
-        GroupHeader1.Visible = False
+        ''調整額のグループヘッダを非表示
+        'GroupHeader1.Visible = False
     End Sub
 
     '￣￣￣￣￣￣￣￣￣￣￣
@@ -189,18 +190,19 @@ Public Class rptSEI0001_DekidakaTyousho
     '＿＿＿＿＿＿＿
 
     Private Sub Detail_Format(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Detail.Format
-        'グループヘッダを表示
-        GroupHeader1.Visible = True
+        ''グループヘッダを表示
+        'GroupHeader1.Visible = True
 
         '調整額のグループフッタを非表示
-        If txtKAISOCODE.Text = "0" Then
+        If txtKAISOCODE.Text = "0" OrElse txtKAISOCODE.Text = "999" Then
             GroupFooter1.Visible = False
         Else
             GroupFooter1.Visible = True
         End If
 
         '調整額が0の場合、明細を非表示
-        If txtKAISOCODE.Text = "0" AndAlso txtSEIKYUGAKU_KONKAI.Text = "0" Then
+        If (txtKAISOCODE.Text = "0" OrElse txtKAISOCODE.Text = "999") _
+                AndAlso (txtSEIKYUGAKU_ZENKAI.Text = "0" AndAlso txtSEIKYUGAKU_KONKAI.Text = "0") Then
             Detail.Visible = False
         Else
             Detail.Visible = True
@@ -227,4 +229,13 @@ Public Class rptSEI0001_DekidakaTyousho
 
     End Sub
 
+    Private Sub GroupHeader1_BeforePrint(sender As Object, e As EventArgs) Handles GroupHeader1.Format
+
+        '調整額のグループフッタを非表示
+        If txtKAISOCODE_HEADER.Text = "0" OrElse txtKAISOCODE_HEADER.Text = "999" Then
+            GroupHeader1.Visible = False
+        Else
+            GroupHeader1.Visible = True
+        End If
+    End Sub
 End Class

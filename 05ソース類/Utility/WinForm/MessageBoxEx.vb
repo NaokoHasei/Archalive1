@@ -324,6 +324,10 @@ Public Class MessageBoxEx
                 Return Show(messageCode, caption, MessageBoxButtons.OK, MessageBoxDefaultButton.Button1)
             Case MessageCode_Arg0.M242
                 Return Show(messageCode, caption, MessageBoxButtons.OK, MessageBoxDefaultButton.Button1)
+            Case MessageCode_Arg0.M244
+                Return Show(messageCode, caption, MessageBoxButtons.OK, MessageBoxDefaultButton.Button1)
+            Case MessageCode_Arg0.M245
+                Return Show(messageCode, caption, MessageBoxButtons.OK, MessageBoxDefaultButton.Button1)
             Case MessageCode_Arg0.M301郵便番号データが存在しませんでした
                 Return Show(messageCode, caption, MessageBoxButtons.OK, MessageBoxDefaultButton.Button1)
             Case MessageCode_Arg0.M302圧縮ファイルの解凍に失敗しました
@@ -428,6 +432,8 @@ Public Class MessageBoxEx
             Case MessageCode_Arg1.M239
                 Return Show(messageCode, arg1, caption, MessageBoxButtons.OK, MessageBoxDefaultButton.Button1)
             Case MessageCode_Arg1.M241
+                Return Show(messageCode, arg1, caption, MessageBoxButtons.OK, MessageBoxDefaultButton.Button1)
+            Case MessageCode_Arg1.M243
                 Return Show(messageCode, arg1, caption, MessageBoxButtons.OK, MessageBoxDefaultButton.Button1)
             Case MessageCode_Arg1.M813は権限がないため起動できません
                 Return Show(messageCode, arg1, caption, MessageBoxButtons.OK, MessageBoxDefaultButton.Button1)

@@ -84,7 +84,6 @@ Public Class T_SEIKYURead
             dr.SEIKYUEDABAN = row.Item("SEIKYUEDABAN").ToString
             dr.JYUTYUNO = CDec(row.Item("JYUTYUNO"))
             dr.JYUTYUEDABAN = row.Item("JYUTYUEDABAN").ToString
-            dr.SURYO_SYOSUIKAKETA = row.Item("SURYO_SYOSUIKAKETA").ToString
             dr.SEIKYUDATE = CDate(row.Item("SEIKYUDATE"))
             dr.SEIKYUMETHOD = row.Item("SEIKYUMETHOD").ToString
             dr.TOKUICODE = row.Item("TOKUICODE").ToString
@@ -99,10 +98,14 @@ Public Class T_SEIKYURead
             dr.GKSEIKYUGAKU = CDec(row.Item("GKSEIKYUGAKU"))
             dr.GKARARIGAKU = CDec(row.Item("GKARARIGAKU"))
             dr.KONJYURYOKINGAKU = row.Item("KONJYURYOKINGAKU").ToString
+            dr.KURIKOSIZAN = row.Item("KURIKOSIZAN").ToString
+            dr.HORYUKIN = row.Item("HORYUKIN").ToString
+            dr.KONHORYUKIN = row.Item("KONHORYUKIN").ToString
             dr.D_BIKO = row.Item("D_BIKO").ToString
             dr.KIGYOKBN = CDec(row.Item("KIGYOKBN"))
             dr.SYORIKBN = CDec(row.Item("SYORIKBN"))
             dr.SYORISTDATE = CDate(row.Item("SYORISTDATE"))
+            dr.SURYO_SYOSUIKAKETA = row.Item("SURYO_SYOSUIKAKETA").ToString
             dtResult.Rows.Add(dr)
         Next
 

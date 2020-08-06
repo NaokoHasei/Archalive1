@@ -36,8 +36,13 @@ Public Class frmSEI0001
     Private SeikyuMethod1_seikyuritu As Decimal = 0
 
     Private strSyohiZeiritu As String
-    Public strS_SCB_ROUND_ZEIKBN As String
     Private strS_SCB_ROUND_TAX As String
+    Private strS_SCB_KURIKOSHIZAN As String
+    Private strFUNCTION_KURIKOSHIZAN As String
+    Private strFUNCTION_KURIKOSHIZAN_NAME As String
+
+    Public strS_SCB_ROUND_ZEIKBN As String
+    Public strS_SCB_TYOSEIGAKU As String
 
     Public Class ReportData
         Public Const TEL固定値 As String = "TEL   ："
@@ -121,6 +126,7 @@ Public Class frmSEI0001
         DetailInput
         KeyInput_AfterEntry
         Reference
+        KurikoshizanSaiseikyu
     End Enum
 
     Public Sub New()
@@ -151,6 +157,11 @@ Public Class frmSEI0001
 
             'SCBの取得
             ReadSCB()
+
+            '繰越残の名称設定
+            lblKurikoshiZan.Text = strS_SCB_KURIKOSHIZAN
+            strFUNCTION_KURIKOSHIZAN = strS_SCB_KURIKOSHIZAN + "再請求"
+            strFUNCTION_KURIKOSHIZAN_NAME = strS_SCB_KURIKOSHIZAN + vbCrLf + "再請求"
 
             '自社情報の取得
             subReadJisyaInfo(scb)
@@ -206,10 +217,6 @@ Public Class frmSEI0001
         Else
             rdoSeikyuHouhou_1.Checked = True
         End If
-        '今回迄受領額
-        txtKonMadeJyuryoGaku.Text = 0
-        '備考
-        txtBiko.Text = ""
 
         '受注情報の表示
         subSetKouziInfo()
@@ -217,6 +224,12 @@ Public Class frmSEI0001
         '明細データ(トラン)の初期化
         MainData = Nothing
         dbgMEISAI.SetDataBinding(MainData, "", True)
+
+        txtKonMadeJyuryoGaku.Text = 0           '今回迄受領額
+        txtKurikoshiZan.Text = 0                '繰越残
+        txtHoryukin.Text = 0                    '保留金
+        txtHoryukinKonkai.Text = 0              '今回迄保留金
+        txtBiko.Text = ""                       '備考
     End Sub
 
     Private Sub ReadSCB()
@@ -248,6 +261,16 @@ Public Class frmSEI0001
         '区分マスタ取得（消費税）
         Dim logic As New M_KBNRead()
         strSyohiZeiritu = logic.fncSelect_SyohiZeiritu(System.DateTime.Today)
+
+        '調整額の初期値
+        S_SCB = New S_SCBRead("請求登録画面", "調整額の初期値")
+        dsS_SCB = S_SCB.GetS_SCB
+        strS_SCB_TYOSEIGAKU = dsS_SCB.S_SCB(0).DATA
+
+        '繰越残の初期値
+        S_SCB = New S_SCBRead("請求登録画面", "繰越残の初期値")
+        dsS_SCB = S_SCB.GetS_SCB
+        strS_SCB_KURIKOSHIZAN = dsS_SCB.S_SCB(0).DATA
     End Sub
 
     Private Sub EnterEventAddressOfErrorCheck()
@@ -257,11 +280,16 @@ Public Class frmSEI0001
         AddHandler txtKeisyo.Enter, AddressOf EnterEventHandler
         AddHandler dbgMEISAI.Enter, AddressOf EnterEventHandler
         AddHandler txtKonMadeJyuryoGaku.Enter, AddressOf EnterEventHandler
+        AddHandler txtKurikoshiZan.Enter, AddressOf EnterEventHandler
+        AddHandler txtHoryukin.Enter, AddressOf EnterEventHandler
+        AddHandler txtHoryukinKonkai.Enter, AddressOf EnterEventHandler
         AddHandler txtBiko.Enter, AddressOf EnterEventHandler
         AddHandler btnMeisaiInput.Enter, AddressOf EnterEventHandler
 
         AddHandler rdoSeikyuHouhou_0.CheckedChanged, AddressOf rdoSeikyuHouhou_CheckedChanged
         AddHandler rdoSeikyuHouhou_1.CheckedChanged, AddressOf rdoSeikyuHouhou_CheckedChanged
+        AddHandler rdoSeikyuHouhou_0.KeyDown, AddressOf SelectNextControlSEI00001
+        AddHandler rdoSeikyuHouhou_1.KeyDown, AddressOf SelectNextControlSEI00001
     End Sub
 
     ''' <summary>
@@ -319,22 +347,30 @@ Public Class frmSEI0001
         txtKeisyo.Enabled = enabled
         rdoSeikyuHouhou_0.Enabled = enabled
         rdoSeikyuHouhou_1.Enabled = enabled
+
         btnMeisaiInput.Enabled = enabled
-        dbgMEISAI.Enabled = enabled
+        If FormStatus <> enumFormStatus.KeyInput AndAlso FormStatus <> enumFormStatus.KeyInput_AfterEntry Then
+            btnMeisaiInput.Enabled = IIf(rdoSeikyuHouhou_0.Checked, False, True)
+        End If
+
+        If rdoSeikyuHouhou_1.Checked Then
+            txtHoryukin.Enabled = False
+            dbgMEISAI.Enabled = False
+        Else
+            txtHoryukin.Enabled = enabled
+            dbgMEISAI.Enabled = enabled
+        End If
+
         txtKonMadeJyuryoGaku.Enabled = enabled
         txtBiko.Enabled = enabled
 
-        If FormStatus = enumFormStatus.Reference Then
+        If FormStatus = enumFormStatus.Reference OrElse FormStatus = enumFormStatus.KurikoshizanSaiseikyu Then
             txtSeikyuEdaban.Enabled = False
             cmbSeikyuNo.Enabled = False
         Else
             txtSeikyuDate.Focus()                               'txtSeikyuEdabanが非活性で入力チェックが行われるため、フォーカスを移動しておく
             txtSeikyuEdaban.Enabled = Not enabled
             cmbSeikyuNo.Enabled = Not enabled
-        End If
-
-        If FormStatus <> enumFormStatus.KeyInput AndAlso FormStatus <> enumFormStatus.KeyInput_AfterEntry Then
-            btnMeisaiInput.Enabled = IIf(rdoSeikyuHouhou_0.Checked, False, True)
         End If
 
         If enabled Then
@@ -353,12 +389,8 @@ Public Class frmSEI0001
         End If
 
         If FormStatus = enumFormStatus.KeyInput Then
-            RemoveHandler txtSeikyuDate.TextChanged, AddressOf txtSeikyuDate_TextUpdated
             AllControlInitialize()
-        ElseIf FormStatus = enumFormStatus.DetailInput Then
-            AddHandler txtSeikyuDate.TextChanged, AddressOf txtSeikyuDate_TextUpdated
         ElseIf FormStatus = enumFormStatus.KeyInput_AfterEntry Then
-            RemoveHandler txtSeikyuDate.TextChanged, AddressOf txtSeikyuDate_TextUpdated
             AllControlInitialize(False)
         End If
 
@@ -377,6 +409,7 @@ Public Class frmSEI0001
         Select Case FormStatus
             Case enumFormStatus.KeyInput, enumFormStatus.KeyInput_AfterEntry
                 FunctionKey.SetItem(1, "終了", "終了", True)
+                FunctionKey.SetItem(9, strFUNCTION_KURIKOSHIZAN, strFUNCTION_KURIKOSHIZAN_NAME, True, FunctionKey.FONT_SMALL)
 
             Case enumFormStatus.DetailInput
                 FunctionKey.SetItem(1, "取消", "取消", True)
@@ -388,6 +421,10 @@ Public Class frmSEI0001
             Case enumFormStatus.Reference
                 FunctionKey.SetItem(1, "取消", "取消", True)
                 FunctionKey.SetItem(11, "プレビュー", "プレビュー", True, FunctionKey.FONT_SMALL)
+
+            Case enumFormStatus.KurikoshizanSaiseikyu
+                FunctionKey.SetItem(1, "取消", "取消", True)
+                FunctionKey.SetItem(12, "印刷", "印刷", True)
         End Select
     End Sub
 
@@ -438,6 +475,17 @@ Public Class frmSEI0001
             '敬称
             CheckResult = InputErrorCheck_Control(txtKeisyo, tabOrder)
             If CheckResult.HasValue Then Return CheckResult.Value
+
+            '今回迄受領額
+            If GetTabOrder(txtKonMadeJyuryoGaku) >= tabOrder Then Return True
+
+            If Not dbgMEISAI.DataSource Is Nothing Then
+                If CDec(dbgMEISAI.DataSource.Rows(0)(FLD_今回迄請求額)) < CDec(txtKonMadeJyuryoGaku.Text) Then
+                    MessageBoxEx.Show(MessageCode_Arg1.M243, "今回迄請求額", PROGRAM_NAME)
+                    txtKonMadeJyuryoGaku.Focus()
+                    Return False
+                End If
+            End If
         End If
 
         Return True
@@ -473,22 +521,30 @@ Public Class frmSEI0001
             Case "削除"
                 FunctionKey_Delete()
 
-            Case "プレビュー"
+            Case strFUNCTION_KURIKOSHIZAN
+                '繰越残再請求
+                FunctionKey_KurikoshizanSaiseikyu()
 
+            Case "プレビュー"
                 Try
                     FunctionKey.ItemEnabled("プレビュー") = False
-                    ReportPrint(True)
+                    ReportPrint(True, False)
                 Finally
                     FunctionKey.ItemEnabled("プレビュー") = True
                 End Try
 
             Case "登録/印刷"
                 FunctionKey_EntryPrint()
+
+            Case "印刷"
+                ReportPrint(False, True)
         End Select
     End Sub
 
     '取消
     Private Sub FunctionKey_Cancel(Optional ByVal CheckMsgOn As Boolean = True)
+
+        TitleBar.EditMode = EditMode.None
 
         If CheckMsgOn Then
             FormSwitch(enumFormStatus.KeyInput)
@@ -497,8 +553,6 @@ Public Class frmSEI0001
         End If
 
         txtSeikyuEdaban.Focus()
-
-        TitleBar.EditMode = EditMode.None
     End Sub
 
     '削除
@@ -513,6 +567,39 @@ Public Class frmSEI0001
 
         '画面クリア(取消動作)
         FunctionKey_Cancel()
+    End Sub
+
+    '繰越残再請求
+    Private Sub FunctionKey_KurikoshizanSaiseikyu()
+        '直近の請求
+        Dim seikyuEdabanMax = T_SEIKYU.fncSelectMAX_SEIKYUEDABAN(txtSeikyuNo.Text).Rows(0).Item("SEIKYUEDABAN")
+
+        '請求が存在しない場合、エラー
+        If NUCheck(seikyuEdabanMax) Then
+            MessageBoxEx.Show(CommonUtility.MessageCode_Arg0.M244, PROGRAM_NAME)
+            Return
+        End If
+
+        Dim drSeikyu = CType(T_SEIKYU.fncSelectT_SEIKYUHED(txtSeikyuNo.Text, seikyuEdabanMax).Rows(0), dsT_SEIKYU.T_SEIKYUHEDRow)
+
+        Dim drMainData As dsSEI0001.MainDataRow = dalogic.ReadMainData(
+              txtSeikyuNo.Text _
+            , drSeikyu.JYUTYUEDABAN _
+            , txtSeikyuNo.Text _
+            , seikyuEdabanMax).Rows(0)
+
+        '直近の請求の繰越残＝または、請求率＜100の場合、エラー
+        If drSeikyu.KURIKOSIZAN = 0 OrElse drMainData.GKJYUTYUGAKU > drMainData.SEIKYUGAKU + drMainData.MADESEIKYUGAKU Then
+            MessageBoxEx.Show(CommonUtility.MessageCode_Arg0.M244, PROGRAM_NAME)
+            Return
+        End If
+
+        '請求情報の表示
+        txtSeikyuEdaban.Text = ZeroPadding(seikyuEdabanMax, txtSeikyuEdaban.MaxLength)
+
+        'タイトルバーを繰越残再請求とし、請求情報の表示処理を呼び出す
+        Me.TitleBar.EditMode = EditMode.SeikyuKurikoshizanSaiseikyu
+        Me.txtSeikyuEdaban_KeyDown(txtSeikyuEdaban, New KeyEventArgs(Keys.Enter))
     End Sub
 
     '登録/印刷
@@ -545,7 +632,7 @@ Public Class frmSEI0001
         If dalogic.Entry(Me, Me.TitleBar.EditMode = EditMode.Edit) Then
             '印刷
             If MessageBoxEx.Show(MessageCode_Arg0.M162引き続き印刷してもよろしいですか, PROGRAM_NAME) = Windows.Forms.DialogResult.Yes Then
-                ReportPrint(False)
+                ReportPrint(False, False)
             End If
 
             'コンボ再作成
@@ -563,7 +650,7 @@ Public Class frmSEI0001
     End Sub
 
     'レポート印刷
-    Private Sub ReportPrint(ByVal previewMode As Boolean)
+    Private Sub ReportPrint(ByVal previewMode As Boolean, ByVal kagamiOnly As Boolean)
         Dim dt As New dsSEI0001.ReportDataDataTable
         Dim dr As dsSEI0001.ReportDataRow = dt.NewReportDataRow
 
@@ -576,8 +663,11 @@ Public Class frmSEI0001
         dr.SeikyuGaku = ReplaceCalcString(MainData.Rows(0)(FLD_今回請求額))
         dr.KoujiName = Utility.NS(lblInfo_KouziName.Text)
         dr.UkeoiGaku = ReplaceCalcString(MainData.Rows(0)(FLD_請負受注金額))
-        dr.MadeJyuryoGaku = NZ(txtKonMadeJyuryoGaku.Value)
+        dr.MadeJyuryoGaku = NZ(txtKonMadeJyuryoGaku.Text)
         dr.MadeSeikyuGaku = ReplaceCalcString(MainData.Rows(0)(FLD_今回迄請求額))
+        dr.Horyukin = NZ(txtHoryukinKonkai.Text)
+        dr.Kurikoshizan = NZ(txtKurikoshiZan.Text)
+        dr.KurikoshizanName = strS_SCB_KURIKOSHIZAN
         dr.Biko = txtBiko.Text
 
         'scb
@@ -602,16 +692,23 @@ Public Class frmSEI0001
         '明細の合計の計算
         Dim dtGoukei = CalcMeisaiGoueki(dtT_SEIKYU_MEISAI)
 
-        Using rpt As New rptSEI0001(dt, txtKeisyoName.Text),
-                rptMeisai As New rptSEI0001_1(rptMain0_1_DataCreate_MEISAI),
-                rptDekidakaChosyo As New rptSEI0001_DekidakaTyousho(dtT_SEIKYU_MEISAI, txtSURYO_SYOSUIKAKETA.Text, dt, dtGoukei, strS_SCB_ROUND_ZEIKBN)
-            'プレビュー
-            If rdoSeikyuHouhou_0.Checked Then
-                PrintReport(PrintReportMode.Preview, {rpt, rptMeisai}, previewMode)
-            Else
-                PrintReport(PrintReportMode.Preview, {rpt, rptMeisai, rptDekidakaChosyo}, previewMode)
-            End If
-        End Using
+        If kagamiOnly Then
+            '鏡のみ印刷
+            Using rpt As New rptSEI0001(dt, txtKeisyoName.Text)
+                PrintReport(PrintReportMode.Preview, {rpt}, previewMode)
+            End Using
+        Else
+            Using rpt As New rptSEI0001(dt, txtKeisyoName.Text),
+                    rptMeisai As New rptSEI0001_1(rptMain0_1_DataCreate_MEISAI),
+                    rptDekidakaChosyo As New rptSEI0001_DekidakaTyousho(dtT_SEIKYU_MEISAI, lblSyosu.Text, dt, dtGoukei, strS_SCB_ROUND_ZEIKBN)
+                'プレビュー
+                If rdoSeikyuHouhou_0.Checked Then
+                    PrintReport(PrintReportMode.Preview, {rpt, rptMeisai}, previewMode)
+                Else
+                    PrintReport(PrintReportMode.Preview, {rpt, rptMeisai, rptDekidakaChosyo}, previewMode)
+                End If
+            End Using
+        End If
     End Sub
 
     Private Function fncCnvDecimal(ByVal val As Decimal) As String
@@ -970,9 +1067,18 @@ Public Class frmSEI0001
         Select Case e.Col
             Case COL.請負受注金額, COL.今回迄請求額, COL.未請求額, COL.請求率
                 e.CellStyle.BackColor = Color.FromArgb(236, 233, 216)
+
             Case COL.出来高, COL.今回請求額
+                dbgMEISAI.Splits(0).DisplayColumns(e.Col).AllowFocus = True
+                If Not (TitleBar.EditMode = EditMode.Create OrElse TitleBar.EditMode = EditMode.Edit) Then
+                    e.CellStyle.BackColor = Color.FromArgb(236, 233, 216)
+                    dbgMEISAI.Splits(0).DisplayColumns(e.Col).AllowFocus = False
+                    Return
+                End If
+
                 If rdoSeikyuHouhou_1.Checked Then
                     e.CellStyle.BackColor = Color.FromArgb(236, 233, 216)
+                    dbgMEISAI.Splits(0).DisplayColumns(e.Col).AllowFocus = False
                 End If
         End Select
     End Sub
@@ -997,35 +1103,55 @@ Public Class frmSEI0001
         Dim formStatus = enumFormStatus.DetailInput
 
         If Not NUCheck(txtSeikyuEdaban.Text) Then
-            'ヘッダ読み込み
-            If Not ReadSeikyuHeaderSettingDisplay() Then
+            '請求枝番が指定ありの場合
+
+            '請求Noの存在チェック
+            Dim dt = T_SEIKYU.fncSelectT_SEIKYUHED(txtSeikyuNo.Text, txtSeikyuEdaban.Text)
+            If dt.Rows.Count = 0 Then
                 MessageBoxEx.Show(CommonUtility.MessageCode_Arg0.M009該当データがありません, Me.Text)
                 txtSeikyuEdaban.Focus()
                 Return
             End If
 
             '参照モードの判定
-            If CDec(txtSeikyuEdaban.Text) <> T_SEIKYU.fncSelectMAX_SEIKYUEDABAN(txtSeikyuNo.Text).Rows(0).Item("SEIKYUEDABAN") Then
+            If Me.TitleBar.EditMode = EditMode.SeikyuKurikoshizanSaiseikyu Then
+                '繰越残再請求の場合
+                formStatus = enumFormStatus.KurikoshizanSaiseikyu
+
+            ElseIf CDec(txtSeikyuEdaban.Text) <> T_SEIKYU.fncSelectMAX_SEIKYUEDABAN(txtSeikyuNo.Text).Rows(0).Item("SEIKYUEDABAN") Then
                 '最後の請求ではない場合
                 formStatus = enumFormStatus.Reference
                 Me.TitleBar.EditMode = EditMode.EditNoneSeikyu
+
             ElseIf drApprovalJyuchu.APPROVALKBN = T_BUKKEN_APPROVALRead.enumApprovalKbn.SYONIN_MI Then
                 '受注未承認の場合
                 formStatus = enumFormStatus.Reference
                 Me.TitleBar.EditMode = EditMode.EditNoneJyutyuMisyonin
+
             Else
                 formStatus = enumFormStatus.DetailInput
                 Me.TitleBar.EditMode = EditMode.Edit
             End If
 
+            'ヘッダ読み込み
+            ReadSeikyuHeaderSettingDisplay()
+
+            '受注情報の表示
+            subSetKouziInfo()
+
             txtSeikyuEdaban.Text = ZeroPadding(txtSeikyuEdaban.Text, txtSeikyuEdaban.MaxLength)
 
         Else
+            '請求枝番が指定なしの場合
+
             '受注承認済のチェック
             If drApprovalJyuchu.APPROVALKBN = T_BUKKEN_APPROVALRead.enumApprovalKbn.SYONIN_MI Then
                 MessageBoxEx.Show(CommonUtility.MessageCode_Arg0.M236, Me.Text)
                 Return
             End If
+
+            '受注情報の表示
+            subSetKouziInfo()
 
             '請求情報の取得
             Dim seikyuEdaban = T_SEIKYU.fncSelectMAX_SEIKYUEDABAN(txtSeikyuNo.Text).Rows(0).Item("SEIKYUEDABAN")
@@ -1033,18 +1159,20 @@ Public Class frmSEI0001
             If Not NUCheck(seikyuEdaban) Then
                 Dim dt = T_SEIKYU.fncSelectT_SEIKYUHED(txtSeikyuNo.Text, seikyuEdaban)
                 Dim dr = CType(dt.Rows(0), dsT_SEIKYU.T_SEIKYUHEDRow)
+                '請求方法
                 If dr.SEIKYUMETHOD = "1" Then
                     rdoSeikyuHouhou_0.Checked = True
                 Else
                     rdoSeikyuHouhou_1.Checked = True
                 End If
+                '今回迄受領額
+                txtKonMadeJyuryoGaku.Value = dr.KONJYURYOKINGAKU
+                '今回迄保留金
+                txtHoryukinKonkai.Value = CDec(dr.HORYUKIN) + CDec(dr.KONHORYUKIN)
             End If
 
             '最大の受注枝番の取得
             txtJyutyuEdaban.Text = T_JYUTYU.fncSelectMAX_JYUTYUEDABAN(txtSeikyuNo.Text).Rows(0).Item("JYUTYUEDABAN")
-
-            '受注情報の表示
-            subSetKouziInfo()
 
             Me.TitleBar.EditMode = EditMode.Create
         End If
@@ -1054,6 +1182,11 @@ Public Class frmSEI0001
 
         '請求トランの読み込み
         ReadSeikyuData()
+
+        '新規の場合、繰越残を初期表示
+        If Me.TitleBar.EditMode = EditMode.Create Then
+            txtKonMadeJyuryoGaku_TextUpdated(Nothing, Nothing)
+        End If
 
         '請求明細トランの読み込み
         ReadSeikyuMeisaiData()
@@ -1067,14 +1200,21 @@ Public Class frmSEI0001
 
     '請求トラン、受注ヘッダトランよりデータ取得
     Private Sub ReadSeikyuData()
+        '１つ前の請求枝番の取得
+        Dim seikyuEdabanMax = T_SEIKYU.fncSelectMAX_SEIKYUEDABAN(txtSeikyuNo.Text).Rows(0).Item("SEIKYUEDABAN")
+
+        Dim seikyuEdaban = -1
+        If Not NUCheck(seikyuEdabanMax) Then
+            seikyuEdaban = CDec(seikyuEdabanMax) + 1
+        End If
+
         '明細データの読み込み
-        '新規の場合、請求NOは0を引数に渡す
+        '新規の場合、請求NOは0（請求情報を取得しないため）、請求枝番は最大の枝番＋1（今回迄請求額の取得のため）を引数に渡す
         MainData = dalogic.ReadMainData(
               txtSeikyuNo.Text _
             , IIf(NUCheck(txtJyutyuEdaban.Text), 0, txtJyutyuEdaban.Text) _
             , IIf(NUCheck(txtSeikyuEdaban.Text), 0, txtSeikyuNo.Text) _
-            , IIf(NUCheck(txtSeikyuEdaban.Text), 0, txtSeikyuEdaban.Text) _
-            , CDate(txtSeikyuDate.Text))
+            , IIf(NUCheck(txtSeikyuEdaban.Text), seikyuEdaban, txtSeikyuEdaban.Text))
 
         Dim dr = CType(MainData.Rows(0), dsSEI0001.MainDataRow)
 
@@ -1085,18 +1225,36 @@ Public Class frmSEI0001
             End If
         End If
 
-        If dr.GKJYUTYUGAKU = 0 Then
-            dr.SEIKYURITU = 1
-        Else
-            dr.SEIKYURITU = Round(
-                              ((dr.MADESEIKYUGAKU + dr.SEIKYUGAKU) / dr.GKJYUTYUGAKU) _
-                            , 3 _
-                            , 請求率丸め区分)
-        End If
+        '請求率の計算
+        CalcSeikyuRitu(dr)
 
         dbgMEISAI.SetDataBinding(MainData, "", True)
         dbgMEISAI.Refresh()
     End Sub
+
+    Private Sub CalcSeikyuRitu(ByRef dr As dsSEI0001.MainDataRow)
+        dr.SEIKYURITU = CalcSeikyuRitu(dr.GKJYUTYUGAKU, dr.MADESEIKYUGAKU, dr.SEIKYUGAKU, dr.MISEIKYUGAKU)
+    End Sub
+
+    Private Function CalcSeikyuRitu(ByVal GKJYUTYUGAKU As Decimal, ByVal MADESEIKYUGAKU As Decimal, ByVal SEIKYUGAKU As Decimal, ByVal MISEIKYUGAKU As Decimal) As Decimal
+        Dim SEIKYURITU As Decimal
+
+        If GKJYUTYUGAKU = 0 Then
+            SEIKYURITU = 1
+        Else
+            SEIKYURITU = Round(
+                              ((MADESEIKYUGAKU + SEIKYUGAKU) / GKJYUTYUGAKU) _
+                            , 3 _
+                            , 請求率丸め区分)
+        End If
+
+        '請求率が100％かつ、未請求額が残っている場合、99％にする。
+        If SEIKYURITU = 1 And MISEIKYUGAKU <> 0 Then
+            SEIKYURITU = 0.99
+        End If
+
+        Return SEIKYURITU
+    End Function
 
     Private Sub ReadSeikyuMeisaiData()
 
@@ -1126,7 +1284,8 @@ Public Class frmSEI0001
                   txtSeikyuNo.Text _
                 , seikyuEdaban _
                 , txtJyutyuEdaban.Text _
-                , jyutyuEdaban)
+                , jyutyuEdaban _
+                , strS_SCB_TYOSEIGAKU)
 
             If rdoSeikyuHouhou_1.Checked Then
                 '該当データなしのエラーの後だと、グリッドの編集でEnterイベントが発生し、請求日付のチェック処理が走るので、イベントを削除する。
@@ -1136,14 +1295,9 @@ Public Class frmSEI0001
                 Dim dr = CType(dbgMEISAI.DataSource(0), dsSEI0001.MainDataRow)
                 dr.SEIKYUGAKU = dtT_SEIKYU_MEISAI.Compute("SUM(SEIKYUGAKU_KONKAI)", "")
                 dr.MISEIKYUGAKU = dr.GKJYUTYUGAKU - dr.SEIKYUGAKU
-                If dr.GKJYUTYUGAKU = 0 Then
-                    dr.SEIKYURITU = 1
-                Else
-                    dr.SEIKYURITU = Round(
-                                      ((dr.MADESEIKYUGAKU + dr.SEIKYUGAKU) / dr.GKJYUTYUGAKU) _
-                                    , 3 _
-                                    , 請求率丸め区分)
-                End If
+
+                '請求率の計算
+                CalcSeikyuRitu(dr)
 
                 AddHandler dbgMEISAI.Enter, AddressOf EnterEventHandler
             End If
@@ -1157,20 +1311,20 @@ Public Class frmSEI0001
     End Sub
 
     '請求ヘッダ情報を画面に表示
-    Private Function ReadSeikyuHeaderSettingDisplay() As Boolean
+    Private Sub ReadSeikyuHeaderSettingDisplay()
         Dim dt = T_SEIKYU.fncSelectT_SEIKYUHED(txtSeikyuNo.Text, txtSeikyuEdaban.Text)
-
-        If dt.Rows.Count = 0 Then Return False
-
         Dim dr = CType(dt.Rows(0), dsT_SEIKYU.T_SEIKYUHEDRow)
 
         txtJyutyuEdaban.Text = dr.JYUTYUEDABAN
-        txtSURYO_SYOSUIKAKETA.Text = dr.SURYO_SYOSUIKAKETA
+        lblSyosu.Text = dr.SURYO_SYOSUIKAKETA
         txtSeikyuDate.Text = dr.SEIKYUDATE
         txtSeikyuDateDisp.Text = fncCnvJapaneseDate(txtSeikyuDate.Text)
         txtKeisyo.Text = dr.KEISYOUCODE
         txtBiko.Text = dr.D_BIKO
         txtKonMadeJyuryoGaku.Value = NZ(dr.KONJYURYOKINGAKU)
+        txtKurikoshiZan.Value = NZ(dr.KURIKOSIZAN)
+        txtHoryukin.Value = NZ(dr.HORYUKIN)
+        txtHoryukinKonkai.Value = NZ(dr.KONHORYUKIN)
         lblTANTOCODE.Text = NS(dr.INP_TANTOCODE)
         lblTANTONAME.Text = BLL.Common.GetDbValue.ExecuteGetValue("M_TANTO", "TANTONAME", "TANTOCODE='" + NS(dt.Rows(0)("INP_TANTOCODE")) + "'")
         rdoSeikyuHouhou_0.Checked = False
@@ -1183,12 +1337,7 @@ Public Class frmSEI0001
 
         '請求ヘッダ読み込み時にデータを訂正前データを保持
         訂正前請求ヘッダ = dt.Copy.Rows(0)
-
-        '受注情報の表示
-        subSetKouziInfo()
-
-        Return True
-    End Function
+    End Sub
 
     Private Sub subReadJisyaInfo(ByRef p As ReportData)
         Dim data As ReportData = New ReportData
@@ -1248,10 +1397,12 @@ Public Class frmSEI0001
 
                     .Columns(COL.未請求額).Value = .Columns(COL.請負受注金額).Value - (.Columns(COL.今回迄請求額).Value + .Columns(COL.今回請求額).Value)
 
-                    .Columns(COL.請求率).Value = Round(
-                          ((.Columns(COL.今回迄請求額).Value + .Columns(COL.今回請求額).Value) / .Columns(COL.請負受注金額).Value) _
-                        , 3 _
-                        , 請求率丸め区分)
+                    '請求率の計算
+                    .Columns(COL.請求率).Value = CalcSeikyuRitu(
+                          .Columns(COL.請負受注金額).Value _
+                        , .Columns(COL.今回迄請求額).Value _
+                        , .Columns(COL.今回請求額).Value _
+                        , .Columns(COL.未請求額).Value)
 
                 Case COL.今回請求額
 
@@ -1261,15 +1412,12 @@ Public Class frmSEI0001
 
                     .Columns(COL.未請求額).Value = .Columns(COL.請負受注金額).Value - (.Columns(COL.今回迄請求額).Value + .Columns(.Col).Value)
 
-                    .Columns(COL.請求率).Value = Round(
-                          ((.Columns(COL.今回迄請求額).Value + .Columns(COL.今回請求額).Value) / .Columns(COL.請負受注金額).Value) _
-                        , 3 _
-                        , 請求率丸め区分)
-
-                    '請求率＝100％なのに未請求額がある場合、100％にしな。
-                    If .Columns(COL.請求率).Value = 1 Then
-                        If .Columns(COL.未請求額).Value > 0 Then .Columns(COL.請求率).Value = 0.99
-                    End If
+                    '請求率の計算
+                    .Columns(COL.請求率).Value = CalcSeikyuRitu(
+                          .Columns(COL.請負受注金額).Value _
+                        , .Columns(COL.今回迄請求額).Value _
+                        , .Columns(COL.今回請求額).Value _
+                        , .Columns(COL.未請求額).Value)
             End Select
         End With
     End Sub
@@ -1290,7 +1438,11 @@ Public Class frmSEI0001
 
         If e.Shift = True AndAlso (e.KeyCode = Keys.Tab OrElse e.KeyCode = Keys.Enter) Then
             If dbgMEISAI.Col = COL.出来高 Then
-                txtKeisyo.Focus()
+                If rdoSeikyuHouhou_0.Enabled Then
+                    rdoSeikyuHouhou_0.Focus()
+                Else
+                    txtKeisyo.Focus()
+                End If
             End If
         End If
     End Sub
@@ -1314,7 +1466,7 @@ Public Class frmSEI0001
         '受注情報の取得
         Dim drJyutyu = CType(T_JYUTYU.fncSelectT_JYUTYUHED(txtSeikyuNo.Text, txtJyutyuEdaban.Text).Rows(0), dsT_JYUTYU.T_JYUTYUHEDRow)
 
-        txtSURYO_SYOSUIKAKETA.Text = drJyutyu.SURYO_SYOSUIKAKETA
+        lblSyosu.Text = drJyutyu.SURYO_SYOSUIKAKETA
         lblInfo_JyutyuNo.Text = drJyutyu.JYUTYUNO_EDABAN
         lblInfo_JyutyuDate.Text = drJyutyu.JYUTYUDATE
         lblInfo_MitumoriNo.Text = drJyutyu.MITUMORINO_EDABAN
@@ -1328,48 +1480,6 @@ Public Class frmSEI0001
         lblInfo_Syokei.Text = NZ(drJyutyu.GKJYUTYUGAKU_NUKI).ToString("#,0") + " 円"
         lblInfo_Syohizei.Text = NZ(drJyutyu.GKTAX).ToString("#,0") + " 円"
         lblInfo_JyutyuKingaku.Text = NZ(drJyutyu.GKJYUTYUGAKU).ToString("#,0") + " 円"
-    End Sub
-
-    Private Sub subReGetMadeSeikyuGaku(ByVal SeikyuDate As Date)
-        If MainData Is Nothing OrElse MainData.Rows.Count = 0 Then Exit Sub
-
-        Dim dt As dsSEI0001.GetMadeSeikyuGakuDataTable = dalogic.ReadMadeSeikyuGaku(CDec(txtSeikyuNo.Text), SeikyuDate)
-
-        If dt.Rows.Count = 0 OrElse NUCheck(dt.Rows(0)("MADESEIKYUGAKU")) Then
-            '今回迄請求額なし
-            MainData.Rows(0)(FLD_今回迄請求額) = Decimal.Parse("0")
-        Else
-            MainData.Rows(0)(FLD_今回迄請求額) = Decimal.Parse(dt.Rows(0)("MADESEIKYUGAKU").ToString)
-        End If
-
-        MainData.Rows(0)(FLD_未請求額) = MainData.Rows(0)(FLD_請負受注金額) - (MainData.Rows(0)(FLD_今回迄請求額) + MainData.Rows(0)(FLD_今回請求額))
-
-        With dbgMEISAI
-            .Columns(COL.請求率).Value = Round(
-                  ((.Columns(COL.今回迄請求額).Value + .Columns(COL.今回請求額).Value) / .Columns(COL.請負受注金額).Value) _
-                , 3 _
-                , 請求率丸め区分)
-        End With
-
-        '再バインド
-        dbgMEISAI.SetDataBinding(MainData, "", True)
-    End Sub
-
-    Private Sub txtSeikyuDate_TextUpdated(ByVal sender As Object, ByVal e As System.EventArgs)
-        'TextUpdatedはイベントが発生しないタイミングがあるため、TextChangedで代用(ステップ数多くなりますが、気にならない程度)
-        txtSeikyuDateDisp.Text = GetCnvSW.SfncYearSW(txtSeikyuDate.Text, True, True)
-
-        If m_変更前請求日付 Is Nothing Then Exit Sub
-
-        If IsDate(txtSeikyuDate.Text) = False Then Exit Sub
-
-        If Not m_変更前請求日付 = Date.Parse(txtSeikyuDate.Text) Then
-            dbgMEISAI.UpdateData()
-
-            subReGetMadeSeikyuGaku(Date.Parse(txtSeikyuDate.Text))
-
-            m_変更前請求日付 = Date.Parse(txtSeikyuDate.Text)
-        End If
     End Sub
 
     Public Function GetServerDate() As Date
@@ -1389,13 +1499,17 @@ Public Class frmSEI0001
 
     Private Sub rdoSeikyuHouhou_CheckedChanged(sender As Object, e As EventArgs)
 
-        btnMeisaiInput.Enabled = IIf(rdoSeikyuHouhou_0.Checked, False, True)
-        dbgMEISAI.Enabled = IIf(rdoSeikyuHouhou_0.Checked, True, False)
-        '背景色の変更（FetchCellStyleイベント）の呼び出し
-        dbgMEISAI.Refresh()
-
         'チェックされない場合、明細の表示は不要（イベントではチェックOFFも呼び出されるので、ON時のみの処理する）
         If sender Is Nothing OrElse CType(sender, RadioButton).Checked = False Then Return
+
+        If TitleBar.EditMode = EditMode.Create OrElse TitleBar.EditMode = EditMode.Edit Then
+            btnMeisaiInput.Enabled = IIf(rdoSeikyuHouhou_0.Checked, False, True)
+            dbgMEISAI.Enabled = IIf(rdoSeikyuHouhou_0.Checked, True, False)
+            txtHoryukin.Enabled = IIf(rdoSeikyuHouhou_0.Checked, True, False)
+        End If
+
+        '背景色の変更（FetchCellStyleイベント）の呼び出し
+        dbgMEISAI.Refresh()
 
         If dbgMEISAI.DataSource Is Nothing Then Return
 
@@ -1438,14 +1552,9 @@ Public Class frmSEI0001
         Dim dr = CType(MainData.Rows(0), dsSEI0001.MainDataRow)
         dr.SEIKYUGAKU = CDec(MeisaiInputResult)
         dr.MISEIKYUGAKU = dr.GKJYUTYUGAKU - dr.SEIKYUGAKU - dr.MADESEIKYUGAKU
-        If dr.GKJYUTYUGAKU = 0 Then
-            dr.SEIKYURITU = 1
-        Else
-            dr.SEIKYURITU = Round(
-                              ((dr.MADESEIKYUGAKU + dr.SEIKYUGAKU) / dr.GKJYUTYUGAKU) _
-                            , 3 _
-                            , 請求率丸め区分)
-        End If
+
+        '請求率の計算
+        CalcSeikyuRitu(dr)
     End Sub
 
     Public Function CalcMeisaiGoueki(dt As dsSEI0001.T_SEIKYU_MEISAIDataTable) As dsSEI0001.T_SEIKYU_MEISAIDataTable
@@ -1459,15 +1568,8 @@ Public Class frmSEI0001
 
         '小計の算出
         For Each row In dt
-            '調整額は今回請求額、累計請求額のみ加算
-            If row.KAISOCODE = "0" Then
-                syokeiKonkai += row.SEIKYUGAKU_KONKAI
-                syokeiRuikei += row.SEIKYUGAKU_RUIKEI
-                Continue For
-            End If
-
-            syokei += row.JYUTYUGAKU
-            syokeiZenaki += row.SEIKYUGAKU_ZENKAI
+            syokei += NZ(row.JYUTYUGAKU)
+            syokeiZenaki += NZ(row.SEIKYUGAKU_ZENKAI)
             syokeiKonkai += row.SEIKYUGAKU_KONKAI
             syokeiRuikei += row.SEIKYUGAKU_RUIKEI
         Next
@@ -1511,9 +1613,30 @@ Public Class frmSEI0001
         Return dtResult
     End Function
 
-    Private Function CalcSyohizei(ByVal value As Decimal) As Decimal
+    Public Function CalcSyohizei(ByVal value As Decimal) As Decimal
         If value = 0 Then Return 0
 
         Return Utility.Round(CDec(value * (CDbl(strSyohiZeiritu) / 100)), 0, CInt(strS_SCB_ROUND_TAX))
     End Function
+
+    Private Sub txtKonMadeJyuryoGaku_TextUpdated(sender As Object, e As EventArgs) Handles txtKonMadeJyuryoGaku.TextUpdated
+        If MainData Is Nothing Then Return
+
+        '保留金額ない場合、繰越残に「今回迄請求額－今回迄受領額」をセット
+        If txtHoryukin.Text = 0 AndAlso txtHoryukinKonkai.Text = 0 Then
+            txtKurikoshiZan.Value = CDec(MainData.Rows(0)(FLD_今回迄請求額)) - CDec(NZ(txtKonMadeJyuryoGaku.Text))
+        Else
+            txtKurikoshiZan.Value = 0
+        End If
+    End Sub
+
+    Private Sub txtHoryukin_TextUpdated(sender As Object, e As EventArgs) Handles txtHoryukin.TextUpdated
+        txtKonMadeJyuryoGaku_TextUpdated(Nothing, Nothing)
+    End Sub
+
+    Private Sub SelectNextControlSEI00001(sender As Object, e As KeyEventArgs)
+        If e.KeyCode <> Keys.Enter Then Return
+
+        SelectNextControl(sender, True, True, True, True)
+    End Sub
 End Class

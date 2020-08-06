@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmSEI0001
     Inherits winformbase.Formbase
 
     'フォームがコンポーネントの一覧をクリーンアップするために dispose をオーバーライドします。
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,16 +20,16 @@ Partial Class frmSEI0001
     'メモ: 以下のプロシージャは Windows フォーム デザイナで必要です。
     'Windows フォーム デザイナを使用して変更できます。  
     'コード エディタを使って変更しないでください。
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSEI0001))
         Me.Label18 = New System.Windows.Forms.Label()
         Me.fraHeader = New System.Windows.Forms.Panel()
         Me.txtSeikyuEdaban = New CommonUtility.WinFormControls.MitumoriNoTextBoxEx()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.txtSeikyuNo = New CommonUtility.WinFormControls.TextBoxEx()
         Me.cmbSeikyuNo = New CommonUtility.WinFormControls.MitumoriNoComboBox()
         Me.lblSEIKYUNO = New CommonUtility.WinFormControls.TextBoxEx()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.txtSeikyuNo = New CommonUtility.WinFormControls.TextBoxEx()
         Me.txtKokyakuCode = New CommonUtility.WinFormControls.TextBoxEx()
         Me.lblTANTOCODE = New System.Windows.Forms.Label()
         Me.lblTANTONAME = New System.Windows.Forms.Label()
@@ -89,6 +89,12 @@ Partial Class frmSEI0001
         Me.dbgMEISAI = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.pnlSeikyu = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtHoryukinKonkai = New CommonUtility.WinFormControls.NumberTextBoxEx()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txtHoryukin = New CommonUtility.WinFormControls.NumberTextBoxEx()
+        Me.lblKurikoshiZan = New System.Windows.Forms.Label()
+        Me.txtKurikoshiZan = New CommonUtility.WinFormControls.NumberTextBoxEx()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btnMeisaiInput = New CommonUtility.WinFormControls.KobetuSentakuButton()
@@ -96,7 +102,7 @@ Partial Class frmSEI0001
         Me.rdoSeikyuHouhou_1 = New System.Windows.Forms.RadioButton()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtJyutyuEdaban = New CommonUtility.WinFormControls.TextBoxEx()
-        Me.txtSURYO_SYOSUIKAKETA = New CommonUtility.WinFormControls.TextBoxEx()
+        Me.lblSyosu = New System.Windows.Forms.Label()
         Me.fraHeader.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -173,34 +179,6 @@ Partial Class frmSEI0001
         Me.txtSeikyuEdaban.UseZeroPadding = True
         Me.txtSeikyuEdaban.ZeroPaddingLength = 2
         '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("メイリオ", 8.0!)
-        Me.Label13.Location = New System.Drawing.Point(148, 8)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(13, 17)
-        Me.Label13.TabIndex = 94
-        Me.Label13.Text = "-"
-        '
-        'txtSeikyuNo
-        '
-        Me.txtSeikyuNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(233, Byte), Integer), CType(CType(216, Byte), Integer))
-        Me.txtSeikyuNo.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtSeikyuNo.DigitOnly = True
-        Me.txtSeikyuNo.DisplayName = "見積Ｎｏ"
-        Me.txtSeikyuNo.Enabled = False
-        Me.txtSeikyuNo.Font = New System.Drawing.Font("メイリオ", 8.0!)
-        Me.txtSeikyuNo.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtSeikyuNo.Location = New System.Drawing.Point(70, 8)
-        Me.txtSeikyuNo.MaxLength = 10
-        Me.txtSeikyuNo.Name = "txtSeikyuNo"
-        Me.txtSeikyuNo.Size = New System.Drawing.Size(78, 16)
-        Me.txtSeikyuNo.TabIndex = 93
-        Me.txtSeikyuNo.Text = "1234567890"
-        Me.txtSeikyuNo.UseZeroPadding = True
-        Me.txtSeikyuNo.ZeroPaddingLength = 10
-        '
         'cmbSeikyuNo
         '
         Me.cmbSeikyuNo.DisplayName = "請求Ｎｏ"
@@ -231,6 +209,34 @@ Partial Class frmSEI0001
         Me.lblSEIKYUNO.TabIndex = 97
         Me.lblSEIKYUNO.Text = "1234567890-01"
         Me.lblSEIKYUNO.Visible = False
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("メイリオ", 8.0!)
+        Me.Label13.Location = New System.Drawing.Point(148, 8)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(13, 17)
+        Me.Label13.TabIndex = 94
+        Me.Label13.Text = "-"
+        '
+        'txtSeikyuNo
+        '
+        Me.txtSeikyuNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(233, Byte), Integer), CType(CType(216, Byte), Integer))
+        Me.txtSeikyuNo.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtSeikyuNo.DigitOnly = True
+        Me.txtSeikyuNo.DisplayName = "見積Ｎｏ"
+        Me.txtSeikyuNo.Enabled = False
+        Me.txtSeikyuNo.Font = New System.Drawing.Font("メイリオ", 8.0!)
+        Me.txtSeikyuNo.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.txtSeikyuNo.Location = New System.Drawing.Point(70, 8)
+        Me.txtSeikyuNo.MaxLength = 10
+        Me.txtSeikyuNo.Name = "txtSeikyuNo"
+        Me.txtSeikyuNo.Size = New System.Drawing.Size(78, 16)
+        Me.txtSeikyuNo.TabIndex = 93
+        Me.txtSeikyuNo.Text = "1234567890"
+        Me.txtSeikyuNo.UseZeroPadding = True
+        Me.txtSeikyuNo.ZeroPaddingLength = 10
         '
         'txtKokyakuCode
         '
@@ -969,7 +975,7 @@ Partial Class frmSEI0001
         Me.txtKonMadeJyuryoGaku.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtKonMadeJyuryoGaku.Font = New System.Drawing.Font("メイリオ", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.txtKonMadeJyuryoGaku.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtKonMadeJyuryoGaku.Location = New System.Drawing.Point(97, 102)
+        Me.txtKonMadeJyuryoGaku.Location = New System.Drawing.Point(97, 103)
         Me.txtKonMadeJyuryoGaku.MaxLength = 12
         Me.txtKonMadeJyuryoGaku.MaxValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.txtKonMadeJyuryoGaku.MinValue = New Decimal(New Integer() {0, 0, 0, 0})
@@ -986,12 +992,12 @@ Partial Class frmSEI0001
         Me.txtBiko.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtBiko.Font = New System.Drawing.Font("メイリオ", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.txtBiko.ImeMode = System.Windows.Forms.ImeMode.Hiragana
-        Me.txtBiko.Location = New System.Drawing.Point(97, 134)
+        Me.txtBiko.Location = New System.Drawing.Point(97, 165)
         Me.txtBiko.MaxLength = 200
         Me.txtBiko.Multiline = True
         Me.txtBiko.Name = "txtBiko"
-        Me.txtBiko.Size = New System.Drawing.Size(350, 107)
-        Me.txtBiko.TabIndex = 8
+        Me.txtBiko.Size = New System.Drawing.Size(358, 107)
+        Me.txtBiko.TabIndex = 9
         Me.txtBiko.Text = "123456789012345678901234567890123456789012345678901234567890123456789012345678901" &
     "23456789012345678901234567890123456789012345678901234567890123456789012345678901" &
     "234567890123456789012345678901234567890"
@@ -1038,6 +1044,12 @@ Partial Class frmSEI0001
         'pnlSeikyu
         '
         Me.pnlSeikyu.BackColor = System.Drawing.Color.Thistle
+        Me.pnlSeikyu.Controls.Add(Me.Label10)
+        Me.pnlSeikyu.Controls.Add(Me.txtHoryukinKonkai)
+        Me.pnlSeikyu.Controls.Add(Me.Label9)
+        Me.pnlSeikyu.Controls.Add(Me.txtHoryukin)
+        Me.pnlSeikyu.Controls.Add(Me.lblKurikoshiZan)
+        Me.pnlSeikyu.Controls.Add(Me.txtKurikoshiZan)
         Me.pnlSeikyu.Controls.Add(Me.Label8)
         Me.pnlSeikyu.Controls.Add(Me.Label6)
         Me.pnlSeikyu.Controls.Add(Me.btnMeisaiInput)
@@ -1052,11 +1064,99 @@ Partial Class frmSEI0001
         Me.pnlSeikyu.Size = New System.Drawing.Size(592, 299)
         Me.pnlSeikyu.TabIndex = 99
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("メイリオ", 8.0!)
+        Me.Label10.Location = New System.Drawing.Point(256, 136)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(74, 17)
+        Me.Label10.TabIndex = 108
+        Me.Label10.Text = "今回迄保留金"
+        '
+        'txtHoryukinKonkai
+        '
+        Me.txtHoryukinKonkai.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(233, Byte), Integer), CType(CType(216, Byte), Integer))
+        Me.txtHoryukinKonkai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtHoryukinKonkai.Enabled = False
+        Me.txtHoryukinKonkai.Font = New System.Drawing.Font("メイリオ", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.txtHoryukinKonkai.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.txtHoryukinKonkai.Location = New System.Drawing.Point(338, 134)
+        Me.txtHoryukinKonkai.MaxLength = 12
+        Me.txtHoryukinKonkai.MaxValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.txtHoryukinKonkai.MinValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.txtHoryukinKonkai.Multiline = True
+        Me.txtHoryukinKonkai.Name = "txtHoryukinKonkai"
+        Me.txtHoryukinKonkai.Size = New System.Drawing.Size(118, 25)
+        Me.txtHoryukinKonkai.TabIndex = 107
+        Me.txtHoryukinKonkai.TabStop = False
+        Me.txtHoryukinKonkai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtHoryukinKonkai.UseNullValidator = True
+        Me.txtHoryukinKonkai.Value = New Decimal(New Integer() {0, 0, 0, 0})
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("メイリオ", 8.0!)
+        Me.Label9.Location = New System.Drawing.Point(15, 136)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(41, 17)
+        Me.Label9.TabIndex = 106
+        Me.Label9.Text = "保留金"
+        '
+        'txtHoryukin
+        '
+        Me.txtHoryukin.BackColor = System.Drawing.Color.White
+        Me.txtHoryukin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtHoryukin.Font = New System.Drawing.Font("メイリオ", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.txtHoryukin.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.txtHoryukin.Location = New System.Drawing.Point(97, 134)
+        Me.txtHoryukin.MaxLength = 12
+        Me.txtHoryukin.MaxValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.txtHoryukin.MinValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.txtHoryukin.Multiline = True
+        Me.txtHoryukin.Name = "txtHoryukin"
+        Me.txtHoryukin.Size = New System.Drawing.Size(118, 25)
+        Me.txtHoryukin.TabIndex = 8
+        Me.txtHoryukin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtHoryukin.UseNullValidator = True
+        Me.txtHoryukin.Value = New Decimal(New Integer() {0, 0, 0, 0})
+        '
+        'lblKurikoshiZan
+        '
+        Me.lblKurikoshiZan.AutoSize = True
+        Me.lblKurikoshiZan.Font = New System.Drawing.Font("メイリオ", 8.0!)
+        Me.lblKurikoshiZan.Location = New System.Drawing.Point(256, 105)
+        Me.lblKurikoshiZan.Name = "lblKurikoshiZan"
+        Me.lblKurikoshiZan.Size = New System.Drawing.Size(41, 17)
+        Me.lblKurikoshiZan.TabIndex = 104
+        Me.lblKurikoshiZan.Text = "繰越残"
+        '
+        'txtKurikoshiZan
+        '
+        Me.txtKurikoshiZan.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(233, Byte), Integer), CType(CType(216, Byte), Integer))
+        Me.txtKurikoshiZan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtKurikoshiZan.Enabled = False
+        Me.txtKurikoshiZan.Font = New System.Drawing.Font("メイリオ", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.txtKurikoshiZan.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.txtKurikoshiZan.Location = New System.Drawing.Point(338, 103)
+        Me.txtKurikoshiZan.MaxLength = 12
+        Me.txtKurikoshiZan.MaxValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.txtKurikoshiZan.MinValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.txtKurikoshiZan.Multiline = True
+        Me.txtKurikoshiZan.Name = "txtKurikoshiZan"
+        Me.txtKurikoshiZan.Size = New System.Drawing.Size(118, 25)
+        Me.txtKurikoshiZan.TabIndex = 103
+        Me.txtKurikoshiZan.TabStop = False
+        Me.txtKurikoshiZan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtKurikoshiZan.UseNullValidator = True
+        Me.txtKurikoshiZan.Value = New Decimal(New Integer() {0, 0, 0, 0})
+        '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("メイリオ", 8.0!)
-        Me.Label8.Location = New System.Drawing.Point(15, 136)
+        Me.Label8.Location = New System.Drawing.Point(15, 167)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(30, 17)
         Me.Label8.TabIndex = 102
@@ -1135,29 +1235,26 @@ Partial Class frmSEI0001
         Me.txtJyutyuEdaban.Text = "1"
         Me.txtJyutyuEdaban.Visible = False
         '
-        'txtSURYO_SYOSUIKAKETA
+        'lblSyosu
         '
-        Me.txtSURYO_SYOSUIKAKETA.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(233, Byte), Integer), CType(CType(216, Byte), Integer))
-        Me.txtSURYO_SYOSUIKAKETA.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtSURYO_SYOSUIKAKETA.DisplayName = "見積Ｎｏ"
-        Me.txtSURYO_SYOSUIKAKETA.Enabled = False
-        Me.txtSURYO_SYOSUIKAKETA.Font = New System.Drawing.Font("メイリオ", 8.0!)
-        Me.txtSURYO_SYOSUIKAKETA.ImeMode = System.Windows.Forms.ImeMode.Hiragana
-        Me.txtSURYO_SYOSUIKAKETA.Location = New System.Drawing.Point(294, 47)
-        Me.txtSURYO_SYOSUIKAKETA.MaxLength = 10
-        Me.txtSURYO_SYOSUIKAKETA.Name = "txtSURYO_SYOSUIKAKETA"
-        Me.txtSURYO_SYOSUIKAKETA.ReadOnly = True
-        Me.txtSURYO_SYOSUIKAKETA.Size = New System.Drawing.Size(22, 16)
-        Me.txtSURYO_SYOSUIKAKETA.TabIndex = 101
-        Me.txtSURYO_SYOSUIKAKETA.Text = "1"
-        Me.txtSURYO_SYOSUIKAKETA.Visible = False
+        Me.lblSyosu.BackColor = System.Drawing.Color.Yellow
+        Me.lblSyosu.Enabled = False
+        Me.lblSyosu.Font = New System.Drawing.Font("メイリオ", 8.0!)
+        Me.lblSyosu.ForeColor = System.Drawing.Color.Black
+        Me.lblSyosu.Location = New System.Drawing.Point(935, 9)
+        Me.lblSyosu.Name = "lblSyosu"
+        Me.lblSyosu.Size = New System.Drawing.Size(15, 17)
+        Me.lblSyosu.TabIndex = 109
+        Me.lblSyosu.Text = "0"
+        Me.lblSyosu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblSyosu.Visible = False
         '
         'frmSEI0001
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1018, 673)
-        Me.Controls.Add(Me.txtSURYO_SYOSUIKAKETA)
+        Me.Controls.Add(Me.lblSyosu)
         Me.Controls.Add(Me.txtJyutyuEdaban)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.lblSEIKYUNO)
@@ -1181,7 +1278,7 @@ Partial Class frmSEI0001
         Me.Controls.SetChildIndex(Me.FunctionKey, 0)
         Me.Controls.SetChildIndex(Me.TitleBar, 0)
         Me.Controls.SetChildIndex(Me.txtJyutyuEdaban, 0)
-        Me.Controls.SetChildIndex(Me.txtSURYO_SYOSUIKAKETA, 0)
+        Me.Controls.SetChildIndex(Me.lblSyosu, 0)
         Me.fraHeader.ResumeLayout(False)
         Me.fraHeader.PerformLayout()
         Me.Panel2.ResumeLayout(False)
@@ -1268,8 +1365,14 @@ Partial Class frmSEI0001
     Friend WithEvents Label7 As Label
     Friend WithEvents lblInfo_JyutyuKingaku As Label
     Friend WithEvents txtJyutyuEdaban As CommonUtility.WinFormControls.TextBoxEx
-    Friend WithEvents txtSURYO_SYOSUIKAKETA As CommonUtility.WinFormControls.TextBoxEx
     Friend WithEvents Label8 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents txtSeikyuEdaban As CommonUtility.WinFormControls.MitumoriNoTextBoxEx
+    Friend WithEvents Label10 As Label
+    Friend WithEvents txtHoryukinKonkai As CommonUtility.WinFormControls.NumberTextBoxEx
+    Friend WithEvents Label9 As Label
+    Friend WithEvents txtHoryukin As CommonUtility.WinFormControls.NumberTextBoxEx
+    Friend WithEvents lblKurikoshiZan As Label
+    Friend WithEvents txtKurikoshiZan As CommonUtility.WinFormControls.NumberTextBoxEx
+    Friend WithEvents lblSyosu As Label
 End Class

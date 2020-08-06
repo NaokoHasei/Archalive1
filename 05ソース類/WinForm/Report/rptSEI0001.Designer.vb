@@ -79,6 +79,12 @@ Partial Public Class rptSEI0001
         Me.Line16 = New GrapeCity.ActiveReports.SectionReportModel.Line()
         Me.Shape1 = New GrapeCity.ActiveReports.SectionReportModel.Shape()
         Me.PageFooter = New GrapeCity.ActiveReports.SectionReportModel.PageFooter()
+        Me.Line20 = New GrapeCity.ActiveReports.SectionReportModel.Line()
+        Me.Line23 = New GrapeCity.ActiveReports.SectionReportModel.Line()
+        Me.Label2 = New GrapeCity.ActiveReports.SectionReportModel.Label()
+        Me.txtHoryukin = New GrapeCity.ActiveReports.SectionReportModel.TextBox()
+        Me.txtKurikoshizan = New GrapeCity.ActiveReports.SectionReportModel.TextBox()
+        Me.txtKurikoshizanName = New GrapeCity.ActiveReports.SectionReportModel.TextBox()
         CType(Me.txtKonSeikyuGaku, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Label9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtMadeSeikyuGaku, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -114,6 +120,10 @@ Partial Public Class rptSEI0001
         CType(Me.txtBank3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtKouzaMeigi, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtKouzaKotei, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Label2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtHoryukin, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtKurikoshizan, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtKurikoshizanName, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'PageHeader
@@ -123,117 +133,117 @@ Partial Public Class rptSEI0001
         '
         'Detail
         '
-        Me.Detail.Controls.AddRange(New GrapeCity.ActiveReports.SectionReportModel.ARControl() {Me.txtKonSeikyuGaku, Me.Label9, Me.txtMadeSeikyuGaku, Me.txtMadeJyuryogaku, Me.txtJyutyuGaku, Me.Label5, Me.Label6, Me.Label7, Me.Label8, Me.Line1, Me.Line7, Me.Line2, Me.Line3, Me.lblTitle, Me.Line4, Me.Line8, Me.txtJisyaName1, Me.Line10, Me.txtSeikyuGaku, Me.Line6, Me.Line5, Me.lblNatsuin3, Me.lblNatsuin2, Me.lblNatsuin1, Me.Line14, Me.txtKyakuName, Me.lblKeisyo, Me.txtSyoriDate, Me.Label1, Me.Line9, Me.Line11, Me.Line12, Me.txtNo, Me.Label3, Me.Line13, Me.Line15, Me.Line17, Me.Line18, Me.txtISO, Me.txtComment, Me.txtYubin, Me.txtAddress, Me.txtTEL, Me.txtFAX, Me.txtEmail, Me.txtURL, Me.Label10, Me.txtBank1, Me.txtBank2, Me.txtBank3, Me.txtKouzaMeigi, Me.Line19, Me.Line21, Me.Line22, Me.txtKouzaKotei, Me.Shape2, Me.Line16, Me.Shape1})
+        Me.Detail.Controls.AddRange(New GrapeCity.ActiveReports.SectionReportModel.ARControl() {Me.Shape1, Me.txtKonSeikyuGaku, Me.Label9, Me.txtMadeSeikyuGaku, Me.txtMadeJyuryogaku, Me.txtJyutyuGaku, Me.Label5, Me.Label6, Me.Label7, Me.Label8, Me.Line1, Me.Line7, Me.Line2, Me.Line3, Me.lblTitle, Me.Line4, Me.Line8, Me.txtJisyaName1, Me.Line10, Me.txtSeikyuGaku, Me.Line6, Me.Line5, Me.lblNatsuin3, Me.lblNatsuin2, Me.lblNatsuin1, Me.Line14, Me.txtKyakuName, Me.lblKeisyo, Me.txtSyoriDate, Me.Label1, Me.Line9, Me.Line11, Me.Line12, Me.txtNo, Me.Label3, Me.Line13, Me.Line15, Me.Line17, Me.Line18, Me.txtISO, Me.txtComment, Me.txtYubin, Me.txtAddress, Me.txtTEL, Me.txtFAX, Me.txtEmail, Me.txtURL, Me.Label10, Me.txtBank1, Me.txtBank2, Me.txtBank3, Me.txtKouzaMeigi, Me.Line19, Me.Line21, Me.Line22, Me.txtKouzaKotei, Me.Shape2, Me.Line16, Me.Line20, Me.Line23, Me.Label2, Me.txtHoryukin, Me.txtKurikoshizan, Me.txtKurikoshizanName})
         Me.Detail.Height = 6.903653!
         Me.Detail.Name = "Detail"
         '
         'txtKonSeikyuGaku
         '
-        Me.txtKonSeikyuGaku.Height = 0.2952756!
-        Me.txtKonSeikyuGaku.Left = 1.380709!
+        Me.txtKonSeikyuGaku.Height = 0.2165354!
+        Me.txtKonSeikyuGaku.Left = 1.417323!
         Me.txtKonSeikyuGaku.Name = "txtKonSeikyuGaku"
         Me.txtKonSeikyuGaku.Padding = New GrapeCity.ActiveReports.PaddingEx(0, 0, 3, 0)
         Me.txtKonSeikyuGaku.Style = "font-family: ＭＳ 明朝; font-size: 14.25pt; text-align: right; vertical-align: bottom" &
     ""
         Me.txtKonSeikyuGaku.Text = "\1,080,000"
-        Me.txtKonSeikyuGaku.Top = 5.059055!
-        Me.txtKonSeikyuGaku.Width = 2.630708!
+        Me.txtKonSeikyuGaku.Top = 5.688976!
+        Me.txtKonSeikyuGaku.Width = 2.559055!
         '
         'Label9
         '
-        Me.Label9.Height = 1.175591!
+        Me.Label9.Height = 1.653543!
         Me.Label9.HyperLink = Nothing
-        Me.Label9.Left = 4.055118!
+        Me.Label9.Left = 4.094488!
         Me.Label9.Name = "Label9"
         Me.Label9.Style = "font-family: ＭＳ 明朝; font-size: 9.75pt; text-align: center; vertical-align: middle" &
     ""
         Me.Label9.Text = "(税込)"
-        Me.Label9.Top = 4.173229!
-        Me.Label9.Width = 0.5736222!
+        Me.Label9.Top = 4.212598!
+        Me.Label9.Width = 0.511811!
         '
         'txtMadeSeikyuGaku
         '
-        Me.txtMadeSeikyuGaku.Height = 0.2952756!
-        Me.txtMadeSeikyuGaku.Left = 1.380709!
+        Me.txtMadeSeikyuGaku.Height = 0.2165354!
+        Me.txtMadeSeikyuGaku.Left = 1.417323!
         Me.txtMadeSeikyuGaku.Name = "txtMadeSeikyuGaku"
         Me.txtMadeSeikyuGaku.Padding = New GrapeCity.ActiveReports.PaddingEx(0, 0, 3, 0)
         Me.txtMadeSeikyuGaku.Style = "font-family: ＭＳ 明朝; font-size: 14.25pt; text-align: right; vertical-align: bottom" &
     ""
-        Me.txtMadeSeikyuGaku.Text = Nothing
-        Me.txtMadeSeikyuGaku.Top = 4.76378!
-        Me.txtMadeSeikyuGaku.Width = 2.630708!
+        Me.txtMadeSeikyuGaku.Text = "\1,080,000"
+        Me.txtMadeSeikyuGaku.Top = 4.507874!
+        Me.txtMadeSeikyuGaku.Width = 2.559055!
         '
         'txtMadeJyuryogaku
         '
-        Me.txtMadeJyuryogaku.Height = 0.2952756!
-        Me.txtMadeJyuryogaku.Left = 1.380709!
+        Me.txtMadeJyuryogaku.Height = 0.2165354!
+        Me.txtMadeJyuryogaku.Left = 1.417323!
         Me.txtMadeJyuryogaku.Name = "txtMadeJyuryogaku"
         Me.txtMadeJyuryogaku.Padding = New GrapeCity.ActiveReports.PaddingEx(0, 0, 3, 0)
         Me.txtMadeJyuryogaku.Style = "font-family: ＭＳ 明朝; font-size: 14.25pt; text-align: right; vertical-align: bottom" &
     ""
-        Me.txtMadeJyuryogaku.Text = Nothing
-        Me.txtMadeJyuryogaku.Top = 4.468504!
-        Me.txtMadeJyuryogaku.Width = 2.630708!
+        Me.txtMadeJyuryogaku.Text = "\1,080,000"
+        Me.txtMadeJyuryogaku.Top = 4.80315!
+        Me.txtMadeJyuryogaku.Width = 2.559055!
         '
         'txtJyutyuGaku
         '
-        Me.txtJyutyuGaku.Height = 0.2952756!
-        Me.txtJyutyuGaku.Left = 1.380709!
+        Me.txtJyutyuGaku.Height = 0.2165354!
+        Me.txtJyutyuGaku.Left = 1.417323!
         Me.txtJyutyuGaku.Name = "txtJyutyuGaku"
         Me.txtJyutyuGaku.Padding = New GrapeCity.ActiveReports.PaddingEx(0, 0, 3, 0)
         Me.txtJyutyuGaku.Style = "font-family: ＭＳ 明朝; font-size: 14.25pt; text-align: right; vertical-align: bottom" &
     ""
         Me.txtJyutyuGaku.Text = "\1,080,000"
-        Me.txtJyutyuGaku.Top = 4.173229!
-        Me.txtJyutyuGaku.Width = 2.630708!
+        Me.txtJyutyuGaku.Top = 4.212598!
+        Me.txtJyutyuGaku.Width = 2.559055!
         '
         'Label5
         '
-        Me.Label5.Height = 0.2952756!
+        Me.Label5.Height = 0.2165354!
         Me.Label5.HyperLink = Nothing
-        Me.Label5.Left = 0.2362207!
+        Me.Label5.Left = 0.2755905!
         Me.Label5.Name = "Label5"
         Me.Label5.Style = "font-family: ＭＳ 明朝; font-size: 9.75pt; text-align: center; vertical-align: middle" &
     ""
         Me.Label5.Text = "請 負 金 額"
-        Me.Label5.Top = 4.173229!
-        Me.Label5.Width = 1.141732!
+        Me.Label5.Top = 4.212598!
+        Me.Label5.Width = 1.062992!
         '
         'Label6
         '
-        Me.Label6.Height = 0.2952756!
+        Me.Label6.Height = 0.2165354!
         Me.Label6.HyperLink = Nothing
-        Me.Label6.Left = 0.2362207!
+        Me.Label6.Left = 0.2755905!
         Me.Label6.Name = "Label6"
         Me.Label6.Style = "font-family: ＭＳ 明朝; font-size: 9.75pt; text-align: center; vertical-align: middle" &
     ""
         Me.Label6.Text = "今回迄受領額"
-        Me.Label6.Top = 4.468504!
-        Me.Label6.Width = 1.141733!
+        Me.Label6.Top = 4.80315!
+        Me.Label6.Width = 1.062992!
         '
         'Label7
         '
-        Me.Label7.Height = 0.2952756!
+        Me.Label7.Height = 0.2165354!
         Me.Label7.HyperLink = Nothing
-        Me.Label7.Left = 0.2362207!
+        Me.Label7.Left = 0.2755905!
         Me.Label7.Name = "Label7"
         Me.Label7.Style = "font-family: ＭＳ 明朝; font-size: 9.75pt; text-align: center; vertical-align: middle" &
     ""
         Me.Label7.Text = "今回迄請求額"
-        Me.Label7.Top = 4.76378!
-        Me.Label7.Width = 1.141733!
+        Me.Label7.Top = 4.507874!
+        Me.Label7.Width = 1.062992!
         '
         'Label8
         '
-        Me.Label8.Height = 0.2952756!
+        Me.Label8.Height = 0.2165354!
         Me.Label8.HyperLink = Nothing
-        Me.Label8.Left = 0.2362207!
+        Me.Label8.Left = 0.2755905!
         Me.Label8.Name = "Label8"
         Me.Label8.Style = "font-family: ＭＳ 明朝; font-size: 9.75pt; text-align: center; vertical-align: middle" &
     ""
         Me.Label8.Text = "今回請求金額"
-        Me.Label8.Top = 5.059055!
-        Me.Label8.Width = 1.141733!
+        Me.Label8.Top = 5.688976!
+        Me.Label8.Width = 1.062992!
         '
         'Line1
         '
@@ -567,7 +577,7 @@ Partial Public Class rptSEI0001
         '
         'Line17
         '
-        Me.Line17.Height = 1.181102!
+        Me.Line17.Height = 1.771653!
         Me.Line17.Left = 4.011417!
         Me.Line17.LineWeight = 2.0!
         Me.Line17.Name = "Line17"
@@ -576,11 +586,11 @@ Partial Public Class rptSEI0001
         Me.Line17.X1 = 4.011417!
         Me.Line17.X2 = 4.011417!
         Me.Line17.Y1 = 4.173229!
-        Me.Line17.Y2 = 5.354331!
+        Me.Line17.Y2 = 5.944882!
         '
         'Line18
         '
-        Me.Line18.Height = 1.181103!
+        Me.Line18.Height = 1.771653!
         Me.Line18.Left = 1.377953!
         Me.Line18.LineWeight = 2.0!
         Me.Line18.Name = "Line18"
@@ -589,7 +599,7 @@ Partial Public Class rptSEI0001
         Me.Line18.X1 = 1.377953!
         Me.Line18.X2 = 1.377953!
         Me.Line18.Y1 = 4.173229!
-        Me.Line18.Y2 = 5.354332!
+        Me.Line18.Y2 = 5.944882!
         '
         'txtISO
         '
@@ -803,7 +813,7 @@ Partial Public Class rptSEI0001
         '
         'Shape1
         '
-        Me.Shape1.Height = 1.181102!
+        Me.Shape1.Height = 1.771654!
         Me.Shape1.Left = 0.2362205!
         Me.Shape1.LineWeight = 2.0!
         Me.Shape1.Name = "Shape1"
@@ -815,6 +825,80 @@ Partial Public Class rptSEI0001
         '
         Me.PageFooter.Height = 0!
         Me.PageFooter.Name = "PageFooter"
+        '
+        'Line20
+        '
+        Me.Line20.Height = 0!
+        Me.Line20.Left = 0.2362206!
+        Me.Line20.LineWeight = 2.0!
+        Me.Line20.Name = "Line20"
+        Me.Line20.Top = 5.354331!
+        Me.Line20.Width = 3.775196!
+        Me.Line20.X1 = 0.2362206!
+        Me.Line20.X2 = 4.011416!
+        Me.Line20.Y1 = 5.354331!
+        Me.Line20.Y2 = 5.354331!
+        '
+        'Line23
+        '
+        Me.Line23.Height = 0!
+        Me.Line23.Left = 0.2362206!
+        Me.Line23.LineWeight = 2.0!
+        Me.Line23.Name = "Line23"
+        Me.Line23.Top = 5.649607!
+        Me.Line23.Width = 3.775195!
+        Me.Line23.X1 = 0.2362206!
+        Me.Line23.X2 = 4.011416!
+        Me.Line23.Y1 = 5.649607!
+        Me.Line23.Y2 = 5.649607!
+        '
+        'Label2
+        '
+        Me.Label2.Height = 0.2165354!
+        Me.Label2.HyperLink = Nothing
+        Me.Label2.Left = 0.2755905!
+        Me.Label2.Name = "Label2"
+        Me.Label2.Style = "font-family: ＭＳ 明朝; font-size: 9.75pt; text-align: center; vertical-align: middle" &
+    ""
+        Me.Label2.Text = "保留金残"
+        Me.Label2.Top = 5.098425!
+        Me.Label2.Width = 1.062992!
+        '
+        'txtHoryukin
+        '
+        Me.txtHoryukin.Height = 0.2165354!
+        Me.txtHoryukin.Left = 1.417323!
+        Me.txtHoryukin.Name = "txtHoryukin"
+        Me.txtHoryukin.Padding = New GrapeCity.ActiveReports.PaddingEx(0, 0, 3, 0)
+        Me.txtHoryukin.Style = "font-family: ＭＳ 明朝; font-size: 14.25pt; text-align: right; vertical-align: bottom" &
+    ""
+        Me.txtHoryukin.Text = "\1,080,000"
+        Me.txtHoryukin.Top = 5.098425!
+        Me.txtHoryukin.Width = 2.559055!
+        '
+        'txtKurikoshizan
+        '
+        Me.txtKurikoshizan.Height = 0.2165354!
+        Me.txtKurikoshizan.Left = 1.417323!
+        Me.txtKurikoshizan.Name = "txtKurikoshizan"
+        Me.txtKurikoshizan.Padding = New GrapeCity.ActiveReports.PaddingEx(0, 0, 3, 0)
+        Me.txtKurikoshizan.Style = "font-family: ＭＳ 明朝; font-size: 14.25pt; text-align: right; vertical-align: bottom" &
+    ""
+        Me.txtKurikoshizan.Text = "\1,080,000"
+        Me.txtKurikoshizan.Top = 5.393701!
+        Me.txtKurikoshizan.Width = 2.559055!
+        '
+        'txtKurikoshizanName
+        '
+        Me.txtKurikoshizanName.Height = 0.2165354!
+        Me.txtKurikoshizanName.Left = 0.2755905!
+        Me.txtKurikoshizanName.Name = "txtKurikoshizanName"
+        Me.txtKurikoshizanName.Padding = New GrapeCity.ActiveReports.PaddingEx(0, 0, 3, 0)
+        Me.txtKurikoshizanName.Style = "font-family: ＭＳ 明朝; font-size: 9.75pt; text-align: center; vertical-align: middle" &
+    "; ddo-char-set: 1"
+        Me.txtKurikoshizanName.Text = "繰越残"
+        Me.txtKurikoshizanName.Top = 5.393701!
+        Me.txtKurikoshizanName.Width = 1.062992!
         '
         'rptSEI0001
         '
@@ -865,6 +949,10 @@ Partial Public Class rptSEI0001
         CType(Me.txtBank3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtKouzaMeigi, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtKouzaKotei, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Label2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtHoryukin, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtKurikoshizan, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtKurikoshizanName, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub
@@ -926,4 +1014,10 @@ Partial Public Class rptSEI0001
     Private WithEvents Line21 As GrapeCity.ActiveReports.SectionReportModel.Line
     Private WithEvents Line22 As GrapeCity.ActiveReports.SectionReportModel.Line
     Private WithEvents txtKouzaKotei As GrapeCity.ActiveReports.SectionReportModel.TextBox
+    Private WithEvents Line20 As GrapeCity.ActiveReports.SectionReportModel.Line
+    Private WithEvents Line23 As GrapeCity.ActiveReports.SectionReportModel.Line
+    Private WithEvents Label2 As GrapeCity.ActiveReports.SectionReportModel.Label
+    Private WithEvents txtHoryukin As GrapeCity.ActiveReports.SectionReportModel.TextBox
+    Private WithEvents txtKurikoshizan As GrapeCity.ActiveReports.SectionReportModel.TextBox
+    Private WithEvents txtKurikoshizanName As GrapeCity.ActiveReports.SectionReportModel.TextBox
 End Class
