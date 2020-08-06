@@ -409,13 +409,13 @@ Public Class frmJYU0001
 
             '承認済の場合
             If siyoKinouAuthority.CheckUseKinou(SiyoKinouAuthority.CONST_受注承認) Then
-                    FunctionKey.SetItem(4, "承認解除", "承認解除", True, FunctionKey.FONT_SMALL)
-                End If
-                FunctionKey.SetItem(11, "受注変更", "受注変更", True, FunctionKey.FONT_SMALL)
+                FunctionKey.SetItem(4, "承認解除", "承認解除", True, FunctionKey.FONT_SMALL)
+            End If
+            FunctionKey.SetItem(11, "受注変更", "受注変更", True, FunctionKey.FONT_SMALL)
 
-            ElseIf TitleBar.EditMode = EditMode.Create OrElse TitleBar.EditMode = EditMode.Edit Then
-                '新規モードまたは、直近の受注を選択かつ、受注未承認の場合
-                FunctionKey.SetItem(FUNC_KAMOKU_HINMOKU, SYSFC_KAMOKU_HINMOKU, SYSFC_KAMOKU_HINMOKU, True, FunctionKey.FONT_SMALL)
+        ElseIf TitleBar.EditMode = EditMode.Create OrElse TitleBar.EditMode = EditMode.Edit Then
+            '新規モードまたは、直近の受注を選択かつ、受注未承認の場合
+            FunctionKey.SetItem(FUNC_KAMOKU_HINMOKU, SYSFC_KAMOKU_HINMOKU, SYSFC_KAMOKU_HINMOKU, True, FunctionKey.FONT_SMALL)
             FunctionKey.SetItem(FUNC_ROW_UP, SYSFC_ROW_UP, "行移動" & vbCrLf & "（上）", True, FunctionKey.FONT_SMALL)
             FunctionKey.SetItem(FUNC_ROW_DOWN, SYSFC_ROW_DOWN, "行移動" & vbCrLf & "（下）", True, FunctionKey.FONT_SMALL)
             FunctionKey.SetItem(FUNC_SEARCH, SYSFC_SEARCH, SYSFC_SEARCH, True)
@@ -1117,6 +1117,9 @@ Public Class frmJYU0001
 
         '1行目の場合、処理しない
         If dbgMEISAI.Row = 0 Then Return
+
+        '削除行は処理しない
+        If dbgMEISAI.Columns(COL_DELETE_FLG).Value = 1 Then Return
 
         'パラメータの設定
         Dim rows() = CType(dbgMEISAI.DataSource, dsJYU0001.T_JYUTYUSelectDataTable).Select("KAISOCODE = '" & trvWorkInfo.SelectedNode.Tag.ToString & "'")
@@ -3712,7 +3715,10 @@ CheckError:
         End If
 
         If trvWorkInfo.SelectedNode.Level > 0 AndAlso dbgMEISAI.Row <> 0 Then
-            FunctionKey.ItemEnabled(FUNC_KAMOKU_HINMOKU) = True
+            If dbgMEISAI.Columns(COL_DELETE_FLG).Value = 0 Then
+                '行削除していない場合、活性とする
+                FunctionKey.ItemEnabled(FUNC_KAMOKU_HINMOKU) = True
+            End If
             FunctionKey.ItemEnabled(FUNC_ROW_DELETE) = True
             FunctionKey.ItemEnabled(FUNC_ROW_UP) = True
             FunctionKey.ItemEnabled(FUNC_ROW_DOWN) = True
