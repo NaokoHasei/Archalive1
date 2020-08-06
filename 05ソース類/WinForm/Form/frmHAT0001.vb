@@ -185,10 +185,10 @@ Public Class frmHAT0001
         If keyClearFlg Then
             txtHATYUEDABAN.Text = ""
             txtHATYUEDABAN2.Text = ""
-            txtSIIRECODE.Text = ""
-            txtSIIRENAME.Text = ""
         End If
 
+        txtSIIRECODE.Text = ""
+        txtSIIRENAME.Text = ""
         chkHATYUDATE.Checked = True
         txtHATYUDATE.Text = ServerDate.ToString("yyyy/MM/dd")
         txtKEISYOUCODE.Text = ""
@@ -219,7 +219,7 @@ Public Class frmHAT0001
         '受注情報の表示
         Call DispJyutyuInfo()
 
-        dbgMeisai.SetDataBinding(New dsHAT0001.明細情報DataTable, "", True)
+        dbgMEISAI.SetDataBinding(New dsHAT0001.明細情報DataTable, "", True)
 
         'コントール活性制御
         Call InitEnabledControl()
@@ -1064,10 +1064,15 @@ Public Class frmHAT0001
                 Return
             End If
 
-            '画面の初期化（発注枝番のクリアと受注枝番の最新化の為）
+            '画面の初期化
             txtHATYUEDABAN.Text = ""
             txtHATYUEDABAN2.Text = ""
-            InitDisp()
+
+            '受注枝番の設定
+            txtJYUTYUEDABAN.Text = ZeroPadding(T_JYUTYU.fncSelectMAX_JYUTYUEDABAN(txtJYUTYUNO.Text).Rows(0).Item("JYUTYUEDABAN"), txtJYUTYUEDABAN.MaxLength)
+
+            '受注情報の表示
+            Call DispJyutyuInfo()
 
             '発注情報が存在しない場合
             TitleBar.EditMode = EditMode.Create
