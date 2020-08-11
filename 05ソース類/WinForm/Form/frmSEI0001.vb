@@ -227,6 +227,7 @@ Public Class frmSEI0001
 
         txtKonMadeJyuryoGaku.Text = 0           '今回迄受領額
         txtKurikoshiZan.Text = 0                '繰越残
+        txtKurikoshiZan.ForeColor = Color.Black
         txtHoryukin.Text = 0                    '保留金
         txtHoryukinKonkai.Text = 0              '今回迄保留金
         txtBiko.Text = ""                       '備考
@@ -361,7 +362,13 @@ Public Class frmSEI0001
             dbgMEISAI.Enabled = enabled
         End If
 
-        txtKonMadeJyuryoGaku.Enabled = enabled
+        If Me.TitleBar.EditMode = EditMode.SeikyuKurikoshizanSaiseikyu Then
+            '繰越残再請求の場合
+            txtKonMadeJyuryoGaku.Enabled = True
+        Else
+            txtKonMadeJyuryoGaku.Enabled = enabled
+        End If
+
         txtBiko.Enabled = enabled
 
         If FormStatus = enumFormStatus.Reference OrElse FormStatus = enumFormStatus.KurikoshizanSaiseikyu Then
@@ -595,6 +602,13 @@ Public Class frmSEI0001
         'タイトルバーを繰越残再請求とし、請求情報の表示処理を呼び出す
         Me.TitleBar.EditMode = EditMode.SeikyuKurikoshizanSaiseikyu
         Me.txtSeikyuEdaban_KeyDown(txtSeikyuEdaban, New KeyEventArgs(Keys.Enter))
+
+        '項目の編集
+        Dim dr = CType(CType(dbgMEISAI.DataSource, dsSEI0001.MainDataDataTable).Rows(0), dsSEI0001.MainDataRow)
+        dr.MADESEIKYUGAKU = dr.MADESEIKYUGAKU + dr.SEIKYUGAKU
+        dr.SEIKYUGAKU = 0
+        txtKonMadeJyuryoGaku_TextUpdated(Nothing, Nothing)
+        txtKurikoshiZan.ForeColor = Color.Red
     End Sub
 
     '登録/印刷
@@ -655,12 +669,21 @@ Public Class frmSEI0001
         dr.SeikyuNo = ZeroPadding(txtSeikyuNo.Text, txtSeikyuNo.MaxLength) & "-" & ZeroPadding(txtSeikyuEdaban.Text, txtSeikyuEdaban.MaxLength)
         dr.SeikyuDate = GetCnvSW.SfncYearSW(txtSeikyuDate.Text, True, False)
         dr.TokuiName = txtKokyakuName.Text
-        dr.SeikyuGaku = ReplaceCalcString(MainData.Rows(0)(FLD_今回請求額))
+        If Me.TitleBar.EditMode = EditMode.SeikyuKurikoshizanSaiseikyu Then
+            '繰越残再請求の場合
+            dr.SeikyuGaku = NZ(txtKurikoshiZan.Text)
+        Else
+            dr.SeikyuGaku = ReplaceCalcString(MainData.Rows(0)(FLD_今回請求額))
+        End If
         dr.KoujiName = Utility.NS(lblInfo_KouziName.Text)
         dr.UkeoiGaku = ReplaceCalcString(MainData.Rows(0)(FLD_請負受注金額))
         dr.MadeJyuryoGaku = NZ(txtKonMadeJyuryoGaku.Text)
         dr.MadeSeikyuGaku = ReplaceCalcString(MainData.Rows(0)(FLD_今回迄請求額))
-        dr.Horyukin = NZ(txtHoryukinKonkai.Text)
+        If NZ(txtHoryukin.Text) < 0 Then
+            dr.Horyukin = NZ(txtHoryukinKonkai.Text) + NZ(txtHoryukin.Text)
+        Else
+            dr.Horyukin = NZ(txtHoryukinKonkai.Text)
+        End If
         dr.Kurikoshizan = NZ(txtKurikoshiZan.Text)
         dr.KurikoshizanName = strS_SCB_KURIKOSHIZAN
         dr.Biko = txtBiko.Text
