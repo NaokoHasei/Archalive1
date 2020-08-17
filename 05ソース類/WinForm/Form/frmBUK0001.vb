@@ -220,7 +220,7 @@ Public Class frmBUK0001
         End If
 
         If enumParentDispValue = enumParentDisp.SEARCH Then
-            FunctionKey.SetItem(1, "終了", "終了", True)
+            FunctionKey.SetItem(1, "取消", "取消", True)
         Else
             FunctionKey.SetItem(1, "取消", "取消", True)
         End If
