@@ -738,12 +738,19 @@ Public Class frmHAT0001
             mode = frmMENT0002.enumDispMode.SELECT_KAMOKU_HINMOKU
         End If
 
-        ''*** 検索画面表示 ***
+        '*** 検索画面表示 ***
         Using f As New frmMENT0002(mode, frmMENT0002.enumKamokuType.SEARCH, "")
             f.Owner = Me
             f.ShowDialog()
 
             If f.outKamokuCode.Count = 0 Then Return
+
+            '新規行以外の場合、確認メッセージ表示
+            If dbgMEISAI.Row <> dbgMEISAI.RowCount Then
+                If MessageBoxEx.Show(MessageCode_Arg0.M178科目品目を変更しますか下位の階層との紐付けが外れる可能性がございます, PROGRAM_NAME) = Windows.Forms.DialogResult.No Then
+                    Exit Sub
+                End If
+            End If
 
             '戻り値の処理
             For idx = 0 To f.outKamokuCode.Count - 1
