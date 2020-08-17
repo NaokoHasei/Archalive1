@@ -886,7 +886,18 @@ Public Class frmMENT0002
         If cmbJyouiCodeNew.Enabled Then
             cmbJyouiCodeNew.Focus()
         Else
-            btnNew.Focus()
+
+            Select Case True
+                Case rdoDKAMOKU.Checked
+                    rdoDKAMOKU.Focus()
+                Case rdoCKAMOKU.Checked
+                    rdoCKAMOKU.Focus()
+                Case rdoSKAMOKU.Checked
+                    rdoSKAMOKU.Focus()
+                Case Else
+                    rdoALL.Focus()
+            End Select
+
         End If
     End Sub
 
