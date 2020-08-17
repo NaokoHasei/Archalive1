@@ -560,7 +560,7 @@ Public Class frmSEI0001
     '削除
     Private Sub FunctionKey_Delete()
 
-        If Not MessageBoxEx.Show(CommonUtility.MessageCode_Arg0.M002削除してもよろしいですか, PROGRAM_NAME) = Windows.Forms.DialogResult.Yes Then Return
+        If Not MessageBoxEx.Show(MessageCode_Arg1.M999フリーYESNO_デフォルトいいえ, "表示中の請求を削除しますか？", PROGRAM_NAME, MessageBoxIcon.Exclamation) = Windows.Forms.DialogResult.Yes Then Return
 
         dalogic.Delete(訂正前請求ヘッダ.SEIKYUNO, 訂正前請求ヘッダ.SEIKYUEDABAN, 訂正前請求ヘッダ.SEIKYUDATE)
 

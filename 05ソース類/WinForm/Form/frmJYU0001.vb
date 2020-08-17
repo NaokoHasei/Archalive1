@@ -732,7 +732,7 @@ Public Class frmJYU0001
                 End If
 
                 '確認メッセージ
-                If MessageBoxEx.Show(MessageCode_Arg0.M002削除してもよろしいですか, PROGRAM_NAME) = Windows.Forms.DialogResult.No Then Exit Sub
+                If MessageBoxEx.Show(MessageCode_Arg1.M999フリーYESNO_デフォルトいいえ, "表示中の受注を削除しますか？", PROGRAM_NAME, MessageBoxIcon.Exclamation) = Windows.Forms.DialogResult.No Then Exit Sub
 
                 Using ts As System.Transactions.TransactionScope = New System.Transactions.TransactionScope()
                     '受注ヘッダトラン全削除

@@ -677,7 +677,7 @@ Public Class frmMIT0001
                 '削除
 
                 '確認メッセージ
-                If MessageBoxEx.Show(MessageCode_Arg0.M002削除してもよろしいですか, PROGRAM_NAME) = Windows.Forms.DialogResult.No Then Exit Sub
+                If MessageBoxEx.Show(MessageCode_Arg1.M999フリーYESNO_デフォルトいいえ, "表示中の見積を削除しますか？", PROGRAM_NAME, MessageBoxIcon.Exclamation) = Windows.Forms.DialogResult.No Then Exit Sub
 
                 Using ts As System.Transactions.TransactionScope = New System.Transactions.TransactionScope()
                     '見積ヘッダトラン全削除

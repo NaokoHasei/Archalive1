@@ -505,7 +505,7 @@ Public Class frmHAT0001
     Private Sub ExecDelete()
         Dim writingDataSet As New dsHAT0001_Update
 
-        If MessageBoxEx.Show(CommonUtility.MessageCode_Arg0.M002削除してもよろしいですか, PROGRAM_NAME) = Windows.Forms.DialogResult.No Then Return
+        If MessageBoxEx.Show(MessageCode_Arg1.M999フリーYESNO_デフォルトいいえ, "表示中の発注を削除しますか？", PROGRAM_NAME, MessageBoxIcon.Exclamation) = Windows.Forms.DialogResult.No Then Return
 
         Call Set受注ヘッダートラン削除データ(writingDataSet)
 
