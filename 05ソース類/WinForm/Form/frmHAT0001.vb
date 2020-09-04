@@ -7,6 +7,14 @@ Imports C1.Win.C1TrueDBGrid
 
 Public Class frmHAT0001
 
+    Private Const intKaisoKeta As Integer = 3                               '階層を形成するコードのバイト数
+    Private intMoveRowValue As Integer = 0
+
+    'ﾌｧﾝｸｼｮﾝ・ｷｰ
+    Private Const SYSFC_ROW_UP As String = "行移動（上）"
+    Private Const SYSFC_ROW_DOWN As String = "行移動（下）"
+
+
     Public Overrides Function PROGRAM_ID() As String
         Return "HAT0001"
     End Function
@@ -242,7 +250,9 @@ Public Class frmHAT0001
                 FunctionKey.SetItem(1, "取消", "取消", True)
                 FunctionKey.SetItem(5, "科目品目", "科目/品目", False, FunctionKey.FONT_SMALL)
                 FunctionKey.SetItem(6, "行削除", "行削除", False)
-                FunctionKey.SetItem(8, "コメント", "コメント", True, FunctionKey.FONT_SMALL)
+                FunctionKey.SetItem(7, SYSFC_ROW_UP, "行移動" & vbCrLf & "（上）", False, FunctionKey.FONT_SMALL)
+                FunctionKey.SetItem(8, SYSFC_ROW_DOWN, "行移動" & vbCrLf & "（下）", False, FunctionKey.FONT_SMALL)
+                FunctionKey.SetItem(9, "コメント", "コメント", True, FunctionKey.FONT_SMALL)
                 FunctionKey.SetItem(12, "登録", "登録", True)
 
                 If Not NUCheck(txtHATYUEDABAN2.Text) AndAlso CDec(txtHATYUEDABAN2.Text) <> 0 Then
@@ -254,7 +264,9 @@ Public Class frmHAT0001
                 FunctionKey.SetItem(3, "削除", "削除", True)
                 FunctionKey.SetItem(5, "科目品目", "科目/品目", False, FunctionKey.FONT_SMALL)
                 FunctionKey.SetItem(6, "行削除", "行削除", False)
-                FunctionKey.SetItem(8, "コメント", "コメント", True, FunctionKey.FONT_SMALL)
+                FunctionKey.SetItem(7, SYSFC_ROW_UP, "行移動" & vbCrLf & "（上）", False, FunctionKey.FONT_SMALL)
+                FunctionKey.SetItem(8, SYSFC_ROW_DOWN, "行移動" & vbCrLf & "（下）", False, FunctionKey.FONT_SMALL)
+                FunctionKey.SetItem(9, "コメント", "コメント", True, FunctionKey.FONT_SMALL)
                 FunctionKey.SetItem(12, "登録", "登録", True)
 
                 If siyoKinouAuthority.CheckUseKinou(SiyoKinouAuthority.CONST_発注承認) Then
@@ -367,6 +379,62 @@ Public Class frmHAT0001
         cmbHATTYUNO.AttachDataSource(Model.ComboBoxTableName.T_HATYUHED_HATYUNO, recieveParam)
     End Sub
 
+    ''' <summary>
+    ''' グリッド　行移動（上）
+    ''' </summary>
+    Private Sub DbgMeisaiRowMove(ByVal mode As String)
+
+        Dim choiceRow = dbgMEISAI.Row
+        Dim targetRow As Integer
+        If mode = "UP" Then
+            targetRow = choiceRow - 1
+        Else
+            targetRow = choiceRow + 1
+        End If
+        '未入力行の場合
+        If choiceRow = dbgMEISAI.RowCount Then Exit Sub
+
+        If mode = "UP" Then
+            '入力最初の行の場合
+            If choiceRow = 0 Then Exit Sub
+        Else
+            '入力最終行の場合
+            If choiceRow = dbgMEISAI.RowCount - 1 Then Exit Sub
+        End If
+
+        Dim dt = CType(dbgMEISAI.DataSource, dsHAT0001.明細情報DataTable)
+
+        '移動元コピー
+        Dim sourceRow0 As dsHAT0001.明細情報Row = dt.Rows(choiceRow)
+        Dim newRow0 As dsHAT0001.明細情報Row = dt.NewRow
+        newRow0.ItemArray = sourceRow0.ItemArray
+
+
+        '移動先コピー
+        Dim sourceRow1 As dsHAT0001.明細情報Row = dt.Rows(targetRow)
+        Dim newRow1 As dsHAT0001.明細情報Row = dt.NewRow
+        newRow1.ItemArray = sourceRow1.ItemArray
+
+        '選択行と移動先の階層コードを入れ替え
+        dt.Rows.InsertAt(newRow0, targetRow)
+        dt.Rows.Remove(sourceRow0)
+        dt.Rows.InsertAt(newRow1, choiceRow)
+        dt.Rows.Remove(sourceRow1)
+
+        ''グリッドにデータテーブルをソートしてセット
+        'dbgMEISAI.SetDataBinding(dt, "", True) '明細情報
+
+        '合計計算
+        subDbgSumMeisai()
+
+        dbgMEISAI.Row = targetRow
+        dbgMEISAI.Col = COLMeisai.KAMOKU_HINMOKU
+        dbgMEISAI.Focus()
+
+        intMoveRowValue = dbgMEISAI.Row
+    End Sub
+
+
     Protected Overrides Sub FunctionKeyAction(ByVal sender As System.Object, ByVal e As FunctionKeyEventArgs)
 
         Select Case e.Name
@@ -429,6 +497,13 @@ Public Class frmHAT0001
             Case "行削除"
                 Call DbgMeisaiRowDelete()
 
+            Case SYSFC_ROW_UP
+                '行移動（上）
+                DbgMeisaiRowMove("UP")
+
+            Case SYSFC_ROW_DOWN
+                '行移動（下）
+                DbgMeisaiRowMove("DOWN")
             Case "コメント"
                 Call PopUpComment()
 
@@ -1834,6 +1909,8 @@ ErrorHandler:
 
         FunctionKey.SetItem(5, "科目品目", "科目/品目", False)
         FunctionKey.SetItem(6, "行削除", "行削除", False)
+        FunctionKey.SetItem(7, SYSFC_ROW_UP, "行移動" & vbCrLf & "（上）", False, FunctionKey.FONT_SMALL)
+        FunctionKey.SetItem(8, SYSFC_ROW_DOWN, "行移動" & vbCrLf & "（下）", False, FunctionKey.FONT_SMALL)
 
         If InputErrorCheck(CType(sender, System.Windows.Forms.Control), GetTabOrder(CType(sender, System.Windows.Forms.Control))) = False Then
             Return
@@ -1892,6 +1969,8 @@ ErrorHandler:
         If Not (TitleBar.EditMode = EditMode.Create OrElse TitleBar.EditMode = EditMode.Edit) Then Return
 
         FunctionKey.SetItem(6, "行削除", "行削除", True)
+        FunctionKey.SetItem(7, SYSFC_ROW_UP, "行移動" & vbCrLf & "（上）", True, FunctionKey.FONT_SMALL)
+        FunctionKey.SetItem(8, SYSFC_ROW_DOWN, "行移動" & vbCrLf & "（下）", True, FunctionKey.FONT_SMALL)
 
         'ファンクションキーの設定
         setFunctionKeyChangeDbgMEISAI()
@@ -1905,6 +1984,8 @@ ErrorHandler:
 
         '初期化
         FunctionKey.SetItem(5, "科目品目", "科目/品目", True)
+        FunctionKey.SetItem(7, SYSFC_ROW_UP, "行移動" & vbCrLf & "（上）", True, FunctionKey.FONT_SMALL)
+        FunctionKey.SetItem(8, SYSFC_ROW_DOWN, "行移動" & vbCrLf & "（下）", True, FunctionKey.FONT_SMALL)
     End Sub
 
     '和暦換算
@@ -1944,6 +2025,7 @@ ErrorHandler:
     Private Sub dbgMEISAI_FetchCellStyle(ByVal sender As Object, ByVal e As C1.Win.C1TrueDBGrid.FetchCellStyleEventArgs) Handles dbgMEISAI.FetchCellStyle
 
         If Me.ActiveControl.Name <> dbgMEISAI.Name Then Return
+        If Not (e.Col = dbgMEISAI.Col AndAlso e.Row = dbgMEISAI.Row) Then Return
 
         'MarqueeStyleでハイライトするようにしているが、タブ移動でハイライトされないので、強制的にハイライトする
         e.CellStyle.BackColor = SystemColors.MenuHighlight
